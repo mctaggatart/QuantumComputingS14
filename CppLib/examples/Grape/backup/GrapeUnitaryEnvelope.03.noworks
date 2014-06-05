@@ -1,0 +1,290 @@
+/*
+Name: Grape.cpp
+Author: Jay Gambetta
+
+Dependences: GrapeUnitary.hpp  
+Brief Discription: This demonstrates grape for lab frame vs rotating frame with large pixels
+
+Version History
+	v0: Feb  11th, 2009.
+
+time ./GrapeUnitary4.e GrapeUnitary4.dat
+
+
+n = 10000
+real	0m8.287s
+user	0m7.917s
+sys	0m0.134s
+
+real	0m0.027s
+user	0m0.023s
+sys	0m0.003s
+
+
+*/
+#include <Grape.hpp>
+using namespace std;
+
+int main (int argc, char const *argv[]){
+
+	verbose=no;
+	cout << "Running program " << argv[0] << endl;
+
+	//Grape inputs
+	double qbfreq=51.5;
+	double delta=0.0, Delta=-2.03;
+	size_t max_iter=1000;
+	double tolerance=0.000000000001, fidelity=0.999, base_a=2.0, epsilon=1, sigma=1, tgate=3, dt;
+	size_t num_time=tgate*1, dim = 4, num_controls =3;
+	size_t rwa_num_time=num_time;	
+	dt=tgate/double(num_time);
+	double rwa_dt = dt;
+	size_t nsubpixels[]={1,1,1*(size_t)tgate};
+	// cout << dt << endl;
+	Grape sys(dim, num_controls, num_time);
+	sys.SetNumericalParameters(fidelity, dt, base_a, epsilon, tolerance, max_iter, nsubpixels, qbfreq, Delta);
+	
+	matrix<complex<double> > a(dim,dim), ad(dim,dim), n(dim,dim), Hdrift(dim,dim),  HcontrolZ(dim,dim), HcontrolX(dim,dim), HcontrolY(dim,dim);
+	matrix<complex<double> > Urot(dim,dim);
+	vector<double> ucontrol0(num_time), ucontrol1(num_time), ucontrol2(num_time);
+	matrix<complex<double> > U_desired(dim,dim);
+	U_desired.SetOutputStyle(Matrix);
+	MOs::Null(U_desired);
+	Hdrift.SetOutputStyle(Matrix);
+	HcontrolX.SetOutputStyle(Matrix);
+	HcontrolY.SetOutputStyle(Matrix);
+	MOs::Destroy(a);
+	ad = MOs::Dagger(a);
+	n=ad*a;
+	
+//Pick desired Gate
+	//PI pulse
+	U_desired(1,0)=std::complex<double>(1,0);
+	U_desired(0,1)=std::complex<double>(1,0);
+	U_desired(2,2)=std::complex<double>(1,0);
+	
+	//PI/2 pulse	
+	//U_desired(0,0)=1/sqrt(2);
+	//U_desired(1,0)=-std::complex<double>(0,1/sqrt(2));
+	//U_desired(1,1)=1/sqrt(2);
+	//U_desired(0,1)=-std::complex<double>(0,1/sqrt(2));
+	//U_desired(2,2)=1;
+	
+	//2PI pulse
+	//MOs::Identity(U_desired);
+
+	
+//0th control
+	HcontrolX=(a+ad);
+	HcontrolY=(-complex<double>(0.0,1.0)*a+complex<double>(0.0,1.0)*ad);		
+	HcontrolZ = n;
+	//cavity below
+/*	HcontrolX(1,0) = HcontrolX(0,1) = -1;
+	HcontrolX(1,2) = HcontrolX(2,1) = -2.1;
+	HcontrolX(3,2) = HcontrolX(2,3) = -5;
+	HcontrolY(1,0) = -complex<double>(0.0,1.0);
+	HcontrolY(0,1) = complex<double>(0.0,1.0);
+	HcontrolY(1,2) = complex<double>(0.0,2.1);
+	HcontrolY(2,1) = -complex<double>(0.0,2.1);
+	HcontrolY(3,2) = -complex<double>(0.0,5);
+	HcontrolY(2,3) = complex<double>(0.0,5);
+	HcontrolX = HcontrolX*0.5;
+	HcontrolY = HcontrolY*0.5;
+*/	cout << HcontrolX << endl;
+	cout << HcontrolY << endl;
+	
+	
+//RWA frame
+	//Hdrift = (delta-0.5*Delta)*n+ 0.5*Delta*n*n;	
+	Hdrift(2,2) =  Delta;	
+	Hdrift(3,3) = 3.0*Delta;	
+	
+	sys.SetHdrift(Hdrift);
+	cout << Hdrift << endl;	
+	
+	for(size_t j = 0; j < num_time; ++j){
+		ucontrol0[j]=USs::TruncatedGaussian(j*dt, 0, tgate-1, M_PI, tgate/2)*1;
+		ucontrol1[j]=USs::GaussianDerivative(j*dt, 0, tgate-1, M_PI, tgate/2)*0.25;
+	}
+	
+	sys.Setucontrol(ucontrol0,0);
+	sys.Normalizeucontrol(0, M_PI);
+	sys.SetHcontrol(0.5*HcontrolX,0);
+	//1st control
+	sys.Setucontrol(ucontrol1,1);
+	sys.SetHcontrol(0.5*HcontrolY,1);
+	
+	sys.Setucontrol(ucontrol2,2);
+	sys.SetHcontrol(HcontrolZ,2);				
+		
+	sys.SetRhoDesired(U_desired);	
+	
+	//run grape
+	double to_ms =1000.0/CLOCKS_PER_SEC;
+	int clo ;
+	clo = clock();	
+	sys.UnitaryTransfer(&Grape::Phi4Sub2, &Grape::GradPhi4Sub2); 
+
+	double* newcontrols0 = sys.Getucontrol(0);
+	double* newcontrols1 = sys.Getucontrol(1);
+	double* newcontrols2 = sys.Getucontrol(2);
+	cout << "con3 " << newcontrols2[3] << endl;
+	
+	clo = to_ms*(clock() - clo);
+	cout << "time " << clo << endl;
+
+//RW with Counter-Rotating
+    const int nsub=10000;
+	size_t nRWCsubpixels[]={nsub,nsub,(size_t)tgate*nsub};
+	size_t old_num_time = num_time;
+	num_time=old_num_time*nsub;
+	dt=tgate/double(num_time);
+	vector<double> ucontrolRWC0(num_time), ucontrolRWC1(num_time), ucontrolRWC2(num_time);
+	for(size_t j = 0; j < old_num_time; ++j)
+	{	for(size_t l = 0; l < nRWCsubpixels[0]; ++l)
+		{	ucontrolRWC0[j*nRWCsubpixels[0]+l]=newcontrols0[j];//USs::Gaussian(j*dt, 0, tgate-1, M_PI, tgate/2);	
+			ucontrolRWC1[j*nRWCsubpixels[0]+l]=newcontrols1[j];
+			ucontrolRWC2[j*nRWCsubpixels[0]+l]=newcontrols2[j];			
+		}	
+	}
+	fidelity=0.9;
+	//fidelity=0.50;
+	
+	Grape sysRWC(dim, num_controls, num_time);
+	cout << fidelity<< dt<< base_a<< epsilon<< tolerance<< max_iter<< nRWCsubpixels[2]<< qbfreq<< Delta << endl;
+	sysRWC.SetNumericalParameters(fidelity, dt, base_a, epsilon, tolerance, max_iter, nRWCsubpixels, qbfreq, Delta);
+	sysRWC.SetRhoDesired(U_desired);	
+	
+	
+	sysRWC.SetHdrift(Hdrift);
+	sysRWC.SetHcontrol(HcontrolX,0);
+	sysRWC.SetHcontrol(HcontrolX,1);
+	sysRWC.SetHcontrol(HcontrolZ,2);
+	
+	sysRWC.Setucontrol(ucontrolRWC0,0);	
+	sysRWC.Setucontrol(ucontrolRWC1,1);	
+	sysRWC.Setucontrol(ucontrolRWC2,2);
+	sysRWC.nconfigs_=9;
+	
+	sysRWC.UnitaryTransfer(&Grape::Phi4Sub2, &Grape::GradPhi4Sub2,&Grape::SetCounterRotating, &Grape::SetGradCounterRotating);
+
+	vector<double> ucontrol0RWC, ucontrol1RWC, ucontrol2RWC;
+	ucontrol0RWC.assign(sysRWC.Getucontrol(0), sysRWC.Getucontrol(0) + num_time );
+	ucontrol1RWC.assign(sysRWC.Getucontrol(1), sysRWC.Getucontrol(1) + num_time );
+	ucontrol2RWC.assign(sysRWC.Getucontrol(2), sysRWC.Getucontrol(2) + num_time );
+	
+//Lab frame
+	size_t nsublab=nsub;
+	size_t nlabsubpixels[]={nsublab,nsublab,(size_t)tgate*nsublab};
+	//old_num_time = num_time;
+	//tgate=6; //pulse broadening
+	num_time=(size_t)(old_num_time)*nsublab;
+	//dt=tgate/double(num_time);
+	vector<double> ucontrollab0(num_time), ucontrollab1(num_time), ucontrollab2(num_time);
+/*	for(size_t j = 0; j < old_num_time; ++j)
+	{	for(size_t l = 0; l < nlabsubpixels[0]/nRWCsubpixels[0]; ++l)
+		{	ucontrollab0[j*nlabsubpixels[0]/nRWCsubpixels[0]+l+nlabsubpixels[0]]=ucontrol0RWC[j];//USs::Gaussian(j*dt, 0, tgate-1, M_PI, tgate/2);	
+			ucontrollab1[j*nlabsubpixels[0]/nRWCsubpixels[0]+l+nlabsubpixels[0]]=ucontrol1RWC[j];			
+			ucontrollab2[j*nlabsubpixels[0]/nRWCsubpixels[0]+l+nlabsubpixels[0]]=ucontrol2RWC[j];			
+		}	
+	}*/
+	for(size_t j = 0; j < old_num_time; ++j)
+	{	for(size_t l = 0; l < nlabsubpixels[0]; ++l)
+		{	ucontrollab0[j*nlabsubpixels[0]+l]=newcontrols0[j];//USs::Gaussian(j*dt, 0, tgate-1, M_PI, tgate/2);	
+			ucontrollab1[j*nlabsubpixels[0]+l]=newcontrols1[j];
+			ucontrollab2[j*nlabsubpixels[0]+l]=newcontrols2[j];			
+		}	
+	}
+	
+	//Filter
+//	double cntrl, cntrl2, cntrl3;
+//	double sig = 0.6;
+//	double normalizn;
+//	normalizn=0;
+	
+//	for(size_t l = 0; l < num_time; ++l)					
+//	{														
+//		normalizn += exp(-abs((int)num_time/2-(int)l)*dt/sig)*dt/sig/2;	
+//	}
+//	std::cout << normalizn << "\n";
+//	vector<double> ucontrollab0filt(num_time), ucontrollab1filt(num_time), ucontrollab2filt(num_time);
+//	for(size_t j = 0; j < num_time; ++j)
+//	{	
+//		cntrl=cntrl2=cntrl3=0;
+//		for(size_t k = 0; k < num_time; ++k)					
+//		{														
+//			cntrl += ucontrollab0[k] * exp(-abs((int)(k)-(int)j)*dt/sig)*dt/sig/2/normalizn;	
+//			cntrl2 +=  ucontrollab1[k] * exp(-abs((int)(k)-(int)j)*dt/sig)*dt/sig/2/normalizn;	
+//			cntrl3 += ucontrollab2[k] * exp(-abs((int)(k)-(int)j)*dt/sig)*dt/sig/2/normalizn;		
+//		}														
+//		ucontrollab0filt[j]= cntrl;						
+//		ucontrollab1filt[j]= cntrl2;					
+//		ucontrollab2filt[j]= cntrl3;
+										
+		//cout << j << " " << ucontrollab0filt[j] << "\n";
+
+//	}
+	
+	//fidelity=0.9999;
+	//fidelity=0.5;
+	
+	Grape sysLab(dim, num_controls, num_time);
+	//sysLab=sysRWC;
+	//cout << fidelity<< dt<< base_a<< epsilon<< tolerance<< max_iter<< nlabsubpixels[2]<< qbfreq<< Delta << endl;
+	sysLab.SetNumericalParameters(fidelity, dt, base_a, epsilon, tolerance, max_iter, nRWCsubpixels, qbfreq, Delta);
+	Urot(0,0) = 1;	
+	Urot(1,1) = exp(-complex<double>(0.0,tgate*qbfreq));
+	Urot(2,2) = exp(-complex<double>(0.0,2.0*tgate*qbfreq));
+	Urot(3,3) = exp(-complex<double>(0.0,3.0*tgate*qbfreq));
+	
+	U_desired=Urot*U_desired;	
+	sysLab.SetRhoDesired(U_desired);	
+	
+	Hdrift(1,1) = qbfreq;
+	Hdrift(2,2) = 2.0*qbfreq + Delta;	
+	Hdrift(3,3) = 3.0*qbfreq + 3*Delta;	
+	
+	sysLab.SetHdrift(Hdrift);
+	cout << Hdrift << endl;
+	
+	sysLab.Setucontrol(ucontrollab0,0);
+	sysLab.Setucontrol(ucontrollab1,1);
+	sysLab.Setucontrol(ucontrollab2,2);
+	sysLab.SetHcontrol(HcontrolX,0);
+	sysLab.SetHcontrol(HcontrolX,1);
+	sysLab.SetHcontrol(HcontrolZ,2);		
+	
+	cout << HcontrolX << endl;
+	cout << HcontrolZ << endl;
+	
+	clo = clock();	
+	//sysLab.UnitaryTransfer(&Grape::Phi4Sub2, &Grape::GradPhi4Sub2Filter, &Grape::SetLab2QuadFiltered, &Grape::SetGradLab2QuadFiltered);
+	sysLab.UnitaryTransfer(&Grape::Phi4Sub2, &Grape::GradPhi4Sub2, &Grape::SetLab2Quadratures, &Grape::SetGradLab2Quadratures);
+	clo = to_ms*(clock() - clo);
+	cout << "time " << clo << endl;
+
+	vector<double> ucontrol0final, ucontrol1final, ucontrol2final;
+	// The finial control
+	ucontrol0final.assign(sysLab.Getucontrol(0), sysLab.Getucontrol(0) + num_time );
+	ucontrol1final.assign(sysLab.Getucontrol(1), sysLab.Getucontrol(1) + num_time );
+	ucontrol2final.assign(sysLab.Getucontrol(2), sysLab.Getucontrol(2) + num_time );
+		
+	string const outfile = argv[1];
+	ofstream dataout;
+	UFs::OpenFile(outfile,dataout, 16);
+	
+//	for(size_t j =0; j < rwa_num_time; j++)
+//		dataout<< j*rwa_dt << " " << abs(sys.rho_[j](0,0))*abs(sys.rho_[j](0,0)) << " " << abs(sys.rho_[j](1,0))* abs(sys.rho_[j](1,0))  << " " << abs(sys.rho_[j](2,0))*abs(sys.rho_[j](2,0)) << endl;
+	
+	cout << endl;
+//Post processing
+
+	for(size_t j =0; j < old_num_time; j++){
+		dataout << j*dt << '\t' <<newcontrols0[(int)j] << '\t' << newcontrols1[(int)j] << '\t' << newcontrols2[(int)j] << endl;
+		dataout << j*dt << '\t' <<ucontrol0RWC[(int)j*nsub+100] << '\t' << ucontrol1RWC[(int)j*nsub+100] << '\t' << ucontrol2RWC[(int)j*nsub+100] << endl;
+		cout <<  ucontrol1final[j*nsublab+100]<< " " << ucontrol2final[j*nsublab+1000] << endl;
+//		dataout << j*dt << '\t' << ucontrollab0filt[j] << '\t' << ucontrollab1filt[j] << '\t' << ucontrollab2filt[j]<< '\t' << ucontrol0final[j] << '\t' << ucontrol1final[j]<< '\t' << ucontrol2final[j] << endl;
+	}
+	dataout.close();
+	return 0;
+}

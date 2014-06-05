@@ -1,0 +1,42 @@
+This is my c++ library for running 
+	UtilityFunctions 	-- contains my error function, read in and out functions, etc
+	Matrix 				-- My matrix class, the matrix is stored as a long array and can be access with either A(i,j) or A[p]. It currently uses the blas 3 routines for matrix multiplication. 
+							-- Extensions: I would like to extend this to sparse at some point
+	MatrixExponetial 	-- Finds the exponential of a matrix
+	 						-- Currently only supports hermitian exp(-a A) where a is complex and A is hermitian. It uses lapack to find the eigenvaluse of hermitian matrices
+						  		-- Extensions: Pade approximation for arbitrary matrices
+	MatrixOperations 	-- Contains things like trace, hermitian conjugate, tensor product and some other common matrix operations
+	OrdinaryDiffEqs 	-- This is my ordinary differential equations solver. It works with vectors which are complex or real, and my matrix class. It contains 
+							-- Euler (adaptive and constant stepper) and Euler with the Romberg extension (constant stepper)
+							-- RK4 (adaptive and constant stepper) and RK4 with the Romberg extension (constant stepper)
+							-- RK45 i think this has to have an error as it gets much slower then the CK -- the embedding might be wrong 
+							-- RKCK currently the faster solver i have implemented.
+	QuantumOperations 	-- This has four parts: Quantum states, state representations, Superoperators, and quantum quantities 
+							-- Currently the states supported are qubit states and fock states. Extensions will include coherent, thermal, and squeezed states.
+							-- Represations of states Wigner, Qfunction
+							-- Superoperators. This currently contains, D[a]rho, -i[H,rho], J[a]rho, A[a]rho, and H[a]rho
+							-- quantities - i want to add concurrences etc 
+	Grape 				-- a class which implements the Grape algorithm for obtaining the optimal control field to implement either a unitary or state transfer 
+					
+	StochasticDiffEqs -- to be written
+	Optimization -- to be included (I may put grape in here)
+	RanomGenerators -- need to think about included or use GSL
+	FindingRoots -- need to write 
+	IntegrationMethods -- need to write
+	SpecialFunctions -- Currently some common functions like erf, Gamma, beta etc
+	UsefullFunctions -- When i find a nifty way to solve a simple problem which i use again i put it in here. 
+						-- 	Are you stuck on a problem?  Trying to sort or find the max of data? 
+							Save/open files with vectors, matrices, and other complicated data?  
+							Look in here for help!
+	StatisticalFunctions -- Functions which take a vector of data and find properties like mean, variance etc
+	TicToc -- A simple timer to keep track of CPU time.
+	
+Major modifications are to get sparse blas working and speed it up more
+
+SVN location. On January 7th 2009 I started a SVN server to version control my library.
+
+I only version control the directory include and examples
+	
+
+					
+	

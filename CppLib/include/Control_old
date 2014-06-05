@@ -1,0 +1,134 @@
+/*
+ *  Control.hpp
+ *  
+ *
+ *  Created by Felix on 30/09/09.
+ *  Copyright 2009 __MyCompanyName__. All rights reserved.
+ *
+ */
+
+class Control {
+	public:
+	
+	size_t npixels_;//  the number of time points	
+	size_t nsubpixels_;//  the number of time points
+	double dt_;	
+	
+	double *u_; //control array of size npixels	
+	
+	
+	inline Control::Control(/*size_t dim,*/ size_t num_time) : /*dim_(dim),*/ npixels_(num_time){
+		u_ = new double[npixels_];
+	}
+	
+	inline Grape::~Grape(){
+		delete [] controls_;
+	}
+	
+	inline void setpixels(size_t newnpixels)
+	{
+		//interpolate between old values (maintain const subpixels)
+	}
+	
+	inline void setsubpixels(size_t newnsubpixels)
+	{
+		n_pixels=n_pixels/nsubpixels*newnsubpixels;
+		//change number of redund subpixels
+	}
+	
+	
+	inline void writefile(char* outfile)
+	{
+		ofstream dataout;
+		UFs::OpenFile(outfile,dataout, 16);
+	
+		for(size_t j =0; j < npixels_; j++){
+			dataout << u_[j] << std::endl;
+		}
+		dataout.close();
+	}
+	
+	inline void readfile()
+	{
+	
+	}
+	
+	inline void SquarePulse( const double ton, const double td, const double amp){
+		// height is amp and duration is td .. thus area is amp*td
+		//n pi/2 pulse area = n pi/2 -> amp  = n pi/2td
+	 	 t=dt*0.5;
+		 for(size_t j =0; j < npixels_; j++){
+		 {
+			u_[j]= (t>ton && t < td+ton) ? amp : 0.0;
+			t+=dt;
+		}
+	}
+	inline void TanhPulse(const double ton, const double td,  const double amp, const double sigma){
+		// height is amp and duration is td area is approximately amp*td
+		//n pi/2 pulse area = n pi/2 -> amp  = n pi/2td
+		 t=dt*0.5;
+		 double one_on_sigma=1.0/sigma;
+		 for(size_t j =0; j < npixels_; j++){
+		 {
+			u_[j]=  0.5*amp*(std::tanh(one_on_sigma*(t-ton)) + std::tanh(-one_on_sigma*(t-ton-td)) );
+			t+=dt;
+		}
+		
+	}
+	inline void Gaussian(const double ton, const double td, const double amp, const double sigma){
+		//normalized so that the area is amp
+		// npi/2 pulse is done by timeing by n pi/2
+		 t=dt*0.5;
+		 for(size_t j =0; j < npixels_; j++){
+		 {
+			u_[j]= amp*std::exp(-0.5*pow((t-ton-td*0.5),2)/std::pow(sigma,2)) / (sigma*M_SQRT2*std::sqrt(M_PI));
+			t+=dt;
+		 }
+	}	
+	inline void ShiftedGaussian(const double ton, const double td, const double amp, const double sigma){
+		//normalized so that the area is amp
+		// npi/2 pulse is done by timeing by n pi/2
+		//starts and ends at 0
+		 t=dt*0.5;
+		 for(size_t j =0; j < npixels_; j++){
+		 {
+			u_[j]= M_PI*amp*(std::exp(-0.5*pow((t-ton-td*0.5)/sigma,2)) - std::exp(-0.5*pow((-ton-td*0.5)/sigma,2)) ) / (sigma*M_SQRT2*std::sqrt(M_PI))/erf(td*0.5*M_SQRT1_2/sigma);
+			t+=dt;
+		 }
+	}
+	
+	inline void GaussianDerivative(const double ton, const double td, const double amp, const double sigma){
+		//normalized so that the area is amp
+		// npi/2 pulse is done by timeing by n pi/2
+		t=dt*0.5;
+		 for(size_t j =0; j < npixels_; j++){
+		 {
+			u_[j]= -2*0.5*(t-ton-td*0.5)/std::pow(sigma,2) * M_PI*amp*std::exp(-0.5*pow((t-ton-td*0.5)/sigma,2)) / (sigma*M_SQRT2*std::sqrt(M_PI))/erf(td*0.5*M_SQRT1_2/sigma);
+			t+=dt;
+		 }
+	}
+	
+	inline void TruncatedGaussian(const double ton, const double td, const double amp, const double sigma){
+		//normalized to approximately amp
+		// npi/2 pulse is done by timeing by amp = n pi/2		if(t>ton && t<td+ton)
+		 t=dt*0.5;
+		 for(size_t j =0; j < npixels_; j++){
+		 {
+			u_[j]= amp*std::exp(-0.5*std::pow((t-ton-td*0.5),2)/std::pow(sigma,2))/(sigma*M_SQRT2*std::sqrt(M_PI))/erf(td*0.5*M_SQRT1_2/sigma);
+			t+=dt;
+		 } 	
+	}
+	
+	//PhaseRamping
+	
+	inline void RandControl(const double min, const double max){
+		srand(time(0));
+		 for(size_t j =0; j < npixels_; j++){
+		 {
+			u_[j]= min + (rand()/RAND_MAX)*(max - min);
+		 } 
+	}
+
+	
+	
+};

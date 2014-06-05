@@ -1,0 +1,831 @@
+/*
+Name: Grape.h
+Author: Jay M. Gambetta and Felix Motzoi
+
+Dependences: MatrixExponential.hpp, QuantumOperations.hpp
+Brief Discription: This program implements grape using my matrix class
+Limitations: I dont see the need for both statetransfer and unitarytransfer, these should be combined into one.
+
+Version History
+	v0: June  9, 2008.
+	v1: Feburary 5th, 2009 uses my new matrix class
+	v2: Feburary 25th, 2009 edits to make adding different performance functions easier. It turns out it is a bit slower with the pointer to the function but not much
+	v3: March ~1, 2009 added envelope for adding nonlinearity to the controls/time e.g. working in the lab frame
+	v4: May 20, 2009 added some new functions
+
+*/
+/*Copy over:	GetFidelity
+				GetCount
+				StateTransfer
+				GetPopulations
+*/				
+#ifndef OptimizeEvolution_h
+#define OptimizeEvolution_h
+#include "MatrixExponential.hpp"
+#include "QuantumOperations.hpp"
+#include "Evolution.hpp"
+class OptimizeEvolution;
+
+typedef double (OptimizeEvolution::* Fid)() const;
+typedef double (OptimizeEvolution::* GradFid)(const size_t j, const size_t k);
+typedef void (OptimizeEvolution::* ptrGradients)();
+
+class OptimizeEvolution : public Evolution{
+	public:
+		OptimizeEvolution(size_t dim, size_t num_controls, size_t num_time, const double h);// number of controls, the number of time points
+		virtual ~OptimizeEvolution();
+
+		void SetNumericalParameters(const double fidelity, const double base_a, const double epsilon, const double tolerance, size_t max_iter);
+		void SetNumTimes(const size_t newnumtimes);
+		
+		void computegradient();
+		void computegradient_Commute();
+		void updatecontrols();
+		void unwindcontrols();
+		
+		void UnitaryTransfer();	
+		void scanamp();
+		void sweepinitialconditions();
+		void sweeptimes(const char* outfile);
+		void sweepfinegraining(const char* outfile);
+		void sweeptimesandcompare(const char* outfile);
+		void sweepfinegrainingandcompare(const char* outfile);
+		void sweepdimandcompare(const char* outfile, const matrix<std::complex<double> >& RefMat, const matrix<std::complex<double> >& RefDesired,Control** refcons);
+		void sweepenergies(const double min, const double max, const matrix<std::complex<double> >& Shift, const matrix<std::complex<double> >& Shift2, matrix<std::complex<double> >& Hsweep, matrix<std::complex<double> >& Hsweep2, const char* outfile);
+		
+		//Fidelity functions adapted from Khaneja GRAPE paper
+		double Phi3() const;
+		double GradPhi3(const size_t j, const size_t k) const;
+		double Phi4() const;
+		double GradPhi4(const size_t j, const size_t k) ;
+		double Phi4Sub2() const;
+		double GradPhi4Sub2(const size_t j, const size_t k) ;
+		
+		//public variables, probably should be made protected
+		size_t nconfigs_;
+		double config_;		
+		GradFid gradPhi;
+		Fid	Phi;
+		OptimizeEvolution** evolutions;
+		ptrGradients pGetGradient;
+		
+		//Accessor methods
+		double GetTopFidelity(){ return top_fidelity_; }
+		size_t GetCount(){ return count_; }
+	
+		
+	protected:
+		size_t level0index_;				//the index of the 0 state for a qubit in a larger Hilbert space
+		matrix<std::complex<double> > gradU;	//rho in the Khaneja paper
+		matrix<std::complex<double> > lambda;	//lambda in the Khaneja paper
+		double top_fidelity_;				// the highest achieved fidelity
+		double fidelity_;					// the desired in fidelity 
+		double tolerance_;					// the minimal change in fidelity 
+		double base_a_;						// scale parameter for derivative, epsilon =base_a^power
+		int power_;							//scales parameter for derivative, base_a^power
+		double epsilon_;					//scales parameter for derivative, base_a^power
+		double alpha_;
+		
+		double **gradient_;					//an array containing the gradiant for each i and j
+		double **tempgradient_;				//an array containing the gradiant for each i and j
+						
+		size_t pos_count_;					// counts the number of forward steps in the algorithm (positive delta_fid)	
+		size_t count_;						// counter used to count calls to grape
+		size_t failcount_;					// counter used to count failed calls to grape	
+		size_t consec_failcount_;			//# consecutive iterations without success 	
+		size_t max_iter_;					//max iteration befor it turns off
+		
+	
+		
+};
+
+#include "AnalyticControl.hpp"
+
+
+inline OptimizeEvolution::OptimizeEvolution(size_t dim, size_t num_controls, size_t num_time, const double h) : Evolution(dim, num_controls, num_time, h){
+	config_=0;
+	level0index_=0;
+	gradU.initialize(dim,dim);	
+	lambda.initialize(dim,dim);	
+	pGetGradient = 	static_cast<ptrPropagate>(&OptimizeEvolution::computegradient);		
+	gradient_ = new double *[num_controls_];
+	tempgradient_ = new double *[num_controls_];
+	for(size_t k=0; k < num_controls_; ++k)
+	{	gradient_[k] = new double[num_time_];
+		tempgradient_[k] = new double[num_time_];		
+	}
+}
+
+OptimizeEvolution::~OptimizeEvolution(){
+	for( size_t k = 0; k < num_controls_; ++k){
+		delete [] gradient_[k];
+		delete [] tempgradient_[k];	}	
+	delete [] gradient_;
+	delete [] tempgradient_;
+}
+
+inline void OptimizeEvolution::SetNumericalParameters(const double fidelity, const double base_a, const double epsilon, const double tolerance, size_t max_iter){
+
+	nconfigs_=1;
+	tolerance_=tolerance;
+	fidelity_=fidelity;
+	tgate_=h_*num_time_;
+	max_iter_ = max_iter;
+	base_a_ = base_a;
+	epsilon_=epsilon*h_;
+	alpha_ = 0;//alpha*2.0*h;
+	lastcontrol=0;
+	
+	if(verbose==yes)
+	{
+	 	std::cout << "--------------------Numerical Parameters--------------------" << std::endl;
+		std::cout << "smallest change in phi allowed: " << tolerance_ << std::endl;
+		std::cout << "desired fidelity: " << fidelity_ << std::endl;
+		std::cout << "max iterations allow before termination: " << max_iter_ << std::endl;
+		std::cout << "------------------------------------------------------------" << std::endl;
+	}
+}
+
+inline void OptimizeEvolution::SetNumTimes(const size_t newnumtimes)
+{
+	Evolution::SetNumTimes(newnumtimes);
+	for( size_t k = 0; k < num_controls_; ++k){
+		delete [] gradient_[k];
+		delete [] tempgradient_[k];
+	} 
+	for(size_t k=0; k < num_controls_; ++k){
+		gradient_[k] = new double[num_time_];
+		tempgradient_[k] = new double[num_time_];
+	}
+}
+
+
+void OptimizeEvolution::computegradient()
+{
+	matrix<std::complex<double> > Htemp_(dim_, dim_);
+	lambda = MOs::Dagger(rho_desired_);
+	for(int j = num_time_-1; j >=0 ; --j){
+			for(size_t k = 0; k < num_controls_; ++k){			
+			theControls_[k]->getMatrixGradient(j,  &Htemp_);
+			//exact gradient inside pixel
+				times1-=clock();
+				Htemp_ = MOs::Dagger(Z[j])*Htemp_;
+				Htemp_ = Htemp_ * Z[j];
+				times1+=clock();
+			
+				for (size_t q = 0; q < dim_; ++q)
+					for (size_t p = 0; p < dim_; ++p)
+						if(p!=q && (W[j][q]-W[j][p]))Htemp_(q,p) *= (i*cos(-(W[j][q]-W[j][p])*h_)-sin(-(W[j][q]-W[j][p])*h_)-i)/(W[j][q]-W[j][p])/h_;
+						
+				times1-=clock();
+				Htemp_ = Z[j]*Htemp_;
+				Htemp_ = Htemp_ * MOs::Dagger(Z[j]);		
+				times1+=clock();
+	
+			//Gradient including interpolation	
+				times1-=clock();
+				gradU= Htemp_*U_[j];
+				times1+=clock();
+	
+				theControls_[k]->setSubGradients(j,  (this->*gradPhi)(j,k), tempgradient_[k]);
+		 }
+		 if(j) lambda = lambda*Unitaries_[j]; 
+		 
+	}
+		
+}
+
+void OptimizeEvolution::computegradient_Commute()
+{
+	int start, inc;
+	matrix<std::complex<double> > Htemp_;
+	lambda = MOs::Dagger(rho_desired_);
+	for(int j = num_time_-1; j >=0 ; --j){
+		if(j%8==0 || j%8==3 || j%8==5 || j%8==6)	{	start=0; inc=+1; } 
+		else		{	start=num_controls_-1; inc=-1;	}
+		for(int k = start; k < num_controls_ && k>=0;  k+=inc){
+			theControls_[k]->getMatrixGradient(j,  &Htemp_);
+			times1-=clock();
+			gradU=Htemp_*UC_[k][j];
+			times1+=clock();
+			theControls_[k]->setSubGradients(j,  (this->*gradPhi)(j,k), tempgradient_[k]);
+			times1-=clock();
+			lambda = lambda*UnitariesC_[k][j];
+			times1+=clock();		
+		}				 
+	}
+}
+
+void OptimizeEvolution::updatecontrols()
+{
+	 ++pos_count_;//if we get the correct direction we set power to be bigger
+	 consec_failcount_=0;	
+	 if(pos_count_ ==5){
+		power_++;
+		pos_count_ =0;
+	 }	
+	for(size_t k =0; k < num_controls_; ++k){
+	  for(size_t j = 0; j < num_time_; ++j) {
+		  gradient_[k][j]=tempgradient_[k][j];
+		  theControls_[k]->u_[j]+=pow(base_a_,power_)*gradient_[k][j];
+		}
+	 }
+	 
+}
+
+void OptimizeEvolution::unwindcontrols()
+{
+	power_--;
+	pos_count_ =0;
+	
+	for(size_t j = 0; j < num_time_; ++j){
+		for(size_t k =0; k < num_controls_; ++k){
+			theControls_[k]->u_[j]+=pow(base_a_,power_)*(1-base_a_)*gradient_[k][j];
+		}
+	}		
+	failcount_++;
+	consec_failcount_++;
+}
+
+
+void OptimizeEvolution::UnitaryTransfer(){
+	//Some flags to make sure all parameters are set
+	size_t test=0;
+	for(size_t k = 0; k < num_controls_+2; ++k)
+	{
+		test+=controlsetflag_[k];
+		if(controlsetflag_[k]){ cout << "flag " << k << " not set\n";
+		std::cout << k << "th AnalyticControl flag is " << controlsetflag_[k] << std::endl; }
+	}
+	if(test != 0) UFs::MyError("Grape::UnitaryTransfer(): you have not set the drift and all AnalyticControl hamiltonians:\n");
+	
+	//Set the counters to zero	
+	size_t n_conseq_unimprov = count_ = failcount_ = consec_failcount_ = pos_count_ = 0;
+	
+	power_ =0; //the power scale for epsilon (epsilon = base_a^power_)	
+	double avgimprov = 0.0;
+	
+	// fidelity ranges from 0 to 1 with 0 be orthogonal and 1 being the same at final time
+	double current_fidelity=0.0;
+	double delta_fidelity=1;
+	top_fidelity_=0.0;	
+	
+	for(int k=0; k<num_controls_; k++)
+		theControls_[k]->writefilewithsuffix("_start");
+	
+	while(abs(delta_fidelity) > tolerance_ && n_conseq_unimprov<20 && count_< max_iter_)
+	{			
+		count_++;
+		current_fidelity=0;
+
+		for(size_t k = 0; k < num_controls_; ++k)
+			for(size_t j = 0; j < num_time_; ++j)
+				tempgradient_[k][j]=0;	
+
+		for(config_=0; config_<nconfigs_; config_++) 
+		{		
+			(this->*pPropagate)();	
+			current_fidelity+=(this->*Phi)();	//the average configuration fidelity		
+			(this->*pGetGradient)();
+		}
+
+		current_fidelity/=nconfigs_;
+		n_conseq_unimprov = (current_fidelity-top_fidelity_==delta_fidelity)*(n_conseq_unimprov+1);
+		delta_fidelity=current_fidelity-top_fidelity_;
+		avgimprov+=delta_fidelity;
+
+		if(delta_fidelity>0)  //the update in the controls			
+		{
+			top_fidelity_+=delta_fidelity;
+			if(top_fidelity_ >= fidelity_) 
+			 break;
+			 updatecontrols();
+		}
+		else unwindcontrols();
+
+		for(int k=0; k<num_controls_; k++)
+				theControls_[k]->Interpolate();
+		
+		size_t echorate = 10;
+		if (count_%echorate==1)
+		{	std::cout << "step " << count_ << ", " << count_-failcount_ << " successes, " << failcount_ << " failures, with error " << 1-top_fidelity_ << " and average improvement " << avgimprov/echorate <<  std::endl; 			  
+			avgimprov=0;
+			for(int k=0; k<num_controls_; k++)
+				theControls_[k]->writefilewithsuffix("_int");	
+	//		writepopulations("pops_int.dat");	
+		}
+   }
+   
+    if(count_>= max_iter_) cout << "max iterations: ";
+	else if(abs(delta_fidelity) <= tolerance_) cout << "tolerance: ";
+	else if(top_fidelity_ >= fidelity_) cout << "success: ";
+	else cout << "numerical precision: ";
+   
+	std::cout << "finished on step " << count_ << ", " << count_-failcount_ << "successes, " << failcount_ << " failures, with error " << 1-top_fidelity_ << " and delta fidelity " << delta_fidelity << std::endl;  
+	
+	for(int k=0; k<num_controls_; k++)
+		theControls_[k]->writefilewithsuffix("_final");
+	//	writepopulations("pops_final.dat");
+	
+}
+
+void OptimizeEvolution::sweepinitialconditions(){
+	
+		double rab=M_PI;
+		double bestfidel=0, lastfidel=0;
+		size_t bestry, bestry2, bestry3;
+
+		AnalyticControl refcontrol(*((AnalyticControl*)theControls_[0]), theControls_[0]->nsubpixels_);
+			refcontrol.ShiftedGaussian( rab, 1.5, NULL);
+			refcontrol.Normalize(rab);
+			refcontrol.writefile("ref.dat");
+
+		for(size_t tries=0; tries<=45; tries+=1)
+		{	
+			cout << "time " << tgate_ << " try " << tries << endl;
+			if(tries<3)
+			{
+				for(int k=0; k<num_controls_; k++)
+				{	
+					if (!(k % (int)pow(2.0,(double)tries)))
+					    ((AnalyticControl*)theControls_[k])->init(); 
+					else //theControls_[k]->RandomControl(-!theControls_[k]->bNorm_*theControls_[k]->amp_,theControls_[k]->amp_);
+						theControls_[k]->Null();
+				}
+			}
+			else for(size_t k=0; k<num_controls_ ; k++)
+				theControls_[k]->RandomControl(-(!((AnalyticControl*)theControls_[k])->bNorm_)*((AnalyticControl*)theControls_[k])->amp_,((AnalyticControl*)theControls_[k])->amp_);
+			
+			for(size_t k=0; k<num_controls_ ; k++)		
+			{	theControls_[k]->Interpolate(); 
+							}	
+			UnitaryTransfer();
+			if(top_fidelity_>bestfidel){ bestfidel = top_fidelity_; bestry = tries; }
+			if(top_fidelity_>fidelity_) break;
+			lastfidel=top_fidelity_;
+
+		}
+//		dataout <<  tgate_ <<"\t" << 1-bestfidel << "\n";
+//		datatry << tgate_ <<"\t" <<bestry<<"\t" <<bestry2<<"\t" <<bestry3 << "\n";
+		cout << "best for " << tgate_ <<": try "<<bestry <<" err " << 1-bestfidel << "\n";	
+		top_fidelity_ = bestfidel; //warning: controls not tracked
+//		datatry.close();
+//		dataout.close();
+
+}
+
+
+void OptimizeEvolution::scanamp(){
+		
+		double bestfidel=0, lastfidel=0;
+		size_t bestry, bestry2, bestry3;
+		ofstream datatry;
+//		UFs::OpenFile("tries.dat",datatry, 16);
+		ofstream dataout;
+//		UFs::OpenFile("besttry",dataout, 16);	
+		
+		double scale = 1, scale2=1;
+		for(size_t tries=0; tries<60; tries+=2)
+		{	
+			for(size_t tries2=0; tries2<60; tries2+=2)
+			{
+			//std::cout << tgate_ << " " << tries<< " " << tries2<< " " <<  << "\n";
+				for(size_t tries3=0; tries3<1; tries3++)
+				{
+					theControls_[2]->rescale(1.0/scale);
+					scale = (-30.1+tries)/15.0;
+					theControls_[2]->rescale(scale);
+					
+					theControls_[3]->rescale(1.0/scale2);
+					scale2 = (-30.1+tries2)/15.0;
+					theControls_[3]->rescale(scale2);
+					
+					
+					UnitaryTransfer();
+					if(top_fidelity_>bestfidel){ bestfidel = top_fidelity_; bestry = tries; bestry2 = tries2;bestry3 = tries3;}
+					//if(top_fidelity_>fidelity_) break;
+						//if(top_fidelity_<lastfidel) break;
+					lastfidel=top_fidelity_;
+
+				}
+			}
+		}
+//		dataout <<  tgate_ <<"\t" << 1-bestfidel << "\n";
+//		datatry << tgate_ <<"\t" <<bestry<<"\t" <<bestry2<<"\t" <<bestry3 << "\n";
+		cout << "best for " << tgate_ <<" try "<<bestry <<" try2 "<<bestry2 <<" was " << 1-bestfidel << "\n";	
+		top_fidelity_ = bestfidel; //warning: controls not reset
+//		datatry.close();
+//		dataout.close();
+
+}
+
+void OptimizeEvolution::sweeptimes(const char* outfile){  //ofstream datafile
+	
+	double rab=M_PI;
+	size_t num_time=theControls_[0]->npixels_;
+	ofstream dataout;
+	UFs::OpenFile(outfile,dataout, 16);
+	for(size_t itime=0; itime<=15; itime++, num_time+= theControls_[0]->nsubpixels_)
+	{	
+			cout << "sweeping number of timeslices: " << num_time << endl;
+			SetNumTimes(num_time);
+		
+		
+			for(int k=0; k<num_controls_; k++)
+				((AnalyticControl*)theControls_[k])->init(); 
+		
+		//	scanamp(phi, gradphi); 
+		//	sweepinitialconditions(phi, gradphi); 
+			cout<<"unitary..\n";
+			UnitaryTransfer(); 
+	
+		dataout <<  tgate_ <<"\t" << 1-top_fidelity_ << "\n";
+		cout <<  "time " << tgate_ <<", error \t" << 1-top_fidelity_ << "\n";
+	}
+		dataout.close();
+}
+
+inline void OptimizeEvolution::sweepfinegraining(const char* outfile){  //ofstream datafile
+	
+	double rab=M_PI;
+	size_t nsubpix=theControls_[0]->nsubpixels_;
+	ofstream dataout;
+	UFs::OpenFile(outfile,dataout, 16);
+	for(size_t itime=0; itime<=50; itime++, nsubpix+= 1)
+	{	
+			cout << "sweeping number of sub-timeslices: " << nsubpix << endl;
+			h_*=((double)theControls_[0]->nsubpixels_)/nsubpix;
+			SetNumTimes(tgate_/h_);
+			
+			for(int k=0; k<num_controls_; k++)
+			{	theControls_[k]->nsubpixels_=nsubpix;
+				((AnalyticControl*)theControls_[k])->init(); 
+			}
+		
+		//	scanamp(phi, gradphi); 
+		//	sweepinitialconditions(phi, gradphi); 
+			UnitaryTransfer(); 
+	
+		dataout <<  tgate_ <<"\t" << 1-top_fidelity_ << "\n";
+		cout <<  "time " << tgate_ <<", error \t" << 1-top_fidelity_ << "\n";
+	}
+		dataout.close();
+}
+
+inline void OptimizeEvolution::sweeptimesandcompare(const char* outfile) {
+	
+	srand ( time(NULL) );
+	ofstream dataout, timeout;
+	UFs::OpenFile(outfile,dataout, 16);
+	UFs::OpenFile("times.dat",timeout, 16);
+	size_t num_time=theControls_[0]->npixels_,  num_time2=evolutions[0]->theControls_[0]->npixels_;
+	long times0;
+	double avgerr;
+			
+	for(size_t itime=0; itime<1; itime++, num_time+= theControls_[0]->nsubpixels_*10, num_time2+=evolutions[0]->theControls_[0]->nsubpixels_*10)
+	{	
+			SetNumTimes(num_time);
+			for(int k=0; k<num_controls_; k++)
+				((AnalyticControl*)(theControls_[k]))->init(); 	
+			cout << "time " << num_time_*h_<< " gradient ascent\n";
+			UnitaryTransfer();
+			
+			timeout << num_time*h_ <<"\t";
+			dataout <<  num_time*h_ <<"\t";
+			for (size_t s=0; s<2; s++)
+			{
+				cout << "evolution"<< s<<"\n";
+				evolutions[s]->SetNumTimes(num_time2);
+				for(int k=0; k<num_controls_; k++)
+				{	
+					((AnalyticControl*)(evolutions[s]->theControls_[k]))->Replicate(0,0,NULL);
+					evolutions[s]->theControls_[k]->Interpolate();
+				}
+				avgerr=0;
+				//evolutions[s]->SetRhoDesired(evolutions->U_[theControls_[0]->npixels_-1]);
+				evolutions[s]->SetRhoDesired(rho_desired_);
+				evolutions[s]->top_fidelity_=0;
+				times0-=clock();
+				cout << "starting ascent\n";
+				evolutions[s]->UnitaryTransfer();
+				times0+=clock();
+				avgerr += 1-evolutions[s]->top_fidelity_;
+				timeout << times0/1000.0 << '\t';
+				dataout <<  avgerr <<"\t";	
+			}	
+			timeout << endl;
+			dataout << endl;
+
+	}
+	dataout.close();
+	timeout.close();
+}
+
+inline void OptimizeEvolution::sweepfinegrainingandcompare(const char* outfile){  //ofstream datafile
+	
+	srand ( time(NULL) );
+	size_t nsubpix=evolutions[0]->theControls_[0]->nsubpixels_;
+	ofstream dataout, timeout;
+	UFs::OpenFile(outfile,dataout, 16);
+	UFs::OpenFile("times.dat",timeout, 16);
+	double nsuperpixels, avgerr;
+	nsuperpixels = evolutions[0]->theControls_[0]->npixels_/ evolutions[0]->theControls_[0]->nsubpixels_;
+	long times0;
+	
+	for(int k=0; k<num_controls_; k++)
+		((AnalyticControl*)(theControls_[k]))->init(); 	
+	UnitaryTransfer();
+	
+	for(size_t it=0; it<=20; it++, nsubpix+= 2)
+	{	
+			size_t totaln = nsubpix*nsuperpixels;
+			
+			timeout << nsubpix <<"\t";
+			dataout <<  nsubpix <<"\t";
+			for (size_t s=0; s<2; s++)
+			{
+				evolutions[s]->h_= tgate_ / totaln;
+				evolutions[s]->SetNumTimes(totaln);
+				for(int k=0; k<num_controls_; k++)
+				{	
+					evolutions[s]->theControls_[k]->nsubpixels_=nsubpix;
+					evolutions[s]->theControls_[k]->dt_=evolutions[s]->h_;
+					((AnalyticControl*)(evolutions[s]->theControls_[k]))->Replicate(0,0,NULL);
+					evolutions[s]->theControls_[k]->Interpolate();
+				}
+				avgerr=0;
+				//evolutions[s]->SetRhoDesired(evolutions->U_[theControls_[0]->npixels_-1]);
+				evolutions[s]->SetRhoDesired(rho_desired_);
+				evolutions[s]->top_fidelity_=0;
+				times0-=clock();
+				evolutions[s]->UnitaryTransfer();
+				times0+=clock();
+				avgerr += 1-evolutions[s]->top_fidelity_;
+				timeout << times0/1000.0 << '\t';
+				dataout <<  avgerr <<"\t";	
+			}	
+			timeout << endl;
+			dataout << endl;
+
+	}
+	dataout.close();
+	timeout.close();
+}
+
+
+inline void OptimizeEvolution::sweepdimandcompare(const char* outfile, const matrix<std::complex<double> >& RefMat,const matrix<std::complex<double> >& RefDesired, Control** refcons){  //ofstream datafile
+	
+	srand ( time(NULL) );
+	size_t nsubpix=evolutions[0]->theControls_[0]->nsubpixels_;
+	ofstream dataout, timeout;
+	UFs::OpenFile(outfile,dataout, 16);
+	UFs::OpenFile("times.dat",timeout, 16);
+	double avgerr;
+	int dim = dim_;
+	
+	cout << "Ref dim " << RefMat.GetRows() << endl;
+	
+	for(int k=0; k<num_controls_; k++)
+		((AnalyticControl*)(theControls_[k]))->init(); 
+	
+	
+	for(size_t it=0; it<4; it++, dim*=2)
+	{	
+			cout << "dim " << dim << endl;
+			*H_drift_ = RefMat;
+			dim_ = dim;
+			H_drift_->resize(dim, dim);
+			for(int k=0; k<num_controls_; k++)
+			{	theControls_[k]->Hcontrol_= refcons[k]->Hcontrol_;
+				theControls_[k]->Hcontrol_.resize(dim,dim);
+				theControls_[k]->Z.resize(dim,dim);
+				delete [] theControls_[k]->W;
+				theControls_[k]->W = new double[dim];
+				ExpM::EigenMethod(theControls_[k]->Hcontrol_,1.0, &(theControls_[k]->Z), theControls_[k]->W);
+			} 
+			for(int j=0; j<num_time_; j++)
+			{	delete [] W[j];
+				W[j] = new double[dim];
+				Z[j].resize(dim,dim);
+			}
+			rho_desired_ = RefDesired;
+			rho_desired_.resize(dim,dim);
+			Z[0].SetOutputStyle(Matrix);
+			cout << Z[0] << endl;
+			UnitaryTransfer();
+			timeout << dim <<"\t";
+			dataout <<  dim <<"\t";
+			for (size_t s=0; s<2; s++)
+			{
+				cout << s << " evolution\n";
+				evolutions[s]->dim_= dim;
+				evolutions[s]->fidelity_ = 0.00001;
+				for(int k=0; k<num_controls_; k++)
+				{	evolutions[s]->theControls_[k]->Hcontrol_ = refcons[k]->Hcontrol_;
+					evolutions[s]->theControls_[k]->Hcontrol_.resize(dim,dim);
+					delete [] evolutions[s]->theControls_[k]->W;
+					evolutions[s]->theControls_[k]->W = new double[dim];
+					evolutions[s]->theControls_[k]->Z.resize(dim,dim);
+					ExpM::EigenMethod(evolutions[s]->theControls_[k]->Hcontrol_,1.0, &(evolutions[s]->theControls_[k]->Z), evolutions[s]->theControls_[k]->W);
+				}
+				for(int j=0; j<evolutions[s]->num_time_; j++)
+				{	delete [] evolutions[s]->W[j];
+					evolutions[s]->W[j] = new double[dim];					
+					evolutions[s]->Z[j].resize(dim,dim);
+				}
+				evolutions[s]->SetHdrift(*H_drift_);					
+				evolutions[s]->rho_desired_.resize(dim,dim);
+				//evolutions[s]->SetRhoDesired(evolutions->U_[theControls_[0]->npixels_-1]);
+				evolutions[s]->SetRhoDesired(rho_desired_);
+				avgerr=1;
+				size_t nsubpix=evolutions[s]->theControls_[0]->nsubpixels_;
+				size_t nsuperpixels = evolutions[s]->num_time_/ nsubpix;
+				size_t totaln = nsubpix*nsuperpixels;
+				while(avgerr>(1-fidelity_)*1.2)
+				{
+					
+					for(int k=0; k<num_controls_; k++)
+					{	
+						((AnalyticControl*)(evolutions[s]->theControls_[k]))->Replicate(0,0,NULL);
+					//	evolutions[s]->theControls_[k]->Interpolate();
+					}
+					avgerr=0;
+					evolutions[s]->top_fidelity_=0;
+					evolutions[s]->UnitaryTransfer();
+					avgerr += 1-evolutions[s]->top_fidelity_;
+					if(avgerr>(1-fidelity_)*1.2)
+					{
+						nsubpix+=2;
+						totaln = nsubpix*nsuperpixels;
+						evolutions[s]->h_= tgate_ / totaln;
+						evolutions[s]->SetNumTimes(totaln);
+						for(int k=0; k<num_controls_; k++)
+						{	
+							evolutions[s]->theControls_[k]->nsubpixels_=nsubpix;
+							evolutions[s]->theControls_[k]->dt_=evolutions[s]->h_;
+						}
+					}
+				}
+				evolutions[s]->fidelity_ = 0.999;
+				for(int k=0; k<num_controls_; k++)
+				{
+					if(k==1) ((AnalyticControl*)(evolutions[s]->theControls_[k]))->SquarePulse(freqs_[3]); 
+					else ((AnalyticControl*)(evolutions[s]->theControls_[k]))->Null();
+					evolutions[s]->theControls_[k]->Interpolate();
+				}
+				cout << "speed test\n";
+				evolutions[s]->times0=evolutions[s]->times1=0;
+				evolutions[s]->UnitaryTransfer();
+				cout << "tim " << evolutions[s]->times0 << endl;
+									
+				timeout << evolutions[s]->times0/1000.0 << '\t' << evolutions[s]->times1/1000.0 << '\t';
+				dataout <<  evolutions[s]->theControls_[0]->nsubpixels_ <<"\t";	
+			}	
+			timeout << ((double)evolutions[0]->times1)/evolutions[1]->times1 << endl;
+			dataout << endl;			
+	}
+	dataout.close();
+	timeout.close();
+}
+
+
+
+void OptimizeEvolution::sweepenergies(const double min, const double max, const matrix<std::complex<double> >& Shift, const matrix<std::complex<double> >& Shift2, matrix<std::complex<double> >& Hsweep, matrix<std::complex<double> >& Hsweep2, const char* outfile)
+{  //datafile
+	
+	ofstream dataout;
+	UFs::OpenFile(outfile,dataout, 16);
+	
+	size_t rwa_num_time=theControls_[0]->npixels_;
+	matrix<std::complex<double> > H_bckup (Hsweep);
+	matrix<std::complex<double> > H_bckup2 (Hsweep2);
+	
+	double rab = M_PI;
+	
+	cout << min << " " << max << endl;;
+	for(double shift=min; shift<max; shift +=  (max-min)/80 )
+	{	
+		Hsweep = H_bckup + shift*Shift;
+		Hsweep2 = H_bckup2 + shift*Shift2;
+		
+		AnalyticControl refcontrol(*((AnalyticControl*)theControls_[0]), theControls_[0]->nsubpixels_);
+			refcontrol.ShiftedGaussian( rab, 3, NULL);
+			refcontrol.Normalize(rab);
+			refcontrol.writefile("ref.dat");
+			
+		double bestfidel=0;
+		//double rwa_dt = tgate_/double(rwa_num_time);
+		//SetNumTimes(rwa_num_time);
+		for(int k=0; k<3; k++)
+				((AnalyticControl*)theControls_[k])->init();
+				
+		for(size_t tries=0; tries<1; tries++)
+		{	
+		//	if(tries==62) iscrap=true;
+			std::cout << tgate_ << " " << tries<< "\n";
+			
+
+			
+			//else 
+			if(tries>1)
+			{
+				theControls_[0]->RandomControl(0, M_PI/tgate_*2.0);
+				
+				cout << theControls_[0]->Normalize(rab)  << " norm\n";
+				
+				if(tries%2)
+						theControls_[1]->RandomControl( -M_PI/tgate_/3, M_PI/tgate_/3);
+			}
+			
+			
+		theControls_[0]->Hcontrol_.SetOutputStyle(Matrix);
+		cout << theControls_[0]->Hcontrol_ << endl;
+		H_drift_->SetOutputStyle(Matrix);
+		cout << Hsweep << endl;
+		cout << *H_drift_ << endl;
+
+			
+			UnitaryTransfer(); 
+			cout << tgate_ <<"\t" << 1-top_fidelity_ << "\n";
+			if(top_fidelity_>bestfidel) bestfidel = top_fidelity_;
+			//if(top_fidelity_>fidelity_) break;
+		}
+		
+		//cout << 1-abs(U_[num_time_-1](1,2)) << endl;;
+	
+		//	cout << "best for " << shift/anharmonicity_ <<" Deltas was " << 1-bestfidel << "\n";
+		//if (top_fidelity_==fidelity_)
+
+		}
+	dataout.close();
+}
+
+
+inline double OptimizeEvolution::Phi3() const{
+	//the measure implemented, phi (PHI_3) is phi = trace[U_desired* UN-1....U_0]/D
+	std::complex<double> temp1=0.0;
+	for(size_t q=0; q< dim_; ++q){
+		for(size_t p=0; p<dim_; ++p){
+			temp1 += std::conj(rho_desired_(p,q))*U_[num_time_-1](p,q);
+		}
+	}
+	return std::real(temp1)/dim_;
+}
+inline double OptimizeEvolution::GradPhi3(const size_t j, const size_t k) const{
+	//phi_3
+	std::complex<double> temp1=0;
+	for(size_t q=0; q< dim_; ++q){
+		for(size_t p=0; p<dim_; ++p){
+			temp1 += lambda(q,p)*gradU(p,q);	
+		}
+	}	
+	return epsilon_*std::imag(temp1);
+}
+inline double OptimizeEvolution::Phi4() const{
+	//the measure implemented, phi (PHI_4) is phi = |trace[U_desired* UN-1....U_0 ]|^2/D^2
+	std::complex<double> temp1=0.0;
+	for(size_t q=0; q< dim_; ++q){
+		for(size_t p=0; p<dim_; ++p){
+			temp1 += std::conj(rho_desired_(p,q))*U_[num_time_-1](p,q);
+		}
+	}
+	return real(temp1*std::conj(temp1))/dim_/dim_;
+}
+inline double OptimizeEvolution::GradPhi4(const size_t j, const size_t k) {
+	//phi_4
+	//2.0*h_*imag(QOs::Expectation( MOs::Dagger(L),H*R)*QOs::Expectation(MOs::Dagger(R),L));
+	std::complex<double> temp1=0, temp2=0;
+	for(size_t q=0; q< dim_; ++q){
+		for(size_t p=0; p<dim_; ++p){
+			temp1 += lambda(q,p)*gradU(p,q);
+			temp2 += std::conj(U_[num_time_-1](p,q))*rho_desired_(p,q);	
+		}
+	}
+	return 2.0*epsilon_*std::imag(temp1*temp2);//*one_on_dim_*one_on_dim_;
+}
+
+inline double OptimizeEvolution::Phi4Sub2() const{
+	//the measure implemented, phi (PHI_4_sub) is phi = |sum_{i=0,1} <i|U_desired* UN-1....U_0|i>|^2/2^2
+	std::complex<double> temp1=0.0;
+	for(size_t q=level0index_; q< level0index_+2; ++q){
+		for(size_t p=0; p<dim_; ++p){
+			temp1 += std::conj(rho_desired_(p,q))*U_[num_time_-1](p,q);		}
+	}
+	return std::real(temp1*std::conj(temp1))*0.25;
+}
+
+inline double OptimizeEvolution::GradPhi4Sub2(const size_t j, const size_t k){
+	//Phi_4_subsystem
+	//2.0*h_*imag(QOs::Expectation( MOs::Dagger(L),H*R)*QOs::Expectation(MOs::Dagger(R),L));
+	std::complex<double> temp1=0, temp2=0;
+	for(size_t q=level0index_; q< level0index_+2; ++q){
+		for(size_t p=0; p<dim_; ++p){
+			temp1 += lambda(q,p)*gradU(p,q);
+			temp2 += std::conj(U_[num_time_-1](p,q))*rho_desired_(p,q);	
+		}
+	}
+	return 2.0*epsilon_*std::imag(temp1*temp2);//*one_on_dim_*one_on_dim_;
+}
+
+#endif /* OptimizeEvolution_h */
+
