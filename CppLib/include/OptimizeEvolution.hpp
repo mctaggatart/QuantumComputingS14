@@ -239,7 +239,9 @@ void OptimizeEvolution::computegradient()
 				deriv = (this->*gradPhi)(j,k);
 				if(gradPenalty)
 					deriv = deriv + (this->*gradPenalty)(j,k);
-				theControls_[k]->setSubGradients(j, deriv , gradient_[k]);  //trace and chain rule to other (scalar) pixel controls
+			       	//cout<<gradient_[k][6]<<"The Controls at k";
+			       theControls_[k]->setSubGradients(j, deriv , gradient_[k]);  //trace and chain rule to other (scalar) pixel controls
+			       //cout<<gradient_[k][6]<<"The Controls at k, after";
 		 }
 		 if(j) lambda = lambda*Unitaries_[j]; 		 
 	}
@@ -298,10 +300,11 @@ inline void OptimizeEvolution::unwindcontrols()
 
 void OptimizeEvolution::UnitaryTransfer(){
 	
-	for(size_t k = 0; k < num_controls_+2; ++k)
+  for(size_t k = 0; k < num_controls_+2; ++k)
 		if(controlsetflag_[k]) UFs::MyError("Grape::UnitaryTransfer(): you have not set the drift and all AnalyticControl hamiltonians:\n");
 	ofstream fidelout;
 	char datafilename[80], scriptfilename[80];
+	//std::cout<<"Num of controls"<<k;
 	if(filename_!=NULL)
 	{	strcat(strcpy(datafilename,filename_), "/fidels");
 		strcpy(scriptfilename, datafilename);
@@ -314,6 +317,8 @@ void OptimizeEvolution::UnitaryTransfer(){
 	
 	for(top_fidelity_=0.0, power_=0; abs(delta_fidelity) > tolerance_ && n_conseq_unimprov<20 && count_< max_iter_; count_++)
 	{	
+	  //cout<<count_<<"count testy"<<endl;
+	  //cout<<max_iter_ << "max iter";
 		(this->*pPropagate)();	
 		current_fidelity=(this->*Phi)();
 		if(Penalty)		

@@ -57,7 +57,7 @@ namespace USs {//Utility functions
 	inline void FourierBubbleSort(double* &data1, int n);
 	inline void FourierBubbleSort(double* &data1, double* &data2, int n);
 	inline void Sleep(int seconds);
-	inline vector<double> 	LoadVector		(const std::string filename, const std::string delimiter);
+        inline std::vector<double> 	LoadVector		(const std::string filename, const std::string delimiter);
 	inline int 				LoadVectorCount	(const std::string filename, const std::string delimiter);
 	
 		
@@ -186,7 +186,7 @@ inline double FindMax(double* y_values, int N)
 	double y_max	=y_values[0];
 	//First find the maximum y_value
 	for (int i=1; i < N; ++i)
-		if ( ABS(y_values,i) > y_max) y_max=ABS(y_values,i);
+	  if ( std::abs(y_values[i]) > y_max) y_max=std::abs(y_values[i]);
 		
 	return y_max;
 }
@@ -257,7 +257,7 @@ inline void Sleep(int seconds)
     while((cur_time - start_time) < seconds);
 }
 //Loads a vector from a simple delimited file (typically comma)
-inline vector<double> LoadVector(const std::string filename, const std::string delimiter)
+inline std::vector<double> LoadVector(const std::string filename, const std::string delimiter)
 {
 	//This is pretty straight forward to use, each element in the file is 
 	//delimited by a delimiter.  You can choose any delimiter, it doesn't even
@@ -310,7 +310,7 @@ inline vector<double> LoadVector(const std::string filename, const std::string d
 	index--;
 	
 	//Create the vector, now that we know the size
-	vector<double> Vector(index);
+	std::vector<double> Vector(index);
 
 	//Transfer the array to the vector
 	for (size_t j=0; j<index; j++)
@@ -412,7 +412,7 @@ inline double** LoadTable(const std::string filename, const std::string delimite
 	while (! myfile.eof() )		//Loop through each row
 	{
 		getline (myfile,line); 
-		if (verbose==1) cout << row_index << ":" << line << "\n";
+		if (verbose==1) std::cout << row_index << ":" << line << "\n";
 		size_t string_size=line.size();
 		col_index=0;
 		prevLoc=0;
@@ -426,13 +426,13 @@ inline double** LoadTable(const std::string filename, const std::string delimite
 			
 			std::istringstream stuff(line.substr(prevLoc, currentLoc-prevLoc-d_size+1));	//Real number
 			stuff>>x[row_index][col_index]; 
-			if (verbose==1) cout << x[row_index][col_index] << " || ";
+			if (verbose==1) std::cout << x[row_index][col_index] << " || ";
 			
 			col_index   = col_index + 1;
 
 			prevLoc = currentLoc + d_size;
 		}
-		if (verbose==1) cout << "\n";
+		if (verbose==1) std::cout << "\n";
 		
 		row_index=row_index+1;
 		//Reallocate the array if it's greater than the maximum size
@@ -612,7 +612,7 @@ inline matrix<std::complex<double> >** USs::LoadMatrixFile(const std::string fil
 void USs::MakeGnuplotScript(size_t nlines, char* filename, char* xlabel, char* ylabel, char* datafile, bool islog)
 {
 	char tempfilename[80];
-	ofstream dataout;	
+	std::ofstream dataout;	
 	if(filename!=NULL)
 			UFs::OpenFile(strcat(strcpy(tempfilename,filename), ".p"),dataout, 16);
 	else return;

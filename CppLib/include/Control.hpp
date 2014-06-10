@@ -83,6 +83,7 @@ class Control {
 	//	ExpM::EigenMethod(Hcontrol_,1.0, &(Z), W);
 		Null();
 		avg=0;
+		buffer=0;
 		pSetHcontrol = &Control::linearControl;		
 		pSetHgradient = &Control::linearGradient;			
 		pInterpolate  = &Control::Pixelate;					
@@ -772,12 +773,13 @@ class Control {
 	}
 
 	inline void setSubGradients(size_t j, double gradient, double* gradients)
-	{
+  {
+   
 		(this->*pSubGradients)(j, gradient, gradients);		
 	}
 
-	inline void setNoSubPixelGradients(size_t j, double gradient, double* gradients){
-		gradients[j] = gradient;				
+	inline void setNoSubPixelGradients(size_t j, double gradient, double* gradients){	
+	  gradients[j] = gradient;				
 	}
 	
 	inline void setAMGradient(size_t j, double gradient, double* gradients){
@@ -791,9 +793,11 @@ class Control {
 	}
 
 	inline void setPixelsGradients(size_t j, double gradient, double* gradients)
-	{
-		if(j>=buffer*nsubpixels_ && j<npixels_-buffer*nsubpixels_)
-			gradients[(j/nsubpixels_)*nsubpixels_+nsubpixels_/2] += gradient;
+  {
+    //std::cout<<"GRADIENT TEST, j is "<<j<<"subpixels min equ "<<buffer*nsubpixels_<<"j is less than "<< npixels_-buffer*nsubpixels_;
+    if(j>=buffer*nsubpixels_ && j<npixels_-buffer*nsubpixels_){
+      //  std::cout<<"j is"<< j;
+      gradients[(j/nsubpixels_)*nsubpixels_+nsubpixels_/2] += gradient;}
 	}
 
 	inline void setLinearSplineGradients(size_t j, double gradient, double* gradients)

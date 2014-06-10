@@ -1,7 +1,7 @@
 # "debug" or "production"
 BUILD_TYPE = production
 
-include ../../include/standard_definitions.mk
+include ../../../include/standard_definitions.mk
 
 PROG0 = GrapeState.e
 SRCS0 = GrapeState.cpp
@@ -45,4 +45,4 @@ OBJS7 = GrapeSelect.o
 
 
 
-include ../../include/standard_makes.mk
+include ../../../include/standard_makes.mk

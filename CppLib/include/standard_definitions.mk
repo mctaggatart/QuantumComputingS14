@@ -16,9 +16,9 @@ ifndef CLUSTER
 			# options set on my laptop
 			CFLAGS+= -I /svndev/CppLib/include
 		else 
-			ifeq ($(USER),andi)
+			ifeq ($(USER),anastasiamctaggart)
 				# options set on my laptop
-				CFLAGS+= -I /home/andi/Uni/Project/CppLib/include
+				CFLAGS+= -I $(HOME)/Internship/code/CppLib/include
 			else
 				# default
 				CFLAGS+= -I $(HOME)/CppLib/include
@@ -41,28 +41,30 @@ ifndef CLUSTER
 			CFLAGS += -g -ansi -pedantic -Wall -W -Wconversion -Wshadow -Wcast-qual -Wwrite-strings -Wno-deprecated
 		else
 			CFLAGS += -fast -Wno-deprecated
-		endif
+		endif 
 	else
 		ifneq (,$(strip $(findstring $(OSTYPE), Linux)))
 			# Linux
 	  		CC      = g++
 			LD      = g++
-			LDFLAGS += -lgsl -lgslcblas -llapack -lblas -lm
+			LDFLAGS +=  -lblas -llapack 
 	  		ifeq ($(BUILD_TYPE), debug)
-				CFLAGS += -g -ansi -pedantic -Wall -W -Wconversion -Wshadow -Wcast-qual -Wwrite-strings
+				CFLAGS += -g -ansi -Wall -W -Wconversion -Wshadow -Wcast-qual -Wwrite-strings -Wno-deprecated
 			else
-				CFLAGS += -O3
+				CFLAGS += -O3 -Wno-deprecated
 			endif
+			
 		else 
 			# default 
 	  		CC      = g++
 			LD      = g++
-			LDFLAGS += -lgsl -lgslcblas -llapack -lblas lg2c -lm
+			LDFLAGS += -lgsl -lgslcblas -llapack -lblas -lg2c -lm -m64 
 			ifeq ($(BUILD_TYPE), debug)
-				CFLAGS += -g -ansi -pedantic -Wall -W -Wconversion -Wshadow -Wcast-qual -Wwrite-strings
+				CFLAGS += -g -ansi -pedantic -Wall -W -Wconversion -Wshadow -Wcast-qual -Wwrite-strings -m64 
 			else
-				CFLAGS += -O3
-			endif		
+				CFLAGS += -O3 -m64
+			endif	
+				LDFLAGS +=  -L /usr/lib -lacml -lpathfortran 
 		endif
 	endif
 endif	

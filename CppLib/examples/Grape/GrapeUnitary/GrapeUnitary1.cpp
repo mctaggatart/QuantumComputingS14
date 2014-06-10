@@ -22,7 +22,10 @@ int main (int argc, char const *argv[]){
 	
 	//Grape inputs
 	size_t num_time=1000, dim = 2, num_controls =1, max_iter=100000;
-	double tolerance=std::numeric_limits<double>::min(), fidelity, base_a=1.5, epsilon=5000, tgate=4, dt, alpha;
+	double tolerance= .01;
+
+	  //std::numeric_limits<double>::min(), 
+	  double fidelity, base_a=1.5, epsilon=5000, tgate=4, dt, alpha;
 	dt=tgate/double(num_time);
 	
 	
@@ -36,10 +39,10 @@ int main (int argc, char const *argv[]){
 	Hdrift = delta*n;
 	Hcontrol=0.5*(a+ad);
 	sys.SetHdrift(Hdrift);
- 	
-	AnalyticControl u0(Hcontrol, dt, num_time, 1, &sys, "u1_control");
-	u0.ShiftedGaussian(M_PI, alpha=2.5, NULL);
-	
+ 	//changed to reg control from analytic
+	Control u0(Hcontrol, dt, num_time, 1, &sys, "u1_control");
+	//u0.ShiftedGaussian(M_PI, alpha=2.5, NULL);
+	u0.RandomControl(0,1);
 	//Initial condition
 	matrix<complex<double> > U_desired(dim,dim);
 	U_desired.SetOutputStyle(Matrix);

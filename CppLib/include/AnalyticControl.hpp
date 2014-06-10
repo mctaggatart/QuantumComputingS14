@@ -233,11 +233,12 @@ class AnalyticControl: public Control {
 	}
 	
 	using Control::Derivative;
-	inline void Derivative(const double amp, const double sigma=0, complex<double>** sys_params){  
+	inline void Derivative(const double amp, const double sigma, complex<double>** sys_params){  
+	  std::cout<<"Derivative";
 		Derivative(amp, refcontrol);
 	}	
 	
-	inline void DerivativeTrig(const double amp, const double sigma=0, complex<double>** sys_params){  
+	inline void DerivativeTrig(const double amp, const double sigma, complex<double>** sys_params){  
 		double Delta = real(*sys_params[0]);
 		double lambda = 2*real(*sys_params[1]);
 		
@@ -262,7 +263,7 @@ class AnalyticControl: public Control {
 	}	
 	
 	
-	inline void StarkShiftDRAGAFreq(const double amp, const double sigma=0, complex<double>** sys_params){
+	inline void StarkShiftDRAGAFreq(const double amp, const double sigma, complex<double>** sys_params){
 		double Delta = real(*sys_params[0]);
 		double lambda = 2*real(*sys_params[1]);
 		Null();
@@ -278,7 +279,7 @@ class AnalyticControl: public Control {
 			u_[j]=avg;
 	}
 	
-	inline void StarkShiftDRAGA(const double amp=0, const double sigma=0, complex<double>** sys_params){
+	inline void StarkShiftDRAGA(const double amp=0, const double sigma=0, complex<double>** sys_params=NULL){
 		double Delta = real(*sys_params[0]);
 		double lambda = 2*real(*sys_params[1]);
 		cout << Delta << " " << lambda << endl;
@@ -289,7 +290,7 @@ class AnalyticControl: public Control {
 	//		u_[j] = avg;
 	}
 
-	inline void StarkShiftDRAGA2(const double amp, const double sigma=0, complex<double>** sys_params){
+	inline void StarkShiftDRAGA2(const double amp, const double sigma, complex<double>** sys_params){
 		double Delta = real(*sys_params[0]);
 		double lambda = 2*real(*sys_params[1]);
 		double Delta2 = real(*sys_params[2]);
@@ -299,14 +300,14 @@ class AnalyticControl: public Control {
 		StarkShift( ( -lamb2*lamb2/Delta2 +(lambda*lambda)/Delta)/4, 2, refcontrol);
 	}
 
-	inline void Twophoton(const double amp, const double sigma=0, complex<double>** sys_params){
+	inline void Twophoton(const double amp, const double sigma, complex<double>** sys_params){
 		double Delta = real(*sys_params[0]);
 		double lambda = 2*real(*sys_params[1]);
 		StarkShift( -lambda/8/Delta/Delta, 2, refcontrol);
 		Derivative(1,this);
 	}
 	
-	inline void TwophotonTrig(const double amp, const double sigma=0, complex<double>** sys_params){
+	inline void TwophotonTrig(const double amp, const double sigma, complex<double>** sys_params){
 		double Delta = real(*sys_params[0]);
 		double lambda = 2*real(*sys_params[1]);
 		
@@ -336,7 +337,7 @@ class AnalyticControl: public Control {
 	}
 	
 	
-	inline void StarkShiftDRAGC(const double amp, const double sigma=0, complex<double>** sys_params){
+	inline void StarkShiftDRAGC(const double amp, const double sigma, complex<double>** sys_params){
 		double Delta = real(*sys_params[0]);
 		double lambda = 2*real(*sys_params[1]);
 		StarkShift( (lambda*lambda - 4)/Delta/4, 2, refcontrol);
@@ -345,7 +346,7 @@ class AnalyticControl: public Control {
 			u_[j] = avg;
 	}
 	
-	inline void StarkShift4DRAGC(const double amp, const double sigma=0, complex<double>** sys_params){
+	inline void StarkShift4DRAGC(const double amp, const double sigma, complex<double>** sys_params){
 		double Delta = real(*sys_params[0]);
 		double lambda = 2*real(*sys_params[1]);
 		StarkShift( (lambda*lambda - 4)/Delta/4, 2, refcontrol);
@@ -363,13 +364,13 @@ class AnalyticControl: public Control {
 		
 	}
 	
-	inline void StarkShiftSelect(const double amp, const double sigma=0,  complex<double>** sys_params){
+	inline void StarkShiftSelect(const double amp, const double sigma,  complex<double>** sys_params){
 		Null();
 		StarkShift( 1, 1, refcontrol);
 		StarkShift( amp, 3, refcontrol);		
 	}
 	
-	inline void StarkShiftTrig(const double amp, const double sigma=0, complex<double>** sys_params){
+	inline void StarkShiftTrig(const double amp, const double sigma, complex<double>** sys_params){
 		double Delta = real(*sys_params[0]);
 		double lambda = 2*real(*sys_params[1]);
 		
@@ -401,7 +402,7 @@ class AnalyticControl: public Control {
 		}
 	}
 	
-	inline void StarkShiftDRAGC2(const double amp, const double sigma=0, complex<double>** sys_params){
+	inline void StarkShiftDRAGC2(const double amp, const double sigma, complex<double>** sys_params){
 		double Delta = real(*sys_params[0]);
 		double lambda = 2*real(*sys_params[1]);
 		double Delta2 = real(*sys_params[2]);
