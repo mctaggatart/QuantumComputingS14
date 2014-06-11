@@ -1,0 +1,3 @@
+g++  -I /home/anastasiamctaggart/Internship/code/CppLib/include -m32 -g -ansi -pedantic -Wall -W -Wconversion -Wshadow -Wcast-qual -Wwrite-strings -c GrapeUnitary1.cpp
+g++ GrapeUnitary1.o  -lgsl -lgslcblas -llapack -lblas -lm -m32 -o GrapeUnitary1.e
+g++  -I /home/anastasiamctaggart/Internship/code/CppLib/include -g -ansi -Wall -W -Wconversion -Wshadow -Wcast-qual -Wwrite-strings -Wno-deprecated -c GrapeUnitary1.cpp

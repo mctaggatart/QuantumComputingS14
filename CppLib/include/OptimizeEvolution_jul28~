@@ -349,7 +349,7 @@ void OptimizeEvolution::sweepinitialconditions(){
 				{	
 					if (!(k % (int)pow(2.0,(double)tries)))
 					    ((AnalyticControl*)theControls_[k])->init(); 
-					else 
+					else //theControls_[k]->RandomControl(-!theControls_[k]->bNorm_*theControls_[k]->amp_,theControls_[k]->amp_);
 						theControls_[k]->Null();
 				}
 			}
@@ -365,9 +365,12 @@ void OptimizeEvolution::sweepinitialconditions(){
 			lastfidel=top_fidelity_;
 
 		}
-
+//		dataout <<  tgate_ <<"\t" << 1-bestfidel << "\n";
+//		datatry << tgate_ <<"\t" <<bestry<<"\t" <<bestry2<<"\t" <<bestry3 << "\n";
 		cout << "best for " << tgate_ <<": try "<<bestry <<" err " << 1-bestfidel << "\n";	
 		top_fidelity_ = bestfidel; //warning: controls not tracked
+//		datatry.close();
+//		dataout.close();
 
 }
 
@@ -377,16 +380,16 @@ void OptimizeEvolution::scanamp(){
 		double bestfidel=0, lastfidel=0;
 		size_t bestry, bestry2, bestry3;
 		ofstream datatry;
-
+//		UFs::OpenFile("tries.dat",datatry, 16);
 		ofstream dataout;
-
+//		UFs::OpenFile("besttry",dataout, 16);	
 		
 		double scale = 1, scale2=1;
 		for(size_t tries=0; tries<60; tries+=2)
 		{	
 			for(size_t tries2=0; tries2<60; tries2+=2)
 			{
-
+			//std::cout << tgate_ << " " << tries<< " " << tries2<< " " <<  << "\n";
 				for(size_t tries3=0; tries3<1; tries3++)
 				{
 					theControls_[2]->rescale(1.0/scale);
@@ -400,16 +403,19 @@ void OptimizeEvolution::scanamp(){
 					
 					UnitaryTransfer();
 					if(top_fidelity_>bestfidel){ bestfidel = top_fidelity_; bestry = tries; bestry2 = tries2;bestry3 = tries3;}
-
+					//if(top_fidelity_>fidelity_) break;
+						//if(top_fidelity_<lastfidel) break;
 					lastfidel=top_fidelity_;
 
 				}
 			}
 		}
-
+//		dataout <<  tgate_ <<"\t" << 1-bestfidel << "\n";
+//		datatry << tgate_ <<"\t" <<bestry<<"\t" <<bestry2<<"\t" <<bestry3 << "\n";
 		cout << "best for " << tgate_ <<" try "<<bestry <<" try2 "<<bestry2 <<" was " << 1-bestfidel << "\n";	
 		top_fidelity_ = bestfidel; //warning: controls not reset
-
+//		datatry.close();
+//		dataout.close();
 
 }
 
@@ -456,7 +462,8 @@ inline void OptimizeEvolution::sweepfinegraining(const char* outfile){  //ofstre
 				((AnalyticControl*)theControls_[k])->init(); 
 			}
 		
-
+		//	scanamp(phi, gradphi); 
+		//	sweepinitialconditions(phi, gradphi); 
 			UnitaryTransfer(); 
 	
 		dataout <<  tgate_ <<"\t" << 1-top_fidelity_ << "\n";
@@ -495,7 +502,7 @@ inline void OptimizeEvolution::sweeptimesandcompare(const char* outfile) {
 					evolutions[s]->theControls_[k]->Interpolate();
 				}
 				avgerr=0;
-
+				//evolutions[s]->SetRhoDesired(evolutions->U_[theControls_[0]->npixels_-1]);
 				evolutions[s]->SetRhoDesired(rho_desired_);
 				evolutions[s]->top_fidelity_=0;
 				times0-=clock();
@@ -547,7 +554,7 @@ inline void OptimizeEvolution::sweepfinegrainingandcompare(const char* outfile){
 					evolutions[s]->theControls_[k]->Interpolate();
 				}
 				avgerr=0;
-
+				//evolutions[s]->SetRhoDesired(evolutions->U_[theControls_[0]->npixels_-1]);
 				evolutions[s]->SetRhoDesired(rho_desired_);
 				evolutions[s]->top_fidelity_=0;
 				times0-=clock();
@@ -628,7 +635,7 @@ inline void OptimizeEvolution::sweepdimandcompare(const char* outfile, const mat
 				}
 				evolutions[s]->SetHdrift(*H_drift_);					
 				evolutions[s]->rho_desired_.resize(dim,dim);
-
+				//evolutions[s]->SetRhoDesired(evolutions->U_[theControls_[0]->npixels_-1]);
 				evolutions[s]->SetRhoDesired(rho_desired_);
 				avgerr=1;
 				size_t nsubpix=evolutions[s]->theControls_[0]->nsubpixels_;
@@ -640,7 +647,7 @@ inline void OptimizeEvolution::sweepdimandcompare(const char* outfile, const mat
 					for(int k=0; k<num_controls_; k++)
 					{	
 						((AnalyticControl*)(evolutions[s]->theControls_[k]))->Replicate(0,0,NULL);
-
+					//	evolutions[s]->theControls_[k]->Interpolate();
 					}
 					avgerr=0;
 					evolutions[s]->top_fidelity_=0;
@@ -707,13 +714,14 @@ void OptimizeEvolution::sweepenergies(const double min, const double max, const 
 			refcontrol.writefile("ref.dat");
 			
 		double bestfidel=0;
-
+		//double rwa_dt = tgate_/double(rwa_num_time);
+		//SetNumTimes(rwa_num_time);
 		for(int k=0; k<3; k++)
 				((AnalyticControl*)theControls_[k])->init();
 				
 		for(size_t tries=0; tries<1; tries++)
 		{	
-
+		//	if(tries==62) iscrap=true;
 			std::cout << tgate_ << " " << tries<< "\n";
 			
 
@@ -740,9 +748,13 @@ void OptimizeEvolution::sweepenergies(const double min, const double max, const 
 			UnitaryTransfer(); 
 			cout << tgate_ <<"\t" << 1-top_fidelity_ << "\n";
 			if(top_fidelity_>bestfidel) bestfidel = top_fidelity_;
-	
+			//if(top_fidelity_>fidelity_) break;
 		}
 		
+		//cout << 1-abs(U_[num_time_-1](1,2)) << endl;;
+	
+		//	cout << "best for " << shift/anharmonicity_ <<" Deltas was " << 1-bestfidel << "\n";
+		//if (top_fidelity_==fidelity_)
 
 		}
 	dataout.close();
