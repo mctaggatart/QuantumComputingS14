@@ -49,7 +49,7 @@ ifndef CLUSTER
 			LD      = g++
 			LDFLAGS +=  -lblas -llapack 
 	  		ifeq ($(BUILD_TYPE), debug)
-				CFLAGS += -g -ansi -Wall -W -Wconversion -Wshadow -Wcast-qual -Wwrite-strings -Wno-deprecated
+				CFLAGS += -g -ansi -w -Wconversion -Wshadow -Wcast-qual -Wwrite-strings -Wno-deprecated
 			else
 				CFLAGS += -O3 -Wno-deprecated
 			endif
