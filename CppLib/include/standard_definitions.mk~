@@ -18,7 +18,8 @@ ifndef CLUSTER
 		else 
 			ifeq ($(USER),anastasiamctaggart)
 				# options set on my laptop
-				CFLAGS+= -I $(HOME)/Internship/code/CppLib/include
+				CFLAGS+= -I /home/anastasiamctaggart/InternshipSummer14/code/CppLib/include
+
 			else
 				# default
 				CFLAGS+= -I $(HOME)/CppLib/include
@@ -49,7 +50,7 @@ ifndef CLUSTER
 			LD      = g++
 			LDFLAGS +=  -lblas -llapack 
 	  		ifeq ($(BUILD_TYPE), debug)
-				CFLAGS += -g -ansi -Wno-deprecated
+				CFLAGS += -g -ansi -w -Wconversion -Wshadow -Wcast-qual -Wwrite-strings -Wno-deprecated
 			else
 				CFLAGS += -O3 -Wno-deprecated
 			endif

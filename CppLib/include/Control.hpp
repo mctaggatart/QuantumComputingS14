@@ -262,6 +262,20 @@ class Control {
 		}
 	}
 
+inline void ShiftedGaussian(const double amp, const double alpha, complex<double>** sys_params){
+		//normalized so that the area is ~amp
+		 double sigma = dt_*npixels_/alpha;
+		 double td = dt_*npixels_;
+		 double  t=dt_*0.5;
+		 for(size_t j =0; j < npixels_; j++)
+		 {
+			u_[j]= M_PI*amp*(exp(-0.5*pow((t-td*0.5)/sigma,2)) - exp(-0.5*pow((-td*0.5)/sigma,2)) ) / (sigma*M_SQRT2*sqrt(M_PI))/erf(td*0.5*M_SQRT1_2/sigma);
+			t+=dt_;
+		 }
+	}
+
+	
+	
 	inline double SquareNormalize(double value)
 	{
 		double sum=0;
@@ -366,8 +380,9 @@ class Control {
 	{	 
 		 for(size_t j =0; j < npixels_; j+=nsubpixels_)
 		 {
-			 u_[j]= min + (rand()/(double)RAND_MAX)*(max - min);
-			 for(size_t k =1; k < nsubpixels_; k++)
+		   // u_[j]= min + (rand()/(double)RAND_MAX)*(max - min);
+		   u_[j]= min+(j/(double)RAND_MAX)*(max-min);	
+		   for(size_t k =1; k < nsubpixels_; k++)
 				u_[j+k]=u_[j];
 		 } 
 	}

@@ -18,7 +18,8 @@ ifndef CLUSTER
 		else 
 			ifeq ($(USER),anastasiamctaggart)
 				# options set on my laptop
-				CFLAGS+= -I $(HOME)/Internship/code/CppLib/include
+				CFLAGS+= -I /home/anastasiamctaggart/InternshipSummer14/code/CppLib/include
+
 			else
 				# default
 				CFLAGS+= -I $(HOME)/CppLib/include

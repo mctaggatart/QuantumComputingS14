@@ -35,7 +35,8 @@ class Evolution {
 		void Setucontrol(Control* control, const int index=-1);
 		
 		matrix<std::complex<double> > GetRhoDesired() { return rho_desired_; }
-		void SetRhoDesired(const matrix<std::complex<double> >& rho_desired);
+  void SetRhoDesired(const matrix<std::complex<double> >& rho_desired);
+  void SetTrueRhoDesired(const matrix<std::complex<double> >& Udes,const matrix<std::complex<double> >& rho_desired);
 
 		void writepopulations(char* outfile);
 						
@@ -48,7 +49,7 @@ class Evolution {
 		void forwardpropagate_Commute();
 		
                 matrix<std::complex<double> >* U_; //an array of the forward evolutions (rho in paper
-                matrix<std::complex<double > >* Rho_;
+                matrix<std::complex<double> >* Rho1_;
                 matrix<std::complex<double> >** UC_; //an array of the forward evolutions (rho in paper) splitting by control
 		double* freqs_;
 						
@@ -62,6 +63,7 @@ class Evolution {
 		matrix<std::complex<double> > *H_drift_; //drift hamiltonian
 		matrix<std::complex<double> > H_drift_exp; //exponential of drift hamiltonian
 		matrix<std::complex<double> > rho_desired_; //the desired rho or unitary			//rename as U_desired_
+  matrix<std::complex<double> > true_rho_desired_;
 		matrix<std::complex<double> > rho_initial_; //the initial rho or unitary
 		
 		size_t num_controls_; //number of controls,
@@ -113,11 +115,11 @@ inline Evolution::Evolution(size_t dim, size_t num_controls, size_t num_time, co
 	controlsetflag_[num_controls_+2]=1; //set for the rho_initial
 	lastcontrol = 0;
 	U_=new  matrix<std::complex<double> >[num_time_];
-	Rho_= new matrix<std::complex<double> >[num_time_];
+	Rho1_= new matrix<std::complex<double> >[num_time_];
 	Unitaries_=new  matrix<std::complex<double> >[num_time_];
 	for(size_t j=0; j < num_time_; ++j){
 		U_[j].initialize(dim_,dim_);
-		Rho_[j].initialize(dim_, dim_);
+		Rho1_[j].initialize(dim_, dim_);
 		Unitaries_[j].initialize(dim_,dim_);
 	}
 	
@@ -134,9 +136,7 @@ Evolution::~Evolution(){
 		delete [] UnitariesC_[k];
 	}
 	for(size_t j=0; j < num_time_; ++j){
-		//U_[j].clear();
-		//Unitaries_[j].clear();
-	//	cout << W[j] << " ";
+		
 		delete [] W[j];
 	}
 	delete [] UC_;
@@ -144,7 +144,7 @@ Evolution::~Evolution(){
 	delete [] theControls_;
 	delete [] controlsetflag_;
 	delete [] U_;
-	delete [] Rho_;
+	delete [] Rho1_;
 	delete [] Unitaries_;
 	delete []Z;
 	delete []W;
@@ -159,16 +159,17 @@ inline void Evolution::SetNumTimes(const size_t newnumtimes)
 	tgate_=h_*num_time_;
 	cout << h_ << " " << num_time_ << " " << tgate_ << endl;
 	delete [] U_;
+	delete [] Rho1_;
 	delete [] Unitaries_;
 	delete []Z;
 	delete []W;
 	
 	U_=new matrix<std::complex<double> >[num_time_];
-	Rho_=new matrix<std::complex<double> >[num_time_];
+	Rho1_=new matrix<std::complex<double> >[num_time_];
 	Unitaries_=new  matrix<std::complex<double> >[num_time_];
 	for(size_t j=0; j < num_time_; ++j){
 		U_[j].initialize(dim_,dim_);
-		Rho_[j].initialize(dim_, dim_);
+		Rho1_[j].initialize(dim_, dim_);
 		Unitaries_[j].initialize(dim_,dim_);
 	}
 
@@ -239,6 +240,17 @@ inline void Evolution::SetRhoDesired(const matrix<std::complex<double> >& rho_de
 		std::cout << "------------------------------------------------------------" << std::endl;
 	}
 }
+inline void Evolution::SetTrueRhoDesired(const matrix<std::complex<double> >& Udes, const matrix<std::complex<double> >& rho_desired){
+  true_rho_desired_=Udes*rho_initial_*MOs::Dagger(Udes);
+	controlsetflag_[num_controls_+1]=0;
+	if(verbose==yes)
+	{
+	  true_rho_desired_.SetOutputStyle(Matrix);
+	 	std::cout << "--------------------True rho desired is set---------------------------" << std::endl;
+		std::cout << true_rho_desired_ << std::endl;
+		std::cout << "------------------------------------------------------------" << std::endl;
+	}
+}
 
 
 //Set the initial state for transfer
@@ -280,7 +292,9 @@ inline void Evolution::writepopulations(char* outfile)
 							
 	for(size_t j =0; j < num_time_; j++){
 		popout << h_* j;
-		pop = U_[j]*rho_initial_*MOs::Dagger(U_[j]);
+		//modified to use Rho_[j] instead of U_[j], as rho is the populations
+		//pop = U_[j]*rho_initial_*MOs::Dagger(U_[j]);
+		pop= Rho1_[j];
 		
 		for(int d=0; d<dim_; d++)
 			popout << '\t' << pop(d,d);
@@ -290,99 +304,104 @@ inline void Evolution::writepopulations(char* outfile)
 }
 
 //forward propogate for unitaries
-void Evolution::forwardpropagate()
-{
-	matrix<std::complex<double> > ident(dim_,dim_);  MOs::Identity(ident);
-	matrix<std::complex<double> > Htemp_(dim_,dim_), Htemp2_(dim_,dim_);	
+   void Evolution::forwardpropagate()
+   {
+   	matrix<std::complex<double> > ident(dim_,dim_);  MOs::Identity(ident);
+   	matrix<std::complex<double> > Htemp_(dim_,dim_), Htemp2_(dim_,dim_);	
  
-	matrix<std::complex<double> >* curUnitary = &ident;
-	std::complex<double> freqs[dim_];
+   	matrix<std::complex<double> >* curUnitary = &ident;
+	//	std::complex<double> freqs[dim_];
        
-	curUnitary = &ident;
-	for(size_t j = 0; j < num_time_; ++j){
-		Htemp_= *H_drift_;
-		
-		//any rotating frame			
-		if(freqs_!=NULL)
-		{	for(size_t d = 0; d < dim_; ++d)
-				freqs[d] = exp(std::complex<double>(0.0,-freqs_[d]*(j*h_))); 
-			MOs::diagmult(Htemp_, freqs, Htemp_);
-			for(size_t d = 0; d < dim_; ++d)
-				freqs[d] = exp(std::complex<double>(0.0,freqs_[d]*(j*h_)));
-			MOs::multdiag(Htemp_, Htemp_, freqs);
-		}
-	//	cout << "wtf\n";
-		//total hamiltonian
-		for(size_t k = 0; k < num_controls_; ++k){	
-			theControls_[k]->getMatrixControl(j,  &Htemp2_);
-	//		cout << k << endl << Htemp2_ << endl;
-			Htemp2_.SetOutputStyle(Matrix);
-			Htemp_ = Htemp_ + Htemp2_;
+   	curUnitary = &ident;
+   	for(size_t j = 0; j < num_time_; ++j){
+   		Htemp_= *H_drift_;
+		/*
+//any rotating frame, commented out to avoid seg faults			
+ 		if(freqs_!=NULL)
+ 		{	for(size_t d = 0; d < dim_; ++d)
+ 				freqs[d] = exp(std::complex<double>(0.0,-freqs_[d]*(j*h_))); 
+ 			MOs::diagmult(Htemp_, freqs, Htemp_);
+ 			for(size_t d = 0; d < dim_; ++d)
+ 				freqs[d] = exp(std::complex<double>(0.0,freqs_[d]*(j*h_)));
+ 			MOs::multdiag(Htemp_, Htemp_, freqs);
+ 		}
+		*/
+// 		//total hamiltonian
+   		for(size_t k = 0; k < num_controls_; ++k){	
+   			theControls_[k]->getMatrixControl(j,  &Htemp2_);
+      
+   			Htemp2_.SetOutputStyle(Matrix);
+   			Htemp_ = Htemp_ + Htemp2_;
 			
-			//if(j==30) cout << Htemp_ << endl;			
-		}
+			
+   		}
 
-		Htemp_.SetOutputStyle(Matrix);
-		//if(j==30) cout << num_controls_ << " " << theControls_[1]->u_[30] << endl << theControls_[1]->Hcontrol_ << endl;
-		//if(j==30) cout << Htemp_ << endl;
-
-		//timestep propagator Unitaries_[j] and total propagator U_[j]
-		Unitaries_[j]= ExpM::EigenMethod(Htemp_,-i*h_, &(Z[j]), W[j]);	
-		U_[j] = Unitaries_[j]*(*curUnitary);
-		
-		curUnitary = &(U_[j]);
-	}	
+   		Htemp_.SetOutputStyle(Matrix);
+   	       
+   		//timestep propagator Unitaries_[j] and total propagator U_[j]
+   		Unitaries_[j]= ExpM::EigenMethod(Htemp_,-i*h_, &(Z[j]), W[j]);	
+   		U_[j] = Unitaries_[j]*(*curUnitary);
+	    
+   		curUnitary = &(U_[j]);
+   	}	
 }	
 //forward propogation for density matrices
-void Evolution::forwardpropagateDM()
-{
-	matrix<std::complex<double> > ident(dim_,dim_);  MOs::Identity(ident);
-	matrix<std::complex<double> > Htemp_(dim_,dim_), Htemp2_(dim_,dim_);	
-	matrix<std::complex<double> >* lastrho = &ident; 
-	lastrho = &ident;
-
-	for(size_t j = 0; j < num_time_; ++j){
-		Htemp_= *H_drift_;
-		
-	   
-	//	cout << "wtf\n";
-		//total hamiltonian
-		for(size_t k = 0; k < num_controls_; ++k){	
-			theControls_[k]->getMatrixControl(j,  &Htemp2_);
-	//		cout << k << endl << Htemp2_ << endl;
-			Htemp2_.SetOutputStyle(Matrix);
-			Htemp_ = Htemp_ + Htemp2_;
+ void Evolution::forwardpropagateDM()
+   {
+   	matrix<std::complex<double> > ident(dim_,dim_);  MOs::Identity(ident);
+   	matrix<std::complex<double> > Htemp_(dim_,dim_), Htemp2_(dim_,dim_);	
+	matrix<std::complex<double> >* lastRho = &rho_initial_;
+   	matrix<std::complex<double> >* curUnitary = &ident;
+ 	//std::complex<double> freqs[dim_];
+	lastRho = &rho_initial_;
+   	curUnitary = &ident;
+   	for(size_t j = 0; j < num_time_; ++j){
+   		Htemp_= *H_drift_;
+		/*	
+	//any rotating frame, commented out to avoid seg faults			
+		if(freqs_!=NULL)
+ 		{	for(size_t d = 0; d < dim_; ++d)
+ 				freqs[d] = exp(std::complex<double>(0.0,-freqs_[d]*(j*h_))); 
+ 			MOs::diagmult(Htemp_, freqs, Htemp_);
+ 			for(size_t d = 0; d < dim_; ++d)
+ 				freqs[d] = exp(std::complex<double>(0.0,freqs_[d]*(j*h_)));
+ 			MOs::multdiag(Htemp_, Htemp_, freqs);
+ 		}
+		*/
+// 		//total hamiltonian
+   		for(size_t k = 0; k < num_controls_; ++k){	
+   			theControls_[k]->getMatrixControl(j,  &Htemp2_);
+   	
+   			Htemp2_.SetOutputStyle(Matrix);
+   			Htemp_ = Htemp_ + Htemp2_;
 			
-			//if(j==30) cout << Htemp_ << endl;			
-		}
+			
+   		}
 
-		Htemp_.SetOutputStyle(Matrix);
-		//if(j==30) cout << num_controls_ << " " << theControls_[1]->u_[30] << endl << theControls_[1]->Hcontrol_ << endl;
-		//if(j==30) cout << Htemp_ << endl;
-
-		//timestep propagator Unitaries_[j] and total propagator U_[j]
-		Unitaries_[j]= ExpM::EigenMethod(Htemp_,-i*h_, &(Z[j]), W[j]);	
+   		Htemp_.SetOutputStyle(Matrix);
+   		
+   		//timestep propagator Unitaries_[j] and total propagator U_[j]
+   		Unitaries_[j]= ExpM::EigenMethod(Htemp_,-i*h_, &(Z[j]), W[j]);	
+   		Rho1_[j] = Unitaries_[j]*(*lastRho)*(MOs::Dagger(Unitaries_[j]));
+		U_[j]=Unitaries_[j]*(*curUnitary);
 	       
-		Rho_[j]=Unitaries_[j]*(*lastrho)*(MOs::Dagger(Unitaries_[j]));
-		lastrho= &(Rho_[j]);
-	       	
-	}	
+   		curUnitary = &(U_[j]);
+		lastRho=&(Rho1_[j]);
+   	}	
 }	
 
 void Evolution::forwardpropagate_Taylor()
-{
-	static matrix<std::complex<double> > ident(dim_,dim_); 
+{	matrix<std::complex<double> > Htemp_(dim_,dim_), Htemp2_(dim_,dim_);
+  	static matrix<std::complex<double> > ident(dim_,dim_); 
 	MOs::Identity(ident);
-	matrix<std::complex<double> >* lastrho = &ident;
 	matrix<std::complex<double> >* curUnitary = &ident;
-	matrix<std::complex<double> > Htemp_, Htemp2_;
-	lastrho = &ident;
+ 	
 	curUnitary = &ident;
 	
 	
 	for(size_t j = 0; j < num_time_; ++j){			
 		U_[j] = (*curUnitary);
-		Rho_[j] = (*lastrho);
+		
 		Htemp_ = *H_drift_;
 		for(size_t k = 0; k < num_controls_; ++k){	
 			theControls_[k]->getMatrixControl(j,  &Htemp2_);
@@ -402,16 +421,16 @@ void Evolution::forwardpropagate_Taylor()
 			Unitaries_[j] = Unitaries_[j]*Unitaries_[j];
 		
 		U_[j] = Unitaries_[j]*(*curUnitary);
-		Rho_[j]=Unitaries_[j]*(*lastrho);
-		lastrho=&(Rho_[j]);
+	       
 		curUnitary=&(U_[j]);
-	}	
+		}
+  	
 }		
 
 void Evolution::forwardpropagate_Commute()
 {
 
-	matrix<std::complex<double> > tempmat(dim_,dim_), ident(dim_,dim_), *propag;
+  matrix<std::complex<double> > tempmat(dim_,dim_), ident(dim_,dim_), *propag;
 	std::complex<double> scalarexponents[dim_];
 	std::complex<double> freqs[dim_];
 	MOs::Identity(ident);
@@ -444,9 +463,11 @@ void Evolution::forwardpropagate_Commute()
 			propag = &(UC_[k][j]);
 		}
 		U_[j] = *propag;
-		//did not add rho here b/c not using commute
-	}
-}	
+		
+					}
+
+	  }
+	
 
 
 
