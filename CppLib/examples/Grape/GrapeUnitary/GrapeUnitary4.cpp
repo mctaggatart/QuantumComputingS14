@@ -59,8 +59,8 @@ int main (int argc, char const *argv[]){
 	U_desired(1,0)=std::complex<double>(1,0);
 	U_desired(0,1)=std::complex<double>(1,0);
 	// U_desired(2,2)=std::complex<double>(1,0);
-	sys.SetRhoDesired(U_desired);	
-	
+	sys.SetUDesired(U_desired);	
+	sys.SetTrueRhoDesired(U_desired);
 	sys.Phi = &OptimizeEvolution::Phi4Sub2;
 	sys.gradPhi = &OptimizeEvolution::GradPhi4Sub2;	
 	

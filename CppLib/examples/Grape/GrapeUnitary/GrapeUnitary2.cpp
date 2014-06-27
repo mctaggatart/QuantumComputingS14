@@ -104,7 +104,8 @@ int main (int argc, char const *argv[]){
 	
 	matrix<complex<double> > U_desired(dim,dim);
 	U_desired=X3;
-	sys.SetRhoDesired(U_desired);
+	sys.SetUDesired(U_desired);
+	sys.SetTrueRhoDesired(U_desired);
 	cout << MOs::Trace(X1*X1) << endl;
 	
 	//run grape
