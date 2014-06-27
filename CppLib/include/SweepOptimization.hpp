@@ -229,7 +229,7 @@ inline void SweepOptimization::sweeptimesandcompare(ptrPropagate pSearchMethod=N
 				}
 				//avgerr=0;
 				//evolutions[s]->SetRhoDesired(evolutions->U_[theControls_[0]->npixels_-1]);
-				evolutions[s]->SetRhoDesired(rho_desired_);
+				evolutions[s]->SetUDesired(U_desired_);
 				evolutions[s]->top_fidelity_=0;
 			}	
 			cout << "\n\ntime " << num_time_*h_<< " gradient ascent\n";
@@ -341,7 +341,7 @@ inline void SweepOptimization::sweepfinegrainingandcompare(ptrPropagate pSearchM
 				}
 				avgerr=0;
 				//evolutions[s]->SetRhoDesired(evolutions->U_[theControls_[0]->npixels_-1]);
-				evolutions[s]->SetRhoDesired(rho_desired_);
+				evolutions[s]->SetUDesired(U_desired_);
 				evolutions[s]->top_fidelity_=0;
 			}	
 			cout << "\n\npixels " << totaln<< " gradient ascent\n";	
@@ -429,10 +429,10 @@ inline void SweepOptimization::sweepdimandcompare(ptrPropagate pSearchMethod, co
 				W[j] = new double[dim];
 				Z[j].resize(dim,dim);
 			}
-			rho_desired_ = RefDesired;
-			rho_desired_.resize(dim,dim);
-			rho_desired_.SetOutputStyle(Matrix);
-			cout << rho_desired_ << endl;
+			U_desired_ = RefDesired;
+			U_desired_.resize(dim,dim);
+			U_desired_.SetOutputStyle(Matrix);
+			cout << U_desired_ << endl;
 			
 			//Z[0].SetOutputStyle(Matrix);
 			//cout << Z[0] << endl;
@@ -472,9 +472,9 @@ inline void SweepOptimization::sweepdimandcompare(ptrPropagate pSearchMethod, co
 					evolutions[s]->Z[j].resize(dim,dim);
 				}
 				evolutions[s]->SetHdrift(*H_drift_);					
-				evolutions[s]->rho_desired_.resize(dim,dim);
+				evolutions[s]->U_desired_.resize(dim,dim);
 				//evolutions[s]->SetRhoDesired(evolutions->U_[theControls_[0]->npixels_-1]);
-				evolutions[s]->SetRhoDesired(rho_desired_);
+				evolutions[s]->SetUDesired(U_desired_);
 				avgerr=1;
 				size_t nsubpix=evolutions[s]->theControls_[0]->nsubpixels_;
 				size_t nsuperpixels = evolutions[s]->num_time_/ nsubpix;

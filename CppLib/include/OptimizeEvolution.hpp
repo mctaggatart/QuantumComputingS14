@@ -13,7 +13,7 @@ Version History
 	v2: Feburary 25th, 2009 edits to make adding different performance functions easier. It turns out it is a bit slower with the pointer to the function but not much
 	v3: March ~1, 2009 added envelope for adding nonlinearity to the controls/time e.g. working in the lab frame
 	v4: May 20, 2009 added some new functions
-
+	v5: June 26, 2014: added Phi 2 and density matrix functions
 */
 /*Copy over:	GetFidelity
 				GetCount
@@ -73,7 +73,7 @@ class OptimizeEvolution : public Evolution{
 		double RelaxationPenalty() const;
 		double GradRelaxationPenalty(const size_t j, const size_t k) ;
 		
-		//public variables, probably should be made protected
+		//public variables
 		size_t nconfigs_;					
 		double config_;		
 		
@@ -105,7 +105,7 @@ class OptimizeEvolution : public Evolution{
 		matrix<std::complex<double> > gradU;	//rho in the Khaneja paper
   
                 matrix<std::complex<double> > gradRho;
-		matrix<std::complex<double> > lambda;	//lambda in the Khaneja paper
+		matrix<std::complex<double> > P;	//P in the Khaneja paper
   matrix<std::complex<double> > lambda_rho; //lambda for density matrices.
 		double top_fidelity_;				// the highest achieved fidelity
 		double fidelity_;					// the desired in fidelity 
@@ -127,7 +127,7 @@ class OptimizeEvolution : public Evolution{
 
 #include "AnalyticControl.hpp"
 
-
+//constructor initalizes everything
 inline OptimizeEvolution::OptimizeEvolution(size_t dim, size_t num_controls, size_t num_time, const double h, char* filename) 
 	: Evolution(dim, num_controls, num_time, h), Penalty(NULL), gradPenalty(NULL){
 	config_=0;
@@ -136,11 +136,11 @@ inline OptimizeEvolution::OptimizeEvolution(size_t dim, size_t num_controls, siz
 	num_evol=0;
 	gradU.initialize(dim,dim);	
 	gradRho.initialize(dim,dim);
-	lambda.initialize(dim,dim);
+	P.initialize(dim,dim);
 	lambda_rho.initialize(dim,dim);
 	pGetGradient = 	static_cast<ptrPropagate>(&OptimizeEvolution::computegradientDensity);		
 	Phi = &OptimizeEvolution::Phi2;
-	gradPhi = &OptimizeEvolution::GradPhi4;
+	gradPhi = &OptimizeEvolution::GradPhi2;
 	gradient_ = new double *[num_controls_];
 	for(size_t k=0; k < num_controls_; ++k)
 		gradient_[k] = new double[num_time_];
@@ -224,15 +224,13 @@ double OptimizeEvolution::robustfidelity() const
 	return fidel/num_evol;
 }
 
-
+//computes gradient for unitaries
 void OptimizeEvolution::computegradient()
 {
 	matrix<std::complex<double> > Htemp_(dim_, dim_);
-	lambda = MOs::Dagger(rho_desired_); //Lagrange multiplier
+	P = MOs::Dagger(U_desired_); //Lagrange multiplier
 	double deriv;
-	//	matrix<std::complex<double> > qubit(2,1);	
-	//	qubit[0]=std::complex<double>(1.0,0);
-	//	qubit[1]=0;
+      
 
 	for(size_t k = 0; k < num_controls_; ++k)
 			for(size_t j = 0; j < num_time_; ++j)
@@ -262,15 +260,15 @@ void OptimizeEvolution::computegradient()
 			       //trace and chain rule to other (scalar) pixel controls
 			     
 		 }
-		 if(j) lambda = lambda*Unitaries_[j]; 		 
+			if(j) P = P*Unitaries_[j];//computes phi at each step 		 
 	}
 		
 }
-
+//computes gradient for density matrices
 void OptimizeEvolution::computegradientDensity()
 {
 	matrix<std::complex<double> > Htemp_(dim_, dim_);
-	lambda = MOs::Dagger(rho_desired_); //Lagrange multiplier
+	P = MOs::Dagger(U_desired_); //Lagrange multiplier, P in Khaneja
 	lambda_rho = MOs::Dagger(true_rho_desired_);
 	double deriv;
        
@@ -282,13 +280,21 @@ void OptimizeEvolution::computegradientDensity()
 	for(int j = num_time_-1; j >=0 ; --j){
 			for(size_t k = 0; k < num_controls_; ++k){			
 				theControls_[k]->getMatrixGradient(j,  &Htemp_); // k-th control,j-th pixel matrix control
-		
+		//integral of k,j-th control in diagonal frame of total hamiltonian
+				Htemp_ = MOs::Dagger(Z[j])*Htemp_* Z[j];
+				for (size_t q = 0; q < dim_; ++q)
+					for (size_t p = 0; p < dim_; ++p)
+						if(p!=q && (W[j][q]-W[j][p]))Htemp_(q,p) *= (i*cos(-(W[j][q]-W[j][p])*h_)-sin(-(W[j][q]-W[j][p])*h_)-i)/(W[j][q]-W[j][p])/h_;
+				Htemp_ = Z[j]*Htemp_*MOs::Dagger(Z[j]);		
+				
+			//computes unitary gradient
 			       	gradU= Htemp_*U_[j]; // k,j-th matrix gradient of total matrix propagation
-	
+				//computes DM gradient
 				gradRho= (Htemp_*Rho1_[j] - Rho1_[j]*Htemp_);
 		
 				
 				deriv = (this->*gradPhi)(j,k);
+				//adds penalty
 				 if(gradPenalty)
 			       		deriv = deriv + (this->*gradPenalty)(j,k);
 		
@@ -297,19 +303,21 @@ void OptimizeEvolution::computegradientDensity()
 		 }
 			
 			if(j){ 
+			  //sets lambda and P to the correct values
+			  
 			  lambda_rho = MOs::Dagger(Unitaries_[j])*lambda_rho*Unitaries_[j];  		 
-			  lambda=lambda*Unitaries_[j];
+			  P=P*Unitaries_[j];
 }
 	}
 		
 }
 
 
-//left unedited as not used
+//left unedited as not used, commutes for unitaries
 void OptimizeEvolution::computegradient_Commute(){
 	int start, inc;
 	matrix<std::complex<double> > Htemp_;
-	lambda = MOs::Dagger(rho_desired_);		//Lagrange multiplier
+	P = MOs::Dagger(U_desired_);		//Lagrange multiplier
 	
 	for(size_t k = 0; k < num_controls_; ++k)
 			for(size_t j = 0; j < num_time_; ++j)
@@ -322,7 +330,7 @@ void OptimizeEvolution::computegradient_Commute(){
 			theControls_[k]->getMatrixGradient(j,  &Htemp_);	 // k-th control,j-th pixel matrix control
 			gradU=Htemp_*UC_[k][j];								// k,j-th matrix gradient of total matrix propagation
 			theControls_[k]->setSubGradients(j,  (this->*gradPhi)(j,k), gradient_[k]);	//trace and chain rule to other (scalar) pixel controls
-			lambda = lambda*UnitariesC_[k][j];
+			P = P*UnitariesC_[k][j];
 		}				 
 	}
 }
@@ -341,7 +349,7 @@ inline void OptimizeEvolution::updatecontrols()
 		 
 }}
 }
-
+//unwinds controls
 inline void OptimizeEvolution::unwindcontrols()
 {
 	power_--;
@@ -354,7 +362,7 @@ inline void OptimizeEvolution::unwindcontrols()
 	}		
 	failcount_++;
 }
-
+//does GRAPE
 void OptimizeEvolution::UnitaryTransfer(){
 	
   for(size_t k = 0; k < num_controls_+2; ++k)
@@ -375,7 +383,7 @@ void OptimizeEvolution::UnitaryTransfer(){
 	writepopulations("populations_start");
 	for(top_fidelity_=0.0, power_=0; abs(delta_fidelity) > tolerance_ && n_conseq_unimprov<20 && count_< max_iter_; count_++)
 	  {
-       
+	    //propagates 
 		(this->*pPropagate)();
 	
 		  //add matrix product
@@ -395,6 +403,7 @@ void OptimizeEvolution::UnitaryTransfer(){
 		
 			if(top_fidelity_ >= fidelity_) break;
 			avgimprov+=delta_fidelity;
+			//actually computes gradient
 			(this->*pGetGradient)();
 			updatecontrols();
 		}
@@ -404,6 +413,7 @@ void OptimizeEvolution::UnitaryTransfer(){
 				theControls_[k]->Interpolate();
 		
 		size_t echorate = 50;
+		//prints out at each 50 failures
 		if (count_%echorate==0)
 		  {	std::cout << "step " << count_+1 << ", " << count_-failcount_+1 << " successes, " << failcount_ << " failures, with error " << 1-top_fidelity_ << " and average improvement " << avgimprov/echorate <<  std::endl; 			
 			fidelout << count_+1 << '\t' << 1-current_fidelity << '\t' << pow(base_a_,power_) << endl;	
@@ -414,7 +424,7 @@ void OptimizeEvolution::UnitaryTransfer(){
 			writepopulations("popul_int");	
 		}
    }
-
+	//prints out at the end
     if(count_>= max_iter_) cout << "max iterations: ";
 	else if(abs(delta_fidelity) <= tolerance_) cout << "tolerance: ";
 	else if(top_fidelity_ >= fidelity_) cout << "success: ";
@@ -437,7 +447,7 @@ void OptimizeEvolution::UnitaryTransfer(){
 
 
 
-//  unimplemented due to decomposition.
+// TODO  unimplemented due to decomposition, view as pseudocode
 inline double OptimizeEvolution::Phi1() const{
   /*	//the measure implemented, phi (PHI_1) is phi =RE(Goal_x+iGoal_t) dot (Unitary(rho_inital_x+i*rho_initial_y)(Unitary dagger))/D
 	std::complex<double> temp1=0.0;
@@ -450,7 +460,7 @@ inline double OptimizeEvolution::Phi1() const{
   	return std::real(temp1)/dim_;*/
   return 0.0;
 }
-//unedited grad phi 1, not implemented decomposition yet
+//TODO unedited grad phi 1, not implemented decomposition yet
 inline double OptimizeEvolution::GradPhi1(const size_t j, const size_t k) const{
   /*	//phi_3
 	std::complex<double> temp1=0;
@@ -467,19 +477,22 @@ inline double OptimizeEvolution::GradPhi1(const size_t j, const size_t k) const{
 
 
 
-
+//Phi 2 from the Khanja paper, it is |phi_0|^2 or <Rho_desired|rho><rho|Rho_desired>, and it does this by taking the trace of Rho_Desired with the current Rho. This can be used for both Density Matrices and Unitaries
 inline double OptimizeEvolution::Phi2() const{
-	//the measure implemented, phi (PHI_4) is phi = |trace[U_desired* UN-1....U_0 ]|^2/D^2
+	
 	std::complex<double> temp1=0.0;
 	for(size_t q=0; q< dim_; ++q){
-		for(size_t p=0; p<dim_; ++p)
-			temp1 += std::conj(true_rho_desired_(p,q))*Rho1_[num_time_-1](p,q);		
+	  for(size_t p=0; p<dim_; ++p){
+		  //computes diagonal elements for TRACE
+			temp1 += std::conj(true_rho_desired_(p,q))*Rho1_[num_time_-1](p,q);
+			
+	  }		
 	} 
 
-
+	//returns real part of the trace squared
 	return real(temp1*std::conj(temp1));
 }
-
+//GradPhi 2 from the Khanja paper, it is -2Re(<lambda|i dt [H, rho]> <rho|goal>) where goal is rho desired, and rho is our current rho, H is our htemp/temp hamilitonian
 inline double OptimizeEvolution::GradPhi2(const size_t j, const size_t k) {
 	//phi_4
 
@@ -492,32 +505,34 @@ inline double OptimizeEvolution::GradPhi2(const size_t j, const size_t k) {
 	}
 	return 2.0*epsilon_*std::imag(temp1*temp2);//*one_on_dim_*one_on_dim_;
 }
+	//the measure implemented, phi (PHI_3) is phi = trace[U_desired* UN-1....U_0]/D for unitaires
 inline double OptimizeEvolution::Phi3() const{
-	//the measure implemented, phi (PHI_3) is phi = trace[U_desired* UN-1....U_0]/D
+
 	std::complex<double> temp1=0.0;
 	for(size_t q=0; q< dim_; ++q){
 		for(size_t p=0; p<dim_; ++p){
-			temp1 += std::conj(rho_desired_(p,q))*U_[num_time_-1](p,q);
+			temp1 += std::conj(U_desired_(p,q))*U_[num_time_-1](p,q);
 		}
 	}
 	return std::real(temp1)/dim_;
 }
+//computes gradphi3 for unitaries
 inline double OptimizeEvolution::GradPhi3(const size_t j, const size_t k) const{
 	//phi_3
 	std::complex<double> temp1=0;
 	for(size_t q=0; q< dim_; ++q){
 		for(size_t p=0; p<dim_; ++p){
-			temp1 += lambda(q,p)*gradU(p,q);	
+			temp1 += P(q,p)*gradU(p,q);	
 		}
 	}	
 	return epsilon_*std::imag(temp1);
 }
 inline double OptimizeEvolution::Phi4() const{
-	//the measure implemented, phi (PHI_4) is phi = |trace[U_desired* UN-1....U_0 ]|^2/D^2
+	//the measure implemented, phi (PHI_4) is phi = |trace[U_desired* UN-1....U_0 ]|^2/D^2, used for unitaries
 	std::complex<double> temp1=0.0;
 	for(size_t q=0; q< dim_; ++q){
 		for(size_t p=0; p<dim_; ++p)
-			temp1 += std::conj(rho_desired_(p,q))*U_[num_time_-1](p,q);		
+			temp1 += std::conj(U_desired_(p,q))*U_[num_time_-1](p,q);		
 	} 
 	return real(temp1*std::conj(temp1))/dim_/dim_;
 }
@@ -527,8 +542,8 @@ inline double OptimizeEvolution::GradPhi4(const size_t j, const size_t k) {
 	std::complex<double> temp1=0, temp2=0;
 	for(size_t q=0; q< dim_; ++q){
 		for(size_t p=0; p<dim_; ++p){
-			temp1 += lambda(q,p)*gradU(p,q);
-			temp2 += std::conj(U_[num_time_-1](p,q))*rho_desired_(p,q);	
+			temp1 += P(q,p)*gradU(p,q);
+			temp2 += std::conj(U_[num_time_-1](p,q))*U_desired_(p,q);	
 		}
 	}
 	return 2.0*epsilon_*std::imag(temp1*temp2);//*one_on_dim_*one_on_dim_;
@@ -548,7 +563,7 @@ inline double OptimizeEvolution::Phi4TrCav() const{
 	size_t dimq = dim_/dimcav;
 	for(size_t q=0; q< dimq; ++q){
 		for(size_t p=0; p<dimq; ++p)
-			temp1 += std::conj(rho_desired_(p,q))*UA(p,q);		
+			temp1 += std::conj(U_desired_(p,q))*UA(p,q);		
 	}
 	//return real(temp1*std::conj(temp1))/dim_/dim_;
 	return real(temp1*std::conj(temp1))/4/4;
@@ -560,13 +575,13 @@ inline double OptimizeEvolution::GradPhi4TrCav(const size_t j, const size_t k) {
 	size_t dimcav = 3;
 	matrix<complex<double> > UA = (1.0/dimcav)*MOs::TraceOutA(U_[num_time_-1], dimcav);
 	matrix<complex<double> > gradUA = (1.0/dimcav)*MOs::TraceOutA(gradU, dimcav);
-	matrix<complex<double> > lamA = (1.0/dimcav)*MOs::TraceOutA(lambda, dimcav);
+	matrix<complex<double> > lamA = (1.0/dimcav)*MOs::TraceOutA(P, dimcav);
 	size_t dimq = dim_/dimcav;
 	
 	for(size_t q=0; q< dimq; ++q){
 		for(size_t p=0; p<dimq; ++p){
 			temp1 += lamA(q,p)*gradU(p,q);
-			temp2 += std::conj(U_[num_time_-1](p,q))*rho_desired_(p,q);	
+			temp2 += std::conj(U_[num_time_-1](p,q))*U_desired_(p,q);	
 		}
 	}
 	return 2.0*epsilon_*std::imag(temp1*temp2);//*one_on_dim_*one_on_dim_;
@@ -578,7 +593,7 @@ inline double OptimizeEvolution::Phi4Sub2() const{
 	std::complex<double> temp1=0.0;
 	for(size_t q=level0index_; q< level0index_+2; ++q){
 		for(size_t p=0; p<dim_; ++p){
-		temp1 += std::conj(rho_desired_(p,q))*U_[num_time_-1](p,q);		
+		temp1 += std::conj(U_desired_(p,q))*U_[num_time_-1](p,q);		
 		}
 	}
 	return std::real(temp1*std::conj(temp1))*0.25;
@@ -590,13 +605,13 @@ inline double OptimizeEvolution::GradPhi4Sub2(const size_t j, const size_t k){
 	std::complex<double> temp1=0, temp2=0;
 	for(size_t q=level0index_; q< level0index_+2; ++q){
 		for(size_t p=0; p<dim_; ++p){
-			temp1 += lambda(q,p)*gradU(p,q);
-			temp2 += std::conj(U_[num_time_-1](p,q))*rho_desired_(p,q);	
+		  temp1 += P(q,p)*gradU(p,q);
+			temp2 += std::conj(U_[num_time_-1](p,q))*U_desired_(p,q);	
 		}
 	}
 	return 2.0*epsilon_*std::imag(temp1*temp2);//*one_on_dim_*one_on_dim_;
 }
-
+/*Below we implement assorted penalities to discourage the gradient from overstepping and overshooting the goals*/
 inline double OptimizeEvolution::LeakagePenalty() const{
 	//the measure implemented, phi (PHI_4_sub) is phi = |sum_{i=0,1} <i|U_desired* UN-1....U_0|i>|^2/2^2
 	std::complex<double> ret=0;
@@ -629,41 +644,7 @@ inline double OptimizeEvolution::GradLeakagePenalty(const size_t j, const size_t
 		ret+=temp1;
 	}	
 	return 0.0004*std::imag(ret)/num_time_;
-}/*/
-
-inline double OptimizeEvolution::LeakagePenalty() const{
-	//the measure implemented, phi (PHI_4_sub) is phi = |sum_{i=0,1} <i|U_desired* UN-1....U_0|i>|^2/2^2
-	std::complex<double> ret=0;
-	for(size_t j=0; j<num_time_; j++) 
-	{	std::complex<double> temp1=0.0;
-		for(size_t q=level0index_; q< level0index_+2; ++q){
-			for(size_t p=level0index_; p<level0index_+2; ++p){
-			temp1 += std::conj(Unitaries_[j](p,q))*Unitaries_[j](p,q);		
-			}
-		}
-		ret+=temp1*0.5;
-	}	
-	return 0.01*std::real(ret)/num_time_;
 }
-
-inline double OptimizeEvolution::GradLeakagePenalty(const size_t j, const size_t k){
-	std::complex<double> ret=0;
-	matrix<complex<double> > Htemp_(dim_, dim_);
-	theControls_[k]->getMatrixGradient(j,  &Htemp_);
-	matrix<complex<double> > UA=gradU;
-	UA = Htemp_*Unitaries_[j];
-	//for(size_t j=0; j<num_time_; j++) 
-	{	std::complex<double> temp1=0.0, temp2=0;		
-		for(size_t q=level0index_; q< level0index_+2; ++q){
-			for(size_t p=level0index_; p<level0index_+2; ++p){
-				temp1 += std::conj(Unitaries_[j](p,q))*UA(p,q);	
-			}
-		}
-	//	if(j<num_time_-1) UA = UA * Unitaries_[j+1];
-		ret+=temp1;
-	}	
-	return 0.004*std::imag(ret)/num_time_;
-}*/
 
 
 
@@ -710,7 +691,7 @@ inline double OptimizeEvolution::GradRelaxationPenalty(const size_t j, const siz
 
 
 
-
+//write controls to an image
 void OptimizeEvolution::writecontrols(char* suffix="")
 {
 	char scriptfilename[80], datafilename[80];
@@ -736,38 +717,12 @@ void OptimizeEvolution::writecontrols(char* suffix="")
 	strcat(strcat(strcpy(command, "gnuplot "), scriptfilename),".p");
 	system(command);
 }
-/*	char scriptfilename[80], datafilename[80], command[80];
-	ofstream dataout;	
-	if(filename_==NULL && suffix==NULL)
-		return;
-	
-	system(strcat(strcpy(command, "cd "), filename_));
-	system("pwd");
-	
-	strcpy(datafilename,suffix);
-	strcat(datafilename, ".dat");
-	strcpy(scriptfilename,suffix);
-	USs::MakeGnuplotScript(num_controls_, scriptfilename, "", "", datafilename);
-	UFs::OpenFile(datafilename,dataout, 16);
-	
-	for(size_t j =0; j < num_time_; j++){
-		dataout <<  h_*(j+0.5);
-		for(int k=0; k<num_controls_; k++)
-				dataout << "\t" << theControls_[k]->u_filt[j];
-		dataout << "\n";		
-	}
-	
-	dataout.close();
-	
-	strcat(strcat(strcpy(command, "gnuplot "), scriptfilename),".p");
-	system(command);
-	system("cd ..");
-	system("pwd");
-*/
 
+//writes the populations to a graph. In this case, pop=rho, as described in khanja. 
 void OptimizeEvolution::writepopulations(char* suffix="")
 {
-	char scriptfilename[80], datafilename[80],startpop[2];
+  //changed startpop to have 3 characters to account for NULL at end
+	char scriptfilename[80], datafilename[80],startpop[3];
 	ofstream dataout;	
 	strcpy(startpop, "__");
 	for(size_t l=0; l<2; l++)
@@ -786,6 +741,7 @@ void OptimizeEvolution::writepopulations(char* suffix="")
 		for(size_t j =0; j < num_time_; j++){  //loop thru dim
 			dataout <<  h_*(j+0.5);
 			for(size_t k=0; k<dim_; k++){
+			  //where one sets the population, use the 2nd line for unitaries. 
 			  dataout<< "\t" << pow(abs(Rho1_[j](k,k)),1);
 			  //dataout<< "\t" << pow(abs(U_[j](l,k)),2);
 			}
@@ -799,12 +755,12 @@ void OptimizeEvolution::writepopulations(char* suffix="")
 		system(command);
 	}
 }
-
+//TODO
 void OptimizeEvolution::writefidelities(char* suffix="")
 {
 
 }
-
+//TODO
 void OptimizeEvolution::writeconfigdata(char* suffix="")
 {
 	//dataout << Hdrift

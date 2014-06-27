@@ -4,9 +4,9 @@ This folder contains all the header files for the project. A short description o
 AnalyticControl:Attempts to find an analytic starting point for the code:
  AnalyticControl(const matrix<complex<double> > &Hcontrol,const double dt,const size_t num_time, const size_t nsubpixels, Evolution* evol, char* filename=NULL) 
 
-Control:
+Control: Handles control. Gaussian starting moved to here
 
-Evolution:
+Evolution: Computes evolution of the progress and the gradient.
 
 GrapeTransfer:
 
@@ -14,17 +14,17 @@ GrapeUnitaryCavity:
 
 GrapeUnitaryQubit:
 
-Headers
+
 
 Matrix: useful matrix class
 
 MatrixExponential:
 
-MatrixOpperations:
+MatrixOpperations: Handles matrix operations such as dagger. Uses namespace MOs
 
 NumericalIntegration:
 
-OptimizeEvolution:
+OptimizeEvolution: Optimizes evolution. also implements Khanja phis, and unitary transfer
 
 OrdinaryDiffEqs:
 
@@ -38,7 +38,7 @@ spMatrix:
 
 standard_definitions.mk-make file
 
-standard_makes.mk
+standard_makes.mk handles linking
 
 StatisticalFunction:
 
@@ -46,8 +46,6 @@ SweepOptimization:
 
 TicToc: Timer class
 
-UsefullFunctions:Assorted useful functions like sleep, bubblesort:
-
-Namespace: USs
+UsefullFunctions:Assorted useful functions like sleep, bubblesort: Namespace: USs, required extensive editing of COUTs to be compliant. 
 
 UtilityFunctions:

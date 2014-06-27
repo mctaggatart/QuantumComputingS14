@@ -1,9 +1,14 @@
 
 /*
-Name: Grape.h
-Author: Jay M. Gambetta and Felix Motzoi
-			
-Dependences: MatrixExponential.hpp, QuantumOperations.hpp
+Name: Evolution.h
+Author: Jay M. Gambetta and Felix Motzoi, Anastasia McTaggart
+This does the actual computation of the gradient			
+Dependences: Controls, but relies on
+include "MatrixExponential.hpp"
+#include "MatrixOperations.hpp"
+#include "MatrixOperations.hpp"
+#include "QuantumOperations.hpp"	
+#include "QuantumOperations.hpp"
 */
 
 #ifndef Evolution_h
@@ -29,14 +34,14 @@ class Evolution {
 		void SetHdrift( matrix<std::complex<double> >& H_drift);
 		
 		matrix<std::complex<double> > GetRhoInitial();
-		void SetRhoInitial(const matrix<std::complex<double> >& rho_initial);
+  void SetRhoInitial(const matrix<std::complex<double> >& rho_initial); //initial state
 		
 		Control* GetuControl(const size_t k);
 		void Setucontrol(Control* control, const int index=-1);
 		
-		matrix<std::complex<double> > GetRhoDesired() { return rho_desired_; }
-  void SetRhoDesired(const matrix<std::complex<double> >& rho_desired);
-  void SetTrueRhoDesired(const matrix<std::complex<double> >& Udes,const matrix<std::complex<double> >& rho_desired);
+  matrix<std::complex<double> > GetUDesired() { return U_desired_; } //desired Unitiary
+  void SetUDesired(const matrix<std::complex<double> >& U_desired);
+  void SetTrueRhoDesired(const matrix<std::complex<double> >& Udes);//sets desired Rho
 
 		void writepopulations(char* outfile);
 						
@@ -44,14 +49,14 @@ class Evolution {
 
 
 		void forwardpropagate();
-                void forwardpropagateDM();
+                void forwardpropagate_Density();
                 void forwardpropagate_Taylor();
 		void forwardpropagate_Commute();
 		
                 matrix<std::complex<double> >* U_; //an array of the forward evolutions (rho in paper
                 matrix<std::complex<double> >* Rho1_;
                 matrix<std::complex<double> >** UC_; //an array of the forward evolutions (rho in paper) splitting by control
-		double* freqs_;
+  double* freqs_;
 						
 	public:
 		size_t num_time_;//  the number of time points	
@@ -62,7 +67,7 @@ class Evolution {
 		
 		matrix<std::complex<double> > *H_drift_; //drift hamiltonian
 		matrix<std::complex<double> > H_drift_exp; //exponential of drift hamiltonian
-		matrix<std::complex<double> > rho_desired_; //the desired rho or unitary			//rename as U_desired_
+		matrix<std::complex<double> > U_desired_; //the desired rho or unitary			//rename as U_desired_
   matrix<std::complex<double> > true_rho_desired_;
 		matrix<std::complex<double> > rho_initial_; //the initial rho or unitary
 		
@@ -87,6 +92,7 @@ class Evolution {
 inline Evolution::Evolution(size_t dim, size_t num_controls, size_t num_time, const double h) 
 	: dim_(dim), num_controls_(num_controls), num_time_(num_time), h_(h), lastcontrol(0)
 {	
+  freqs_=NULL;
 	Z = new matrix<std::complex<double> >[num_time_];	
 	W = new double *[num_time_];
 	for(size_t j = 0; j < num_time_; ++j)
@@ -94,13 +100,13 @@ inline Evolution::Evolution(size_t dim, size_t num_controls, size_t num_time, co
 	  W[j] = new double[dim_];	
 	}
 	//SET ppropogate to the one you want to use!
-	pPropagate = &Evolution::forwardpropagateDM;
+	pPropagate = &Evolution::forwardpropagate_Density;
 	theControls_ = new Control*[num_controls_];
 	controlsetflag_=new size_t[num_controls_+3]; // one more for Hdrift and one more for rho_desired and rho_initial
 	UC_ = new  matrix<std::complex<double> >*[num_controls_];
 	UnitariesC_ = new  matrix<std::complex<double> >*[num_controls_];
 	for(size_t k=0; k < num_controls_; ++k){
-		//controls_[k] = new double[num_time_];
+	      
 		UC_[k] = new matrix<std::complex<double> >[num_time_];
 		UnitariesC_[k] = new matrix<std::complex<double> >[num_time_];
 		for(size_t j=0; j < num_time_; ++j){
@@ -215,7 +221,7 @@ inline void Evolution::SetHdrift( matrix<std::complex<double> >& H_drift){
 		std::cout << "------------------------------------------------------------" << std::endl;
 	}
 }
-
+//sets controls for unitaries
 inline void Evolution::Setucontrol(Control* control, const int k){
 	if(k>=0) lastcontrol=k;
 	
@@ -229,18 +235,19 @@ inline void Evolution::Setucontrol(Control* control, const int k){
 
 		
 //Set the target state for transfer
-inline void Evolution::SetRhoDesired(const matrix<std::complex<double> >& rho_desired){
-	rho_desired_=rho_desired;
+inline void Evolution::SetUDesired(const matrix<std::complex<double> >& U_desired){
+	U_desired_=U_desired;
 	controlsetflag_[num_controls_+1]=0;
 	if(verbose==yes)
 	{
-		rho_desired_.SetOutputStyle(Matrix);
+		U_desired_.SetOutputStyle(Matrix);
 	 	std::cout << "--------------------rho desired is set---------------------------" << std::endl;
-		std::cout << rho_desired_ << std::endl;
+		std::cout << U_desired_ << std::endl;
 		std::cout << "------------------------------------------------------------" << std::endl;
 	}
 }
-inline void Evolution::SetTrueRhoDesired(const matrix<std::complex<double> >& Udes, const matrix<std::complex<double> >& rho_desired){
+//sets actual rho desired
+inline void Evolution::SetTrueRhoDesired(const matrix<std::complex<double> >& Udes){
   true_rho_desired_=Udes*rho_initial_*MOs::Dagger(Udes);
 	controlsetflag_[num_controls_+1]=0;
 	if(verbose==yes)
@@ -282,7 +289,7 @@ inline Control* Evolution::GetuControl(const size_t k){
 }
 
 
-	
+//writes populations	
 inline void Evolution::writepopulations(char* outfile)
 {	
 	ofstream popout;
@@ -310,14 +317,14 @@ inline void Evolution::writepopulations(char* outfile)
    	matrix<std::complex<double> > Htemp_(dim_,dim_), Htemp2_(dim_,dim_);	
  
    	matrix<std::complex<double> >* curUnitary = &ident;
-	//	std::complex<double> freqs[dim_];
-       
+	std::complex<double>* freqs=new std::complex<double>[dim_];
+	//  freqs_ = new std::complex<double>[dim_];       
    	curUnitary = &ident;
    	for(size_t j = 0; j < num_time_; ++j){
    		Htemp_= *H_drift_;
-		/*
+			
 //any rotating frame, commented out to avoid seg faults			
- 		if(freqs_!=NULL)
+			if(freqs_!=NULL)
  		{	for(size_t d = 0; d < dim_; ++d)
  				freqs[d] = exp(std::complex<double>(0.0,-freqs_[d]*(j*h_))); 
  			MOs::diagmult(Htemp_, freqs, Htemp_);
@@ -325,7 +332,7 @@ inline void Evolution::writepopulations(char* outfile)
  				freqs[d] = exp(std::complex<double>(0.0,freqs_[d]*(j*h_)));
  			MOs::multdiag(Htemp_, Htemp_, freqs);
  		}
-		*/
+		
 // 		//total hamiltonian
    		for(size_t k = 0; k < num_controls_; ++k){	
    			theControls_[k]->getMatrixControl(j,  &Htemp2_);
@@ -346,28 +353,32 @@ inline void Evolution::writepopulations(char* outfile)
    	}	
 }	
 //forward propogation for density matrices
- void Evolution::forwardpropagateDM()
+ void Evolution::forwardpropagate_Density()
    {
    	matrix<std::complex<double> > ident(dim_,dim_);  MOs::Identity(ident);
    	matrix<std::complex<double> > Htemp_(dim_,dim_), Htemp2_(dim_,dim_);	
 	matrix<std::complex<double> >* lastRho = &rho_initial_;
    	matrix<std::complex<double> >* curUnitary = &ident;
- 	//std::complex<double> freqs[dim_];
+ 	//std::complex<double>* freqs  = new std::complex<double>[dim_];
+   
 	lastRho = &rho_initial_;
    	curUnitary = &ident;
    	for(size_t j = 0; j < num_time_; ++j){
    		Htemp_= *H_drift_;
-		/*	
+			
 	//any rotating frame, commented out to avoid seg faults			
-		if(freqs_!=NULL)
- 		{	for(size_t d = 0; d < dim_; ++d)
+	/*	if(freqs_!=NULL)
+ 		{	for(size_t d = 0; d < dim_-1; ++d)
  				freqs[d] = exp(std::complex<double>(0.0,-freqs_[d]*(j*h_))); 
  			MOs::diagmult(Htemp_, freqs, Htemp_);
- 			for(size_t d = 0; d < dim_; ++d)
+ 			for(size_t d = 0; d < dim_-1; ++d)
  				freqs[d] = exp(std::complex<double>(0.0,freqs_[d]*(j*h_)));
  			MOs::multdiag(Htemp_, Htemp_, freqs);
  		}
-		*/
+	*/
+
+
+		
 // 		//total hamiltonian
    		for(size_t k = 0; k < num_controls_; ++k){	
    			theControls_[k]->getMatrixControl(j,  &Htemp2_);
@@ -389,7 +400,7 @@ inline void Evolution::writepopulations(char* outfile)
 		lastRho=&(Rho1_[j]);
    	}	
 }	
-
+//forward propagate for unitaries with taylor methods
 void Evolution::forwardpropagate_Taylor()
 {	matrix<std::complex<double> > Htemp_(dim_,dim_), Htemp2_(dim_,dim_);
   	static matrix<std::complex<double> > ident(dim_,dim_); 
@@ -426,7 +437,7 @@ void Evolution::forwardpropagate_Taylor()
 		}
   	
 }		
-
+//forward propagate commute for unitaries
 void Evolution::forwardpropagate_Commute()
 {
 

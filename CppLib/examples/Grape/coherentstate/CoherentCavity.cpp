@@ -114,14 +114,14 @@ int main (int argc, char const *argv[]){
 	//u2.pSubGradients = &Control::GaussianFilterGradient;//setLinearSplineGradients;//
 	
 	sys.SetHdrift(Hdrift);
-	sys.SetRhoDesired(U_desired);
+	sys.SetUDesired(U_desired);
 	
 	sys.sweepinitialconditions(); 		
 	
 	cout << "leakage " << sys.LeakagePenalty() << endl;
 	cout << "relaxation purity " << sys.RelaxationPenalty() << endl;
 	
-	sys.SetRhoDesired(o + od);	
+	sys.SetUDesired(o + od);	
 
 	cout << "final evolution" << endl;
 	cout << sys.U_[num_time-1].SetOutputStyle(Matrix) << endl;
