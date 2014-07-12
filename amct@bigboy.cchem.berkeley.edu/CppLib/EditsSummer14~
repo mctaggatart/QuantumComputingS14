@@ -1,0 +1,18 @@
+On 06/06/2014 I worked on compiling the code. The following edits were made:
+Include/UsefullFunctions.hpp:
+Set the default parameter of 
+
+Changed findmax to have different code inside and std::abs(y_values[i]) instead of ABS(y_values, i)
+Added std:: in front of all instances of vector and cout and ofstream. This is due to the change in compilers.
+
+Include/AnalyticControl.hpp
+Edited derivative and other functions to have a default paramater in the contstructor. This is for  complex<double>** sys_params=NULL because we set sigma =0 before it and it won't compile unless you add defaults for all paramaters after it
+
+Also installed several libraries. 
+
+ sudo apt-get install liblapack-dev
+sudo apt-get install openmpi-bin libopenmpi-dev
+ sudo apt-get install gsl-bin libgsl0-dev
+
+
+At least one of those contained the correct libraries that were missing. 

@@ -43,13 +43,17 @@ namespace MOs { //All my matrix operators
 	//Common Matricies
 	template <class T> 
 	void Null(matrix<T>& A);
-	template <class T> 
+	template <class T>
 	void Identity(matrix<T>& I);
 	template <class T> 
 	void Destroy(matrix<T>& a);
 	template <class T> 
 	void GenPauliX(matrix<T>& a, size_t level_i, size_t level_j);
-	template <class T> 
+	template <class T>
+	void GenPauliMinus(matrix<T>& a, size_t level_i, size_t level_j);	
+        template <class T>
+	void GenPauliZ(matrix<T>& a, size_t level_i, size_t level_j);
+        template <class T> 
 	void numberSymetry(matrix<T>& n);
 	template <class T> 
 	void costheta(matrix<T>& ct);
@@ -215,6 +219,28 @@ inline void  MOs::GenPauliX(matrix<T>& a, size_t level_i, size_t level_j)
 	a(level_i,level_j)=a(level_j,level_i)=T(1);
 }
 template <class T> 
+inline void  MOs::GenPauliMinus(matrix<T>& a, size_t level_i, size_t level_j)
+{
+	Identity(a);
+	
+	a(level_i,level_j)=T(1);
+	a(level_j,level_j)=a(level_i, level_i)=a(level_j,level_i)=T(0);
+}
+
+
+
+
+
+//creates a paul Z matrix
+template <class T> 
+inline void  MOs::GenPauliZ(matrix<T>& a, size_t level_i, size_t level_j)
+{
+	Identity(a);
+	a(level_i,level_i)=T(1);
+        a(level_i,level_j)=a(level_j,level_i)=T(0);
+	a(level_j,level_j)=T(-1);
+}
+template <class T> 
 inline void MOs::Destroy(matrix<T>& a){
 	// The Annilation operator
 	size_t dim = a.GetRows();
@@ -225,6 +251,7 @@ inline void MOs::Destroy(matrix<T>& a){
 			a(i,j) = j == i+1 ? std::sqrt(T(j)) : T(0);	
 	return;	
 }
+
 template <class T> 
 inline void MOs::numberSymetry(matrix<T>& n){
 	// The symetry number operator - (dim-1)/2 to (dim-1)/2
@@ -254,7 +281,7 @@ inline void MOs::Pauli(matrix<std::complex<double> >& sx, matrix<std::complex<do
 	sx(0,1)=std::complex<double>(1);
 	sx(1,1)=std::complex<double>(0);
 	
-	// Pauli x
+	// Pauli y
 	sy(0,0)=std::complex<double>(0);
 	sy(1,0)=std::complex<double>(0,1);
 	sy(0,1)=std::complex<double>(0,-1);

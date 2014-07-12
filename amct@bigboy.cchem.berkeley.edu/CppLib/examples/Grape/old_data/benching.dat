@@ -1,0 +1,2425 @@
+0{Xp, X90m, Xm, X90m, Idp, Idp, Xm}
+0{Xp, X90m, Xm, X90m, Idp, X90m, Xm, X90p, Idp}
+1{Xp, X90m, Xm, X90m, Idp, X90m, Xm, X90p, Idp, Idm, Ym}
+0{Xp, X90m, Xm, X90m, Idp, X90m, Xm, X90p, Idp, X90m, Ym, X90p, Idm}
+0{Xp, X90m, Xm, X90m, Idp, X90m, Xm, X90p, Idp, X90m, Ym, X90m, Idm, Idp, Xm}
+0{Xp, X90m, Xm, X90m, Idp, X90m, Xm, X90p, Idp, X90m, Ym, X90m, Idm, Y90p, 
+ Xm, Y90m, Xm, Idp, Idm}
+0{Xp, X90m, Xm, X90m, Idp, X90m, Xm, X90p, Idp, X90m, Ym, X90m, Idm, Y90p, 
+ Xm, Y90m, Xm, X90m, Idm, X90p, Xp, Idp, Xm}
+0{Xp, X90m, Xm, X90m, Idp, X90m, Xm, X90p, Idp, X90m, Ym, X90m, Idm, Y90p, 
+ Xm, Y90m, Xm, X90m, Idm, X90p, Xp, Y90m, Xm, Y90p, Xm, Idp, Idp}
+1{Xp, X90m, Xm, X90m, Idp, X90m, Xm, X90p, Idp, X90m, Ym, X90m, Idm, Y90p, 
+ Xm, Y90m, Xm, X90m, Idm, X90p, Xp, Y90m, Xm, Y90p, Xm, Y90p, Idp, Y90p, Yp, 
+ X90p, Xp, X90m, Idp, Idm, Idm}
+0{Xp, X90m, Xm, X90m, Idp, X90m, Xm, X90p, Idp, X90m, Ym, X90m, Idm, Y90p, 
+ Xm, Y90m, Xm, X90m, Idm, X90p, Xp, Y90m, Xm, Y90p, Xm, Y90p, Idp, Y90p, Yp, 
+ X90p, Xp, X90m, Idp, X90m, Idm, Y90m, Idm, X90m, Idp, X90m, Ym, X90p, Idp}
+0{Xp, X90m, Xm, X90m, Idp, X90m, Xm, X90p, Idp, X90m, Ym, X90m, Idm, Y90p, 
+ Xm, Y90m, Xm, X90m, Idm, X90p, Xp, Y90m, Xm, Y90p, Xm, Y90p, Idp, Y90p, Yp, 
+ X90p, Xp, X90m, Idp, X90m, Idm, Y90m, Idm, X90m, Idp, X90m, Ym, X90m, Idp, 
+ X90p, Idm, Y90m, Xm, X90p, Idm, Idm, Xp}
+1{Xp, X90m, Xm, X90m, Idp, X90m, Xm, X90p, Idp, X90m, Ym, X90m, Idm, Y90p, 
+ Xm, Y90m, Xm, X90m, Idm, X90p, Xp, Y90m, Xm, Y90p, Xm, Y90p, Idp, Y90p, Yp, 
+ X90p, Xp, X90m, Idp, X90m, Idm, Y90m, Idm, X90m, Idp, X90m, Ym, X90m, Idp, 
+ X90p, Idm, Y90m, Xm, X90p, Idm, Y90m, Xp, Y90m, Idm, Y90p, Ym, Y90p, Xm, 
+ X90m, Idm, Y90m, Xm, Y90p, Ym, X90m, Idm, Idp, Idm}
+1{Xp, X90m, Xm, X90m, Idp, X90m, Xm, X90p, Idp, X90m, Ym, X90m, Idm, Y90p, 
+ Xm, Y90m, Xm, X90m, Idm, X90p, Xp, Y90m, Xm, Y90p, Xm, Y90p, Idp, Y90p, Yp, 
+ X90p, Xp, X90m, Idp, X90m, Idm, Y90m, Idm, X90m, Idp, X90m, Ym, X90m, Idp, 
+ X90p, Idm, Y90m, Xm, X90p, Idm, Y90m, Xp, Y90m, Idm, Y90p, Ym, Y90p, Xm, 
+ X90m, Idm, Y90m, Xm, Y90p, Ym, X90m, Idm, Y90p, Idm, Y90p, Xp, X90p, Idp, 
+ Y90m, Yp, X90m, Idp, X90m, Idp, Y90p, Idm, X90m, Idm, Idp, Xm}
+0{Xp, X90m, Xm, X90m, Idp, X90m, Xm, X90p, Idp, X90m, Ym, X90m, Idm, Y90p, 
+ Xm, Y90m, Xm, X90m, Idm, X90p, Xp, Y90m, Xm, Y90p, Xm, Y90p, Idp, Y90p, Yp, 
+ X90p, Xp, X90m, Idp, X90m, Idm, Y90m, Idm, X90m, Idp, X90m, Ym, X90m, Idp, 
+ X90p, Idm, Y90m, Xm, X90p, Idm, Y90m, Xp, Y90m, Idm, Y90p, Ym, Y90p, Xm, 
+ X90m, Idm, Y90m, Xm, Y90p, Ym, X90m, Idm, Y90p, Idm, Y90p, Xp, X90p, Idp, 
+ Y90m, Yp, X90m, Idp, X90m, Idp, Y90p, Idm, X90m, Idm, X90m, Xm, Y90m, Xp, 
+ X90p, Idp, X90m, Ym, Y90p, Xm, X90p, Ym, Y90m, Yp, X90p, Idm, Y90m, Idp}
+0{Xp, X90m, Xm, X90m, Idp, X90m, Xm, X90p, Idp, X90m, Ym, X90m, Idm, Y90p, 
+ Xm, Y90m, Xm, X90m, Idm, X90p, Xp, Y90m, Xm, Y90p, Xm, Y90p, Idp, Y90p, Yp, 
+ X90p, Xp, X90m, Idp, X90m, Idm, Y90m, Idm, X90m, Idp, X90m, Ym, X90m, Idp, 
+ X90p, Idm, Y90m, Xm, X90p, Idm, Y90m, Xp, Y90m, Idm, Y90p, Ym, Y90p, Xm, 
+ X90m, Idm, Y90m, Xm, Y90p, Ym, X90m, Idm, Y90p, Idm, Y90p, Xp, X90p, Idp, 
+ Y90m, Yp, X90m, Idp, X90m, Idp, Y90p, Idm, X90m, Idm, X90m, Xm, Y90m, Xp, 
+ X90p, Idp, X90m, Ym, Y90p, Xm, X90p, Ym, Y90m, Yp, X90p, Idm, X90m, Idp, 
+ X90p, Yp, Y90m, Xp, Y90p, Idp, X90p, Xp, Y90p, Idm, Y90m, Idp, X90m, Idm, 
+ X90p, Yp, Y90m, Idp, X90p, Idp, X90p, Xp, Y90p, Ym, Y90p, Idm, X90p, Idp, 
+ X90m, Xm, Idp, Idm}
+1{Xp, X90m, Xm, X90m, Idp, X90m, Xm, X90p, Idp, X90m, Ym, X90m, Idm, Y90p, 
+ Xm, Y90m, Xm, X90m, Idm, X90p, Xp, Y90m, Xm, Y90p, Xm, Y90p, Idp, Y90p, Yp, 
+ X90p, Xp, X90m, Idp, X90m, Idm, Y90m, Idm, X90m, Idp, X90m, Ym, X90m, Idp, 
+ X90p, Idm, Y90m, Xm, X90p, Idm, Y90m, Xp, Y90m, Idm, Y90p, Ym, Y90p, Xm, 
+ X90m, Idm, Y90m, Xm, Y90p, Ym, X90m, Idm, Y90p, Idm, Y90p, Xp, X90p, Idp, 
+ Y90m, Yp, X90m, Idp, X90m, Idp, Y90p, Idm, X90m, Idm, X90m, Xm, Y90m, Xp, 
+ X90p, Idp, X90m, Ym, Y90p, Xm, X90p, Ym, Y90m, Yp, X90p, Idm, X90m, Idp, 
+ X90p, Yp, Y90m, Xp, Y90p, Idp, X90p, Xp, Y90p, Idm, Y90m, Idp, X90m, Idm, 
+ X90p, Yp, Y90m, Idp, X90p, Idp, X90p, Xp, Y90p, Ym, Y90p, Idm, X90p, Idp, 
+ X90m, Xm, X90p, Idm, Y90m, Idp, X90p, Xp, Y90m, Xp, Y90p, Idm, Y90m, Yp, 
+ X90m, Idp, Y90m, Idm, Y90m, Xm, Y90p, Idm, Y90m, Idm, X90p, Idp, X90p, Xm, 
+ Y90m, Yp, X90m, Idm, X90p, Idm, Idm, Ym}
+1{Xp, X90m, Xm, X90m, Idp, X90m, Xm, X90p, Idp, X90m, Ym, X90m, Idm, Y90p, 
+ Xm, Y90m, Xm, X90m, Idm, X90p, Xp, Y90m, Xm, Y90p, Xm, Y90p, Idp, Y90p, Yp, 
+ X90p, Xp, X90m, Idp, X90m, Idm, Y90m, Idm, X90m, Idp, X90m, Ym, X90m, Idp, 
+ X90p, Idm, Y90m, Xm, X90p, Idm, Y90m, Xp, Y90m, Idm, Y90p, Ym, Y90p, Xm, 
+ X90m, Idm, Y90m, Xm, Y90p, Ym, X90m, Idm, Y90p, Idm, Y90p, Xp, X90p, Idp, 
+ Y90m, Yp, X90m, Idp, X90m, Idp, Y90p, Idm, X90m, Idm, X90m, Xm, Y90m, Xp, 
+ X90p, Idp, X90m, Ym, Y90p, Xm, X90p, Ym, Y90m, Yp, X90p, Idm, X90m, Idp, 
+ X90p, Yp, Y90m, Xp, Y90p, Idp, X90p, Xp, Y90p, Idm, Y90m, Idp, X90m, Idm, 
+ X90p, Yp, Y90m, Idp, X90p, Idp, X90p, Xp, Y90p, Ym, Y90p, Idm, X90p, Idp, 
+ X90m, Xm, X90p, Idm, Y90m, Idp, X90p, Xp, Y90m, Xp, Y90p, Idm, Y90m, Yp, 
+ X90m, Idp, Y90m, Idm, Y90m, Xm, Y90p, Idm, Y90m, Idm, X90p, Idp, X90p, Xm, 
+ Y90m, Yp, X90m, Idm, X90p, Idm, X90m, Ym, Y90p, Idp, Y90p, Idm, Y90p, Idp, 
+ X90m, Xp, Y90p, Idp, X90p, Ym, Y90m, Xm, Y90p, Xm, X90m, Idm, Y90m, Idm, 
+ Y90m, Xm, X90m, Xp, X90p, Idm, X90m, Yp, Y90m, Idm, Idp, Ym}
+0{Idm, X90m, Idm, X90m, Idp, Idp, Xp}
+1{Idm, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Xp}
+1{Idm, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Xp, Idm, Idp}
+0{Idm, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Xp, X90p, Idp, X90m, Xm}
+1{Idm, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Xp, X90p, Idp, X90p, Xm, Idm, 
+ Idp}
+0{Idm, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Xp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Idp, Idm, Xp}
+0{Idm, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Xp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Idp, X90m, Xp, X90p, Idp, Idm, Idp}
+0{Idm, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Xp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Idp, X90m, Xp, X90p, Idp, Y90p, Idp, Y90p, Idm, Idm, Yp}
+1{Idm, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Xp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Idp, X90m, Xp, X90p, Idp, Y90p, Idp, Y90p, Idm, Y90p, Yp, Y90p, 
+ Idm, X90m, Xm, X90p, Xm, Idp, Idp}
+1{Idm, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Xp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Idp, X90m, Xp, X90p, Idp, Y90p, Idp, Y90p, Idm, Y90p, Yp, Y90p, 
+ Idm, X90m, Xm, X90p, Xm, X90p, Idp, Y90p, Xm, X90p, Xm, X90m, Idm, X90p, Yp}
+0{Idm, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Xp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Idp, X90m, Xp, X90p, Idp, Y90p, Idp, Y90p, Idm, Y90p, Yp, Y90p, 
+ Idm, X90m, Xm, X90p, Xm, X90p, Idp, Y90p, Xm, X90p, Xm, X90m, Idm, X90m, Yp, 
+ X90p, Idm, Y90m, Xm, X90p, Idp, Idm, Idp}
+0{Idm, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Xp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Idp, X90m, Xp, X90p, Idp, Y90p, Idp, Y90p, Idm, Y90p, Yp, Y90p, 
+ Idm, X90m, Xm, X90p, Xm, X90p, Idp, Y90p, Xm, X90p, Xm, X90m, Idm, X90m, Yp, 
+ X90p, Idm, Y90m, Xm, X90p, Idp, Y90m, Idp, Y90m, Idp, Y90p, Xm, Y90p, Idp, 
+ X90m, Xp, Y90p, Idp, Y90m, Xp, X90p, Yp, Idp, Ym}
+1{Idm, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Xp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Idp, X90m, Xp, X90p, Idp, Y90p, Idp, Y90p, Idm, Y90p, Yp, Y90p, 
+ Idm, X90m, Xm, X90p, Xm, X90p, Idp, Y90p, Xm, X90p, Xm, X90m, Idm, X90m, Yp, 
+ X90p, Idm, Y90m, Xm, X90p, Idp, Y90m, Idp, Y90m, Idp, Y90p, Xm, Y90p, Idp, 
+ X90m, Xp, Y90p, Idp, Y90m, Xp, X90p, Yp, Y90p, Ym, Y90m, Ym, X90m, Idm, 
+ Y90m, Yp, X90m, Idm, X90p, Ym, Y90p, Idp, X90p, Idp, Idp, Idp}
+0{Idm, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Xp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Idp, X90m, Xp, X90p, Idp, Y90p, Idp, Y90p, Idm, Y90p, Yp, Y90p, 
+ Idm, X90m, Xm, X90p, Xm, X90p, Idp, Y90p, Xm, X90p, Xm, X90m, Idm, X90m, Yp, 
+ X90p, Idm, Y90m, Xm, X90p, Idp, Y90m, Idp, Y90m, Idp, Y90p, Xm, Y90p, Idp, 
+ X90m, Xp, Y90p, Idp, Y90m, Xp, X90p, Yp, Y90p, Ym, Y90m, Ym, X90m, Idm, 
+ Y90m, Yp, X90m, Idm, X90p, Ym, Y90p, Idp, X90p, Idp, X90m, Idp, Y90m, Idp, 
+ X90p, Idp, X90p, Idm, Y90m, Idm, X90m, Idm, Y90p, Yp, X90m, Idp, Y90m, Idm}
+0{Idm, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Xp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Idp, X90m, Xp, X90p, Idp, Y90p, Idp, Y90p, Idm, Y90p, Yp, Y90p, 
+ Idm, X90m, Xm, X90p, Xm, X90p, Idp, Y90p, Xm, X90p, Xm, X90m, Idm, X90m, Yp, 
+ X90p, Idm, Y90m, Xm, X90p, Idp, Y90m, Idp, Y90m, Idp, Y90p, Xm, Y90p, Idp, 
+ X90m, Xp, Y90p, Idp, Y90m, Xp, X90p, Yp, Y90p, Ym, Y90m, Ym, X90m, Idm, 
+ Y90m, Yp, X90m, Idm, X90p, Ym, Y90p, Idp, X90p, Idp, X90m, Idp, Y90m, Idp, 
+ X90p, Idp, X90p, Idm, Y90m, Idm, X90m, Idm, Y90p, Yp, X90m, Idp, X90p, Idm, 
+ X90p, Idm, Y90m, Xm, Y90p, Yp, X90m, Ym, Y90m, Xm, Y90p, Idp, X90m, Ym, 
+ X90p, Idm, Y90m, Xp, X90m, Idm, X90p, Yp, Y90p, Idm, Y90p, Idp, X90p, Yp, 
+ X90m, Idp, Idm, Idm}
+1{Idm, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Xp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Idp, X90m, Xp, X90p, Idp, Y90p, Idp, Y90p, Idm, Y90p, Yp, Y90p, 
+ Idm, X90m, Xm, X90p, Xm, X90p, Idp, Y90p, Xm, X90p, Xm, X90m, Idm, X90m, Yp, 
+ X90p, Idm, Y90m, Xm, X90p, Idp, Y90m, Idp, Y90m, Idp, Y90p, Xm, Y90p, Idp, 
+ X90m, Xp, Y90p, Idp, Y90m, Xp, X90p, Yp, Y90p, Ym, Y90m, Ym, X90m, Idm, 
+ Y90m, Yp, X90m, Idm, X90p, Ym, Y90p, Idp, X90p, Idp, X90m, Idp, Y90m, Idp, 
+ X90p, Idp, X90p, Idm, Y90m, Idm, X90m, Idm, Y90p, Yp, X90m, Idp, X90p, Idm, 
+ X90p, Idm, Y90m, Xm, Y90p, Yp, X90m, Ym, Y90m, Xm, Y90p, Idp, X90m, Ym, 
+ X90p, Idm, Y90m, Xp, X90m, Idm, X90p, Yp, Y90p, Idm, Y90p, Idp, X90p, Yp, 
+ X90m, Idp, X90m, Idm, Y90p, Ym, X90m, Yp, Y90p, Xm, Y90m, Yp, Y90m, Xm, 
+ X90m, Idm, Y90m, Ym, Y90p, Xp, Y90m, Idp, Y90p, Idp, X90m, Idp, X90p, Xp, 
+ Y90m, Idm, X90m, Idm, X90p, Ym, Idm, Ym}
+1{Idm, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Xp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Idp, X90m, Xp, X90p, Idp, Y90p, Idp, Y90p, Idm, Y90p, Yp, Y90p, 
+ Idm, X90m, Xm, X90p, Xm, X90p, Idp, Y90p, Xm, X90p, Xm, X90m, Idm, X90m, Yp, 
+ X90p, Idm, Y90m, Xm, X90p, Idp, Y90m, Idp, Y90m, Idp, Y90p, Xm, Y90p, Idp, 
+ X90m, Xp, Y90p, Idp, Y90m, Xp, X90p, Yp, Y90p, Ym, Y90m, Ym, X90m, Idm, 
+ Y90m, Yp, X90m, Idm, X90p, Ym, Y90p, Idp, X90p, Idp, X90m, Idp, Y90m, Idp, 
+ X90p, Idp, X90p, Idm, Y90m, Idm, X90m, Idm, Y90p, Yp, X90m, Idp, X90p, Idm, 
+ X90p, Idm, Y90m, Xm, Y90p, Yp, X90m, Ym, Y90m, Xm, Y90p, Idp, X90m, Ym, 
+ X90p, Idm, Y90m, Xp, X90m, Idm, X90p, Yp, Y90p, Idm, Y90p, Idp, X90p, Yp, 
+ X90m, Idp, X90m, Idm, Y90p, Ym, X90m, Yp, Y90p, Xm, Y90m, Yp, Y90m, Xm, 
+ X90m, Idm, Y90m, Ym, Y90p, Xp, Y90m, Idp, Y90p, Idp, X90m, Idp, X90p, Xp, 
+ Y90m, Idm, X90m, Idm, X90p, Ym, X90p, Ym, Y90m, Xm, Y90p, Xp, Y90p, Yp, 
+ X90p, Xm, Y90m, Yp, X90m, Idm, Y90m, Xp, Y90p, Yp, X90m, Idm, Y90p, Idm, 
+ Y90m, Yp, X90m, Xm, X90p, Idm, X90p, Xp, Y90p, Xp, Idm, Idm}
+1{Idm, X90m, Xm, X90m, Yp, Idm, Idp}
+0{Idm, X90m, Xm, X90m, Yp, X90p, Idp, X90p, Idp}
+0{Idm, X90m, Xm, X90m, Yp, X90p, Idp, X90p, Idp, Idp, Idp}
+1{Idm, X90m, Xm, X90m, Yp, X90p, Idp, X90p, Idp, X90m, Idp, X90m, Idm}
+1{Idm, X90m, Xm, X90m, Yp, X90p, Idp, X90p, Idp, X90m, Idp, X90m, Idm, Idm, 
+ Idm}
+1{Idm, X90m, Xm, X90m, Yp, X90p, Idp, X90p, Idp, X90m, Idp, X90m, Idm, Y90p, 
+ Idm, Y90p, Yp, Idp, Idm}
+1{Idm, X90m, Xm, X90m, Yp, X90p, Idp, X90p, Idp, X90m, Idp, X90m, Idm, Y90p, 
+ Idm, Y90p, Yp, X90p, Idm, X90p, Xp, Idp, Idp}
+0{Idm, X90m, Xm, X90m, Yp, X90p, Idp, X90p, Idp, X90m, Idp, X90m, Idm, Y90p, 
+ Idm, Y90p, Yp, X90p, Idm, X90p, Xp, Y90m, Idp, Y90p, Idm, Idm, Yp}
+1{Idm, X90m, Xm, X90m, Yp, X90p, Idp, X90p, Idp, X90m, Idp, X90m, Idm, Y90p, 
+ Idm, Y90p, Yp, X90p, Idm, X90p, Xp, Y90m, Idp, Y90p, Idm, Y90m, Yp, Y90m, 
+ Idp, X90p, Yp, X90m, Yp, Idp, Xp}
+1{Idm, X90m, Xm, X90m, Yp, X90p, Idp, X90p, Idp, X90m, Idp, X90m, Idm, Y90p, 
+ Idm, Y90p, Yp, X90p, Idm, X90p, Xp, Y90m, Idp, Y90p, Idm, Y90m, Yp, Y90m, 
+ Idp, X90p, Yp, X90m, Yp, X90m, Xp, Y90p, Yp, X90p, Ym, X90m, Idp, X90m, Idm}
+0{Idm, X90m, Xm, X90m, Yp, X90p, Idp, X90p, Idp, X90m, Idp, X90m, Idm, Y90p, 
+ Idm, Y90p, Yp, X90p, Idm, X90p, Xp, Y90m, Idp, Y90p, Idm, Y90m, Yp, Y90m, 
+ Idp, X90p, Yp, X90m, Yp, X90m, Xp, Y90p, Yp, X90p, Ym, X90m, Idp, X90m, Idm, 
+ X90m, Idm, Y90m, Idm, X90m, Idm, Idp, Idm}
+1{Idm, X90m, Xm, X90m, Yp, X90p, Idp, X90p, Idp, X90m, Idp, X90m, Idm, Y90p, 
+ Idm, Y90p, Yp, X90p, Idm, X90p, Xp, Y90m, Idp, Y90p, Idm, Y90m, Yp, Y90m, 
+ Idp, X90p, Yp, X90m, Yp, X90m, Xp, Y90p, Yp, X90p, Ym, X90m, Idp, X90m, Idm, 
+ X90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idm, Y90m, Ym, Y90m, Idp, Y90m, Ym, 
+ X90p, Yp, Y90m, Idp, Y90p, Idp, X90m, Idm, Idm, Idp}
+0{Idm, X90m, Xm, X90m, Yp, X90p, Idp, X90p, Idp, X90m, Idp, X90m, Idm, Y90p, 
+ Idm, Y90p, Yp, X90p, Idm, X90p, Xp, Y90m, Idp, Y90p, Idm, Y90m, Yp, Y90m, 
+ Idp, X90p, Yp, X90m, Yp, X90m, Xp, Y90p, Yp, X90p, Ym, X90m, Idp, X90m, Idm, 
+ X90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idm, Y90m, Ym, Y90m, Idp, Y90m, Ym, 
+ X90p, Yp, Y90m, Idp, Y90p, Idp, X90m, Idm, Y90m, Idp, Y90p, Xp, X90p, Idm, 
+ Y90m, Idm, X90m, Idp, X90m, Xm, Y90m, Idp, X90m, Idp, Idm, Idm}
+1{Idm, X90m, Xm, X90m, Yp, X90p, Idp, X90p, Idp, X90m, Idp, X90m, Idm, Y90p, 
+ Idm, Y90p, Yp, X90p, Idm, X90p, Xp, Y90m, Idp, Y90p, Idm, Y90m, Yp, Y90m, 
+ Idp, X90p, Yp, X90m, Yp, X90m, Xp, Y90p, Yp, X90p, Ym, X90m, Idp, X90m, Idm, 
+ X90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idm, Y90m, Ym, Y90m, Idp, Y90m, Ym, 
+ X90p, Yp, Y90m, Idp, Y90p, Idp, X90m, Idm, Y90m, Idp, Y90p, Xp, X90p, Idm, 
+ Y90m, Idm, X90m, Idp, X90m, Xm, Y90m, Idp, X90m, Idp, X90p, Idm, Y90m, Idm, 
+ X90m, Idm, X90p, Xm, Y90m, Ym, X90m, Idm, Y90p, Xp, X90m, Idp, Y90p, Ym}
+1{Idm, X90m, Xm, X90m, Yp, X90p, Idp, X90p, Idp, X90m, Idp, X90m, Idm, Y90p, 
+ Idm, Y90p, Yp, X90p, Idm, X90p, Xp, Y90m, Idp, Y90p, Idm, Y90m, Yp, Y90m, 
+ Idp, X90p, Yp, X90m, Yp, X90m, Xp, Y90p, Yp, X90p, Ym, X90m, Idp, X90m, Idm, 
+ X90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idm, Y90m, Ym, Y90m, Idp, Y90m, Ym, 
+ X90p, Yp, Y90m, Idp, Y90p, Idp, X90m, Idm, Y90m, Idp, Y90p, Xp, X90p, Idm, 
+ Y90m, Idm, X90m, Idp, X90m, Xm, Y90m, Idp, X90m, Idp, X90p, Idm, Y90m, Idm, 
+ X90m, Idm, X90p, Xm, Y90m, Ym, X90m, Idm, Y90p, Xp, X90m, Idp, X90p, Ym, 
+ X90p, Idm, Y90m, Xp, Y90p, Idm, X90m, Xm, Y90m, Ym, Y90p, Idp, X90p, Xp, 
+ X90m, Idm, Y90m, Idm, X90p, Xm, X90p, Xm, Y90p, Idm, Y90m, Idm, X90m, Xp, 
+ X90p, Idp, Idp, Yp}
+0{Idm, X90m, Xm, X90m, Yp, X90p, Idp, X90p, Idp, X90m, Idp, X90m, Idm, Y90p, 
+ Idm, Y90p, Yp, X90p, Idm, X90p, Xp, Y90m, Idp, Y90p, Idm, Y90m, Yp, Y90m, 
+ Idp, X90p, Yp, X90m, Yp, X90m, Xp, Y90p, Yp, X90p, Ym, X90m, Idp, X90m, Idm, 
+ X90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idm, Y90m, Ym, Y90m, Idp, Y90m, Ym, 
+ X90p, Yp, Y90m, Idp, Y90p, Idp, X90m, Idm, Y90m, Idp, Y90p, Xp, X90p, Idm, 
+ Y90m, Idm, X90m, Idp, X90m, Xm, Y90m, Idp, X90m, Idp, X90p, Idm, Y90m, Idm, 
+ X90m, Idm, X90p, Xm, Y90m, Ym, X90m, Idm, Y90p, Xp, X90m, Idp, X90p, Ym, 
+ X90p, Idm, Y90m, Xp, Y90p, Idm, X90m, Xm, Y90m, Ym, Y90p, Idp, X90p, Xp, 
+ X90m, Idm, Y90m, Idm, X90p, Xm, X90p, Xm, Y90p, Idm, Y90m, Idm, X90m, Xp, 
+ X90p, Idp, X90m, Yp, Y90p, Ym, X90m, Ym, Y90p, Idm, Y90m, Yp, Y90m, Idm, 
+ X90m, Idp, Y90m, Idp, Y90m, Xm, Y90p, Idm, Y90m, Idp, X90p, Idm, X90m, Ym, 
+ Y90p, Xp, X90p, Idp, X90m, Xp, Idm, Xp}
+1{Idm, X90m, Xm, X90m, Yp, X90p, Idp, X90p, Idp, X90m, Idp, X90m, Idm, Y90p, 
+ Idm, Y90p, Yp, X90p, Idm, X90p, Xp, Y90m, Idp, Y90p, Idm, Y90m, Yp, Y90m, 
+ Idp, X90p, Yp, X90m, Yp, X90m, Xp, Y90p, Yp, X90p, Ym, X90m, Idp, X90m, Idm, 
+ X90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idm, Y90m, Ym, Y90m, Idp, Y90m, Ym, 
+ X90p, Yp, Y90m, Idp, Y90p, Idp, X90m, Idm, Y90m, Idp, Y90p, Xp, X90p, Idm, 
+ Y90m, Idm, X90m, Idp, X90m, Xm, Y90m, Idp, X90m, Idp, X90p, Idm, Y90m, Idm, 
+ X90m, Idm, X90p, Xm, Y90m, Ym, X90m, Idm, Y90p, Xp, X90m, Idp, X90p, Ym, 
+ X90p, Idm, Y90m, Xp, Y90p, Idm, X90m, Xm, Y90m, Ym, Y90p, Idp, X90p, Xp, 
+ X90m, Idm, Y90m, Idm, X90p, Xm, X90p, Xm, Y90p, Idm, Y90m, Idm, X90m, Xp, 
+ X90p, Idp, X90m, Yp, Y90p, Ym, X90m, Ym, Y90p, Idm, Y90m, Yp, Y90m, Idm, 
+ X90m, Idp, Y90m, Idp, Y90m, Xm, Y90p, Idm, Y90m, Idp, X90p, Idm, X90m, Ym, 
+ Y90p, Xp, X90p, Idp, X90m, Xp, X90m, Xp, Y90p, Idm, Y90m, Idm, Y90p, Ym, 
+ X90p, Ym, Y90m, Ym, X90m, Ym, Y90p, Yp, Y90m, Xm, X90p, Idp, Y90m, Idp, 
+ Y90m, Xm, X90m, Yp, X90p, Ym, X90m, Xp, Y90m, Idp, Idm, Xp}
+1{Yp, X90m, Idm, X90m, Idp, Idp, Xp}
+0{Yp, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Yp}
+0{Yp, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Yp, Idm, Idp}
+0{Yp, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Yp, X90p, Idp, X90p, Xm}
+0{Yp, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Yp, X90p, Idp, X90p, Xm, Idp, Idp}
+1{Yp, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Yp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Xp, Idp, Idm}
+0{Yp, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Yp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Xp, X90p, Idm, X90m, Xp, Idp, Idm}
+1{Yp, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Yp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Xp, X90p, Idm, X90m, Xp, Y90p, Idm, Y90m, Idm, Idm, Xp}
+0{Yp, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Yp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Xp, X90p, Idm, X90m, Xp, Y90p, Idm, Y90m, Idm, Y90p, Xp, Y90p, 
+ Idp, X90m, Xp, X90p, Yp, Idm, Xm}
+1{Yp, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Yp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Xp, X90p, Idm, X90m, Xp, Y90p, Idm, Y90m, Idm, Y90p, Xp, Y90p, 
+ Idp, X90m, Xp, X90p, Yp, X90p, Xm, Y90m, Xm, X90m, Idp, X90p, Xm, X90p, Idp}
+1{Yp, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Yp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Xp, X90p, Idm, X90m, Xp, Y90p, Idm, Y90m, Idm, Y90p, Xp, Y90p, 
+ Idp, X90m, Xp, X90p, Yp, X90p, Xm, Y90m, Xm, X90m, Idp, X90p, Xm, X90p, Idp, 
+ X90m, Yp, Y90m, Idp, X90m, Idm, Idm, Xp}
+1{Yp, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Yp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Xp, X90p, Idm, X90m, Xp, Y90p, Idm, Y90m, Idm, Y90p, Xp, Y90p, 
+ Idp, X90m, Xp, X90p, Yp, X90p, Xm, Y90m, Xm, X90m, Idp, X90p, Xm, X90p, Idp, 
+ X90m, Yp, Y90m, Idp, X90m, Idm, Y90m, Xp, Y90m, Ym, Y90m, Xm, Y90m, Xm, 
+ X90p, Ym, Y90m, Xm, Y90p, Idm, X90m, Idp, Idp, Idp}
+1{Yp, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Yp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Xp, X90p, Idm, X90m, Xp, Y90p, Idm, Y90m, Idm, Y90p, Xp, Y90p, 
+ Idp, X90m, Xp, X90p, Yp, X90p, Xm, Y90m, Xm, X90m, Idp, X90p, Xm, X90p, Idp, 
+ X90m, Yp, Y90m, Idp, X90m, Idm, Y90m, Xp, Y90m, Ym, Y90m, Xm, Y90m, Xm, 
+ X90p, Ym, Y90m, Xm, Y90p, Idm, X90m, Idp, Y90p, Idp, Y90m, Idp, X90m, Xm, 
+ Y90m, Xp, X90m, Idm, X90p, Idm, Y90p, Idp, X90m, Yp, Idm, Idm}
+1{Yp, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Yp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Xp, X90p, Idm, X90m, Xp, Y90p, Idm, Y90m, Idm, Y90p, Xp, Y90p, 
+ Idp, X90m, Xp, X90p, Yp, X90p, Xm, Y90m, Xm, X90m, Idp, X90p, Xm, X90p, Idp, 
+ X90m, Yp, Y90m, Idp, X90m, Idm, Y90m, Xp, Y90m, Ym, Y90m, Xm, Y90m, Xm, 
+ X90p, Ym, Y90m, Xm, Y90p, Idm, X90m, Idp, Y90p, Idp, Y90m, Idp, X90m, Xm, 
+ Y90m, Xp, X90m, Idm, X90p, Idm, Y90p, Idp, X90m, Yp, X90m, Idm, Y90m, Yp, 
+ X90p, Idm, X90p, Ym, Y90m, Xp, X90m, Xm, Y90p, Idm, X90p, Xp, Y90m, Idm}
+0{Yp, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Yp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Xp, X90p, Idm, X90m, Xp, Y90p, Idm, Y90m, Idm, Y90p, Xp, Y90p, 
+ Idp, X90m, Xp, X90p, Yp, X90p, Xm, Y90m, Xm, X90m, Idp, X90p, Xm, X90p, Idp, 
+ X90m, Yp, Y90m, Idp, X90m, Idm, Y90m, Xp, Y90m, Ym, Y90m, Xm, Y90m, Xm, 
+ X90p, Ym, Y90m, Xm, Y90p, Idm, X90m, Idp, Y90p, Idp, Y90m, Idp, X90m, Xm, 
+ Y90m, Xp, X90m, Idm, X90p, Idm, Y90p, Idp, X90m, Yp, X90m, Idm, Y90m, Yp, 
+ X90p, Idm, X90p, Ym, Y90m, Xp, X90m, Xm, Y90p, Idm, X90p, Xp, X90p, Idm, 
+ X90m, Xp, Y90p, Idp, Y90p, Idm, X90p, Idp, Y90p, Xm, Y90m, Idp, X90m, Ym, 
+ X90p, Idp, Y90m, Ym, X90m, Xp, X90m, Xm, Y90m, Idp, Y90p, Yp, X90p, Idm, 
+ X90p, Xp, Idp, Xp}
+0{Yp, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Yp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Xp, X90p, Idm, X90m, Xp, Y90p, Idm, Y90m, Idm, Y90p, Xp, Y90p, 
+ Idp, X90m, Xp, X90p, Yp, X90p, Xm, Y90m, Xm, X90m, Idp, X90p, Xm, X90p, Idp, 
+ X90m, Yp, Y90m, Idp, X90m, Idm, Y90m, Xp, Y90m, Ym, Y90m, Xm, Y90m, Xm, 
+ X90p, Ym, Y90m, Xm, Y90p, Idm, X90m, Idp, Y90p, Idp, Y90m, Idp, X90m, Xm, 
+ Y90m, Xp, X90m, Idm, X90p, Idm, Y90p, Idp, X90m, Yp, X90m, Idm, Y90m, Yp, 
+ X90p, Idm, X90p, Ym, Y90m, Xp, X90m, Xm, Y90p, Idm, X90p, Xp, X90p, Idm, 
+ X90m, Xp, Y90p, Idp, Y90p, Idm, X90p, Idp, Y90p, Xm, Y90m, Idp, X90m, Ym, 
+ X90p, Idp, Y90m, Ym, X90m, Xp, X90m, Xm, Y90m, Idp, Y90p, Yp, X90p, Idm, 
+ X90p, Xp, X90m, Xp, Y90p, Idp, X90m, Ym, Y90p, Xm, Y90m, Idp, Y90m, Ym, 
+ X90m, Idm, Y90m, Idm, Y90p, Idp, Y90p, Idp, Y90p, Ym, X90m, Idm, X90p, Yp, 
+ Y90m, Xm, X90m, Idp, X90p, Xm, Idp, Ym}
+0{Yp, X90m, Idm, X90m, Idp, X90p, Xp, X90m, Yp, X90p, Idp, X90p, Xm, Y90m, 
+ Idp, Y90p, Xp, X90p, Idm, X90m, Xp, Y90p, Idm, Y90m, Idm, Y90p, Xp, Y90p, 
+ Idp, X90m, Xp, X90p, Yp, X90p, Xm, Y90m, Xm, X90m, Idp, X90p, Xm, X90p, Idp, 
+ X90m, Yp, Y90m, Idp, X90m, Idm, Y90m, Xp, Y90m, Ym, Y90m, Xm, Y90m, Xm, 
+ X90p, Ym, Y90m, Xm, Y90p, Idm, X90m, Idp, Y90p, Idp, Y90m, Idp, X90m, Xm, 
+ Y90m, Xp, X90m, Idm, X90p, Idm, Y90p, Idp, X90m, Yp, X90m, Idm, Y90m, Yp, 
+ X90p, Idm, X90p, Ym, Y90m, Xp, X90m, Xm, Y90p, Idm, X90p, Xp, X90p, Idm, 
+ X90m, Xp, Y90p, Idp, Y90p, Idm, X90p, Idp, Y90p, Xm, Y90m, Idp, X90m, Ym, 
+ X90p, Idp, Y90m, Ym, X90m, Xp, X90m, Xm, Y90m, Idp, Y90p, Yp, X90p, Idm, 
+ X90p, Xp, X90m, Xp, Y90p, Idp, X90m, Ym, Y90p, Xm, Y90m, Idp, Y90m, Ym, 
+ X90m, Idm, Y90m, Idm, Y90p, Idp, Y90p, Idp, Y90p, Ym, X90m, Idm, X90p, Yp, 
+ Y90m, Xm, X90m, Idp, X90p, Xm, X90p, Ym, Y90m, Xp, Y90p, Idm, Y90p, Idp, 
+ X90m, Yp, Y90p, Idp, X90p, Idm, Y90m, Xp, Y90p, Xm, X90m, Idp, Y90m, Idp, 
+ Y90p, Idp, X90p, Xm, X90m, Yp, X90p, Ym, Y90p, Idm, Idp, Xp}
+1{Xp, X90m, Xm, X90m, Idm, Idm, Idp}
+0{Xp, X90m, Xm, X90m, Idm, X90p, Idp, X90m, Ym}
+1{Xp, X90m, Xm, X90m, Idm, X90p, Idp, X90p, Ym, Idp, Idp}
+0{Xp, X90m, Xm, X90m, Idm, X90p, Idp, X90p, Ym, X90m, Idp, X90m, Idm}
+0{Xp, X90m, Xm, X90m, Idm, X90p, Idp, X90p, Ym, X90m, Idp, X90m, Idm, Idm, 
+ Idp}
+1{Xp, X90m, Xm, X90m, Idm, X90p, Idp, X90p, Ym, X90m, Idp, X90m, Idm, Y90p, 
+ Idp, Y90p, Idp, Idp, Idm}
+1{Xp, X90m, Xm, X90m, Idm, X90p, Idp, X90p, Ym, X90m, Idp, X90m, Idm, Y90p, 
+ Idp, Y90p, Idp, X90m, Idm, X90p, Ym, Idp, Yp}
+0{Xp, X90m, Xm, X90m, Idm, X90p, Idp, X90p, Ym, X90m, Idp, X90m, Idm, Y90p, 
+ Idp, Y90p, Idp, X90m, Idm, X90p, Ym, Y90m, Yp, Y90p, Idp, Idm, Ym}
+0{Xp, X90m, Xm, X90m, Idm, X90p, Idp, X90p, Ym, X90m, Idp, X90m, Idm, Y90p, 
+ Idp, Y90p, Idp, X90m, Idm, X90p, Ym, Y90m, Yp, Y90p, Idp, Y90m, Ym, Y90m, 
+ Idp, X90m, Xp, X90p, Idp, Idm, Idm}
+1{Xp, X90m, Xm, X90m, Idm, X90p, Idp, X90p, Ym, X90m, Idp, X90m, Idm, Y90p, 
+ Idp, Y90p, Idp, X90m, Idm, X90p, Ym, Y90m, Yp, Y90p, Idp, Y90m, Ym, Y90m, 
+ Idp, X90m, Xp, X90p, Idp, X90m, Idm, Y90p, Yp, X90p, Idm, X90p, Ym, X90p, 
+ Idp}
+1{Xp, X90m, Xm, X90m, Idm, X90p, Idp, X90p, Ym, X90m, Idp, X90m, Idm, Y90p, 
+ Idp, Y90p, Idp, X90m, Idm, X90p, Ym, Y90m, Yp, Y90p, Idp, Y90m, Ym, Y90m, 
+ Idp, X90m, Xp, X90p, Idp, X90m, Idm, Y90p, Yp, X90p, Idm, X90p, Ym, X90p, 
+ Idp, X90p, Ym, Y90p, Idm, X90m, Yp, Idm, Xp}
+0{Xp, X90m, Xm, X90m, Idm, X90p, Idp, X90p, Ym, X90m, Idp, X90m, Idm, Y90p, 
+ Idp, Y90p, Idp, X90m, Idm, X90p, Ym, Y90m, Yp, Y90p, Idp, Y90m, Ym, Y90m, 
+ Idp, X90m, Xp, X90p, Idp, X90m, Idm, Y90p, Yp, X90p, Idm, X90p, Ym, X90p, 
+ Idp, X90p, Ym, Y90p, Idm, X90m, Yp, Y90m, Xp, Y90m, Yp, Y90m, Ym, Y90m, Xp, 
+ X90p, Xm, Y90m, Idp, Y90m, Xm, X90p, Xp, Idp, Ym}
+0{Xp, X90m, Xm, X90m, Idm, X90p, Idp, X90p, Ym, X90m, Idp, X90m, Idm, Y90p, 
+ Idp, Y90p, Idp, X90m, Idm, X90p, Ym, Y90m, Yp, Y90p, Idp, Y90m, Ym, Y90m, 
+ Idp, X90m, Xp, X90p, Idp, X90m, Idm, Y90p, Yp, X90p, Idm, X90p, Ym, X90p, 
+ Idp, X90p, Ym, Y90p, Idm, X90m, Yp, Y90m, Xp, Y90m, Yp, Y90m, Ym, Y90m, Xp, 
+ X90p, Xm, Y90m, Idp, Y90m, Xm, X90p, Xp, Y90p, Ym, Y90m, Xp, X90m, Xp, Y90m, 
+ Idp, X90m, Xp, X90p, Yp, Y90p, Idm, X90p, Xm, Idp, Idm}
+1{Xp, X90m, Xm, X90m, Idm, X90p, Idp, X90p, Ym, X90m, Idp, X90m, Idm, Y90p, 
+ Idp, Y90p, Idp, X90m, Idm, X90p, Ym, Y90m, Yp, Y90p, Idp, Y90m, Ym, Y90m, 
+ Idp, X90m, Xp, X90p, Idp, X90m, Idm, Y90p, Yp, X90p, Idm, X90p, Ym, X90p, 
+ Idp, X90p, Ym, Y90p, Idm, X90m, Yp, Y90m, Xp, Y90m, Yp, Y90m, Ym, Y90m, Xp, 
+ X90p, Xm, Y90m, Idp, Y90m, Xm, X90p, Xp, Y90p, Ym, Y90m, Xp, X90m, Xp, Y90m, 
+ Idp, X90m, Xp, X90p, Yp, Y90p, Idm, X90p, Xm, X90p, Idm, Y90p, Idp, X90p, 
+ Idp, X90p, Idp, Y90p, Idp, X90p, Idp, Y90p, Idm, X90m, Idm, Y90m, Ym}
+0{Xp, X90m, Xm, X90m, Idm, X90p, Idp, X90p, Ym, X90m, Idp, X90m, Idm, Y90p, 
+ Idp, Y90p, Idp, X90m, Idm, X90p, Ym, Y90m, Yp, Y90p, Idp, Y90m, Ym, Y90m, 
+ Idp, X90m, Xp, X90p, Idp, X90m, Idm, Y90p, Yp, X90p, Idm, X90p, Ym, X90p, 
+ Idp, X90p, Ym, Y90p, Idm, X90m, Yp, Y90m, Xp, Y90m, Yp, Y90m, Ym, Y90m, Xp, 
+ X90p, Xm, Y90m, Idp, Y90m, Xm, X90p, Xp, Y90p, Ym, Y90m, Xp, X90m, Xp, Y90m, 
+ Idp, X90m, Xp, X90p, Yp, Y90p, Idm, X90p, Xm, X90p, Idm, Y90p, Idp, X90p, 
+ Idp, X90p, Idp, Y90p, Idp, X90p, Idp, Y90p, Idm, X90m, Idm, X90p, Ym, X90p, 
+ Yp, Y90m, Ym, Y90p, Idp, X90m, Idp, Y90m, Idp, Y90m, Idp, X90m, Idm, X90p, 
+ Idp, Y90p, Idp, X90m, Yp, X90m, Yp, Y90m, Idp, Y90p, Ym, X90p, Idp, X90p, 
+ Yp, Idp, Idp}
+0{Xp, X90m, Xm, X90m, Idm, X90p, Idp, X90p, Ym, X90m, Idp, X90m, Idm, Y90p, 
+ Idp, Y90p, Idp, X90m, Idm, X90p, Ym, Y90m, Yp, Y90p, Idp, Y90m, Ym, Y90m, 
+ Idp, X90m, Xp, X90p, Idp, X90m, Idm, Y90p, Yp, X90p, Idm, X90p, Ym, X90p, 
+ Idp, X90p, Ym, Y90p, Idm, X90m, Yp, Y90m, Xp, Y90m, Yp, Y90m, Ym, Y90m, Xp, 
+ X90p, Xm, Y90m, Idp, Y90m, Xm, X90p, Xp, Y90p, Ym, Y90m, Xp, X90m, Xp, Y90m, 
+ Idp, X90m, Xp, X90p, Yp, Y90p, Idm, X90p, Xm, X90p, Idm, Y90p, Idp, X90p, 
+ Idp, X90p, Idp, Y90p, Idp, X90p, Idp, Y90p, Idm, X90m, Idm, X90p, Ym, X90p, 
+ Yp, Y90m, Ym, Y90p, Idp, X90m, Idp, Y90m, Idp, Y90m, Idp, X90m, Idm, X90p, 
+ Idp, Y90p, Idp, X90m, Yp, X90m, Yp, Y90m, Idp, Y90p, Ym, X90p, Idp, X90p, 
+ Yp, X90m, Idp, Y90m, Yp, X90p, Xm, Y90m, Yp, Y90p, Ym, Y90p, Idp, X90p, Idm, 
+ Y90m, Xp, Y90p, Idp, Y90p, Idm, Y90p, Idp, X90m, Idp, X90p, Idm, Y90m, Idp, 
+ X90m, Idm, X90p, Idm, Idp, Xm}
+1{Xp, X90m, Xm, X90m, Idm, X90p, Idp, X90p, Ym, X90m, Idp, X90m, Idm, Y90p, 
+ Idp, Y90p, Idp, X90m, Idm, X90p, Ym, Y90m, Yp, Y90p, Idp, Y90m, Ym, Y90m, 
+ Idp, X90m, Xp, X90p, Idp, X90m, Idm, Y90p, Yp, X90p, Idm, X90p, Ym, X90p, 
+ Idp, X90p, Ym, Y90p, Idm, X90m, Yp, Y90m, Xp, Y90m, Yp, Y90m, Ym, Y90m, Xp, 
+ X90p, Xm, Y90m, Idp, Y90m, Xm, X90p, Xp, Y90p, Ym, Y90m, Xp, X90m, Xp, Y90m, 
+ Idp, X90m, Xp, X90p, Yp, Y90p, Idm, X90p, Xm, X90p, Idm, Y90p, Idp, X90p, 
+ Idp, X90p, Idp, Y90p, Idp, X90p, Idp, Y90p, Idm, X90m, Idm, X90p, Ym, X90p, 
+ Yp, Y90m, Ym, Y90p, Idp, X90m, Idp, Y90m, Idp, Y90m, Idp, X90m, Idm, X90p, 
+ Idp, Y90p, Idp, X90m, Yp, X90m, Yp, Y90m, Idp, Y90p, Ym, X90p, Idp, X90p, 
+ Yp, X90m, Idp, Y90m, Yp, X90p, Xm, Y90m, Yp, Y90p, Ym, Y90p, Idp, X90p, Idm, 
+ Y90m, Xp, Y90p, Idp, Y90p, Idm, Y90p, Idp, X90m, Idp, X90p, Idm, Y90m, Idp, 
+ X90m, Idm, X90p, Idm, X90p, Xm, Y90m, Xm, Y90p, Ym, Y90p, Yp, X90p, Idm, 
+ Y90m, Idm, X90m, Idp, Y90m, Idp, Y90m, Idp, X90m, Ym, Y90m, Ym, Y90m, Idp, 
+ X90p, Xm, X90m, Xp, X90p, Idm, Y90m, Idp, Idm, Idm}
+1{Ym, X90m, Idp, X90m, Xp, Idp, Idm}
+0{Ym, X90m, Idp, X90m, Xp, X90p, Idm, X90m, Xm}
+1{Ym, X90m, Idp, X90m, Xp, X90p, Idm, X90m, Xm, Idp, Yp}
+1{Ym, X90m, Idp, X90m, Xp, X90p, Idm, X90m, Xm, X90p, Yp, X90m, Xm}
+0{Ym, X90m, Idp, X90m, Xp, X90p, Idm, X90m, Xm, X90p, Yp, X90p, Xm, Idp, Idp}
+0{Ym, X90m, Idp, X90m, Xp, X90p, Idm, X90m, Xm, X90p, Yp, X90p, Xm, Y90m, 
+ Idp, Y90m, Ym, Idp, Idp}
+1{Ym, X90m, Idp, X90m, Xp, X90p, Idm, X90m, Xm, X90p, Yp, X90p, Xm, Y90m, 
+ Idp, Y90m, Ym, X90m, Idp, X90p, Xm, Idm, Idm}
+1{Ym, X90m, Idp, X90m, Xp, X90p, Idm, X90m, Xm, X90p, Yp, X90p, Xm, Y90m, 
+ Idp, Y90m, Ym, X90m, Idp, X90p, Xm, Y90m, Idm, Y90m, Xp, Idm, Idp}
+0{Ym, X90m, Idp, X90m, Xp, X90p, Idm, X90m, Xm, X90p, Yp, X90p, Xm, Y90m, 
+ Idp, Y90m, Ym, X90m, Idp, X90p, Xm, Y90m, Idm, Y90m, Xp, Y90m, Idp, Y90m, 
+ Yp, X90m, Xm, X90p, Yp, Idp, Xp}
+0{Ym, X90m, Idp, X90m, Xp, X90p, Idm, X90m, Xm, X90p, Yp, X90p, Xm, Y90m, 
+ Idp, Y90m, Ym, X90m, Idp, X90p, Xm, Y90m, Idm, Y90m, Xp, Y90m, Idp, Y90m, 
+ Yp, X90m, Xm, X90p, Yp, X90p, Xp, Y90m, Xm, X90m, Ym, X90p, Ym, X90m, Idp}
+0{Ym, X90m, Idp, X90m, Xp, X90p, Idm, X90m, Xm, X90p, Yp, X90p, Xm, Y90m, 
+ Idp, Y90m, Ym, X90m, Idp, X90p, Xm, Y90m, Idm, Y90m, Xp, Y90m, Idp, Y90m, 
+ Yp, X90m, Xm, X90p, Yp, X90p, Xp, Y90m, Xm, X90m, Ym, X90p, Ym, X90p, Idp, 
+ X90m, Idp, Y90m, Idp, X90m, Idp, Idp, Idm}
+1{Ym, X90m, Idp, X90m, Xp, X90p, Idm, X90m, Xm, X90p, Yp, X90p, Xm, Y90m, 
+ Idp, Y90m, Ym, X90m, Idp, X90p, Xm, Y90m, Idm, Y90m, Xp, Y90m, Idp, Y90m, 
+ Yp, X90m, Xm, X90p, Yp, X90p, Xp, Y90m, Xm, X90m, Ym, X90p, Ym, X90p, Idp, 
+ X90m, Idp, Y90m, Idp, X90m, Idp, Y90m, Idm, Y90p, Xm, Y90p, Idp, Y90p, Xm, 
+ X90m, Yp, Y90p, Yp, Y90m, Idp, X90p, Xp, Idm, Ym}
+1{Ym, X90m, Idp, X90m, Xp, X90p, Idm, X90m, Xm, X90p, Yp, X90p, Xm, Y90m, 
+ Idp, Y90m, Ym, X90m, Idp, X90p, Xm, Y90m, Idm, Y90m, Xp, Y90m, Idp, Y90m, 
+ Yp, X90m, Xm, X90p, Yp, X90p, Xp, Y90m, Xm, X90m, Ym, X90p, Ym, X90p, Idp, 
+ X90m, Idp, Y90m, Idp, X90m, Idp, Y90m, Idm, Y90p, Xm, Y90p, Idp, Y90p, Xm, 
+ X90m, Yp, Y90p, Yp, Y90m, Idp, X90p, Xp, Y90p, Ym, Y90m, Idp, X90p, Xm, 
+ Y90p, Ym, X90p, Idm, X90m, Yp, Y90m, Idp, X90m, Idm, Idm, Ym}
+0{Ym, X90m, Idp, X90m, Xp, X90p, Idm, X90m, Xm, X90p, Yp, X90p, Xm, Y90m, 
+ Idp, Y90m, Ym, X90m, Idp, X90p, Xm, Y90m, Idm, Y90m, Xp, Y90m, Idp, Y90m, 
+ Yp, X90m, Xm, X90p, Yp, X90p, Xp, Y90m, Xm, X90m, Ym, X90p, Ym, X90p, Idp, 
+ X90m, Idp, Y90m, Idp, X90m, Idp, Y90m, Idm, Y90p, Xm, Y90p, Idp, Y90p, Xm, 
+ X90m, Yp, Y90p, Yp, Y90m, Idp, X90p, Xp, Y90p, Ym, Y90m, Idp, X90p, Xm, 
+ Y90p, Ym, X90p, Idm, X90m, Yp, Y90m, Idp, X90m, Idm, X90m, Ym, Y90m, Idm, 
+ X90m, Idm, X90m, Idm, Y90m, Ym, X90m, Idm, Y90m, Xp, X90p, Idm, Y90m, Xp}
+1{Ym, X90m, Idp, X90m, Xp, X90p, Idm, X90m, Xm, X90p, Yp, X90p, Xm, Y90m, 
+ Idp, Y90m, Ym, X90m, Idp, X90p, Xm, Y90m, Idm, Y90m, Xp, Y90m, Idp, Y90m, 
+ Yp, X90m, Xm, X90p, Yp, X90p, Xp, Y90m, Xm, X90m, Ym, X90p, Ym, X90p, Idp, 
+ X90m, Idp, Y90m, Idp, X90m, Idp, Y90m, Idm, Y90p, Xm, Y90p, Idp, Y90p, Xm, 
+ X90m, Yp, Y90p, Yp, Y90m, Idp, X90p, Xp, Y90p, Ym, Y90m, Idp, X90p, Xm, 
+ Y90p, Ym, X90p, Idm, X90m, Yp, Y90m, Idp, X90m, Idm, X90m, Ym, Y90m, Idm, 
+ X90m, Idm, X90m, Idm, Y90m, Ym, X90m, Idm, Y90m, Xp, X90p, Idm, X90p, Xp, 
+ X90p, Idm, Y90m, Xp, Y90p, Idm, X90m, Idp, Y90p, Idp, Y90m, Idm, X90p, Xp, 
+ X90m, Idp, Y90p, Idp, X90m, Idm, X90p, Idp, Y90p, Xm, Y90p, Xp, X90p, Idm, 
+ X90m, Yp, Idp, Yp}
+0{Ym, X90m, Idp, X90m, Xp, X90p, Idm, X90m, Xm, X90p, Yp, X90p, Xm, Y90m, 
+ Idp, Y90m, Ym, X90m, Idp, X90p, Xm, Y90m, Idm, Y90m, Xp, Y90m, Idp, Y90m, 
+ Yp, X90m, Xm, X90p, Yp, X90p, Xp, Y90m, Xm, X90m, Ym, X90p, Ym, X90p, Idp, 
+ X90m, Idp, Y90m, Idp, X90m, Idp, Y90m, Idm, Y90p, Xm, Y90p, Idp, Y90p, Xm, 
+ X90m, Yp, Y90p, Yp, Y90m, Idp, X90p, Xp, Y90p, Ym, Y90m, Idp, X90p, Xm, 
+ Y90p, Ym, X90p, Idm, X90m, Yp, Y90m, Idp, X90m, Idm, X90m, Ym, Y90m, Idm, 
+ X90m, Idm, X90m, Idm, Y90m, Ym, X90m, Idm, Y90m, Xp, X90p, Idm, X90p, Xp, 
+ X90p, Idm, Y90m, Xp, Y90p, Idm, X90m, Idp, Y90p, Idp, Y90m, Idm, X90p, Xp, 
+ X90m, Idp, Y90p, Idp, X90m, Idm, X90p, Idp, Y90p, Xm, Y90p, Xp, X90p, Idm, 
+ X90m, Yp, X90p, Yp, Y90m, Yp, X90p, Ym, Y90m, Idm, Y90m, Idm, Y90m, Idp, 
+ X90p, Idp, Y90m, Yp, Y90p, Xm, Y90m, Idp, Y90m, Xm, X90p, Ym, X90p, Xp, 
+ Y90m, Idm, X90m, Idm, X90m, Idm, Idm, Idm}
+0{Ym, X90m, Idp, X90m, Xp, X90p, Idm, X90m, Xm, X90p, Yp, X90p, Xm, Y90m, 
+ Idp, Y90m, Ym, X90m, Idp, X90p, Xm, Y90m, Idm, Y90m, Xp, Y90m, Idp, Y90m, 
+ Yp, X90m, Xm, X90p, Yp, X90p, Xp, Y90m, Xm, X90m, Ym, X90p, Ym, X90p, Idp, 
+ X90m, Idp, Y90m, Idp, X90m, Idp, Y90m, Idm, Y90p, Xm, Y90p, Idp, Y90p, Xm, 
+ X90m, Yp, Y90p, Yp, Y90m, Idp, X90p, Xp, Y90p, Ym, Y90m, Idp, X90p, Xm, 
+ Y90p, Ym, X90p, Idm, X90m, Yp, Y90m, Idp, X90m, Idm, X90m, Ym, Y90m, Idm, 
+ X90m, Idm, X90m, Idm, Y90m, Ym, X90m, Idm, Y90m, Xp, X90p, Idm, X90p, Xp, 
+ X90p, Idm, Y90m, Xp, Y90p, Idm, X90m, Idp, Y90p, Idp, Y90m, Idm, X90p, Xp, 
+ X90m, Idp, Y90p, Idp, X90m, Idm, X90p, Idp, Y90p, Xm, Y90p, Xp, X90p, Idm, 
+ X90m, Yp, X90p, Yp, Y90m, Yp, X90p, Ym, Y90m, Idm, Y90m, Idm, Y90m, Idp, 
+ X90p, Idp, Y90m, Yp, Y90p, Xm, Y90m, Idp, Y90m, Xm, X90p, Ym, X90p, Xp, 
+ Y90m, Idm, X90m, Idm, X90m, Idm, X90p, Idm, Y90m, Ym, Y90p, Ym, Y90p, Yp, 
+ X90p, Idm, Y90m, Ym, X90m, Xp, Y90p, Idm, Y90p, Ym, X90m, Yp, Y90m, Xp, 
+ Y90m, Idp, X90m, Idp, X90p, Idm, X90m, Xp, Y90m, Yp, Idm, Xp}
+1{Idm, X90m, Idp, X90p, Xm, Idp, Idm}
+1{Idm, X90m, Idp, X90p, Xm, X90m, Idm, X90p, Idm}
+0{Idm, X90m, Idp, X90p, Xm, X90m, Idm, X90p, Idm, Idp, Xm}
+1{Idm, X90m, Idp, X90p, Xm, X90m, Idm, X90p, Idm, X90m, Xm, X90m, Idp}
+0{Idm, X90m, Idp, X90p, Xm, X90m, Idm, X90p, Idm, X90m, Xm, X90m, Idp, Idm, 
+ Ym}
+1{Idm, X90m, Idp, X90p, Xm, X90m, Idm, X90p, Idm, X90m, Xm, X90m, Idp, Y90p, 
+ Ym, Y90m, Ym, Idm, Idm}
+1{Idm, X90m, Idp, X90p, Xm, X90m, Idm, X90p, Idm, X90m, Xm, X90m, Idp, Y90p, 
+ Ym, Y90m, Ym, X90m, Idm, X90p, Idp, Idp, Idp}
+1{Idm, X90m, Idp, X90p, Xm, X90m, Idm, X90p, Idm, X90m, Xm, X90m, Idp, Y90p, 
+ Ym, Y90m, Ym, X90m, Idm, X90p, Idp, Y90m, Idp, Y90p, Yp, Idm, Xp}
+1{Idm, X90m, Idp, X90p, Xm, X90m, Idm, X90p, Idm, X90m, Xm, X90m, Idp, Y90p, 
+ Ym, Y90m, Ym, X90m, Idm, X90p, Idp, Y90m, Idp, Y90p, Yp, Y90p, Xp, Y90p, Yp, 
+ X90p, Idm, X90p, Idp, Idm, Idm}
+0{Idm, X90m, Idp, X90p, Xm, X90m, Idm, X90p, Idm, X90m, Xm, X90m, Idp, Y90p, 
+ Ym, Y90m, Ym, X90m, Idm, X90p, Idp, Y90m, Idp, Y90p, Yp, Y90p, Xp, Y90p, Yp, 
+ X90p, Idm, X90p, Idp, X90m, Idm, Y90p, Ym, X90p, Idm, X90p, Idm, X90m, Xm}
+1{Idm, X90m, Idp, X90p, Xm, X90m, Idm, X90p, Idm, X90m, Xm, X90m, Idp, Y90p, 
+ Ym, Y90m, Ym, X90m, Idm, X90p, Idp, Y90m, Idp, Y90p, Yp, Y90p, Xp, Y90p, Yp, 
+ X90p, Idm, X90p, Idp, X90m, Idm, Y90p, Ym, X90p, Idm, X90p, Idm, X90m, Xm, 
+ X90p, Xp, Y90p, Xm, X90m, Ym, Idp, Idp}
+1{Idm, X90m, Idp, X90p, Xm, X90m, Idm, X90p, Idm, X90m, Xm, X90m, Idp, Y90p, 
+ Ym, Y90m, Ym, X90m, Idm, X90p, Idp, Y90m, Idp, Y90p, Yp, Y90p, Xp, Y90p, Yp, 
+ X90p, Idm, X90p, Idp, X90m, Idm, Y90p, Ym, X90p, Idm, X90p, Idm, X90m, Xm, 
+ X90p, Xp, Y90p, Xm, X90m, Ym, Y90m, Idp, Y90p, Ym, Y90p, Idm, Y90p, Idm, 
+ X90p, Ym, Y90m, Idm, Y90m, Idm, X90p, Idp, Idp, Xp}
+1{Idm, X90m, Idp, X90p, Xm, X90m, Idm, X90p, Idm, X90m, Xm, X90m, Idp, Y90p, 
+ Ym, Y90m, Ym, X90m, Idm, X90p, Idp, Y90m, Idp, Y90p, Yp, Y90p, Xp, Y90p, Yp, 
+ X90p, Idm, X90p, Idp, X90m, Idm, Y90p, Ym, X90p, Idm, X90p, Idm, X90m, Xm, 
+ X90p, Xp, Y90p, Xm, X90m, Ym, Y90m, Idp, Y90p, Ym, Y90p, Idm, Y90p, Idm, 
+ X90p, Ym, Y90m, Idm, Y90m, Idm, X90p, Idp, Y90m, Xp, Y90p, Idm, X90m, Idp, 
+ Y90p, Xp, X90p, Idm, X90m, Idm, Y90p, Xp, X90m, Idm, Idp, Idm}
+0{Idm, X90m, Idp, X90p, Xm, X90m, Idm, X90p, Idm, X90m, Xm, X90m, Idp, Y90p, 
+ Ym, Y90m, Ym, X90m, Idm, X90p, Idp, Y90m, Idp, Y90p, Yp, Y90p, Xp, Y90p, Yp, 
+ X90p, Idm, X90p, Idp, X90m, Idm, Y90p, Ym, X90p, Idm, X90p, Idm, X90m, Xm, 
+ X90p, Xp, Y90p, Xm, X90m, Ym, Y90m, Idp, Y90p, Ym, Y90p, Idm, Y90p, Idm, 
+ X90p, Ym, Y90m, Idm, Y90m, Idm, X90p, Idp, Y90m, Xp, Y90p, Idm, X90m, Idp, 
+ Y90p, Xp, X90p, Idm, X90m, Idm, Y90p, Xp, X90m, Idm, X90p, Idm, Y90m, Idm, 
+ X90p, Ym, X90m, Ym, Y90p, Yp, X90p, Xp, Y90m, Xm, X90p, Xp, Y90m, Xp}
+1{Idm, X90m, Idp, X90p, Xm, X90m, Idm, X90p, Idm, X90m, Xm, X90m, Idp, Y90p, 
+ Ym, Y90m, Ym, X90m, Idm, X90p, Idp, Y90m, Idp, Y90p, Yp, Y90p, Xp, Y90p, Yp, 
+ X90p, Idm, X90p, Idp, X90m, Idm, Y90p, Ym, X90p, Idm, X90p, Idm, X90m, Xm, 
+ X90p, Xp, Y90p, Xm, X90m, Ym, Y90m, Idp, Y90p, Ym, Y90p, Idm, Y90p, Idm, 
+ X90p, Ym, Y90m, Idm, Y90m, Idm, X90p, Idp, Y90m, Xp, Y90p, Idm, X90m, Idp, 
+ Y90p, Xp, X90p, Idm, X90m, Idm, Y90p, Xp, X90m, Idm, X90p, Idm, Y90m, Idm, 
+ X90p, Ym, X90m, Ym, Y90p, Yp, X90p, Xp, Y90m, Xm, X90p, Xp, X90p, Xp, X90p, 
+ Xm, Y90m, Xp, Y90p, Xp, X90m, Idm, Y90p, Ym, Y90m, Idm, X90m, Idp, X90m, 
+ Idp, Y90m, Yp, X90m, Ym, X90m, Xp, Y90m, Xm, Y90m, Xp, X90m, Ym, X90p, Idm, 
+ Idm, Ym}
+1{Idm, X90m, Idp, X90p, Xm, X90m, Idm, X90p, Idm, X90m, Xm, X90m, Idp, Y90p, 
+ Ym, Y90m, Ym, X90m, Idm, X90p, Idp, Y90m, Idp, Y90p, Yp, Y90p, Xp, Y90p, Yp, 
+ X90p, Idm, X90p, Idp, X90m, Idm, Y90p, Ym, X90p, Idm, X90p, Idm, X90m, Xm, 
+ X90p, Xp, Y90p, Xm, X90m, Ym, Y90m, Idp, Y90p, Ym, Y90p, Idm, Y90p, Idm, 
+ X90p, Ym, Y90m, Idm, Y90m, Idm, X90p, Idp, Y90m, Xp, Y90p, Idm, X90m, Idp, 
+ Y90p, Xp, X90p, Idm, X90m, Idm, Y90p, Xp, X90m, Idm, X90p, Idm, Y90m, Idm, 
+ X90p, Ym, X90m, Ym, Y90p, Yp, X90p, Xp, Y90m, Xm, X90p, Xp, X90p, Xp, X90p, 
+ Xm, Y90m, Xp, Y90p, Xp, X90m, Idm, Y90p, Ym, Y90m, Idm, X90m, Idp, X90m, 
+ Idp, Y90m, Yp, X90m, Ym, X90m, Xp, Y90m, Xm, Y90m, Xp, X90m, Ym, X90p, Idm, 
+ X90p, Ym, Y90m, Idp, X90m, Yp, Y90p, Ym, Y90m, Idp, Y90p, Yp, X90p, Yp, 
+ Y90p, Xp, Y90m, Idm, Y90p, Idp, Y90p, Ym, X90m, Xm, X90m, Xm, Y90p, Idp, 
+ X90p, Xm, X90p, Ym, Idp, Idm}
+0{Idm, X90m, Idp, X90p, Xm, X90m, Idm, X90p, Idm, X90m, Xm, X90m, Idp, Y90p, 
+ Ym, Y90m, Ym, X90m, Idm, X90p, Idp, Y90m, Idp, Y90p, Yp, Y90p, Xp, Y90p, Yp, 
+ X90p, Idm, X90p, Idp, X90m, Idm, Y90p, Ym, X90p, Idm, X90p, Idm, X90m, Xm, 
+ X90p, Xp, Y90p, Xm, X90m, Ym, Y90m, Idp, Y90p, Ym, Y90p, Idm, Y90p, Idm, 
+ X90p, Ym, Y90m, Idm, Y90m, Idm, X90p, Idp, Y90m, Xp, Y90p, Idm, X90m, Idp, 
+ Y90p, Xp, X90p, Idm, X90m, Idm, Y90p, Xp, X90m, Idm, X90p, Idm, Y90m, Idm, 
+ X90p, Ym, X90m, Ym, Y90p, Yp, X90p, Xp, Y90m, Xm, X90p, Xp, X90p, Xp, X90p, 
+ Xm, Y90m, Xp, Y90p, Xp, X90m, Idm, Y90p, Ym, Y90m, Idm, X90m, Idp, X90m, 
+ Idp, Y90m, Yp, X90m, Ym, X90m, Xp, Y90m, Xm, Y90m, Xp, X90m, Ym, X90p, Idm, 
+ X90p, Ym, Y90m, Idp, X90m, Yp, Y90p, Ym, Y90m, Idp, Y90p, Yp, X90p, Yp, 
+ Y90p, Xp, Y90m, Idm, Y90p, Idp, Y90p, Ym, X90m, Xm, X90m, Xm, Y90p, Idp, 
+ X90p, Xm, X90p, Ym, X90p, Idm, Y90m, Xm, Y90p, Xm, Y90p, Ym, X90p, Idm, 
+ Y90p, Xm, X90p, Ym, Y90m, Idp, Y90p, Ym, X90m, Idm, Y90p, Xm, Y90p, Yp, 
+ X90p, Idm, X90p, Xp, X90m, Ym, Y90m, Idp, Idp, Idm}
+1{Ym, X90m, Idp, X90m, Ym, Idp, Idm}
+0{Ym, X90m, Idp, X90m, Ym, X90p, Idm, X90p, Idm}
+0{Ym, X90m, Idp, X90m, Ym, X90p, Idm, X90p, Idm, Idm, Idm}
+1{Ym, X90m, Idp, X90m, Ym, X90p, Idm, X90p, Idm, X90p, Idm, X90p, Idp}
+0{Ym, X90m, Idp, X90m, Ym, X90p, Idm, X90p, Idm, X90p, Idm, X90m, Idp, Idm, 
+ Idm}
+1{Ym, X90m, Idp, X90m, Ym, X90p, Idm, X90p, Idm, X90p, Idm, X90m, Idp, Y90p, 
+ Idm, Y90m, Xm, Idp, Idp}
+0{Ym, X90m, Idp, X90m, Ym, X90p, Idm, X90p, Idm, X90p, Idm, X90m, Idp, Y90p, 
+ Idm, Y90m, Xm, X90m, Idp, X90m, Idp, Idp, Idm}
+1{Ym, X90m, Idp, X90m, Ym, X90p, Idm, X90p, Idm, X90p, Idm, X90m, Idp, Y90p, 
+ Idm, Y90m, Xm, X90m, Idp, X90m, Idp, Y90m, Idm, Y90m, Yp, Idp, Yp}
+1{Ym, X90m, Idp, X90m, Ym, X90p, Idm, X90p, Idm, X90p, Idm, X90m, Idp, Y90p, 
+ Idm, Y90m, Xm, X90m, Idp, X90m, Idp, Y90m, Idm, Y90m, Yp, Y90m, Yp, Y90m, 
+ Ym, X90m, Xm, X90p, Idp, Idp, Xm}
+0{Ym, X90m, Idp, X90m, Ym, X90p, Idm, X90p, Idm, X90p, Idm, X90m, Idp, Y90p, 
+ Idm, Y90m, Xm, X90m, Idp, X90m, Idp, Y90m, Idm, Y90m, Yp, Y90m, Yp, Y90m, 
+ Ym, X90m, Xm, X90p, Idp, X90m, Xm, Y90p, Xp, X90p, Xm, X90m, Ym, X90p, Xm}
+0{Ym, X90m, Idp, X90m, Ym, X90p, Idm, X90p, Idm, X90p, Idm, X90m, Idp, Y90p, 
+ Idm, Y90m, Xm, X90m, Idp, X90m, Idp, Y90m, Idm, Y90m, Yp, Y90m, Yp, Y90m, 
+ Ym, X90m, Xm, X90p, Idp, X90m, Xm, Y90p, Xp, X90p, Xm, X90m, Ym, X90m, Xm, 
+ X90p, Idp, Y90p, Idm, X90m, Xm, Idp, Idp}
+1{Ym, X90m, Idp, X90m, Ym, X90p, Idm, X90p, Idm, X90p, Idm, X90m, Idp, Y90p, 
+ Idm, Y90m, Xm, X90m, Idp, X90m, Idp, Y90m, Idm, Y90m, Yp, Y90m, Yp, Y90m, 
+ Ym, X90m, Xm, X90p, Idp, X90m, Xm, Y90p, Xp, X90p, Xm, X90m, Ym, X90m, Xm, 
+ X90p, Idp, Y90p, Idm, X90m, Xm, Y90m, Idp, Y90m, Xm, Y90m, Idp, Y90p, Yp, 
+ X90m, Xp, Y90p, Yp, Y90m, Idm, X90p, Idm, Idm, Xm}
+0{Ym, X90m, Idp, X90m, Ym, X90p, Idm, X90p, Idm, X90p, Idm, X90m, Idp, Y90p, 
+ Idm, Y90m, Xm, X90m, Idp, X90m, Idp, Y90m, Idm, Y90m, Yp, Y90m, Yp, Y90m, 
+ Ym, X90m, Xm, X90p, Idp, X90m, Xm, Y90p, Xp, X90p, Xm, X90m, Ym, X90m, Xm, 
+ X90p, Idp, Y90p, Idm, X90m, Xm, Y90m, Idp, Y90m, Xm, Y90m, Idp, Y90p, Yp, 
+ X90m, Xp, Y90p, Yp, Y90m, Idm, X90p, Idm, Y90p, Xm, Y90m, Xm, X90m, Yp, 
+ Y90m, Idm, X90p, Idm, X90p, Xp, Y90p, Idp, X90p, Idp, Idp, Xm}
+1{Ym, X90m, Idp, X90m, Ym, X90p, Idm, X90p, Idm, X90p, Idm, X90m, Idp, Y90p, 
+ Idm, Y90m, Xm, X90m, Idp, X90m, Idp, Y90m, Idm, Y90m, Yp, Y90m, Yp, Y90m, 
+ Ym, X90m, Xm, X90p, Idp, X90m, Xm, Y90p, Xp, X90p, Xm, X90m, Ym, X90m, Xm, 
+ X90p, Idp, Y90p, Idm, X90m, Xm, Y90m, Idp, Y90m, Xm, Y90m, Idp, Y90p, Yp, 
+ X90m, Xp, Y90p, Yp, Y90m, Idm, X90p, Idm, Y90p, Xm, Y90m, Xm, X90m, Yp, 
+ Y90m, Idm, X90p, Idm, X90p, Xp, Y90p, Idp, X90p, Idp, X90m, Xm, Y90m, Xm, 
+ X90p, Xp, X90m, Xp, Y90p, Xp, X90p, Idm, Y90p, Idp, X90p, Yp, Y90p, Xm}
+0{Ym, X90m, Idp, X90m, Ym, X90p, Idm, X90p, Idm, X90p, Idm, X90m, Idp, Y90p, 
+ Idm, Y90m, Xm, X90m, Idp, X90m, Idp, Y90m, Idm, Y90m, Yp, Y90m, Yp, Y90m, 
+ Ym, X90m, Xm, X90p, Idp, X90m, Xm, Y90p, Xp, X90p, Xm, X90m, Ym, X90m, Xm, 
+ X90p, Idp, Y90p, Idm, X90m, Xm, Y90m, Idp, Y90m, Xm, Y90m, Idp, Y90p, Yp, 
+ X90m, Xp, Y90p, Yp, Y90m, Idm, X90p, Idm, Y90p, Xm, Y90m, Xm, X90m, Yp, 
+ Y90m, Idm, X90p, Idm, X90p, Xp, Y90p, Idp, X90p, Idp, X90m, Xm, Y90m, Xm, 
+ X90p, Xp, X90m, Xp, Y90p, Xp, X90p, Idm, Y90p, Idp, X90p, Yp, X90p, Xm, 
+ X90p, Xp, Y90m, Yp, Y90p, Ym, X90m, Yp, Y90m, Xp, Y90p, Idm, X90m, Yp, X90p, 
+ Xp, Y90m, Idm, X90m, Idm, X90p, Xp, Y90p, Idp, Y90m, Yp, X90m, Idm, X90m, 
+ Idm, Idp, Yp}
+0{Ym, X90m, Idp, X90m, Ym, X90p, Idm, X90p, Idm, X90p, Idm, X90m, Idp, Y90p, 
+ Idm, Y90m, Xm, X90m, Idp, X90m, Idp, Y90m, Idm, Y90m, Yp, Y90m, Yp, Y90m, 
+ Ym, X90m, Xm, X90p, Idp, X90m, Xm, Y90p, Xp, X90p, Xm, X90m, Ym, X90m, Xm, 
+ X90p, Idp, Y90p, Idm, X90m, Xm, Y90m, Idp, Y90m, Xm, Y90m, Idp, Y90p, Yp, 
+ X90m, Xp, Y90p, Yp, Y90m, Idm, X90p, Idm, Y90p, Xm, Y90m, Xm, X90m, Yp, 
+ Y90m, Idm, X90p, Idm, X90p, Xp, Y90p, Idp, X90p, Idp, X90m, Xm, Y90m, Xm, 
+ X90p, Xp, X90m, Xp, Y90p, Xp, X90p, Idm, Y90p, Idp, X90p, Yp, X90p, Xm, 
+ X90p, Xp, Y90m, Yp, Y90p, Ym, X90m, Yp, Y90m, Xp, Y90p, Idm, X90m, Yp, X90p, 
+ Xp, Y90m, Idm, X90m, Idm, X90p, Xp, Y90p, Idp, Y90m, Yp, X90m, Idm, X90m, 
+ Idm, X90p, Yp, Y90m, Idm, X90m, Idp, Y90p, Ym, Y90m, Yp, Y90m, Xp, X90m, 
+ Idp, Y90p, Xm, Y90m, Xp, Y90p, Idp, Y90p, Xm, X90m, Yp, X90m, Ym, Y90p, Yp, 
+ X90p, Xp, X90p, Xm, Idp, Xm}
+1{Ym, X90m, Idp, X90m, Ym, X90p, Idm, X90p, Idm, X90p, Idm, X90m, Idp, Y90p, 
+ Idm, Y90m, Xm, X90m, Idp, X90m, Idp, Y90m, Idm, Y90m, Yp, Y90m, Yp, Y90m, 
+ Ym, X90m, Xm, X90p, Idp, X90m, Xm, Y90p, Xp, X90p, Xm, X90m, Ym, X90m, Xm, 
+ X90p, Idp, Y90p, Idm, X90m, Xm, Y90m, Idp, Y90m, Xm, Y90m, Idp, Y90p, Yp, 
+ X90m, Xp, Y90p, Yp, Y90m, Idm, X90p, Idm, Y90p, Xm, Y90m, Xm, X90m, Yp, 
+ Y90m, Idm, X90p, Idm, X90p, Xp, Y90p, Idp, X90p, Idp, X90m, Xm, Y90m, Xm, 
+ X90p, Xp, X90m, Xp, Y90p, Xp, X90p, Idm, Y90p, Idp, X90p, Yp, X90p, Xm, 
+ X90p, Xp, Y90m, Yp, Y90p, Ym, X90m, Yp, Y90m, Xp, Y90p, Idm, X90m, Yp, X90p, 
+ Xp, Y90m, Idm, X90m, Idm, X90p, Xp, Y90p, Idp, Y90m, Yp, X90m, Idm, X90m, 
+ Idm, X90p, Yp, Y90m, Idm, X90m, Idp, Y90p, Ym, Y90m, Yp, Y90m, Xp, X90m, 
+ Idp, Y90p, Xm, Y90m, Xp, Y90p, Idp, Y90p, Xm, X90m, Yp, X90m, Ym, Y90p, Yp, 
+ X90p, Xp, X90p, Xm, X90p, Xm, Y90m, Idm, Y90m, Xp, Y90m, Xp, X90m, Yp, Y90p, 
+ Xm, X90p, Idp, Y90p, Idp, Y90m, Yp, X90p, Idp, Y90m, Ym, Y90m, Idp, X90m, 
+ Xp, X90p, Idm, X90p, Idp, Y90m, Idm, Idm, Xm}
+1{Idp, X90p, Idp, Y90m, Ym, X90m, Xp}
+0{Idp, X90p, Idp, Y90m, Ym, X90m, Xp, Idp, Xm}
+0{Idp, X90p, Idp, Y90m, Ym, X90m, Xp, X90p, Xm, X90m, Idm}
+0{Idp, X90p, Idp, Y90m, Ym, X90m, Xp, X90p, Xm, Y90m, Idm, X90m, Idm}
+1{Idp, X90p, Idp, Y90m, Ym, X90m, Xp, X90p, Xm, Y90m, Idm, Y90m, Idm, X90p, 
+ Idm}
+1{Idp, X90p, Idp, Y90m, Ym, X90m, Xp, X90p, Xm, Y90m, Idm, Y90m, Idm, X90m, 
+ Idm, Y90m, Xp, Y90m, Idm}
+0{Idp, X90p, Idp, Y90m, Ym, X90m, Xp, X90p, Xm, Y90m, Idm, Y90m, Idm, X90m, 
+ Idm, Y90m, Xp, Y90m, Idm, X90m, Idm, X90p, Xp}
+0{Idp, X90p, Idp, Y90m, Ym, X90m, Xp, X90p, Xm, Y90m, Idm, Y90m, Idm, X90m, 
+ Idm, Y90m, Xp, Y90m, Idm, X90m, Idm, X90m, Xp, X90m, Idp, X90m, Idm}
+0{Idp, X90p, Idp, Y90m, Ym, X90m, Xp, X90p, Xm, Y90m, Idm, Y90m, Idm, X90m, 
+ Idm, Y90m, Xp, Y90m, Idm, X90m, Idm, X90m, Xp, X90m, Idp, X90p, Idm, Y90m, 
+ Idp, Y90p, Yp, Y90m, Idp, Y90m, Xm}
+1{Idp, X90p, Idp, Y90m, Ym, X90m, Xp, X90p, Xm, Y90m, Idm, Y90m, Idm, X90m, 
+ Idm, Y90m, Xp, Y90m, Idm, X90m, Idm, X90m, Xp, X90m, Idp, X90p, Idm, Y90m, 
+ Idp, Y90p, Yp, Y90m, Idp, Y90p, Xm, X90m, Xm, Y90m, Idp, Y90p, Idp, X90m, 
+ Idm}
+1{Idp, X90p, Idp, Y90m, Ym, X90m, Xp, X90p, Xm, Y90m, Idm, Y90m, Idm, X90m, 
+ Idm, Y90m, Xp, Y90m, Idm, X90m, Idm, X90m, Xp, X90m, Idp, X90p, Idm, Y90m, 
+ Idp, Y90p, Yp, Y90m, Idp, Y90p, Xm, X90m, Xm, Y90m, Idp, Y90p, Idp, Y90p, 
+ Idm, X90m, Ym, Y90m, Idp, Y90p, Idm, Idp, Yp}
+1{Idp, X90p, Idp, Y90m, Ym, X90m, Xp, X90p, Xm, Y90m, Idm, Y90m, Idm, X90m, 
+ Idm, Y90m, Xp, Y90m, Idm, X90m, Idm, X90m, Xp, X90m, Idp, X90p, Idm, Y90m, 
+ Idp, Y90p, Yp, Y90m, Idp, Y90p, Xm, X90m, Xm, Y90m, Idp, Y90p, Idp, Y90p, 
+ Idm, X90m, Ym, Y90m, Idp, Y90p, Idm, X90m, Yp, X90m, Idp, Y90m, Yp, Y90m, 
+ Xm, Y90p, Ym, X90p, Xm, X90p, Idm, X90m, Yp, Y90p, Idm}
+0{Idp, X90p, Idp, Y90m, Ym, X90m, Xp, X90p, Xm, Y90m, Idm, Y90m, Idm, X90m, 
+ Idm, Y90m, Xp, Y90m, Idm, X90m, Idm, X90m, Xp, X90m, Idp, X90p, Idm, Y90m, 
+ Idp, Y90p, Yp, Y90m, Idp, Y90p, Xm, X90m, Xm, Y90m, Idp, Y90p, Idp, Y90p, 
+ Idm, X90m, Ym, Y90m, Idp, Y90p, Idm, X90m, Yp, X90m, Idp, Y90m, Yp, Y90m, 
+ Xm, Y90p, Ym, X90p, Xm, X90p, Idm, X90m, Yp, Y90m, Idm, X90m, Idp, X90p, 
+ Idm, Y90p, Xp, X90m, Idp, Y90m, Xp, Y90m, Ym, X90p, Idp, Y90m, Yp}
+0{Idp, X90p, Idp, Y90m, Ym, X90m, Xp, X90p, Xm, Y90m, Idm, Y90m, Idm, X90m, 
+ Idm, Y90m, Xp, Y90m, Idm, X90m, Idm, X90m, Xp, X90m, Idp, X90p, Idm, Y90m, 
+ Idp, Y90p, Yp, Y90m, Idp, Y90p, Xm, X90m, Xm, Y90m, Idp, Y90p, Idp, Y90p, 
+ Idm, X90m, Ym, Y90m, Idp, Y90p, Idm, X90m, Yp, X90m, Idp, Y90m, Yp, Y90m, 
+ Xm, Y90p, Ym, X90p, Xm, X90p, Idm, X90m, Yp, Y90m, Idm, X90m, Idp, X90p, 
+ Idm, Y90p, Xp, X90m, Idp, Y90m, Xp, Y90m, Ym, X90p, Idp, Y90m, Yp, X90p, 
+ Idm, Y90p, Ym, Y90m, Idp, X90m, Idp, X90p, Idp, X90p, Xp, X90m, Idp, X90p, 
+ Idm}
+0{Idp, X90p, Idp, Y90m, Ym, X90m, Xp, X90p, Xm, Y90m, Idm, Y90m, Idm, X90m, 
+ Idm, Y90m, Xp, Y90m, Idm, X90m, Idm, X90m, Xp, X90m, Idp, X90p, Idm, Y90m, 
+ Idp, Y90p, Yp, Y90m, Idp, Y90p, Xm, X90m, Xm, Y90m, Idp, Y90p, Idp, Y90p, 
+ Idm, X90m, Ym, Y90m, Idp, Y90p, Idm, X90m, Yp, X90m, Idp, Y90m, Yp, Y90m, 
+ Xm, Y90p, Ym, X90p, Xm, X90p, Idm, X90m, Yp, Y90m, Idm, X90m, Idp, X90p, 
+ Idm, Y90p, Xp, X90m, Idp, Y90m, Xp, Y90m, Ym, X90p, Idp, Y90m, Yp, X90p, 
+ Idm, Y90p, Ym, Y90m, Idp, X90m, Idp, X90p, Idp, X90p, Xp, X90m, Idp, Y90p, 
+ Idm, X90p, Yp, Y90m, Idp, Y90m, Idp, Y90p, Yp, X90p, Xp, X90p, Ym, Y90p, 
+ Idp, Y90p, Idm, Y90m, Idm, Y90p, Idp, X90m, Idm, X90m, Idp, X90m, Xm, Y90m, 
+ Ym, X90p, Idp, X90p, Xp}
+0{Idp, X90p, Idp, Y90m, Ym, X90m, Xp, X90p, Xm, Y90m, Idm, Y90m, Idm, X90m, 
+ Idm, Y90m, Xp, Y90m, Idm, X90m, Idm, X90m, Xp, X90m, Idp, X90p, Idm, Y90m, 
+ Idp, Y90p, Yp, Y90m, Idp, Y90p, Xm, X90m, Xm, Y90m, Idp, Y90p, Idp, Y90p, 
+ Idm, X90m, Ym, Y90m, Idp, Y90p, Idm, X90m, Yp, X90m, Idp, Y90m, Yp, Y90m, 
+ Xm, Y90p, Ym, X90p, Xm, X90p, Idm, X90m, Yp, Y90m, Idm, X90m, Idp, X90p, 
+ Idm, Y90p, Xp, X90m, Idp, Y90m, Xp, Y90m, Ym, X90p, Idp, Y90m, Yp, X90p, 
+ Idm, Y90p, Ym, Y90m, Idp, X90m, Idp, X90p, Idp, X90p, Xp, X90m, Idp, Y90p, 
+ Idm, X90p, Yp, Y90m, Idp, Y90m, Idp, Y90p, Yp, X90p, Xp, X90p, Ym, Y90p, 
+ Idp, Y90p, Idm, Y90m, Idm, Y90p, Idp, X90m, Idm, X90m, Idp, X90m, Xm, Y90m, 
+ Ym, X90p, Idp, Y90m, Xp, Y90p, Idm, X90m, Idm, Y90p, Idm, X90p, Idm, X90m, 
+ Yp, X90p, Xp, X90m, Xm, Y90p, Idm, Y90m, Yp, Y90m, Yp, X90m, Yp, Y90p, Xm, 
+ X90m, Yp, X90m, Ym, X90p, Xp, Idm, Idp}
+0{Idp, X90p, Idp, Y90m, Ym, X90m, Xp, X90p, Xm, Y90m, Idm, Y90m, Idm, X90m, 
+ Idm, Y90m, Xp, Y90m, Idm, X90m, Idm, X90m, Xp, X90m, Idp, X90p, Idm, Y90m, 
+ Idp, Y90p, Yp, Y90m, Idp, Y90p, Xm, X90m, Xm, Y90m, Idp, Y90p, Idp, Y90p, 
+ Idm, X90m, Ym, Y90m, Idp, Y90p, Idm, X90m, Yp, X90m, Idp, Y90m, Yp, Y90m, 
+ Xm, Y90p, Ym, X90p, Xm, X90p, Idm, X90m, Yp, Y90m, Idm, X90m, Idp, X90p, 
+ Idm, Y90p, Xp, X90m, Idp, Y90m, Xp, Y90m, Ym, X90p, Idp, Y90m, Yp, X90p, 
+ Idm, Y90p, Ym, Y90m, Idp, X90m, Idp, X90p, Idp, X90p, Xp, X90m, Idp, Y90p, 
+ Idm, X90p, Yp, Y90m, Idp, Y90m, Idp, Y90p, Yp, X90p, Xp, X90p, Ym, Y90p, 
+ Idp, Y90p, Idm, Y90m, Idm, Y90p, Idp, X90m, Idm, X90m, Idp, X90m, Xm, Y90m, 
+ Ym, X90p, Idp, Y90m, Xp, Y90p, Idm, X90m, Idm, Y90p, Idm, X90p, Idm, X90m, 
+ Yp, X90p, Xp, X90m, Xm, Y90p, Idm, Y90m, Yp, Y90m, Yp, X90m, Yp, Y90p, Xm, 
+ X90m, Yp, X90m, Ym, X90p, Xp, Y90m, Idp, Y90p, Xm, Y90p, Yp, Y90p, Idp, 
+ X90m, Xm, Y90p, Xp, X90p, Xp, X90p, Yp, Y90p, Idm, Y90p, Idm, Y90m, Idm, 
+ X90p, Idp, X90m, Xp, Y90m, Xp, Y90p, Ym, Y90m, Xp, X90m, Yp}
+0{Idm, X90m, Idm, Y90m, Xm, X90m, Idm}
+1{Idm, X90m, Idm, Y90m, Xm, X90m, Idm, Idm, Ym}
+1{Idm, X90m, Idm, Y90m, Xm, X90m, Idm, X90p, Ym, X90p, Idp}
+1{Idm, X90m, Idm, Y90m, Xm, X90m, Idm, X90p, Ym, Y90m, Idp, X90m, Ym}
+1{Idm, X90m, Idm, Y90m, Xm, X90m, Idm, X90p, Ym, Y90m, Idp, Y90p, Ym, X90m, 
+ Xp}
+1{Idm, X90m, Idm, Y90m, Xm, X90m, Idm, X90p, Ym, Y90m, Idp, Y90p, Ym, X90p, 
+ Xp, Y90p, Xp, Y90m, Yp}
+0{Idm, X90m, Idm, Y90m, Xm, X90m, Idm, X90p, Ym, Y90m, Idp, Y90p, Ym, X90p, 
+ Xp, Y90p, Xp, Y90p, Yp, X90m, Idm, X90m, Xm}
+0{Idm, X90m, Idm, Y90m, Xm, X90m, Idm, X90p, Ym, Y90m, Idp, Y90p, Ym, X90p, 
+ Xp, Y90p, Xp, Y90p, Yp, X90m, Idm, X90m, Xm, X90m, Ym, X90m, Xm}
+0{Idm, X90m, Idm, Y90m, Xm, X90m, Idm, X90p, Ym, Y90m, Idp, Y90p, Ym, X90p, 
+ Xp, Y90p, Xp, Y90p, Yp, X90m, Idm, X90m, Xm, X90m, Ym, X90p, Xm, Y90m, Idm, 
+ Y90m, Idm, Y90p, Yp, Y90p, Idp}
+1{Idm, X90m, Idm, Y90m, Xm, X90m, Idm, X90p, Ym, Y90m, Idp, Y90p, Ym, X90p, 
+ Xp, Y90p, Xp, Y90p, Yp, X90m, Idm, X90m, Xm, X90m, Ym, X90p, Xm, Y90m, Idm, 
+ Y90m, Idm, Y90p, Yp, Y90m, Idp, X90p, Yp, Y90p, Idp, Y90m, Idp, X90m, Idm}
+1{Idm, X90m, Idm, Y90m, Xm, X90m, Idm, X90p, Ym, Y90m, Idp, Y90p, Ym, X90p, 
+ Xp, Y90p, Xp, Y90p, Yp, X90m, Idm, X90m, Xm, X90m, Ym, X90p, Xm, Y90m, Idm, 
+ Y90m, Idm, Y90p, Yp, Y90m, Idp, X90p, Yp, Y90p, Idp, Y90m, Idp, Y90m, Idm, 
+ X90p, Idm, Y90m, Idm, Y90p, Idp, Idp, Yp}
+0{Idm, X90m, Idm, Y90m, Xm, X90m, Idm, X90p, Ym, Y90m, Idp, Y90p, Ym, X90p, 
+ Xp, Y90p, Xp, Y90p, Yp, X90m, Idm, X90m, Xm, X90m, Ym, X90p, Xm, Y90m, Idm, 
+ Y90m, Idm, Y90p, Yp, Y90m, Idp, X90p, Yp, Y90p, Idp, Y90m, Idp, Y90m, Idm, 
+ X90p, Idm, Y90m, Idm, Y90p, Idp, X90p, Yp, X90p, Xp, Y90m, Idm, Y90m, Idp, 
+ Y90m, Idm, X90m, Xp, X90m, Idp, X90p, Yp, Y90p, Idp}
+1{Idm, X90m, Idm, Y90m, Xm, X90m, Idm, X90p, Ym, Y90m, Idp, Y90p, Ym, X90p, 
+ Xp, Y90p, Xp, Y90p, Yp, X90m, Idm, X90m, Xm, X90m, Ym, X90p, Xm, Y90m, Idm, 
+ Y90m, Idm, Y90p, Yp, Y90m, Idp, X90p, Yp, Y90p, Idp, Y90m, Idp, Y90m, Idm, 
+ X90p, Idm, Y90m, Idm, Y90p, Idp, X90p, Yp, X90p, Xp, Y90m, Idm, Y90m, Idp, 
+ Y90m, Idm, X90m, Xp, X90m, Idp, X90p, Yp, Y90p, Idp, X90p, Idm, X90p, Yp, 
+ Y90p, Idm, X90m, Idm, Y90m, Yp, Y90m, Xp, X90p, Idp, Y90m, Xp}
+1{Idm, X90m, Idm, Y90m, Xm, X90m, Idm, X90p, Ym, Y90m, Idp, Y90p, Ym, X90p, 
+ Xp, Y90p, Xp, Y90p, Yp, X90m, Idm, X90m, Xm, X90m, Ym, X90p, Xm, Y90m, Idm, 
+ Y90m, Idm, Y90p, Yp, Y90m, Idp, X90p, Yp, Y90p, Idp, Y90m, Idp, Y90m, Idm, 
+ X90p, Idm, Y90m, Idm, Y90p, Idp, X90p, Yp, X90p, Xp, Y90m, Idm, Y90m, Idp, 
+ Y90m, Idm, X90m, Xp, X90m, Idp, X90p, Yp, Y90p, Idp, X90p, Idm, X90p, Yp, 
+ Y90p, Idm, X90m, Idm, Y90m, Yp, Y90m, Xp, X90p, Idp, Y90m, Xp, X90p, Idp, 
+ Y90m, Xp, Y90p, Yp, X90p, Ym, X90m, Idm, X90p, Ym, X90m, Idp, X90p, Idm}
+1{Idm, X90m, Idm, Y90m, Xm, X90m, Idm, X90p, Ym, Y90m, Idp, Y90p, Ym, X90p, 
+ Xp, Y90p, Xp, Y90p, Yp, X90m, Idm, X90m, Xm, X90m, Ym, X90p, Xm, Y90m, Idm, 
+ Y90m, Idm, Y90p, Yp, Y90m, Idp, X90p, Yp, Y90p, Idp, Y90m, Idp, Y90m, Idm, 
+ X90p, Idm, Y90m, Idm, Y90p, Idp, X90p, Yp, X90p, Xp, Y90m, Idm, Y90m, Idp, 
+ Y90m, Idm, X90m, Xp, X90m, Idp, X90p, Yp, Y90p, Idp, X90p, Idm, X90p, Yp, 
+ Y90p, Idm, X90m, Idm, Y90m, Yp, Y90m, Xp, X90p, Idp, Y90m, Xp, X90p, Idp, 
+ Y90m, Xp, Y90p, Yp, X90p, Ym, X90m, Idm, X90p, Ym, X90m, Idp, Y90m, Idm, 
+ X90p, Idp, Y90m, Idm, Y90m, Xm, Y90p, Idp, X90p, Yp, X90p, Yp, Y90p, Idp, 
+ Y90p, Ym, Y90m, Xm, Y90p, Xp, X90m, Idm, X90p, Yp, X90p, Xm, Y90p, Xp, X90m, 
+ Xm, X90p, Ym}
+0{Idm, X90m, Idm, Y90m, Xm, X90m, Idm, X90p, Ym, Y90m, Idp, Y90p, Ym, X90p, 
+ Xp, Y90p, Xp, Y90p, Yp, X90m, Idm, X90m, Xm, X90m, Ym, X90p, Xm, Y90m, Idm, 
+ Y90m, Idm, Y90p, Yp, Y90m, Idp, X90p, Yp, Y90p, Idp, Y90m, Idp, Y90m, Idm, 
+ X90p, Idm, Y90m, Idm, Y90p, Idp, X90p, Yp, X90p, Xp, Y90m, Idm, Y90m, Idp, 
+ Y90m, Idm, X90m, Xp, X90m, Idp, X90p, Yp, Y90p, Idp, X90p, Idm, X90p, Yp, 
+ Y90p, Idm, X90m, Idm, Y90m, Yp, Y90m, Xp, X90p, Idp, Y90m, Xp, X90p, Idp, 
+ Y90m, Xp, Y90p, Yp, X90p, Ym, X90m, Idm, X90p, Ym, X90m, Idp, Y90m, Idm, 
+ X90p, Idp, Y90m, Idm, Y90m, Xm, Y90p, Idp, X90p, Yp, X90p, Yp, Y90p, Idp, 
+ Y90p, Ym, Y90m, Xm, Y90p, Xp, X90m, Idm, X90p, Yp, X90p, Xm, Y90p, Xp, X90m, 
+ Xm, Y90p, Ym, Y90m, Idp, X90m, Yp, Y90m, Xm, X90m, Idm, X90m, Idp, X90m, Xp, 
+ X90p, Ym, Y90m, Idm, Y90p, Idm, Y90p, Xp, X90p, Idp, Y90p, Yp, X90m, Ym, 
+ X90m, Yp, X90p, Ym, Idm, Idm}
+0{Idm, X90m, Idm, Y90m, Xm, X90m, Idm, X90p, Ym, Y90m, Idp, Y90p, Ym, X90p, 
+ Xp, Y90p, Xp, Y90p, Yp, X90m, Idm, X90m, Xm, X90m, Ym, X90p, Xm, Y90m, Idm, 
+ Y90m, Idm, Y90p, Yp, Y90m, Idp, X90p, Yp, Y90p, Idp, Y90m, Idp, Y90m, Idm, 
+ X90p, Idm, Y90m, Idm, Y90p, Idp, X90p, Yp, X90p, Xp, Y90m, Idm, Y90m, Idp, 
+ Y90m, Idm, X90m, Xp, X90m, Idp, X90p, Yp, Y90p, Idp, X90p, Idm, X90p, Yp, 
+ Y90p, Idm, X90m, Idm, Y90m, Yp, Y90m, Xp, X90p, Idp, Y90m, Xp, X90p, Idp, 
+ Y90m, Xp, Y90p, Yp, X90p, Ym, X90m, Idm, X90p, Ym, X90m, Idp, Y90m, Idm, 
+ X90p, Idp, Y90m, Idm, Y90m, Xm, Y90p, Idp, X90p, Yp, X90p, Yp, Y90p, Idp, 
+ Y90p, Ym, Y90m, Xm, Y90p, Xp, X90m, Idm, X90p, Yp, X90p, Xm, Y90p, Xp, X90m, 
+ Xm, Y90p, Ym, Y90m, Idp, X90m, Yp, Y90m, Xm, X90m, Idm, X90m, Idp, X90m, Xp, 
+ X90p, Ym, Y90m, Idm, Y90p, Idm, Y90p, Xp, X90p, Idp, Y90p, Yp, X90m, Ym, 
+ X90m, Yp, X90p, Ym, Y90m, Idm, Y90p, Yp, Y90p, Ym, Y90p, Xp, X90m, Idm, 
+ Y90p, Idp, X90m, Idm, X90m, Xp, Y90m, Idp, Y90m, Yp, Y90m, Idm, X90m, Xm, 
+ X90m, Yp, Y90m, Ym, Y90p, Idm, Y90p, Yp, X90p, Idm}
+1{Idp, X90p, Xp, Y90p, Idm, X90p, Ym}
+0{Idp, X90p, Xp, Y90p, Idm, X90p, Ym, Idp, Yp}
+1{Idp, X90p, Xp, Y90p, Idm, X90p, Ym, X90m, Yp, X90p, Idm}
+0{Idp, X90p, Xp, Y90p, Idm, X90p, Ym, X90m, Yp, Y90p, Idm, X90m, Idm}
+1{Idp, X90p, Xp, Y90p, Idm, X90p, Ym, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, 
+ Xm}
+0{Idp, X90p, Xp, Y90p, Idm, X90p, Ym, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, 
+ Xm, Y90m, Yp, Y90p, Idp}
+0{Idp, X90p, Xp, Y90p, Idm, X90p, Ym, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, 
+ Xm, Y90m, Yp, Y90m, Idp, X90m, Ym, X90p, Yp}
+0{Idp, X90p, Xp, Y90p, Idm, X90p, Ym, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, 
+ Xm, Y90m, Yp, Y90m, Idp, X90m, Ym, X90m, Yp, X90m, Xp, X90m, Ym}
+0{Idp, X90p, Xp, Y90p, Idm, X90p, Ym, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, 
+ Xm, Y90m, Yp, Y90m, Idp, X90m, Ym, X90m, Yp, X90m, Xp, X90p, Ym, Y90m, Idp, 
+ Y90m, Idp, Y90p, Idm, Y90m, Idp}
+1{Idp, X90p, Xp, Y90p, Idm, X90p, Ym, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, 
+ Xm, Y90m, Yp, Y90m, Idp, X90m, Ym, X90m, Yp, X90m, Xp, X90p, Ym, Y90m, Idp, 
+ Y90m, Idp, Y90p, Idm, Y90p, Idp, X90m, Ym, Y90m, Ym, Y90p, Yp, X90p, Idp}
+0{Idp, X90p, Xp, Y90p, Idm, X90p, Ym, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, 
+ Xm, Y90m, Yp, Y90m, Idp, X90m, Ym, X90m, Yp, X90m, Xp, X90p, Ym, Y90m, Idp, 
+ Y90m, Idp, Y90p, Idm, Y90p, Idp, X90m, Ym, Y90m, Ym, Y90p, Yp, Y90m, Idp, 
+ X90m, Idp, Y90m, Idm, Y90m, Ym, Idm, Idm}
+1{Idp, X90p, Xp, Y90p, Idm, X90p, Ym, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, 
+ Xm, Y90m, Yp, Y90m, Idp, X90m, Ym, X90m, Yp, X90m, Xp, X90p, Ym, Y90m, Idp, 
+ Y90m, Idp, Y90p, Idm, Y90p, Idp, X90m, Ym, Y90m, Ym, Y90p, Yp, Y90m, Idp, 
+ X90m, Idp, Y90m, Idm, Y90m, Ym, X90m, Idm, X90p, Yp, Y90m, Idm, Y90m, Idp, 
+ Y90p, Idm, X90p, Yp, X90p, Xm, X90p, Idm, Y90p, Xp}
+1{Idp, X90p, Xp, Y90p, Idm, X90p, Ym, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, 
+ Xm, Y90m, Yp, Y90m, Idp, X90m, Ym, X90m, Yp, X90m, Xp, X90p, Ym, Y90m, Idp, 
+ Y90m, Idp, Y90p, Idm, Y90p, Idp, X90m, Ym, Y90m, Ym, Y90p, Yp, Y90m, Idp, 
+ X90m, Idp, Y90m, Idm, Y90m, Ym, X90m, Idm, X90p, Yp, Y90m, Idm, Y90m, Idp, 
+ Y90p, Idm, X90p, Yp, X90p, Xm, X90p, Idm, Y90m, Xp, X90p, Idm, X90m, Idm, 
+ Y90p, Yp, X90m, Idm, Y90m, Idm, Y90p, Idm, X90p, Idp, Y90m, Idp}
+0{Idp, X90p, Xp, Y90p, Idm, X90p, Ym, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, 
+ Xm, Y90m, Yp, Y90m, Idp, X90m, Ym, X90m, Yp, X90m, Xp, X90p, Ym, Y90m, Idp, 
+ Y90m, Idp, Y90p, Idm, Y90p, Idp, X90m, Ym, Y90m, Ym, Y90p, Yp, Y90m, Idp, 
+ X90m, Idp, Y90m, Idm, Y90m, Ym, X90m, Idm, X90p, Yp, Y90m, Idm, Y90m, Idp, 
+ Y90p, Idm, X90p, Yp, X90p, Xm, X90p, Idm, Y90m, Xp, X90p, Idm, X90m, Idm, 
+ Y90p, Yp, X90m, Idm, Y90m, Idm, Y90p, Idm, X90p, Idp, Y90p, Idp, X90p, Idm, 
+ Y90m, Xp, Y90p, Idp, X90p, Idm, X90m, Idm, X90m, Xm, X90p, Idp, X90p, Xp}
+1{Idp, X90p, Xp, Y90p, Idm, X90p, Ym, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, 
+ Xm, Y90m, Yp, Y90m, Idp, X90m, Ym, X90m, Yp, X90m, Xp, X90p, Ym, Y90m, Idp, 
+ Y90m, Idp, Y90p, Idm, Y90p, Idp, X90m, Ym, Y90m, Ym, Y90p, Yp, Y90m, Idp, 
+ X90m, Idp, Y90m, Idm, Y90m, Ym, X90m, Idm, X90p, Yp, Y90m, Idm, Y90m, Idp, 
+ Y90p, Idm, X90p, Yp, X90p, Xm, X90p, Idm, Y90m, Xp, X90p, Idm, X90m, Idm, 
+ Y90p, Yp, X90m, Idm, Y90m, Idm, Y90p, Idm, X90p, Idp, Y90p, Idp, X90p, Idm, 
+ Y90m, Xp, Y90p, Idp, X90p, Idm, X90m, Idm, X90m, Xm, X90p, Idp, Y90m, Xp, 
+ X90m, Ym, Y90p, Yp, Y90p, Idm, Y90m, Xm, X90m, Xp, X90m, Idm, Y90m, Ym, 
+ Y90m, Xp, Y90p, Xp, Y90m, Xp, X90p, Xp, X90p, Xm, X90p, Xm, Y90p, Idp, X90m, 
+ Idm, X90m, Xm}
+1{Idp, X90p, Xp, Y90p, Idm, X90p, Ym, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, 
+ Xm, Y90m, Yp, Y90m, Idp, X90m, Ym, X90m, Yp, X90m, Xp, X90p, Ym, Y90m, Idp, 
+ Y90m, Idp, Y90p, Idm, Y90p, Idp, X90m, Ym, Y90m, Ym, Y90p, Yp, Y90m, Idp, 
+ X90m, Idp, Y90m, Idm, Y90m, Ym, X90m, Idm, X90p, Yp, Y90m, Idm, Y90m, Idp, 
+ Y90p, Idm, X90p, Yp, X90p, Xm, X90p, Idm, Y90m, Xp, X90p, Idm, X90m, Idm, 
+ Y90p, Yp, X90m, Idm, Y90m, Idm, Y90p, Idm, X90p, Idp, Y90p, Idp, X90p, Idm, 
+ Y90m, Xp, Y90p, Idp, X90p, Idm, X90m, Idm, X90m, Xm, X90p, Idp, Y90m, Xp, 
+ X90m, Ym, Y90p, Yp, Y90p, Idm, Y90m, Xm, X90m, Xp, X90m, Idm, Y90m, Ym, 
+ Y90m, Xp, Y90p, Xp, Y90m, Xp, X90p, Xp, X90p, Xm, X90p, Xm, Y90p, Idp, X90m, 
+ Idm, Y90m, Xm, Y90p, Ym, X90p, Yp, Y90p, Idp, X90p, Idp, X90m, Idm, X90p, 
+ Xp, X90m, Idp, Y90p, Ym, Y90p, Idm, Y90m, Idp, X90p, Idp, Y90p, Idm, X90p, 
+ Yp, X90p, Idp, X90p, Idm, Idp, Xm}
+1{Idp, X90p, Xp, Y90p, Idm, X90p, Ym, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, 
+ Xm, Y90m, Yp, Y90m, Idp, X90m, Ym, X90m, Yp, X90m, Xp, X90p, Ym, Y90m, Idp, 
+ Y90m, Idp, Y90p, Idm, Y90p, Idp, X90m, Ym, Y90m, Ym, Y90p, Yp, Y90m, Idp, 
+ X90m, Idp, Y90m, Idm, Y90m, Ym, X90m, Idm, X90p, Yp, Y90m, Idm, Y90m, Idp, 
+ Y90p, Idm, X90p, Yp, X90p, Xm, X90p, Idm, Y90m, Xp, X90p, Idm, X90m, Idm, 
+ Y90p, Yp, X90m, Idm, Y90m, Idm, Y90p, Idm, X90p, Idp, Y90p, Idp, X90p, Idm, 
+ Y90m, Xp, Y90p, Idp, X90p, Idm, X90m, Idm, X90m, Xm, X90p, Idp, Y90m, Xp, 
+ X90m, Ym, Y90p, Yp, Y90p, Idm, Y90m, Xm, X90m, Xp, X90m, Idm, Y90m, Ym, 
+ Y90m, Xp, Y90p, Xp, Y90m, Xp, X90p, Xp, X90p, Xm, X90p, Xm, Y90p, Idp, X90m, 
+ Idm, Y90m, Xm, Y90p, Ym, X90p, Yp, Y90p, Idp, X90p, Idp, X90m, Idm, X90p, 
+ Xp, X90m, Idp, Y90p, Ym, Y90p, Idm, Y90m, Idp, X90p, Idp, Y90p, Idm, X90p, 
+ Yp, X90p, Idp, X90p, Idm, Y90m, Xm, Y90m, Xm, Y90m, Xp, Y90m, Idp, X90p, 
+ Idp, Y90m, Xm, X90m, Xp, X90m, Xp, Y90m, Idm, Y90p, Xm, Y90p, Ym, X90m, Idp, 
+ X90m, Idm, Y90m, Ym, Y90p, Xm, Y90m, Idm, X90m, Xp}
+1{Idm, X90p, Yp, Y90p, Xp, X90m, Idp}
+1{Idm, X90p, Yp, Y90p, Xp, X90p, Idp, Idp, Xp}
+0{Idm, X90p, Yp, Y90p, Xp, X90p, Idp, X90m, Xp, X90p, Ym}
+1{Idm, X90p, Yp, Y90p, Xp, X90p, Idp, X90m, Xp, Y90p, Ym, X90m, Xm}
+1{Idm, X90p, Yp, Y90p, Xp, X90p, Idp, X90m, Xp, Y90p, Ym, Y90m, Xm, X90m, Idm}
+1{Idm, X90p, Yp, Y90p, Xp, X90p, Idp, X90m, Xp, Y90p, Ym, Y90m, Xm, X90m, 
+ Idm, Y90p, Idm, Y90m, Idp}
+0{Idm, X90p, Yp, Y90p, Xp, X90p, Idp, X90m, Xp, Y90p, Ym, Y90m, Xm, X90m, 
+ Idm, Y90p, Idm, Y90m, Idp, X90m, Idm, X90p, Ym}
+1{Idm, X90p, Yp, Y90p, Xp, X90p, Idp, X90m, Xp, Y90p, Ym, Y90m, Xm, X90m, 
+ Idm, Y90p, Idm, Y90m, Idp, X90m, Idm, X90p, Ym, X90p, Xp, X90m, Idp}
+0{Idm, X90p, Yp, Y90p, Xp, X90p, Idp, X90m, Xp, Y90p, Ym, Y90m, Xm, X90m, 
+ Idm, Y90p, Idm, Y90m, Idp, X90m, Idm, X90p, Ym, X90p, Xp, X90m, Idp, Y90m, 
+ Xm, Y90m, Xm, Y90p, Idm, Y90m, Xp}
+1{Idm, X90p, Yp, Y90p, Xp, X90p, Idp, X90m, Xp, Y90p, Ym, Y90m, Xm, X90m, 
+ Idm, Y90p, Idm, Y90m, Idp, X90m, Idm, X90p, Ym, X90p, Xp, X90m, Idp, Y90m, 
+ Xm, Y90m, Xm, Y90p, Idm, Y90p, Xp, X90m, Xp, Y90m, Idm, Y90m, Idp, X90m, Idm}
+0{Idm, X90p, Yp, Y90p, Xp, X90p, Idp, X90m, Xp, Y90p, Ym, Y90m, Xm, X90m, 
+ Idm, Y90p, Idm, Y90m, Idp, X90m, Idm, X90p, Ym, X90p, Xp, X90m, Idp, Y90m, 
+ Xm, Y90m, Xm, Y90p, Idm, Y90p, Xp, X90m, Xp, Y90m, Idm, Y90m, Idp, Y90m, 
+ Idm, X90p, Xp, Y90p, Yp, Y90p, Ym, Idp, Idm}
+1{Idm, X90p, Yp, Y90p, Xp, X90p, Idp, X90m, Xp, Y90p, Ym, Y90m, Xm, X90m, 
+ Idm, Y90p, Idm, Y90m, Idp, X90m, Idm, X90p, Ym, X90p, Xp, X90m, Idp, Y90m, 
+ Xm, Y90m, Xm, Y90p, Idm, Y90p, Xp, X90m, Xp, Y90m, Idm, Y90m, Idp, Y90m, 
+ Idm, X90p, Xp, Y90p, Yp, Y90p, Ym, X90p, Idm, X90m, Idp, Y90m, Xp, Y90m, 
+ Idm, Y90p, Idm, X90m, Xp, X90m, Idp, X90m, Ym, Y90m, Yp}
+1{Idm, X90p, Yp, Y90p, Xp, X90p, Idp, X90m, Xp, Y90p, Ym, Y90m, Xm, X90m, 
+ Idm, Y90p, Idm, Y90m, Idp, X90m, Idm, X90p, Ym, X90p, Xp, X90m, Idp, Y90m, 
+ Xm, Y90m, Xm, Y90p, Idm, Y90p, Xp, X90m, Xp, Y90m, Idm, Y90m, Idp, Y90m, 
+ Idm, X90p, Xp, Y90p, Yp, Y90p, Ym, X90p, Idm, X90m, Idp, Y90m, Xp, Y90m, 
+ Idm, Y90p, Idm, X90m, Xp, X90m, Idp, X90m, Ym, Y90m, Yp, X90p, Idm, X90p, 
+ Xp, Y90p, Idp, X90m, Ym, Y90p, Idm, Y90p, Idm, X90m, Xm, Y90p, Xm}
+1{Idm, X90p, Yp, Y90p, Xp, X90p, Idp, X90m, Xp, Y90p, Ym, Y90m, Xm, X90m, 
+ Idm, Y90p, Idm, Y90m, Idp, X90m, Idm, X90p, Ym, X90p, Xp, X90m, Idp, Y90m, 
+ Xm, Y90m, Xm, Y90p, Idm, Y90p, Xp, X90m, Xp, Y90m, Idm, Y90m, Idp, Y90m, 
+ Idm, X90p, Xp, Y90p, Yp, Y90p, Ym, X90p, Idm, X90m, Idp, Y90m, Xp, Y90m, 
+ Idm, Y90p, Idm, X90m, Xp, X90m, Idp, X90m, Ym, Y90m, Yp, X90p, Idm, X90p, 
+ Xp, Y90p, Idp, X90m, Ym, Y90p, Idm, Y90p, Idm, X90m, Xm, Y90m, Xm, X90p, 
+ Idp, Y90p, Idm, Y90p, Idp, X90p, Xp, X90m, Ym, X90p, Xm, X90m, Yp, X90m, Xm}
+0{Idm, X90p, Yp, Y90p, Xp, X90p, Idp, X90m, Xp, Y90p, Ym, Y90m, Xm, X90m, 
+ Idm, Y90p, Idm, Y90m, Idp, X90m, Idm, X90p, Ym, X90p, Xp, X90m, Idp, Y90m, 
+ Xm, Y90m, Xm, Y90p, Idm, Y90p, Xp, X90m, Xp, Y90m, Idm, Y90m, Idp, Y90m, 
+ Idm, X90p, Xp, Y90p, Yp, Y90p, Ym, X90p, Idm, X90m, Idp, Y90m, Xp, Y90m, 
+ Idm, Y90p, Idm, X90m, Xp, X90m, Idp, X90m, Ym, Y90m, Yp, X90p, Idm, X90p, 
+ Xp, Y90p, Idp, X90m, Ym, Y90p, Idm, Y90p, Idm, X90m, Xm, Y90m, Xm, X90p, 
+ Idp, Y90p, Idm, Y90p, Idp, X90p, Xp, X90m, Ym, X90p, Xm, X90m, Yp, Y90m, Xm, 
+ X90m, Idm, Y90p, Yp, Y90p, Ym, Y90m, Xp, X90m, Idp, X90m, Xm, Y90m, Idp, 
+ Y90m, Xp, Y90p, Idm, Y90m, Ym, X90p, Idm, X90p, Idm, X90m, Xm, Y90m, Idp, 
+ X90m, Idp, X90m, Idm}
+0{Idm, X90p, Yp, Y90p, Xp, X90p, Idp, X90m, Xp, Y90p, Ym, Y90m, Xm, X90m, 
+ Idm, Y90p, Idm, Y90m, Idp, X90m, Idm, X90p, Ym, X90p, Xp, X90m, Idp, Y90m, 
+ Xm, Y90m, Xm, Y90p, Idm, Y90p, Xp, X90m, Xp, Y90m, Idm, Y90m, Idp, Y90m, 
+ Idm, X90p, Xp, Y90p, Yp, Y90p, Ym, X90p, Idm, X90m, Idp, Y90m, Xp, Y90m, 
+ Idm, Y90p, Idm, X90m, Xp, X90m, Idp, X90m, Ym, Y90m, Yp, X90p, Idm, X90p, 
+ Xp, Y90p, Idp, X90m, Ym, Y90p, Idm, Y90p, Idm, X90m, Xm, Y90m, Xm, X90p, 
+ Idp, Y90p, Idm, Y90p, Idp, X90p, Xp, X90m, Ym, X90p, Xm, X90m, Yp, Y90m, Xm, 
+ X90m, Idm, Y90p, Yp, Y90p, Ym, Y90m, Xp, X90m, Idp, X90m, Xm, Y90m, Idp, 
+ Y90m, Xp, Y90p, Idm, Y90m, Ym, X90p, Idm, X90p, Idm, X90m, Xm, Y90m, Idp, 
+ X90m, Idp, Y90p, Idm, Y90p, Xm, X90p, Idm, Y90m, Ym, X90m, Idm, X90m, Idp, 
+ X90p, Idm, X90p, Yp, Y90m, Idm, Y90m, Yp, Y90m, Idp, X90m, Idm, Y90p, Idm, 
+ X90m, Idm, X90p, Xp, X90m, Idp, Idm, Yp}
+1{Idm, X90p, Yp, Y90p, Xp, X90p, Idp, X90m, Xp, Y90p, Ym, Y90m, Xm, X90m, 
+ Idm, Y90p, Idm, Y90m, Idp, X90m, Idm, X90p, Ym, X90p, Xp, X90m, Idp, Y90m, 
+ Xm, Y90m, Xm, Y90p, Idm, Y90p, Xp, X90m, Xp, Y90m, Idm, Y90m, Idp, Y90m, 
+ Idm, X90p, Xp, Y90p, Yp, Y90p, Ym, X90p, Idm, X90m, Idp, Y90m, Xp, Y90m, 
+ Idm, Y90p, Idm, X90m, Xp, X90m, Idp, X90m, Ym, Y90m, Yp, X90p, Idm, X90p, 
+ Xp, Y90p, Idp, X90m, Ym, Y90p, Idm, Y90p, Idm, X90m, Xm, Y90m, Xm, X90p, 
+ Idp, Y90p, Idm, Y90p, Idp, X90p, Xp, X90m, Ym, X90p, Xm, X90m, Yp, Y90m, Xm, 
+ X90m, Idm, Y90p, Yp, Y90p, Ym, Y90m, Xp, X90m, Idp, X90m, Xm, Y90m, Idp, 
+ Y90m, Xp, Y90p, Idm, Y90m, Ym, X90p, Idm, X90p, Idm, X90m, Xm, Y90m, Idp, 
+ X90m, Idp, Y90p, Idm, Y90p, Xm, X90p, Idm, Y90m, Ym, X90m, Idm, X90m, Idp, 
+ X90p, Idm, X90p, Yp, Y90m, Idm, Y90m, Yp, Y90m, Idp, X90m, Idm, Y90p, Idm, 
+ X90m, Idm, X90p, Xp, X90m, Idp, Y90m, Yp, Y90m, Idp, Y90m, Ym, Y90m, Idm, 
+ X90m, Idm, Y90p, Idp, X90p, Xm, X90p, Xp, Y90p, Xm, Y90p, Xp, Y90p, Idm, 
+ X90p, Ym, X90p, Yp, Y90p, Idp, Y90m, Xp, Y90p, Xp, X90p, Xp}
+1{Idm, X90m, Idp, Y90p, Yp, X90m, Idp}
+0{Idm, X90m, Idp, Y90p, Yp, X90p, Idp, Idm, Idp}
+0{Idm, X90m, Idp, Y90p, Yp, X90p, Idp, X90m, Idp, X90m, Xp}
+1{Idm, X90m, Idp, Y90p, Yp, X90p, Idp, X90m, Idp, Y90p, Xp, X90p, Idp}
+1{Idm, X90m, Idp, Y90p, Yp, X90p, Idp, X90m, Idp, Y90p, Xp, Y90m, Idp, X90m, 
+ Ym}
+0{Idm, X90m, Idp, Y90p, Yp, X90p, Idp, X90m, Idp, Y90p, Xp, Y90m, Idp, X90p, 
+ Ym, Y90p, Xm, Y90m, Idm}
+1{Idm, X90m, Idp, Y90p, Yp, X90p, Idp, X90m, Idp, Y90p, Xp, Y90m, Idp, X90p, 
+ Ym, Y90p, Xm, Y90p, Idm, X90m, Idm, X90p, Idm}
+1{Idm, X90m, Idp, Y90p, Yp, X90p, Idp, X90m, Idp, Y90p, Xp, Y90m, Idp, X90p, 
+ Ym, Y90p, Xm, Y90p, Idm, X90m, Idm, X90m, Idm, X90p, Ym, X90m, Yp}
+1{Idm, X90m, Idp, Y90p, Yp, X90p, Idp, X90m, Idp, Y90p, Xp, Y90m, Idp, X90p, 
+ Ym, Y90p, Xm, Y90p, Idm, X90m, Idm, X90m, Idm, X90p, Ym, X90m, Yp, Y90p, Xm, 
+ Y90p, Ym, Y90m, Idp, Y90m, Xp}
+1{Idm, X90m, Idp, Y90p, Yp, X90p, Idp, X90m, Idp, Y90p, Xp, Y90m, Idp, X90p, 
+ Ym, Y90p, Xm, Y90p, Idm, X90m, Idm, X90m, Idm, X90p, Ym, X90m, Yp, Y90p, Xm, 
+ Y90p, Ym, Y90m, Idp, Y90p, Xp, X90m, Idp, Y90p, Xm, Y90m, Idp, X90m, Xm}
+0{Idm, X90m, Idp, Y90p, Yp, X90p, Idp, X90m, Idp, Y90p, Xp, Y90m, Idp, X90p, 
+ Ym, Y90p, Xm, Y90p, Idm, X90m, Idm, X90m, Idm, X90p, Ym, X90m, Yp, Y90p, Xm, 
+ Y90p, Ym, Y90m, Idp, Y90p, Xp, X90m, Idp, Y90p, Xm, Y90m, Idp, Y90m, Xm, 
+ X90m, Yp, Y90m, Idm, Y90p, Idm, Idm, Idp}
+1{Idm, X90m, Idp, Y90p, Yp, X90p, Idp, X90m, Idp, Y90p, Xp, Y90m, Idp, X90p, 
+ Ym, Y90p, Xm, Y90p, Idm, X90m, Idm, X90m, Idm, X90p, Ym, X90m, Yp, Y90p, Xm, 
+ Y90p, Ym, Y90m, Idp, Y90p, Xp, X90m, Idp, Y90p, Xm, Y90m, Idp, Y90m, Xm, 
+ X90m, Yp, Y90m, Idm, Y90p, Idm, X90p, Idp, X90m, Idm, Y90p, Idp, Y90p, Idp, 
+ Y90m, Idm, X90m, Idm, X90p, Xm, X90p, Ym, Y90m, Idp}
+1{Idm, X90m, Idp, Y90p, Yp, X90p, Idp, X90m, Idp, Y90p, Xp, Y90m, Idp, X90p, 
+ Ym, Y90p, Xm, Y90p, Idm, X90m, Idm, X90m, Idm, X90p, Ym, X90m, Yp, Y90p, Xm, 
+ Y90p, Ym, Y90m, Idp, Y90p, Xp, X90m, Idp, Y90p, Xm, Y90m, Idp, Y90m, Xm, 
+ X90m, Yp, Y90m, Idm, Y90p, Idm, X90p, Idp, X90m, Idm, Y90p, Idp, Y90p, Idp, 
+ Y90m, Idm, X90m, Idm, X90p, Xm, X90p, Ym, Y90p, Idp, X90p, Idp, X90p, Yp, 
+ Y90p, Idm, X90p, Idp, Y90p, Ym, Y90p, Idp, X90m, Idp, Y90p, Idm}
+1{Idm, X90m, Idp, Y90p, Yp, X90p, Idp, X90m, Idp, Y90p, Xp, Y90m, Idp, X90p, 
+ Ym, Y90p, Xm, Y90p, Idm, X90m, Idm, X90m, Idm, X90p, Ym, X90m, Yp, Y90p, Xm, 
+ Y90p, Ym, Y90m, Idp, Y90p, Xp, X90m, Idp, Y90p, Xm, Y90m, Idp, Y90m, Xm, 
+ X90m, Yp, Y90m, Idm, Y90p, Idm, X90p, Idp, X90m, Idm, Y90p, Idp, Y90p, Idp, 
+ Y90m, Idm, X90m, Idm, X90p, Xm, X90p, Ym, Y90p, Idp, X90p, Idp, X90p, Yp, 
+ Y90p, Idm, X90p, Idp, Y90p, Ym, Y90p, Idp, X90m, Idp, Y90m, Idm, X90m, Yp, 
+ Y90m, Yp, Y90p, Xp, X90p, Idm, X90m, Ym, X90p, Idp, X90p, Idm, X90m, Idm}
+0{Idm, X90m, Idp, Y90p, Yp, X90p, Idp, X90m, Idp, Y90p, Xp, Y90m, Idp, X90p, 
+ Ym, Y90p, Xm, Y90p, Idm, X90m, Idm, X90m, Idm, X90p, Ym, X90m, Yp, Y90p, Xm, 
+ Y90p, Ym, Y90m, Idp, Y90p, Xp, X90m, Idp, Y90p, Xm, Y90m, Idp, Y90m, Xm, 
+ X90m, Yp, Y90m, Idm, Y90p, Idm, X90p, Idp, X90m, Idm, Y90p, Idp, Y90p, Idp, 
+ Y90m, Idm, X90m, Idm, X90p, Xm, X90p, Ym, Y90p, Idp, X90p, Idp, X90p, Yp, 
+ Y90p, Idm, X90p, Idp, Y90p, Ym, Y90p, Idp, X90m, Idp, Y90m, Idm, X90m, Yp, 
+ Y90m, Yp, Y90p, Xp, X90p, Idm, X90m, Ym, X90p, Idp, X90p, Idm, Y90m, Idm, 
+ X90m, Xm, Y90p, Xp, Y90p, Ym, Y90m, Idm, X90m, Idm, X90p, Idp, Y90p, Yp, 
+ Y90p, Xm, Y90m, Ym, Y90p, Idp, X90m, Ym, X90m, Xp, X90m, Idp, Y90p, Ym, 
+ X90m, Idp, X90m, Idm}
+0{Idm, X90m, Idp, Y90p, Yp, X90p, Idp, X90m, Idp, Y90p, Xp, Y90m, Idp, X90p, 
+ Ym, Y90p, Xm, Y90p, Idm, X90m, Idm, X90m, Idm, X90p, Ym, X90m, Yp, Y90p, Xm, 
+ Y90p, Ym, Y90m, Idp, Y90p, Xp, X90m, Idp, Y90p, Xm, Y90m, Idp, Y90m, Xm, 
+ X90m, Yp, Y90m, Idm, Y90p, Idm, X90p, Idp, X90m, Idm, Y90p, Idp, Y90p, Idp, 
+ Y90m, Idm, X90m, Idm, X90p, Xm, X90p, Ym, Y90p, Idp, X90p, Idp, X90p, Yp, 
+ Y90p, Idm, X90p, Idp, Y90p, Ym, Y90p, Idp, X90m, Idp, Y90m, Idm, X90m, Yp, 
+ Y90m, Yp, Y90p, Xp, X90p, Idm, X90m, Ym, X90p, Idp, X90p, Idm, Y90m, Idm, 
+ X90m, Xm, Y90p, Xp, Y90p, Ym, Y90m, Idm, X90m, Idm, X90p, Idp, Y90p, Yp, 
+ Y90p, Xm, Y90m, Ym, Y90p, Idp, X90m, Ym, X90m, Xp, X90m, Idp, Y90p, Ym, 
+ X90m, Idp, Y90m, Idm, Y90p, Idm, X90p, Ym, Y90p, Idm, X90p, Idm, X90m, Xp, 
+ X90p, Xm, X90m, Ym, Y90p, Idp, Y90m, Xm, Y90m, Ym, X90m, Xm, Y90p, Idm, 
+ X90m, Idm, X90m, Yp, X90p, Idp, Idm, Idp}
+1{Idm, X90m, Idp, Y90p, Yp, X90p, Idp, X90m, Idp, Y90p, Xp, Y90m, Idp, X90p, 
+ Ym, Y90p, Xm, Y90p, Idm, X90m, Idm, X90m, Idm, X90p, Ym, X90m, Yp, Y90p, Xm, 
+ Y90p, Ym, Y90m, Idp, Y90p, Xp, X90m, Idp, Y90p, Xm, Y90m, Idp, Y90m, Xm, 
+ X90m, Yp, Y90m, Idm, Y90p, Idm, X90p, Idp, X90m, Idm, Y90p, Idp, Y90p, Idp, 
+ Y90m, Idm, X90m, Idm, X90p, Xm, X90p, Ym, Y90p, Idp, X90p, Idp, X90p, Yp, 
+ Y90p, Idm, X90p, Idp, Y90p, Ym, Y90p, Idp, X90m, Idp, Y90m, Idm, X90m, Yp, 
+ Y90m, Yp, Y90p, Xp, X90p, Idm, X90m, Ym, X90p, Idp, X90p, Idm, Y90m, Idm, 
+ X90m, Xm, Y90p, Xp, Y90p, Ym, Y90m, Idm, X90m, Idm, X90p, Idp, Y90p, Yp, 
+ Y90p, Xm, Y90m, Ym, Y90p, Idp, X90m, Ym, X90m, Xp, X90m, Idp, Y90p, Ym, 
+ X90m, Idp, Y90m, Idm, Y90p, Idm, X90p, Ym, Y90p, Idm, X90p, Idm, X90m, Xp, 
+ X90p, Xm, X90m, Ym, Y90p, Idp, Y90m, Xm, Y90m, Ym, X90m, Xm, Y90p, Idm, 
+ X90m, Idm, X90m, Yp, X90p, Idp, Y90p, Idp, Y90m, Idp, Y90p, Idp, Y90p, Yp, 
+ X90m, Idm, Y90p, Idm, X90m, Ym, X90m, Idp, Y90m, Idp, Y90p, Idp, Y90p, Ym, 
+ X90m, Idm, X90m, Xm, Y90m, Idm, Y90m, Idp, Y90p, Idp, X90p, Xp}
+1{Idp, X90m, Idp, Y90p, Xm, X90p, Idp}
+1{Idp, X90m, Idp, Y90p, Xm, X90p, Idp, Idp, Idp}
+1{Idp, X90m, Idp, Y90p, Xm, X90p, Idp, X90p, Idp, X90p, Xm}
+1{Idp, X90m, Idp, Y90p, Xm, X90p, Idp, X90p, Idp, Y90m, Xm, X90m, Xm}
+1{Idp, X90m, Idp, Y90p, Xm, X90p, Idp, X90p, Idp, Y90m, Xm, Y90p, Xm, X90m, 
+ Idp}
+1{Idp, X90m, Idp, Y90p, Xm, X90p, Idp, X90p, Idp, Y90m, Xm, Y90p, Xm, X90p, 
+ Idp, Y90p, Idp, Y90m, Ym}
+1{Idp, X90m, Idp, Y90p, Xm, X90p, Idp, X90p, Idp, Y90m, Xm, Y90p, Xm, X90p, 
+ Idp, Y90p, Idp, Y90p, Ym, X90m, Ym, X90p, Yp}
+1{Idp, X90m, Idp, Y90p, Xm, X90p, Idp, X90p, Idp, Y90m, Xm, Y90p, Xm, X90p, 
+ Idp, Y90p, Idp, Y90p, Ym, X90m, Ym, X90m, Yp, X90m, Ym, X90p, Xm}
+0{Idp, X90m, Idp, Y90p, Xm, X90p, Idp, X90p, Idp, Y90m, Xm, Y90p, Xm, X90p, 
+ Idp, Y90p, Idp, Y90p, Ym, X90m, Ym, X90m, Yp, X90m, Ym, X90p, Xm, Y90m, Idp, 
+ Y90m, Yp, Y90p, Xp, Y90p, Idm}
+0{Idp, X90m, Idp, Y90p, Xm, X90p, Idp, X90p, Idp, Y90m, Xm, Y90p, Xm, X90p, 
+ Idp, Y90p, Idp, Y90p, Ym, X90m, Ym, X90m, Yp, X90m, Ym, X90p, Xm, Y90m, Idp, 
+ Y90m, Yp, Y90p, Xp, Y90m, Idm, X90p, Yp, Y90p, Xm, Y90m, Idp, X90p, Xm}
+0{Idp, X90m, Idp, Y90p, Xm, X90p, Idp, X90p, Idp, Y90m, Xm, Y90p, Xm, X90p, 
+ Idp, Y90p, Idp, Y90p, Ym, X90m, Ym, X90m, Yp, X90m, Ym, X90p, Xm, Y90m, Idp, 
+ Y90m, Yp, Y90p, Xp, Y90m, Idm, X90p, Yp, Y90p, Xm, Y90m, Idp, Y90m, Xm, 
+ X90m, Idm, Y90m, Yp, Y90m, Idm, Idp, Ym}
+0{Idp, X90m, Idp, Y90p, Xm, X90p, Idp, X90p, Idp, Y90m, Xm, Y90p, Xm, X90p, 
+ Idp, Y90p, Idp, Y90p, Ym, X90m, Ym, X90m, Yp, X90m, Ym, X90p, Xm, Y90m, Idp, 
+ Y90m, Yp, Y90p, Xp, Y90m, Idm, X90p, Yp, Y90p, Xm, Y90m, Idp, Y90m, Xm, 
+ X90m, Idm, Y90m, Yp, Y90m, Idm, X90p, Ym, X90p, Idm, Y90m, Idm, Y90p, Yp, 
+ Y90m, Idm, X90p, Idp, X90m, Idm, X90m, Idm, Y90m, Idm}
+1{Idp, X90m, Idp, Y90p, Xm, X90p, Idp, X90p, Idp, Y90m, Xm, Y90p, Xm, X90p, 
+ Idp, Y90p, Idp, Y90p, Ym, X90m, Ym, X90m, Yp, X90m, Ym, X90p, Xm, Y90m, Idp, 
+ Y90m, Yp, Y90p, Xp, Y90m, Idm, X90p, Yp, Y90p, Xm, Y90m, Idp, Y90m, Xm, 
+ X90m, Idm, Y90m, Yp, Y90m, Idm, X90p, Ym, X90p, Idm, Y90m, Idm, Y90p, Yp, 
+ Y90m, Idm, X90p, Idp, X90m, Idm, X90m, Idm, Y90p, Idm, X90m, Idm, X90p, Xp, 
+ Y90p, Idm, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, Idp, Y90p, Idm}
+0{Idp, X90m, Idp, Y90p, Xm, X90p, Idp, X90p, Idp, Y90m, Xm, Y90p, Xm, X90p, 
+ Idp, Y90p, Idp, Y90p, Ym, X90m, Ym, X90m, Yp, X90m, Ym, X90p, Xm, Y90m, Idp, 
+ Y90m, Yp, Y90p, Xp, Y90m, Idm, X90p, Yp, Y90p, Xm, Y90m, Idp, Y90m, Xm, 
+ X90m, Idm, Y90m, Yp, Y90m, Idm, X90p, Ym, X90p, Idm, Y90m, Idm, Y90p, Yp, 
+ Y90m, Idm, X90p, Idp, X90m, Idm, X90m, Idm, Y90p, Idm, X90m, Idm, X90p, Xp, 
+ Y90p, Idm, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, Idp, Y90m, Idm, X90p, Idp, 
+ Y90m, Ym, Y90p, Yp, X90p, Ym, X90m, Idp, X90p, Idp, X90m, Idm, X90p, Idp}
+0{Idp, X90m, Idp, Y90p, Xm, X90p, Idp, X90p, Idp, Y90m, Xm, Y90p, Xm, X90p, 
+ Idp, Y90p, Idp, Y90p, Ym, X90m, Ym, X90m, Yp, X90m, Ym, X90p, Xm, Y90m, Idp, 
+ Y90m, Yp, Y90p, Xp, Y90m, Idm, X90p, Yp, Y90p, Xm, Y90m, Idp, Y90m, Xm, 
+ X90m, Idm, Y90m, Yp, Y90m, Idm, X90p, Ym, X90p, Idm, Y90m, Idm, Y90p, Yp, 
+ Y90m, Idm, X90p, Idp, X90m, Idm, X90m, Idm, Y90p, Idm, X90m, Idm, X90p, Xp, 
+ Y90p, Idm, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, Idp, Y90m, Idm, X90p, Idp, 
+ Y90m, Ym, Y90p, Yp, X90p, Ym, X90m, Idp, X90p, Idp, X90m, Idm, Y90p, Idp, 
+ X90m, Xp, Y90p, Idm, Y90p, Xp, Y90m, Yp, X90m, Ym, X90m, Xp, Y90m, Idm, 
+ Y90m, Idp, Y90p, Yp, Y90m, Ym, X90p, Idp, X90p, Xp, X90p, Idm, Y90m, Xp, 
+ X90p, Idm, X90p, Idm}
+1{Idp, X90m, Idp, Y90p, Xm, X90p, Idp, X90p, Idp, Y90m, Xm, Y90p, Xm, X90p, 
+ Idp, Y90p, Idp, Y90p, Ym, X90m, Ym, X90m, Yp, X90m, Ym, X90p, Xm, Y90m, Idp, 
+ Y90m, Yp, Y90p, Xp, Y90m, Idm, X90p, Yp, Y90p, Xm, Y90m, Idp, Y90m, Xm, 
+ X90m, Idm, Y90m, Yp, Y90m, Idm, X90p, Ym, X90p, Idm, Y90m, Idm, Y90p, Yp, 
+ Y90m, Idm, X90p, Idp, X90m, Idm, X90m, Idm, Y90p, Idm, X90m, Idm, X90p, Xp, 
+ Y90p, Idm, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, Idp, Y90m, Idm, X90p, Idp, 
+ Y90m, Ym, Y90p, Yp, X90p, Ym, X90m, Idp, X90p, Idp, X90m, Idm, Y90p, Idp, 
+ X90m, Xp, Y90p, Idm, Y90p, Xp, Y90m, Yp, X90m, Ym, X90m, Xp, Y90m, Idm, 
+ Y90m, Idp, Y90p, Yp, Y90m, Ym, X90p, Idp, X90p, Xp, X90p, Idm, Y90m, Xp, 
+ X90p, Idm, Y90m, Idm, Y90m, Ym, X90m, Ym, Y90m, Idm, X90m, Idm, X90m, Xm, 
+ X90p, Xp, X90m, Ym, Y90p, Yp, Y90p, Ym, Y90p, Idp, X90p, Idp, Y90p, Idp, 
+ X90p, Idm, X90p, Idm, X90m, Xp, Idm, Xp}
+1{Idp, X90m, Idp, Y90p, Xm, X90p, Idp, X90p, Idp, Y90m, Xm, Y90p, Xm, X90p, 
+ Idp, Y90p, Idp, Y90p, Ym, X90m, Ym, X90m, Yp, X90m, Ym, X90p, Xm, Y90m, Idp, 
+ Y90m, Yp, Y90p, Xp, Y90m, Idm, X90p, Yp, Y90p, Xm, Y90m, Idp, Y90m, Xm, 
+ X90m, Idm, Y90m, Yp, Y90m, Idm, X90p, Ym, X90p, Idm, Y90m, Idm, Y90p, Yp, 
+ Y90m, Idm, X90p, Idp, X90m, Idm, X90m, Idm, Y90p, Idm, X90m, Idm, X90p, Xp, 
+ Y90p, Idm, X90m, Yp, Y90p, Idm, Y90p, Idm, X90m, Idp, Y90m, Idm, X90p, Idp, 
+ Y90m, Ym, Y90p, Yp, X90p, Ym, X90m, Idp, X90p, Idp, X90m, Idm, Y90p, Idp, 
+ X90m, Xp, Y90p, Idm, Y90p, Xp, Y90m, Yp, X90m, Ym, X90m, Xp, Y90m, Idm, 
+ Y90m, Idp, Y90p, Yp, Y90m, Ym, X90p, Idp, X90p, Xp, X90p, Idm, Y90m, Xp, 
+ X90p, Idm, Y90m, Idm, Y90m, Ym, X90m, Ym, Y90m, Idm, X90m, Idm, X90m, Xm, 
+ X90p, Xp, X90m, Ym, Y90p, Yp, Y90p, Ym, Y90p, Idp, X90p, Idp, Y90p, Idp, 
+ X90p, Idm, X90p, Idm, X90m, Xp, Y90p, Xp, Y90p, Idp, Y90m, Idp, Y90p, Idp, 
+ X90m, Ym, Y90p, Idp, X90m, Idp, X90m, Yp, Y90m, Yp, Y90m, Xm, Y90m, Xp, 
+ X90p, Yp, X90p, Idp, Y90p, Idp, Y90m, Idm, Y90p, Idp, X90m, Idp}
+1{Xm, X90p, Idm, Y90m, Idp, X90m, Idm}
+0{Xm, X90p, Idm, Y90m, Idp, X90m, Idm, Idp, Xm}
+0{Xm, X90p, Idm, Y90m, Idp, X90m, Idm, X90p, Xm, X90m, Idp}
+0{Xm, X90p, Idm, Y90m, Idp, X90m, Idm, X90p, Xm, Y90m, Idp, X90m, Idp}
+0{Xm, X90p, Idm, Y90m, Idp, X90m, Idm, X90p, Xm, Y90m, Idp, Y90p, Idp, X90p, 
+ Yp}
+0{Xm, X90p, Idm, Y90m, Idp, X90m, Idm, X90p, Xm, Y90m, Idp, Y90p, Idp, X90p, 
+ Yp, Y90p, Yp, Y90p, Idp}
+1{Xm, X90p, Idm, Y90m, Idp, X90m, Idm, X90p, Xm, Y90m, Idp, Y90p, Idp, X90p, 
+ Yp, Y90p, Yp, Y90p, Idp, X90m, Idm, X90m, Idp}
+1{Xm, X90p, Idm, Y90m, Idp, X90m, Idm, X90p, Xm, Y90m, Idp, Y90p, Idp, X90p, 
+ Yp, Y90p, Yp, Y90p, Idp, X90m, Idm, X90m, Idp, X90p, Idp, X90p, Ym}
+1{Xm, X90p, Idm, Y90m, Idp, X90m, Idm, X90p, Xm, Y90m, Idp, Y90p, Idp, X90p, 
+ Yp, Y90p, Yp, Y90p, Idp, X90m, Idm, X90m, Idp, X90p, Idp, X90p, Ym, Y90m, 
+ Xm, Y90m, Idm, Y90p, Ym, Y90m, Idp}
+0{Xm, X90p, Idm, Y90m, Idp, X90m, Idm, X90p, Xm, Y90m, Idp, Y90p, Idp, X90p, 
+ Yp, Y90p, Yp, Y90p, Idp, X90m, Idm, X90m, Idp, X90p, Idp, X90p, Ym, Y90m, 
+ Xm, Y90m, Idm, Y90p, Ym, Y90m, Idp, X90p, Ym, Y90p, Xp, Y90m, Idm, X90m, Idm}
+0{Xm, X90p, Idm, Y90m, Idp, X90m, Idm, X90p, Xm, Y90m, Idp, Y90p, Idp, X90p, 
+ Yp, Y90p, Yp, Y90p, Idp, X90m, Idm, X90m, Idp, X90p, Idp, X90p, Ym, Y90m, 
+ Xm, Y90m, Idm, Y90p, Ym, Y90m, Idp, X90p, Ym, Y90p, Xp, Y90m, Idm, Y90m, 
+ Idm, X90p, Idm, Y90p, Ym, Y90p, Yp, Idp, Idm}
+1{Xm, X90p, Idm, Y90m, Idp, X90m, Idm, X90p, Xm, Y90m, Idp, Y90p, Idp, X90p, 
+ Yp, Y90p, Yp, Y90p, Idp, X90m, Idm, X90m, Idp, X90p, Idp, X90p, Ym, Y90m, 
+ Xm, Y90m, Idm, Y90p, Ym, Y90m, Idp, X90p, Ym, Y90p, Xp, Y90m, Idm, Y90m, 
+ Idm, X90p, Idm, Y90p, Ym, Y90p, Yp, X90p, Idm, X90m, Idp, Y90p, Idp, Y90m, 
+ Xm, Y90p, Idm, X90m, Ym, X90m, Xm, X90m, Yp, Y90m, Idp}
+1{Xm, X90p, Idm, Y90m, Idp, X90m, Idm, X90p, Xm, Y90m, Idp, Y90p, Idp, X90p, 
+ Yp, Y90p, Yp, Y90p, Idp, X90m, Idm, X90m, Idp, X90p, Idp, X90p, Ym, Y90m, 
+ Xm, Y90m, Idm, Y90p, Ym, Y90m, Idp, X90p, Ym, Y90p, Xp, Y90m, Idm, Y90m, 
+ Idm, X90p, Idm, Y90p, Ym, Y90p, Yp, X90p, Idm, X90m, Idp, Y90p, Idp, Y90m, 
+ Xm, Y90p, Idm, X90m, Ym, X90m, Xm, X90m, Yp, Y90m, Idp, X90p, Yp, X90m, Idp, 
+ Y90m, Yp, X90p, Idm, Y90m, Xp, Y90m, Ym, X90p, Ym, Y90p, Xm}
+1{Xm, X90p, Idm, Y90m, Idp, X90m, Idm, X90p, Xm, Y90m, Idp, Y90p, Idp, X90p, 
+ Yp, Y90p, Yp, Y90p, Idp, X90m, Idm, X90m, Idp, X90p, Idp, X90p, Ym, Y90m, 
+ Xm, Y90m, Idm, Y90p, Ym, Y90m, Idp, X90p, Ym, Y90p, Xp, Y90m, Idm, Y90m, 
+ Idm, X90p, Idm, Y90p, Ym, Y90p, Yp, X90p, Idm, X90m, Idp, Y90p, Idp, Y90m, 
+ Xm, Y90p, Idm, X90m, Ym, X90m, Xm, X90m, Yp, Y90m, Idp, X90p, Yp, X90m, Idp, 
+ Y90m, Yp, X90p, Idm, Y90m, Xp, Y90m, Ym, X90p, Ym, Y90p, Xm, X90m, Ym, Y90m, 
+ Idp, Y90p, Xp, X90p, Idm, X90m, Ym, X90p, Idm, X90p, Xm, X90m, Idp}
+1{Xm, X90p, Idm, Y90m, Idp, X90m, Idm, X90p, Xm, Y90m, Idp, Y90p, Idp, X90p, 
+ Yp, Y90p, Yp, Y90p, Idp, X90m, Idm, X90m, Idp, X90p, Idp, X90p, Ym, Y90m, 
+ Xm, Y90m, Idm, Y90p, Ym, Y90m, Idp, X90p, Ym, Y90p, Xp, Y90m, Idm, Y90m, 
+ Idm, X90p, Idm, Y90p, Ym, Y90p, Yp, X90p, Idm, X90m, Idp, Y90p, Idp, Y90m, 
+ Xm, Y90p, Idm, X90m, Ym, X90m, Xm, X90m, Yp, Y90m, Idp, X90p, Yp, X90m, Idp, 
+ Y90m, Yp, X90p, Idm, Y90m, Xp, Y90m, Ym, X90p, Ym, Y90p, Xm, X90m, Ym, Y90m, 
+ Idp, Y90p, Xp, X90p, Idm, X90m, Ym, X90p, Idm, X90p, Xm, Y90p, Idp, X90p, 
+ Xp, Y90m, Xp, Y90m, Idp, Y90m, Idm, X90p, Idp, X90m, Idm, Y90m, Idm, Y90p, 
+ Idp, Y90m, Xm, Y90p, Ym, X90m, Ym, X90m, Xm, X90m, Idp, Y90m, Yp, X90p, Idp, 
+ X90p, Ym}
+1{Xm, X90p, Idm, Y90m, Idp, X90m, Idm, X90p, Xm, Y90m, Idp, Y90p, Idp, X90p, 
+ Yp, Y90p, Yp, Y90p, Idp, X90m, Idm, X90m, Idp, X90p, Idp, X90p, Ym, Y90m, 
+ Xm, Y90m, Idm, Y90p, Ym, Y90m, Idp, X90p, Ym, Y90p, Xp, Y90m, Idm, Y90m, 
+ Idm, X90p, Idm, Y90p, Ym, Y90p, Yp, X90p, Idm, X90m, Idp, Y90p, Idp, Y90m, 
+ Xm, Y90p, Idm, X90m, Ym, X90m, Xm, X90m, Yp, Y90m, Idp, X90p, Yp, X90m, Idp, 
+ Y90m, Yp, X90p, Idm, Y90m, Xp, Y90m, Ym, X90p, Ym, Y90p, Xm, X90m, Ym, Y90m, 
+ Idp, Y90p, Xp, X90p, Idm, X90m, Ym, X90p, Idm, X90p, Xm, Y90p, Idp, X90p, 
+ Xp, Y90m, Xp, Y90m, Idp, Y90m, Idm, X90p, Idp, X90m, Idm, Y90m, Idm, Y90p, 
+ Idp, Y90m, Xm, Y90p, Ym, X90m, Ym, X90m, Xm, X90m, Idp, Y90m, Yp, X90p, Idp, 
+ Y90p, Ym, Y90m, Idm, X90p, Idp, Y90m, Idp, X90m, Ym, X90m, Xm, X90p, Xm, 
+ X90m, Idp, Y90p, Idm, Y90p, Xp, Y90p, Xm, X90p, Idm, Y90m, Idp, X90p, Yp, 
+ X90p, Xm, X90m, Idm, Idm, Yp}
+1{Xm, X90p, Idm, Y90m, Idp, X90m, Idm, X90p, Xm, Y90m, Idp, Y90p, Idp, X90p, 
+ Yp, Y90p, Yp, Y90p, Idp, X90m, Idm, X90m, Idp, X90p, Idp, X90p, Ym, Y90m, 
+ Xm, Y90m, Idm, Y90p, Ym, Y90m, Idp, X90p, Ym, Y90p, Xp, Y90m, Idm, Y90m, 
+ Idm, X90p, Idm, Y90p, Ym, Y90p, Yp, X90p, Idm, X90m, Idp, Y90p, Idp, Y90m, 
+ Xm, Y90p, Idm, X90m, Ym, X90m, Xm, X90m, Yp, Y90m, Idp, X90p, Yp, X90m, Idp, 
+ Y90m, Yp, X90p, Idm, Y90m, Xp, Y90m, Ym, X90p, Ym, Y90p, Xm, X90m, Ym, Y90m, 
+ Idp, Y90p, Xp, X90p, Idm, X90m, Ym, X90p, Idm, X90p, Xm, Y90p, Idp, X90p, 
+ Xp, Y90m, Xp, Y90m, Idp, Y90m, Idm, X90p, Idp, X90m, Idm, Y90m, Idm, Y90p, 
+ Idp, Y90m, Xm, Y90p, Ym, X90m, Ym, X90m, Xm, X90m, Idp, Y90m, Yp, X90p, Idp, 
+ Y90p, Ym, Y90m, Idm, X90p, Idp, Y90m, Idp, X90m, Ym, X90m, Xm, X90p, Xm, 
+ X90m, Idp, Y90p, Idm, Y90p, Xp, Y90p, Xm, X90p, Idm, Y90m, Idp, X90p, Yp, 
+ X90p, Xm, X90m, Idm, Y90p, Yp, Y90p, Idp, Y90m, Idm, Y90m, Xp, X90p, Ym, 
+ Y90m, Idm, X90m, Idp, X90m, Idm, Y90p, Yp, Y90p, Idp, Y90p, Xm, X90m, Idp, 
+ X90m, Idm, Y90p, Yp, Y90m, Yp, Y90p, Xp, X90p, Idm}
+1{Yp, X90p, Idp, Y90m, Xp, X90m, Xm}
+0{Yp, X90p, Idp, Y90m, Xp, X90m, Xm, Idm, Xm}
+0{Yp, X90p, Idp, Y90m, Xp, X90m, Xm, X90p, Xm, X90p, Xp}
+1{Yp, X90p, Idp, Y90m, Xp, X90m, Xm, X90p, Xm, Y90m, Xp, X90p, Xm}
+1{Yp, X90p, Idp, Y90m, Xp, X90m, Xm, X90p, Xm, Y90m, Xp, Y90p, Xm, X90p, Idm}
+0{Yp, X90p, Idp, Y90m, Xp, X90m, Xm, X90p, Xm, Y90m, Xp, Y90p, Xm, X90p, Idm, 
+ Y90p, Ym, Y90m, Idp}
+0{Yp, X90p, Idp, Y90m, Xp, X90m, Xm, X90p, Xm, Y90m, Xp, Y90p, Xm, X90p, Idm, 
+ Y90p, Ym, Y90p, Idp, X90p, Ym, X90m, Xp}
+0{Yp, X90p, Idp, Y90m, Xp, X90m, Xm, X90p, Xm, Y90m, Xp, Y90p, Xm, X90p, Idm, 
+ Y90p, Ym, Y90p, Idp, X90p, Ym, X90p, Xp, X90p, Xp, X90p, Ym}
+1{Yp, X90p, Idp, Y90m, Xp, X90m, Xm, X90p, Xm, Y90m, Xp, Y90p, Xm, X90p, Idm, 
+ Y90p, Ym, Y90p, Idp, X90p, Ym, X90p, Xp, X90p, Xp, X90m, Ym, Y90p, Idp, 
+ Y90m, Xp, Y90p, Xp, Y90p, Idm}
+0{Yp, X90p, Idp, Y90m, Xp, X90m, Xm, X90p, Xm, Y90m, Xp, Y90p, Xm, X90p, Idm, 
+ Y90p, Ym, Y90p, Idp, X90p, Ym, X90p, Xp, X90p, Xp, X90m, Ym, Y90p, Idp, 
+ Y90m, Xp, Y90p, Xp, Y90m, Idm, X90p, Idm, Y90p, Yp, Y90m, Idp, X90p, Xp}
+0{Yp, X90p, Idp, Y90m, Xp, X90m, Xm, X90p, Xm, Y90m, Xp, Y90p, Xm, X90p, Idm, 
+ Y90p, Ym, Y90p, Idp, X90p, Ym, X90p, Xp, X90p, Xp, X90m, Ym, Y90p, Idp, 
+ Y90m, Xp, Y90p, Xp, Y90m, Idm, X90p, Idm, Y90p, Yp, Y90m, Idp, Y90p, Xp, 
+ X90p, Idm, Y90p, Xm, Y90p, Idm, Idm, Yp}
+0{Yp, X90p, Idp, Y90m, Xp, X90m, Xm, X90p, Xm, Y90m, Xp, Y90p, Xm, X90p, Idm, 
+ Y90p, Ym, Y90p, Idp, X90p, Ym, X90p, Xp, X90p, Xp, X90m, Ym, Y90p, Idp, 
+ Y90m, Xp, Y90p, Xp, Y90m, Idm, X90p, Idm, Y90p, Yp, Y90m, Idp, Y90p, Xp, 
+ X90p, Idm, Y90p, Xm, Y90p, Idm, X90m, Yp, X90m, Idp, Y90p, Xp, Y90p, Xp, 
+ Y90m, Idm, X90m, Idm, X90m, Ym, X90m, Yp, Y90p, Idp}
+1{Yp, X90p, Idp, Y90m, Xp, X90m, Xm, X90p, Xm, Y90m, Xp, Y90p, Xm, X90p, Idm, 
+ Y90p, Ym, Y90p, Idp, X90p, Ym, X90p, Xp, X90p, Xp, X90m, Ym, Y90p, Idp, 
+ Y90m, Xp, Y90p, Xp, Y90m, Idm, X90p, Idm, Y90p, Yp, Y90m, Idp, Y90p, Xp, 
+ X90p, Idm, Y90p, Xm, Y90p, Idm, X90m, Yp, X90m, Idp, Y90p, Xp, Y90p, Xp, 
+ Y90m, Idm, X90m, Idm, X90m, Ym, X90m, Yp, Y90m, Idp, X90m, Xp, X90p, Xm, 
+ Y90p, Idp, X90p, Xm, Y90m, Xm, Y90m, Yp, X90p, Ym, Y90p, Xp}
+0{Yp, X90p, Idp, Y90m, Xp, X90m, Xm, X90p, Xm, Y90m, Xp, Y90p, Xm, X90p, Idm, 
+ Y90p, Ym, Y90p, Idp, X90p, Ym, X90p, Xp, X90p, Xp, X90m, Ym, Y90p, Idp, 
+ Y90m, Xp, Y90p, Xp, Y90m, Idm, X90p, Idm, Y90p, Yp, Y90m, Idp, Y90p, Xp, 
+ X90p, Idm, Y90p, Xm, Y90p, Idm, X90m, Yp, X90m, Idp, Y90p, Xp, Y90p, Xp, 
+ Y90m, Idm, X90m, Idm, X90m, Ym, X90m, Yp, Y90m, Idp, X90m, Xp, X90p, Xm, 
+ Y90p, Idp, X90p, Xm, Y90m, Xm, Y90m, Yp, X90p, Ym, Y90p, Xp, X90m, Idp, 
+ Y90m, Idp, Y90p, Xm, X90p, Yp, X90m, Ym, X90p, Ym, X90m, Idm, X90p, Idm}
+0{Yp, X90p, Idp, Y90m, Xp, X90m, Xm, X90p, Xm, Y90m, Xp, Y90p, Xm, X90p, Idm, 
+ Y90p, Ym, Y90p, Idp, X90p, Ym, X90p, Xp, X90p, Xp, X90m, Ym, Y90p, Idp, 
+ Y90m, Xp, Y90p, Xp, Y90m, Idm, X90p, Idm, Y90p, Yp, Y90m, Idp, Y90p, Xp, 
+ X90p, Idm, Y90p, Xm, Y90p, Idm, X90m, Yp, X90m, Idp, Y90p, Xp, Y90p, Xp, 
+ Y90m, Idm, X90m, Idm, X90m, Ym, X90m, Yp, Y90m, Idp, X90m, Xp, X90p, Xm, 
+ Y90p, Idp, X90p, Xm, Y90m, Xm, Y90m, Yp, X90p, Ym, Y90p, Xp, X90m, Idp, 
+ Y90m, Idp, Y90p, Xm, X90p, Yp, X90m, Ym, X90p, Ym, X90m, Idm, Y90p, Idm, 
+ X90p, Idm, Y90m, Idp, Y90m, Xm, Y90p, Idm, X90p, Idm, X90m, Idm, Y90p, Idm, 
+ Y90m, Idp, Y90p, Idp, Y90p, Idm, X90p, Ym, X90p, Idp, X90m, Idp, Y90m, Xp, 
+ X90p, Ym, X90p, Idm}
+0{Yp, X90p, Idp, Y90m, Xp, X90m, Xm, X90p, Xm, Y90m, Xp, Y90p, Xm, X90p, Idm, 
+ Y90p, Ym, Y90p, Idp, X90p, Ym, X90p, Xp, X90p, Xp, X90m, Ym, Y90p, Idp, 
+ Y90m, Xp, Y90p, Xp, Y90m, Idm, X90p, Idm, Y90p, Yp, Y90m, Idp, Y90p, Xp, 
+ X90p, Idm, Y90p, Xm, Y90p, Idm, X90m, Yp, X90m, Idp, Y90p, Xp, Y90p, Xp, 
+ Y90m, Idm, X90m, Idm, X90m, Ym, X90m, Yp, Y90m, Idp, X90m, Xp, X90p, Xm, 
+ Y90p, Idp, X90p, Xm, Y90m, Xm, Y90m, Yp, X90p, Ym, Y90p, Xp, X90m, Idp, 
+ Y90m, Idp, Y90p, Xm, X90p, Yp, X90m, Ym, X90p, Ym, X90m, Idm, Y90p, Idm, 
+ X90p, Idm, Y90m, Idp, Y90m, Xm, Y90p, Idm, X90p, Idm, X90m, Idm, Y90p, Idm, 
+ Y90m, Idp, Y90p, Idp, Y90p, Idm, X90p, Ym, X90p, Idp, X90m, Idp, Y90m, Xp, 
+ X90p, Ym, Y90m, Idm, Y90p, Ym, X90p, Idp, Y90p, Xm, X90p, Idm, X90m, Idm, 
+ X90p, Xm, X90m, Yp, Y90p, Idm, Y90m, Idm, Y90m, Xp, X90m, Idp, Y90m, Idp, 
+ X90m, Idm, X90p, Xm, X90m, Yp, Idp, Xp}
+1{Yp, X90p, Idp, Y90m, Xp, X90m, Xm, X90p, Xm, Y90m, Xp, Y90p, Xm, X90p, Idm, 
+ Y90p, Ym, Y90p, Idp, X90p, Ym, X90p, Xp, X90p, Xp, X90m, Ym, Y90p, Idp, 
+ Y90m, Xp, Y90p, Xp, Y90m, Idm, X90p, Idm, Y90p, Yp, Y90m, Idp, Y90p, Xp, 
+ X90p, Idm, Y90p, Xm, Y90p, Idm, X90m, Yp, X90m, Idp, Y90p, Xp, Y90p, Xp, 
+ Y90m, Idm, X90m, Idm, X90m, Ym, X90m, Yp, Y90m, Idp, X90m, Xp, X90p, Xm, 
+ Y90p, Idp, X90p, Xm, Y90m, Xm, Y90m, Yp, X90p, Ym, Y90p, Xp, X90m, Idp, 
+ Y90m, Idp, Y90p, Xm, X90p, Yp, X90m, Ym, X90p, Ym, X90m, Idm, Y90p, Idm, 
+ X90p, Idm, Y90m, Idp, Y90m, Xm, Y90p, Idm, X90p, Idm, X90m, Idm, Y90p, Idm, 
+ Y90m, Idp, Y90p, Idp, Y90p, Idm, X90p, Ym, X90p, Idp, X90m, Idp, Y90m, Xp, 
+ X90p, Ym, Y90m, Idm, Y90p, Ym, X90p, Idp, Y90p, Xm, X90p, Idm, X90m, Idm, 
+ X90p, Xm, X90m, Yp, Y90p, Idm, Y90m, Idm, Y90m, Xp, X90m, Idp, Y90m, Idp, 
+ X90m, Idm, X90p, Xm, X90m, Yp, Y90p, Xp, Y90p, Xm, Y90p, Xp, Y90p, Ym, X90m, 
+ Yp, Y90p, Idm, X90p, Xp, X90p, Idm, Y90m, Yp, Y90m, Xm, Y90m, Xm, X90p, Idp, 
+ X90p, Xm, Y90p, Idm, Y90p, Ym, Y90m, Idp, X90p, Idm}
+1{Idm, Y90m, Idm, Y90m, Idm, Idp, Idm}
+0{Idm, Y90m, Idm, Y90m, Idm, X90m, Idm, X90m, Idp}
+1{Idm, Y90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idp, X90m, Yp}
+1{Idm, Y90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idp, Y90p, Yp, X90p, Idp}
+1{Idm, Y90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idp, Y90p, Yp, Y90m, Idp, X90m, 
+ Yp}
+0{Idm, Y90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idp, Y90p, Yp, Y90m, Idp, Y90m, 
+ Yp, X90p, Xp, Idm, Idm}
+1{Idm, Y90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idp, Y90p, Yp, Y90m, Idp, Y90m, 
+ Yp, X90p, Xp, Y90m, Idm, Y90m, Ym, Idm, Ym}
+0{Idm, Y90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idp, Y90p, Yp, Y90m, Idp, Y90m, 
+ Yp, X90p, Xp, Y90m, Idm, Y90m, Ym, Y90p, Ym, X90p, Idp, Y90m, Xp}
+0{Idm, Y90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idp, Y90p, Yp, Y90m, Idp, Y90m, 
+ Yp, X90p, Xp, Y90m, Idm, Y90m, Ym, Y90p, Ym, X90p, Idp, Y90p, Xp, X90m, Yp, 
+ Y90m, Yp, Y90p, Ym, X90m, Idm}
+0{Idm, Y90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idp, Y90p, Yp, Y90m, Idp, Y90m, 
+ Yp, X90p, Xp, Y90m, Idm, Y90m, Ym, Y90p, Ym, X90p, Idp, Y90p, Xp, X90m, Yp, 
+ Y90m, Yp, Y90p, Ym, X90p, Idm, Y90m, Ym, X90m, Xp, Y90p, Yp, Idp, Xm}
+0{Idm, Y90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idp, Y90p, Yp, Y90m, Idp, Y90m, 
+ Yp, X90p, Xp, Y90m, Idm, Y90m, Ym, Y90p, Ym, X90p, Idp, Y90p, Xp, X90m, Yp, 
+ Y90m, Yp, Y90p, Ym, X90p, Idm, Y90m, Ym, X90m, Xp, Y90p, Yp, X90p, Xm, X90p, 
+ Idm, Y90p, Xp, X90p, Idm, Y90p, Idp}
+1{Idm, Y90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idp, Y90p, Yp, Y90m, Idp, Y90m, 
+ Yp, X90p, Xp, Y90m, Idm, Y90m, Ym, Y90p, Ym, X90p, Idp, Y90p, Xp, X90m, Yp, 
+ Y90m, Yp, Y90p, Ym, X90p, Idm, Y90m, Ym, X90m, Xp, Y90p, Yp, X90p, Xm, X90p, 
+ Idm, Y90p, Xp, X90p, Idm, X90m, Idp, X90p, Xp, Y90p, Xm, X90m, Xp, X90p, 
+ Idp, X90m, Xp, X90p, Idm, X90p, Yp, X90m, Idp}
+0{Idm, Y90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idp, Y90p, Yp, Y90m, Idp, Y90m, 
+ Yp, X90p, Xp, Y90m, Idm, Y90m, Ym, Y90p, Ym, X90p, Idp, Y90p, Xp, X90m, Yp, 
+ Y90m, Yp, Y90p, Ym, X90p, Idm, Y90m, Ym, X90m, Xp, Y90p, Yp, X90p, Xm, X90p, 
+ Idm, Y90p, Xp, X90p, Idm, X90m, Idp, X90p, Xp, Y90p, Xm, X90m, Xp, X90p, 
+ Idp, X90m, Xp, X90p, Idm, X90p, Yp, Y90p, Idp, X90p, Xm, X90p, Idm, Y90p, 
+ Idp, X90p, Ym, Y90p, Idp, Y90p, Yp, Y90p, Yp, Y90p, Xm}
+1{Idm, Y90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idp, Y90p, Yp, Y90m, Idp, Y90m, 
+ Yp, X90p, Xp, Y90m, Idm, Y90m, Ym, Y90p, Ym, X90p, Idp, Y90p, Xp, X90m, Yp, 
+ Y90m, Yp, Y90p, Ym, X90p, Idm, Y90m, Ym, X90m, Xp, Y90p, Yp, X90p, Xm, X90p, 
+ Idm, Y90p, Xp, X90p, Idm, X90m, Idp, X90p, Xp, Y90p, Xm, X90m, Xp, X90p, 
+ Idp, X90m, Xp, X90p, Idm, X90p, Yp, Y90p, Idp, X90p, Xm, X90p, Idm, Y90p, 
+ Idp, X90p, Ym, Y90p, Idp, Y90p, Yp, Y90p, Yp, Y90m, Xm, Y90p, Idp, X90m, Yp, 
+ X90m, Idm, Y90p, Ym, Y90p, Idp, X90p, Xm, Y90m, Xp, Idm, Idm}
+0{Idm, Y90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idp, Y90p, Yp, Y90m, Idp, Y90m, 
+ Yp, X90p, Xp, Y90m, Idm, Y90m, Ym, Y90p, Ym, X90p, Idp, Y90p, Xp, X90m, Yp, 
+ Y90m, Yp, Y90p, Ym, X90p, Idm, Y90m, Ym, X90m, Xp, Y90p, Yp, X90p, Xm, X90p, 
+ Idm, Y90p, Xp, X90p, Idm, X90m, Idp, X90p, Xp, Y90p, Xm, X90m, Xp, X90p, 
+ Idp, X90m, Xp, X90p, Idm, X90p, Yp, Y90p, Idp, X90p, Xm, X90p, Idm, Y90p, 
+ Idp, X90p, Ym, Y90p, Idp, Y90p, Yp, Y90p, Yp, Y90m, Xm, Y90p, Idp, X90m, Yp, 
+ X90m, Idm, Y90p, Ym, Y90p, Idp, X90p, Xm, Y90m, Xp, X90m, Idm, Y90m, Ym, 
+ Y90p, Xp, X90p, Idm, Y90p, Ym, X90m, Yp, Y90p, Xp, X90m, Idp, Y90m, Idm, 
+ X90m, Idp, X90m, Idm, Y90p, Idp, X90m, Idm, Y90m, Idm, X90p, Idm, Y90p, Idp, 
+ Idm, Idp}
+0{Idm, Y90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idp, Y90p, Yp, Y90m, Idp, Y90m, 
+ Yp, X90p, Xp, Y90m, Idm, Y90m, Ym, Y90p, Ym, X90p, Idp, Y90p, Xp, X90m, Yp, 
+ Y90m, Yp, Y90p, Ym, X90p, Idm, Y90m, Ym, X90m, Xp, Y90p, Yp, X90p, Xm, X90p, 
+ Idm, Y90p, Xp, X90p, Idm, X90m, Idp, X90p, Xp, Y90p, Xm, X90m, Xp, X90p, 
+ Idp, X90m, Xp, X90p, Idm, X90p, Yp, Y90p, Idp, X90p, Xm, X90p, Idm, Y90p, 
+ Idp, X90p, Ym, Y90p, Idp, Y90p, Yp, Y90p, Yp, Y90m, Xm, Y90p, Idp, X90m, Yp, 
+ X90m, Idm, Y90p, Ym, Y90p, Idp, X90p, Xm, Y90m, Xp, X90m, Idm, Y90m, Ym, 
+ Y90p, Xp, X90p, Idm, Y90p, Ym, X90m, Yp, Y90p, Xp, X90m, Idp, Y90m, Idm, 
+ X90m, Idp, X90m, Idm, Y90p, Idp, X90m, Idm, Y90m, Idm, X90p, Idm, Y90p, Idp, 
+ Y90p, Idp, X90p, Ym, X90m, Idp, Y90m, Xp, Y90m, Yp, Y90p, Ym, X90p, Idm, 
+ Y90p, Idp, X90m, Xm, Y90p, Idp, X90p, Ym, X90m, Xp, X90p, Idm, Y90p, Ym, 
+ X90m, Idp, Y90m, Xp, X90p, Xp}
+0{Idm, Y90m, Idm, Y90m, Idm, X90m, Idm, Y90p, Idp, Y90p, Yp, Y90m, Idp, Y90m, 
+ Yp, X90p, Xp, Y90m, Idm, Y90m, Ym, Y90p, Ym, X90p, Idp, Y90p, Xp, X90m, Yp, 
+ Y90m, Yp, Y90p, Ym, X90p, Idm, Y90m, Ym, X90m, Xp, Y90p, Yp, X90p, Xm, X90p, 
+ Idm, Y90p, Xp, X90p, Idm, X90m, Idp, X90p, Xp, Y90p, Xm, X90m, Xp, X90p, 
+ Idp, X90m, Xp, X90p, Idm, X90p, Yp, Y90p, Idp, X90p, Xm, X90p, Idm, Y90p, 
+ Idp, X90p, Ym, Y90p, Idp, Y90p, Yp, Y90p, Yp, Y90m, Xm, Y90p, Idp, X90m, Yp, 
+ X90m, Idm, Y90p, Ym, Y90p, Idp, X90p, Xm, Y90m, Xp, X90m, Idm, Y90m, Ym, 
+ Y90p, Xp, X90p, Idm, Y90p, Ym, X90m, Yp, Y90p, Xp, X90m, Idp, Y90m, Idm, 
+ X90m, Idp, X90m, Idm, Y90p, Idp, X90m, Idm, Y90m, Idm, X90p, Idm, Y90p, Idp, 
+ Y90p, Idp, X90p, Ym, X90m, Idp, Y90m, Xp, Y90m, Yp, Y90p, Ym, X90p, Idm, 
+ Y90p, Idp, X90m, Xm, Y90p, Idp, X90p, Ym, X90m, Xp, X90p, Idm, Y90p, Ym, 
+ X90m, Idp, Y90m, Xp, X90m, Xp, Y90p, Idp, Y90m, Idm, Y90m, Xp, Y90m, Xp, 
+ X90p, Yp, X90p, Xp, X90m, Xp, Y90m, Xm, Y90p, Yp, Y90m, Ym, X90m, Idm, X90m, 
+ Xm, Y90m, Idp, X90m, Idp, X90p, Xm, X90m, Yp}
+1{Idm, Y90m, Idm, Y90m, Idm, Idm, Idm}
+1{Idm, Y90m, Idm, Y90m, Idm, X90p, Idm, X90p, Ym}
+1{Idm, Y90m, Idm, Y90m, Idm, X90p, Idm, Y90m, Ym, X90p, Ym}
+1{Idm, Y90m, Idm, Y90m, Idm, X90p, Idm, Y90m, Ym, Y90m, Ym, X90m, Idm}
+0{Idm, Y90m, Idm, Y90m, Idm, X90p, Idm, Y90m, Ym, Y90m, Ym, Y90p, Idm, X90m, 
+ Yp}
+0{Idm, Y90m, Idm, Y90m, Idm, X90p, Idm, Y90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, 
+ Yp, X90m, Idp, Idm, Ym}
+1{Idm, Y90m, Idm, Y90m, Idm, X90p, Idm, Y90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Idm, Idp, Idp}
+0{Idm, Y90m, Idm, Y90m, Idm, X90p, Idm, Y90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Idm, Y90p, Idp, X90m, Xm, Y90m, Xp}
+0{Idm, Y90m, Idm, Y90m, Idm, X90p, Idm, Y90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Idm, Y90p, Idp, X90m, Xm, Y90p, Xp, X90m, Yp, 
+ Y90m, Ym, Y90p, Xp, X90m, Yp}
+1{Idm, Y90m, Idm, Y90m, Idm, X90p, Idm, Y90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Idm, Y90p, Idp, X90m, Xm, Y90p, Xp, X90m, Yp, 
+ Y90m, Ym, Y90p, Xp, X90p, Yp, Y90m, Idp, X90m, Xp, Y90p, Ym, Idm, Xp}
+0{Idm, Y90m, Idm, Y90m, Idm, X90p, Idm, Y90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Idm, Y90p, Idp, X90m, Xm, Y90p, Xp, X90m, Yp, 
+ Y90m, Ym, Y90p, Xp, X90p, Yp, Y90m, Idp, X90m, Xp, Y90p, Ym, X90p, Xp, X90p, 
+ Idm, Y90m, Xp, X90m, Xp, Y90p, Idm}
+1{Idm, Y90m, Idm, Y90m, Idm, X90p, Idm, Y90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Idm, Y90p, Idp, X90m, Xm, Y90p, Xp, X90m, Yp, 
+ Y90m, Ym, Y90p, Xp, X90p, Yp, Y90m, Idp, X90m, Xp, Y90p, Ym, X90p, Xp, X90p, 
+ Idm, Y90m, Xp, X90m, Xp, X90p, Idm, X90m, Ym, Y90m, Xm, X90p, Idm, X90m, 
+ Idm, X90m, Idm, X90m, Idm, X90m, Ym, X90p, Yp}
+1{Idm, Y90m, Idm, Y90m, Idm, X90p, Idm, Y90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Idm, Y90p, Idp, X90m, Xm, Y90p, Xp, X90m, Yp, 
+ Y90m, Ym, Y90p, Xp, X90p, Yp, Y90m, Idp, X90m, Xp, Y90p, Ym, X90p, Xp, X90p, 
+ Idm, Y90m, Xp, X90m, Xp, X90p, Idm, X90m, Ym, Y90m, Xm, X90p, Idm, X90m, 
+ Idm, X90m, Idm, X90m, Idm, X90m, Ym, Y90m, Yp, X90m, Idm, X90p, Idm, Y90m, 
+ Idp, X90p, Yp, Y90p, Xm, Y90m, Yp, Y90m, Idp, Y90m, Idm}
+1{Idm, Y90m, Idm, Y90m, Idm, X90p, Idm, Y90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Idm, Y90p, Idp, X90m, Xm, Y90p, Xp, X90m, Yp, 
+ Y90m, Ym, Y90p, Xp, X90p, Yp, Y90m, Idp, X90m, Xp, Y90p, Ym, X90p, Xp, X90p, 
+ Idm, Y90m, Xp, X90m, Xp, X90p, Idm, X90m, Ym, Y90m, Xm, X90p, Idm, X90m, 
+ Idm, X90m, Idm, X90m, Idm, X90m, Ym, Y90m, Yp, X90m, Idm, X90p, Idm, Y90m, 
+ Idp, X90p, Yp, Y90p, Xm, Y90m, Yp, Y90m, Idp, Y90p, Idm, Y90m, Idm, X90m, 
+ Xp, X90m, Xp, Y90p, Yp, Y90p, Yp, X90m, Xp, Y90p, Xp, Idp, Yp}
+0{Idm, Y90m, Idm, Y90m, Idm, X90p, Idm, Y90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Idm, Y90p, Idp, X90m, Xm, Y90p, Xp, X90m, Yp, 
+ Y90m, Ym, Y90p, Xp, X90p, Yp, Y90m, Idp, X90m, Xp, Y90p, Ym, X90p, Xp, X90p, 
+ Idm, Y90m, Xp, X90m, Xp, X90p, Idm, X90m, Ym, Y90m, Xm, X90p, Idm, X90m, 
+ Idm, X90m, Idm, X90m, Idm, X90m, Ym, Y90m, Yp, X90m, Idm, X90p, Idm, Y90m, 
+ Idp, X90p, Yp, Y90p, Xm, Y90m, Yp, Y90m, Idp, Y90p, Idm, Y90m, Idm, X90m, 
+ Xp, X90m, Xp, Y90p, Yp, Y90p, Yp, X90m, Xp, Y90p, Xp, X90p, Yp, Y90m, Xm, 
+ Y90p, Yp, X90p, Idp, Y90m, Yp, X90p, Idm, Y90m, Idp, X90m, Idm, Y90m, Idp, 
+ X90p, Yp, X90p, Ym, Y90p, Idm, X90p, Yp, Y90p, Idp, X90m, Xp, Y90m, Xp, Idm, 
+ Idm}
+0{Idm, Y90m, Idm, Y90m, Idm, X90p, Idm, Y90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Idm, Y90p, Idp, X90m, Xm, Y90p, Xp, X90m, Yp, 
+ Y90m, Ym, Y90p, Xp, X90p, Yp, Y90m, Idp, X90m, Xp, Y90p, Ym, X90p, Xp, X90p, 
+ Idm, Y90m, Xp, X90m, Xp, X90p, Idm, X90m, Ym, Y90m, Xm, X90p, Idm, X90m, 
+ Idm, X90m, Idm, X90m, Idm, X90m, Ym, Y90m, Yp, X90m, Idm, X90p, Idm, Y90m, 
+ Idp, X90p, Yp, Y90p, Xm, Y90m, Yp, Y90m, Idp, Y90p, Idm, Y90m, Idm, X90m, 
+ Xp, X90m, Xp, Y90p, Yp, Y90p, Yp, X90m, Xp, Y90p, Xp, X90p, Yp, Y90m, Xm, 
+ Y90p, Yp, X90p, Idp, Y90m, Yp, X90p, Idm, Y90m, Idp, X90m, Idm, Y90m, Idp, 
+ X90p, Yp, X90p, Ym, Y90p, Idm, X90p, Yp, Y90p, Idp, X90m, Xp, Y90m, Xp, 
+ Y90m, Idm, X90m, Idm, X90p, Idm, Y90m, Xm, Y90m, Idp, Y90m, Xm, X90m, Idp, 
+ Y90m, Idp, X90p, Idp, Y90p, Idp, X90p, Yp, X90m, Idp, X90p, Idp, Y90p, Yp, 
+ X90m, Xp, Y90p, Idm, X90p, Idp}
+0{Idm, Y90m, Idm, Y90m, Idm, X90p, Idm, Y90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Idm, Y90p, Idp, X90m, Xm, Y90p, Xp, X90m, Yp, 
+ Y90m, Ym, Y90p, Xp, X90p, Yp, Y90m, Idp, X90m, Xp, Y90p, Ym, X90p, Xp, X90p, 
+ Idm, Y90m, Xp, X90m, Xp, X90p, Idm, X90m, Ym, Y90m, Xm, X90p, Idm, X90m, 
+ Idm, X90m, Idm, X90m, Idm, X90m, Ym, Y90m, Yp, X90m, Idm, X90p, Idm, Y90m, 
+ Idp, X90p, Yp, Y90p, Xm, Y90m, Yp, Y90m, Idp, Y90p, Idm, Y90m, Idm, X90m, 
+ Xp, X90m, Xp, Y90p, Yp, Y90p, Yp, X90m, Xp, Y90p, Xp, X90p, Yp, Y90m, Xm, 
+ Y90p, Yp, X90p, Idp, Y90m, Yp, X90p, Idm, Y90m, Idp, X90m, Idm, Y90m, Idp, 
+ X90p, Yp, X90p, Ym, Y90p, Idm, X90p, Yp, Y90p, Idp, X90m, Xp, Y90m, Xp, 
+ Y90m, Idm, X90m, Idm, X90p, Idm, Y90m, Xm, Y90m, Idp, Y90m, Xm, X90m, Idp, 
+ Y90m, Idp, X90p, Idp, Y90p, Idp, X90p, Yp, X90m, Idp, X90p, Idp, Y90p, Yp, 
+ X90m, Xp, Y90p, Idm, X90m, Idp, Y90m, Idm, Y90m, Idp, Y90m, Idp, Y90m, Idm, 
+ X90p, Idp, X90p, Idp, X90p, Xm, Y90p, Idp, Y90p, Idp, Y90p, Idp, X90p, Ym, 
+ X90p, Xp, Y90p, Idp, X90p, Idm, X90p, Idm, X90p, Idp}
+1{Idp, Y90m, Idp, Y90p, Xm, Idm, Idm}
+0{Idp, Y90m, Idp, Y90p, Xm, X90m, Idm, X90p, Ym}
+1{Idp, Y90m, Idp, Y90p, Xm, X90m, Idm, Y90p, Ym, X90p, Idm}
+0{Idp, Y90m, Idp, Y90p, Xm, X90m, Idm, Y90p, Ym, Y90p, Idm, X90m, Idp}
+0{Idp, Y90m, Idp, Y90p, Xm, X90m, Idm, Y90p, Ym, Y90p, Idm, Y90m, Idp, X90p, 
+ Ym}
+1{Idp, Y90m, Idp, Y90p, Xm, X90m, Idm, Y90p, Ym, Y90p, Idm, Y90m, Idp, Y90m, 
+ Ym, X90p, Idp, Idp, Idm}
+0{Idp, Y90m, Idp, Y90p, Xm, X90m, Idm, Y90p, Ym, Y90p, Idm, Y90m, Idp, Y90m, 
+ Ym, X90p, Idp, Y90p, Idm, Y90p, Ym, Idp, Xm}
+0{Idp, Y90m, Idp, Y90p, Xm, X90m, Idm, Y90p, Ym, Y90p, Idm, Y90m, Idp, Y90m, 
+ Ym, X90p, Idp, Y90p, Idm, Y90p, Ym, Y90m, Xm, X90m, Ym, Y90m, Xp}
+0{Idp, Y90m, Idp, Y90p, Xm, X90m, Idm, Y90p, Ym, Y90p, Idm, Y90m, Idp, Y90m, 
+ Ym, X90p, Idp, Y90p, Idm, Y90p, Ym, Y90m, Xm, X90m, Ym, Y90p, Xp, X90m, Yp, 
+ Y90m, Idm, Y90p, Xm, X90m, Xp}
+1{Idp, Y90m, Idp, Y90p, Xm, X90m, Idm, Y90p, Ym, Y90p, Idm, Y90m, Idp, Y90m, 
+ Ym, X90p, Idp, Y90p, Idm, Y90p, Ym, Y90m, Xm, X90m, Ym, Y90p, Xp, X90m, Yp, 
+ Y90m, Idm, Y90p, Xm, X90p, Xp, Y90m, Idp, X90m, Ym, Y90p, Xm, Idm, Idp}
+0{Idp, Y90m, Idp, Y90p, Xm, X90m, Idm, Y90p, Ym, Y90p, Idm, Y90m, Idp, Y90m, 
+ Ym, X90p, Idp, Y90p, Idm, Y90p, Ym, Y90m, Xm, X90m, Ym, Y90p, Xp, X90m, Yp, 
+ Y90m, Idm, Y90p, Xm, X90p, Xp, Y90m, Idp, X90m, Ym, Y90p, Xm, X90p, Idp, 
+ X90p, Idm, Y90m, Idm, X90m, Idm, Y90p, Idp}
+1{Idp, Y90m, Idp, Y90p, Xm, X90m, Idm, Y90p, Ym, Y90p, Idm, Y90m, Idp, Y90m, 
+ Ym, X90p, Idp, Y90p, Idm, Y90p, Ym, Y90m, Xm, X90m, Ym, Y90p, Xp, X90m, Yp, 
+ Y90m, Idm, Y90p, Xm, X90p, Xp, Y90m, Idp, X90m, Ym, Y90p, Xm, X90p, Idp, 
+ X90p, Idm, Y90m, Idm, X90m, Idm, X90p, Idp, X90p, Idp, Y90p, Idm, X90m, Idp, 
+ X90p, Idp, X90m, Idp, X90p, Idm, X90m, Yp, X90m, Idm}
+0{Idp, Y90m, Idp, Y90p, Xm, X90m, Idm, Y90p, Ym, Y90p, Idm, Y90m, Idp, Y90m, 
+ Ym, X90p, Idp, Y90p, Idm, Y90p, Ym, Y90m, Xm, X90m, Ym, Y90p, Xp, X90m, Yp, 
+ Y90m, Idm, Y90p, Xm, X90p, Xp, Y90m, Idp, X90m, Ym, Y90p, Xm, X90p, Idp, 
+ X90p, Idm, Y90m, Idm, X90m, Idm, X90p, Idp, X90p, Idp, Y90p, Idm, X90m, Idp, 
+ X90p, Idp, X90m, Idp, X90p, Idm, X90m, Yp, Y90m, Idm, X90p, Idm, X90p, Ym, 
+ Y90p, Idm, X90p, Yp, Y90p, Idp, Y90p, Yp, Y90p, Ym, Y90m, Yp}
+1{Idp, Y90m, Idp, Y90p, Xm, X90m, Idm, Y90p, Ym, Y90p, Idm, Y90m, Idp, Y90m, 
+ Ym, X90p, Idp, Y90p, Idm, Y90p, Ym, Y90m, Xm, X90m, Ym, Y90p, Xp, X90m, Yp, 
+ Y90m, Idm, Y90p, Xm, X90p, Xp, Y90m, Idp, X90m, Ym, Y90p, Xm, X90p, Idp, 
+ X90p, Idm, Y90m, Idm, X90m, Idm, X90p, Idp, X90p, Idp, Y90p, Idm, X90m, Idp, 
+ X90p, Idp, X90m, Idp, X90p, Idm, X90m, Yp, Y90m, Idm, X90p, Idm, X90p, Ym, 
+ Y90p, Idm, X90p, Yp, Y90p, Idp, Y90p, Yp, Y90p, Ym, Y90m, Yp, Y90p, Xm, 
+ X90m, Idp, X90m, Ym, Y90p, Yp, Y90p, Idm, X90m, Idp, Y90p, Xm, Idm, Idm}
+0{Idp, Y90m, Idp, Y90p, Xm, X90m, Idm, Y90p, Ym, Y90p, Idm, Y90m, Idp, Y90m, 
+ Ym, X90p, Idp, Y90p, Idm, Y90p, Ym, Y90m, Xm, X90m, Ym, Y90p, Xp, X90m, Yp, 
+ Y90m, Idm, Y90p, Xm, X90p, Xp, Y90m, Idp, X90m, Ym, Y90p, Xm, X90p, Idp, 
+ X90p, Idm, Y90m, Idm, X90m, Idm, X90p, Idp, X90p, Idp, Y90p, Idm, X90m, Idp, 
+ X90p, Idp, X90m, Idp, X90p, Idm, X90m, Yp, Y90m, Idm, X90p, Idm, X90p, Ym, 
+ Y90p, Idm, X90p, Yp, Y90p, Idp, Y90p, Yp, Y90p, Ym, Y90m, Yp, Y90p, Xm, 
+ X90m, Idp, X90m, Ym, Y90p, Yp, Y90p, Idm, X90m, Idp, Y90p, Xm, X90p, Idm, 
+ Y90p, Idm, Y90p, Idp, X90p, Yp, Y90m, Xp, X90p, Yp, Y90m, Xp, X90p, Xm, 
+ Y90m, Ym, X90m, Xp, X90m, Yp, Y90m, Idp, X90p, Xp, Y90p, Idp, X90m, Idp, 
+ Y90m, Idp, Idp, Xp}
+1{Idp, Y90m, Idp, Y90p, Xm, X90m, Idm, Y90p, Ym, Y90p, Idm, Y90m, Idp, Y90m, 
+ Ym, X90p, Idp, Y90p, Idm, Y90p, Ym, Y90m, Xm, X90m, Ym, Y90p, Xp, X90m, Yp, 
+ Y90m, Idm, Y90p, Xm, X90p, Xp, Y90m, Idp, X90m, Ym, Y90p, Xm, X90p, Idp, 
+ X90p, Idm, Y90m, Idm, X90m, Idm, X90p, Idp, X90p, Idp, Y90p, Idm, X90m, Idp, 
+ X90p, Idp, X90m, Idp, X90p, Idm, X90m, Yp, Y90m, Idm, X90p, Idm, X90p, Ym, 
+ Y90p, Idm, X90p, Yp, Y90p, Idp, Y90p, Yp, Y90p, Ym, Y90m, Yp, Y90p, Xm, 
+ X90m, Idp, X90m, Ym, Y90p, Yp, Y90p, Idm, X90m, Idp, Y90p, Xm, X90p, Idm, 
+ Y90p, Idm, Y90p, Idp, X90p, Yp, Y90m, Xp, X90p, Yp, Y90m, Xp, X90p, Xm, 
+ Y90m, Ym, X90m, Xp, X90m, Yp, Y90m, Idp, X90p, Xp, Y90p, Idp, X90m, Idp, 
+ Y90m, Idp, Y90m, Xp, X90p, Xp, X90m, Ym, Y90m, Xp, Y90m, Xm, Y90p, Yp, X90p, 
+ Idp, Y90p, Idp, X90m, Idp, Y90m, Idp, X90m, Ym, X90p, Idm, X90p, Yp, Y90m, 
+ Idm, X90m, Xm, Y90p, Yp, X90m, Yp}
+1{Idp, Y90m, Idp, Y90p, Xm, X90m, Idm, Y90p, Ym, Y90p, Idm, Y90m, Idp, Y90m, 
+ Ym, X90p, Idp, Y90p, Idm, Y90p, Ym, Y90m, Xm, X90m, Ym, Y90p, Xp, X90m, Yp, 
+ Y90m, Idm, Y90p, Xm, X90p, Xp, Y90m, Idp, X90m, Ym, Y90p, Xm, X90p, Idp, 
+ X90p, Idm, Y90m, Idm, X90m, Idm, X90p, Idp, X90p, Idp, Y90p, Idm, X90m, Idp, 
+ X90p, Idp, X90m, Idp, X90p, Idm, X90m, Yp, Y90m, Idm, X90p, Idm, X90p, Ym, 
+ Y90p, Idm, X90p, Yp, Y90p, Idp, Y90p, Yp, Y90p, Ym, Y90m, Yp, Y90p, Xm, 
+ X90m, Idp, X90m, Ym, Y90p, Yp, Y90p, Idm, X90m, Idp, Y90p, Xm, X90p, Idm, 
+ Y90p, Idm, Y90p, Idp, X90p, Yp, Y90m, Xp, X90p, Yp, Y90m, Xp, X90p, Xm, 
+ Y90m, Ym, X90m, Xp, X90m, Yp, Y90m, Idp, X90p, Xp, Y90p, Idp, X90m, Idp, 
+ Y90m, Idp, Y90m, Xp, X90p, Xp, X90m, Ym, Y90m, Xp, Y90m, Xm, Y90p, Yp, X90p, 
+ Idp, Y90p, Idp, X90m, Idp, Y90m, Idp, X90m, Ym, X90p, Idm, X90p, Yp, Y90m, 
+ Idm, X90m, Xm, Y90p, Yp, X90p, Yp, Y90m, Yp, Y90m, Idp, Y90p, Idm, Y90m, 
+ Idp, X90p, Idm, X90m, Idp, X90m, Idp, Y90p, Idp, Y90m, Yp, Y90p, Idm, X90m, 
+ Idp, X90p, Idm, Y90m, Idm, X90p, Idm, X90p, Xm, X90m, Idm}
+0{Yp, Y90m, Xm, Y90p, Idp, Idm, Ym}
+0{Yp, Y90m, Xm, Y90p, Idp, X90m, Ym, X90m, Idp}
+1{Yp, Y90m, Xm, Y90p, Idp, X90m, Ym, Y90p, Idp, X90m, Yp}
+0{Yp, Y90m, Xm, Y90p, Idp, X90m, Ym, Y90p, Idp, Y90m, Yp, X90m, Idm}
+0{Yp, Y90m, Xm, Y90p, Idp, X90m, Ym, Y90p, Idp, Y90m, Yp, Y90p, Idm, X90p, Xm}
+0{Yp, Y90m, Xm, Y90p, Idp, X90m, Ym, Y90p, Idp, Y90m, Yp, Y90p, Idm, Y90m, 
+ Xm, X90p, Yp, Idm, Ym}
+0{Yp, Y90m, Xm, Y90p, Idp, X90m, Ym, Y90p, Idp, Y90m, Yp, Y90p, Idm, Y90m, 
+ Xm, X90p, Yp, Y90m, Ym, Y90m, Idm, Idm, Ym}
+0{Yp, Y90m, Xm, Y90p, Idp, X90m, Ym, Y90p, Idp, Y90m, Yp, Y90p, Idm, Y90m, 
+ Xm, X90p, Yp, Y90m, Ym, Y90m, Idm, Y90p, Ym, X90p, Idp, Y90m, Idp}
+0{Yp, Y90m, Xm, Y90p, Idp, X90m, Ym, Y90p, Idp, Y90m, Yp, Y90p, Idm, Y90m, 
+ Xm, X90p, Yp, Y90m, Ym, Y90m, Idm, Y90p, Ym, X90p, Idp, Y90m, Idp, X90m, 
+ Idm, Y90m, Yp, Y90p, Idm, X90m, Xp}
+0{Yp, Y90m, Xm, Y90p, Idp, X90m, Ym, Y90p, Idp, Y90m, Yp, Y90p, Idm, Y90m, 
+ Xm, X90p, Yp, Y90m, Ym, Y90m, Idm, Y90p, Ym, X90p, Idp, Y90m, Idp, X90m, 
+ Idm, Y90m, Yp, Y90p, Idm, X90p, Xp, Y90m, Xm, X90m, Xm, Y90p, Xp, Idm, Idp}
+0{Yp, Y90m, Xm, Y90p, Idp, X90m, Ym, Y90p, Idp, Y90m, Yp, Y90p, Idm, Y90m, 
+ Xm, X90p, Yp, Y90m, Ym, Y90m, Idm, Y90p, Ym, X90p, Idp, Y90m, Idp, X90m, 
+ Idm, Y90m, Yp, Y90p, Idm, X90p, Xp, Y90m, Xm, X90m, Xm, Y90p, Xp, X90p, Idp, 
+ X90m, Xp, Y90m, Ym, X90m, Xp, Y90m, Xm}
+1{Yp, Y90m, Xm, Y90p, Idp, X90m, Ym, Y90p, Idp, Y90m, Yp, Y90p, Idm, Y90m, 
+ Xm, X90p, Yp, Y90m, Ym, Y90m, Idm, Y90p, Ym, X90p, Idp, Y90m, Idp, X90m, 
+ Idm, Y90m, Yp, Y90p, Idm, X90p, Xp, Y90m, Xm, X90m, Xm, Y90p, Xp, X90p, Idp, 
+ X90m, Xp, Y90m, Ym, X90m, Xp, X90p, Xm, X90p, Idp, Y90m, Idp, X90p, Ym, 
+ X90m, Yp, X90m, Yp, X90p, Xm, X90p, Idp, X90m, Idp}
+1{Yp, Y90m, Xm, Y90p, Idp, X90m, Ym, Y90p, Idp, Y90m, Yp, Y90p, Idm, Y90m, 
+ Xm, X90p, Yp, Y90m, Ym, Y90m, Idm, Y90p, Ym, X90p, Idp, Y90m, Idp, X90m, 
+ Idm, Y90m, Yp, Y90p, Idm, X90p, Xp, Y90m, Xm, X90m, Xm, Y90p, Xp, X90p, Idp, 
+ X90m, Xp, Y90m, Ym, X90m, Xp, X90p, Xm, X90p, Idp, Y90m, Idp, X90p, Ym, 
+ X90m, Yp, X90m, Yp, X90p, Xm, X90p, Idp, Y90m, Idp, X90m, Idp, X90p, Yp, 
+ Y90p, Yp, X90p, Ym, Y90p, Idm, Y90p, Xp, Y90p, Xp, Y90m, Idm}
+0{Yp, Y90m, Xm, Y90p, Idp, X90m, Ym, Y90p, Idp, Y90m, Yp, Y90p, Idm, Y90m, 
+ Xm, X90p, Yp, Y90m, Ym, Y90m, Idm, Y90p, Ym, X90p, Idp, Y90m, Idp, X90m, 
+ Idm, Y90m, Yp, Y90p, Idm, X90p, Xp, Y90m, Xm, X90m, Xm, Y90p, Xp, X90p, Idp, 
+ X90m, Xp, Y90m, Ym, X90m, Xp, X90p, Xm, X90p, Idp, Y90m, Idp, X90p, Ym, 
+ X90m, Yp, X90m, Yp, X90p, Xm, X90p, Idp, Y90m, Idp, X90m, Idp, X90p, Yp, 
+ Y90p, Yp, X90p, Ym, Y90p, Idm, Y90p, Xp, Y90p, Xp, Y90m, Idm, Y90p, Idp, 
+ X90p, Idp, X90p, Idm, Y90p, Xp, Y90p, Ym, X90m, Idp, Y90p, Xp, Idp, Idp}
+1{Yp, Y90m, Xm, Y90p, Idp, X90m, Ym, Y90p, Idp, Y90m, Yp, Y90p, Idm, Y90m, 
+ Xm, X90p, Yp, Y90m, Ym, Y90m, Idm, Y90p, Ym, X90p, Idp, Y90m, Idp, X90m, 
+ Idm, Y90m, Yp, Y90p, Idm, X90p, Xp, Y90m, Xm, X90m, Xm, Y90p, Xp, X90p, Idp, 
+ X90m, Xp, Y90m, Ym, X90m, Xp, X90p, Xm, X90p, Idp, Y90m, Idp, X90p, Ym, 
+ X90m, Yp, X90m, Yp, X90p, Xm, X90p, Idp, Y90m, Idp, X90m, Idp, X90p, Yp, 
+ Y90p, Yp, X90p, Ym, Y90p, Idm, Y90p, Xp, Y90p, Xp, Y90m, Idm, Y90p, Idp, 
+ X90p, Idp, X90p, Idm, Y90p, Xp, Y90p, Ym, X90m, Idp, Y90p, Xp, X90p, Idp, 
+ Y90m, Idp, Y90m, Idp, X90p, Xp, Y90m, Xm, X90p, Idp, Y90m, Xp, X90p, Idm, 
+ Y90p, Yp, X90p, Xp, X90p, Xm, Y90p, Ym, X90p, Idm, Y90m, Idp, X90p, Idp, 
+ Y90m, Idm, Idm, Idp}
+0{Yp, Y90m, Xm, Y90p, Idp, X90m, Ym, Y90p, Idp, Y90m, Yp, Y90p, Idm, Y90m, 
+ Xm, X90p, Yp, Y90m, Ym, Y90m, Idm, Y90p, Ym, X90p, Idp, Y90m, Idp, X90m, 
+ Idm, Y90m, Yp, Y90p, Idm, X90p, Xp, Y90m, Xm, X90m, Xm, Y90p, Xp, X90p, Idp, 
+ X90m, Xp, Y90m, Ym, X90m, Xp, X90p, Xm, X90p, Idp, Y90m, Idp, X90p, Ym, 
+ X90m, Yp, X90m, Yp, X90p, Xm, X90p, Idp, Y90m, Idp, X90m, Idp, X90p, Yp, 
+ Y90p, Yp, X90p, Ym, Y90p, Idm, Y90p, Xp, Y90p, Xp, Y90m, Idm, Y90p, Idp, 
+ X90p, Idp, X90p, Idm, Y90p, Xp, Y90p, Ym, X90m, Idp, Y90p, Xp, X90p, Idp, 
+ Y90m, Idp, Y90m, Idp, X90p, Xp, Y90m, Xm, X90p, Idp, Y90m, Xp, X90p, Idm, 
+ Y90p, Yp, X90p, Xp, X90p, Xm, Y90p, Ym, X90p, Idm, Y90m, Idp, X90p, Idp, 
+ Y90m, Idm, Y90p, Idp, X90m, Idm, X90p, Idp, Y90p, Xm, Y90p, Idm, Y90p, Idm, 
+ X90m, Idm, Y90m, Idp, X90m, Ym, Y90p, Xm, X90p, Idp, X90p, Yp, X90m, Idp, 
+ Y90p, Idm, X90m, Yp, Y90p, Yp, X90m, Ym}
+0{Yp, Y90m, Xm, Y90p, Idp, X90m, Ym, Y90p, Idp, Y90m, Yp, Y90p, Idm, Y90m, 
+ Xm, X90p, Yp, Y90m, Ym, Y90m, Idm, Y90p, Ym, X90p, Idp, Y90m, Idp, X90m, 
+ Idm, Y90m, Yp, Y90p, Idm, X90p, Xp, Y90m, Xm, X90m, Xm, Y90p, Xp, X90p, Idp, 
+ X90m, Xp, Y90m, Ym, X90m, Xp, X90p, Xm, X90p, Idp, Y90m, Idp, X90p, Ym, 
+ X90m, Yp, X90m, Yp, X90p, Xm, X90p, Idp, Y90m, Idp, X90m, Idp, X90p, Yp, 
+ Y90p, Yp, X90p, Ym, Y90p, Idm, Y90p, Xp, Y90p, Xp, Y90m, Idm, Y90p, Idp, 
+ X90p, Idp, X90p, Idm, Y90p, Xp, Y90p, Ym, X90m, Idp, Y90p, Xp, X90p, Idp, 
+ Y90m, Idp, Y90m, Idp, X90p, Xp, Y90m, Xm, X90p, Idp, Y90m, Xp, X90p, Idm, 
+ Y90p, Yp, X90p, Xp, X90p, Xm, Y90p, Ym, X90p, Idm, Y90m, Idp, X90p, Idp, 
+ Y90m, Idm, Y90p, Idp, X90m, Idm, X90p, Idp, Y90p, Xm, Y90p, Idm, Y90p, Idm, 
+ X90m, Idm, Y90m, Idp, X90m, Ym, Y90p, Xm, X90p, Idp, X90p, Yp, X90m, Idp, 
+ Y90p, Idm, X90m, Yp, Y90p, Yp, X90p, Ym, Y90m, Xm, Y90m, Yp, Y90p, Yp, Y90p, 
+ Idp, X90m, Ym, X90m, Idp, X90m, Idp, Y90m, Idp, Y90m, Idm, Y90m, Xp, X90m, 
+ Idp, X90p, Idp, Y90p, Idm, X90p, Idp, X90m, Idm, X90m, Idm}
+1{Ym, Y90m, Xm, Y90p, Xm, Idm, Xm}
+1{Ym, Y90m, Xm, Y90p, Xm, X90m, Xm, X90m, Ym}
+1{Ym, Y90m, Xm, Y90p, Xm, X90m, Xm, Y90p, Ym, X90m, Xm}
+1{Ym, Y90m, Xm, Y90p, Xm, X90m, Xm, Y90p, Ym, Y90p, Xm, X90m, Idp}
+0{Ym, Y90m, Xm, Y90p, Xm, X90m, Xm, Y90p, Ym, Y90p, Xm, Y90m, Idp, X90m, Ym}
+1{Ym, Y90m, Xm, Y90p, Xm, X90m, Xm, Y90p, Ym, Y90p, Xm, Y90m, Idp, Y90p, Ym, 
+ X90m, Ym, Idp, Ym}
+1{Ym, Y90m, Xm, Y90p, Xm, X90m, Xm, Y90p, Ym, Y90p, Xm, Y90m, Idp, Y90p, Ym, 
+ X90m, Ym, Y90p, Ym, Y90p, Ym, Idm, Idm}
+1{Ym, Y90m, Xm, Y90p, Xm, X90m, Xm, Y90p, Ym, Y90p, Xm, Y90m, Idp, Y90p, Ym, 
+ X90m, Ym, Y90p, Ym, Y90p, Ym, Y90m, Idm, X90m, Ym, Y90p, Yp}
+0{Ym, Y90m, Xm, Y90p, Xm, X90m, Xm, Y90p, Ym, Y90p, Xm, Y90m, Idp, Y90p, Ym, 
+ X90m, Ym, Y90p, Ym, Y90p, Ym, Y90m, Idm, X90m, Ym, Y90p, Yp, X90m, Idm, 
+ Y90m, Xp, Y90p, Yp, X90p, Idm}
+0{Ym, Y90m, Xm, Y90p, Xm, X90m, Xm, Y90p, Ym, Y90p, Xm, Y90m, Idp, Y90p, Ym, 
+ X90m, Ym, Y90p, Ym, Y90p, Ym, Y90m, Idm, X90m, Ym, Y90p, Yp, X90m, Idm, 
+ Y90m, Xp, Y90p, Yp, X90p, Idm, Y90p, Idm, X90m, Xm, Y90p, Idp, Idp, Xp}
+1{Ym, Y90m, Xm, Y90p, Xm, X90m, Xm, Y90p, Ym, Y90p, Xm, Y90m, Idp, Y90p, Ym, 
+ X90m, Ym, Y90p, Ym, Y90p, Ym, Y90m, Idm, X90m, Ym, Y90p, Yp, X90m, Idm, 
+ Y90m, Xp, Y90p, Yp, X90p, Idm, Y90p, Idm, X90m, Xm, Y90p, Idp, X90p, Xp, 
+ X90p, Xp, Y90p, Xm, X90p, Idp, Y90p, Idm}
+1{Ym, Y90m, Xm, Y90p, Xm, X90m, Xm, Y90p, Ym, Y90p, Xm, Y90m, Idp, Y90p, Ym, 
+ X90m, Ym, Y90p, Ym, Y90p, Ym, Y90m, Idm, X90m, Ym, Y90p, Yp, X90m, Idm, 
+ Y90m, Xp, Y90p, Yp, X90p, Idm, Y90p, Idm, X90m, Xm, Y90p, Idp, X90p, Xp, 
+ X90p, Xp, Y90p, Xm, X90p, Idp, X90p, Idm, X90p, Yp, Y90p, Idm, X90p, Idm, 
+ X90p, Yp, X90p, Idp, X90p, Idp, X90p, Idm, X90m, Idp}
+1{Ym, Y90m, Xm, Y90p, Xm, X90m, Xm, Y90p, Ym, Y90p, Xm, Y90m, Idp, Y90p, Ym, 
+ X90m, Ym, Y90p, Ym, Y90p, Ym, Y90m, Idm, X90m, Ym, Y90p, Yp, X90m, Idm, 
+ Y90m, Xp, Y90p, Yp, X90p, Idm, Y90p, Idm, X90m, Xm, Y90p, Idp, X90p, Xp, 
+ X90p, Xp, Y90p, Xm, X90p, Idp, X90p, Idm, X90p, Yp, Y90p, Idm, X90p, Idm, 
+ X90p, Yp, X90p, Idp, X90p, Idp, X90p, Idm, Y90m, Idp, X90p, Ym, X90p, Idp, 
+ Y90p, Xp, X90p, Xp, Y90p, Idm, Y90p, Idp, Y90m, Idm, Y90p, Idm}
+0{Ym, Y90m, Xm, Y90p, Xm, X90m, Xm, Y90p, Ym, Y90p, Xm, Y90m, Idp, Y90p, Ym, 
+ X90m, Ym, Y90p, Ym, Y90p, Ym, Y90m, Idm, X90m, Ym, Y90p, Yp, X90m, Idm, 
+ Y90m, Xp, Y90p, Yp, X90p, Idm, Y90p, Idm, X90m, Xm, Y90p, Idp, X90p, Xp, 
+ X90p, Xp, Y90p, Xm, X90p, Idp, X90p, Idm, X90p, Yp, Y90p, Idm, X90p, Idm, 
+ X90p, Yp, X90p, Idp, X90p, Idp, X90p, Idm, Y90m, Idp, X90p, Ym, X90p, Idp, 
+ Y90p, Xp, X90p, Xp, Y90p, Idm, Y90p, Idp, Y90m, Idm, Y90p, Idm, Y90p, Xp, 
+ X90m, Xm, X90m, Yp, Y90p, Idp, Y90m, Idm, X90m, Ym, Y90p, Ym, Idp, Yp}
+1{Ym, Y90m, Xm, Y90p, Xm, X90m, Xm, Y90p, Ym, Y90p, Xm, Y90m, Idp, Y90p, Ym, 
+ X90m, Ym, Y90p, Ym, Y90p, Ym, Y90m, Idm, X90m, Ym, Y90p, Yp, X90m, Idm, 
+ Y90m, Xp, Y90p, Yp, X90p, Idm, Y90p, Idm, X90m, Xm, Y90p, Idp, X90p, Xp, 
+ X90p, Xp, Y90p, Xm, X90p, Idp, X90p, Idm, X90p, Yp, Y90p, Idm, X90p, Idm, 
+ X90p, Yp, X90p, Idp, X90p, Idp, X90p, Idm, Y90m, Idp, X90p, Ym, X90p, Idp, 
+ Y90p, Xp, X90p, Xp, Y90p, Idm, Y90p, Idp, Y90m, Idm, Y90p, Idm, Y90p, Xp, 
+ X90m, Xm, X90m, Yp, Y90p, Idp, Y90m, Idm, X90m, Ym, Y90p, Ym, X90p, Yp, 
+ Y90m, Ym, Y90p, Idm, X90p, Idp, Y90p, Yp, X90m, Idm, Y90m, Xp, X90p, Idp, 
+ Y90p, Idp, X90p, Xp, X90p, Ym, Y90p, Yp, X90p, Xm, Y90p, Idp, X90p, Idp, 
+ Y90p, Xm, Idp, Yp}
+0{Ym, Y90m, Xm, Y90p, Xm, X90m, Xm, Y90p, Ym, Y90p, Xm, Y90m, Idp, Y90p, Ym, 
+ X90m, Ym, Y90p, Ym, Y90p, Ym, Y90m, Idm, X90m, Ym, Y90p, Yp, X90m, Idm, 
+ Y90m, Xp, Y90p, Yp, X90p, Idm, Y90p, Idm, X90m, Xm, Y90p, Idp, X90p, Xp, 
+ X90p, Xp, Y90p, Xm, X90p, Idp, X90p, Idm, X90p, Yp, Y90p, Idm, X90p, Idm, 
+ X90p, Yp, X90p, Idp, X90p, Idp, X90p, Idm, Y90m, Idp, X90p, Ym, X90p, Idp, 
+ Y90p, Xp, X90p, Xp, Y90p, Idm, Y90p, Idp, Y90m, Idm, Y90p, Idm, Y90p, Xp, 
+ X90m, Xm, X90m, Yp, Y90p, Idp, Y90m, Idm, X90m, Ym, Y90p, Ym, X90p, Yp, 
+ Y90m, Ym, Y90p, Idm, X90p, Idp, Y90p, Yp, X90m, Idm, Y90m, Xp, X90p, Idp, 
+ Y90p, Idp, X90p, Xp, X90p, Ym, Y90p, Yp, X90p, Xm, Y90p, Idp, X90p, Idp, 
+ Y90p, Xm, Y90p, Yp, X90m, Ym, X90p, Idp, Y90p, Ym, Y90p, Idp, Y90m, Xm, 
+ X90m, Yp, Y90m, Yp, X90p, Xp, Y90m, Yp, X90m, Idp, X90p, Xm, X90m, Idp, 
+ Y90m, Yp, X90p, Idm, Y90p, Idp, X90p, Idm}
+0{Ym, Y90m, Xm, Y90p, Xm, X90m, Xm, Y90p, Ym, Y90p, Xm, Y90m, Idp, Y90p, Ym, 
+ X90m, Ym, Y90p, Ym, Y90p, Ym, Y90m, Idm, X90m, Ym, Y90p, Yp, X90m, Idm, 
+ Y90m, Xp, Y90p, Yp, X90p, Idm, Y90p, Idm, X90m, Xm, Y90p, Idp, X90p, Xp, 
+ X90p, Xp, Y90p, Xm, X90p, Idp, X90p, Idm, X90p, Yp, Y90p, Idm, X90p, Idm, 
+ X90p, Yp, X90p, Idp, X90p, Idp, X90p, Idm, Y90m, Idp, X90p, Ym, X90p, Idp, 
+ Y90p, Xp, X90p, Xp, Y90p, Idm, Y90p, Idp, Y90m, Idm, Y90p, Idm, Y90p, Xp, 
+ X90m, Xm, X90m, Yp, Y90p, Idp, Y90m, Idm, X90m, Ym, Y90p, Ym, X90p, Yp, 
+ Y90m, Ym, Y90p, Idm, X90p, Idp, Y90p, Yp, X90m, Idm, Y90m, Xp, X90p, Idp, 
+ Y90p, Idp, X90p, Xp, X90p, Ym, Y90p, Yp, X90p, Xm, Y90p, Idp, X90p, Idp, 
+ Y90p, Xm, Y90p, Yp, X90m, Ym, X90p, Idp, Y90p, Ym, Y90p, Idp, Y90m, Xm, 
+ X90m, Yp, Y90m, Yp, X90p, Xp, Y90m, Yp, X90m, Idp, X90p, Xm, X90m, Idp, 
+ Y90m, Yp, X90p, Idm, Y90p, Idp, X90m, Idm, Y90p, Ym, Y90p, Idp, Y90m, Xp, 
+ Y90m, Idm, X90p, Idp, X90p, Xp, X90m, Idm, Y90p, Idp, Y90p, Idp, Y90p, Yp, 
+ X90p, Idm, X90m, Xp, Y90m, Idm, X90p, Yp, X90m, Idp, X90p, Idm}
+1{Idm, Y90p, Idp, Y90p, Yp, Idm, Xp}
+0{Idm, Y90p, Idp, Y90p, Yp, X90m, Xp, X90m, Idm}
+1{Idm, Y90p, Idp, Y90p, Yp, X90m, Xp, Y90p, Idm, X90p, Idp}
+1{Idm, Y90p, Idp, Y90p, Yp, X90m, Xp, Y90p, Idm, Y90m, Idp, X90m, Xm}
+1{Idm, Y90p, Idp, Y90p, Yp, X90m, Xp, Y90p, Idm, Y90m, Idp, Y90m, Xm, X90m, 
+ Idm}
+1{Idm, Y90p, Idp, Y90p, Yp, X90m, Xp, Y90p, Idm, Y90m, Idp, Y90m, Xm, Y90p, 
+ Idm, X90p, Idp, Idm, Xm}
+1{Idm, Y90p, Idp, Y90p, Yp, X90m, Xp, Y90p, Idm, Y90m, Idp, Y90m, Xm, Y90p, 
+ Idm, X90p, Idp, Y90m, Xm, Y90m, Xp, Idm, Xp}
+0{Idm, Y90p, Idp, Y90p, Yp, X90m, Xp, Y90p, Idm, Y90m, Idp, Y90m, Xm, Y90p, 
+ Idm, X90p, Idp, Y90m, Xm, Y90m, Xp, Y90p, Xp, X90p, Xm, Y90p, Yp}
+0{Idm, Y90p, Idp, Y90p, Yp, X90m, Xp, Y90p, Idm, Y90m, Idp, Y90m, Xm, Y90p, 
+ Idm, X90p, Idp, Y90m, Xm, Y90m, Xp, Y90p, Xp, X90p, Xm, Y90m, Yp, X90p, Idp, 
+ Y90m, Idm, Y90m, Idm, X90m, Xm}
+1{Idm, Y90p, Idp, Y90p, Yp, X90m, Xp, Y90p, Idm, Y90m, Idp, Y90m, Xm, Y90p, 
+ Idm, X90p, Idp, Y90m, Xm, Y90m, Xp, Y90p, Xp, X90p, Xm, Y90m, Yp, X90p, Idp, 
+ Y90m, Idm, Y90m, Idm, X90p, Xm, Y90m, Idp, X90m, Idm, Y90p, Idm, Idp, Idm}
+0{Idm, Y90p, Idp, Y90p, Yp, X90m, Xp, Y90p, Idm, Y90m, Idp, Y90m, Xm, Y90p, 
+ Idm, X90p, Idp, Y90m, Xm, Y90m, Xp, Y90p, Xp, X90p, Xm, Y90m, Yp, X90p, Idp, 
+ Y90m, Idm, Y90m, Idm, X90p, Xm, Y90m, Idp, X90m, Idm, Y90p, Idm, X90m, Idm, 
+ X90p, Idm, Y90p, Idm, X90m, Idm, Y90p, Idp}
+0{Idm, Y90p, Idp, Y90p, Yp, X90m, Xp, Y90p, Idm, Y90m, Idp, Y90m, Xm, Y90p, 
+ Idm, X90p, Idp, Y90m, Xm, Y90m, Xp, Y90p, Xp, X90p, Xm, Y90m, Yp, X90p, Idp, 
+ Y90m, Idm, Y90m, Idm, X90p, Xm, Y90m, Idp, X90m, Idm, Y90p, Idm, X90m, Idm, 
+ X90p, Idm, Y90p, Idm, X90m, Idm, X90p, Idp, X90p, Idp, Y90p, Xp, X90m, Xm, 
+ X90p, Idm, X90m, Ym, X90p, Xm, X90p, Yp, X90p, Idm}
+1{Idm, Y90p, Idp, Y90p, Yp, X90m, Xp, Y90p, Idm, Y90m, Idp, Y90m, Xm, Y90p, 
+ Idm, X90p, Idp, Y90m, Xm, Y90m, Xp, Y90p, Xp, X90p, Xm, Y90m, Yp, X90p, Idp, 
+ Y90m, Idm, Y90m, Idm, X90p, Xm, Y90m, Idp, X90m, Idm, Y90p, Idm, X90m, Idm, 
+ X90p, Idm, Y90p, Idm, X90m, Idm, X90p, Idp, X90p, Idp, Y90p, Xp, X90m, Xm, 
+ X90p, Idm, X90m, Ym, X90p, Xm, X90p, Yp, Y90p, Idm, X90m, Idp, X90p, Xp, 
+ Y90p, Yp, X90p, Yp, Y90p, Ym, Y90m, Idm, Y90p, Yp, Y90m, Ym}
+1{Idm, Y90p, Idp, Y90p, Yp, X90m, Xp, Y90p, Idm, Y90m, Idp, Y90m, Xm, Y90p, 
+ Idm, X90p, Idp, Y90m, Xm, Y90m, Xp, Y90p, Xp, X90p, Xm, Y90m, Yp, X90p, Idp, 
+ Y90m, Idm, Y90m, Idm, X90p, Xm, Y90m, Idp, X90m, Idm, Y90p, Idm, X90m, Idm, 
+ X90p, Idm, Y90p, Idm, X90m, Idm, X90p, Idp, X90p, Idp, Y90p, Xp, X90m, Xm, 
+ X90p, Idm, X90m, Ym, X90p, Xm, X90p, Yp, Y90p, Idm, X90m, Idp, X90p, Xp, 
+ Y90p, Yp, X90p, Yp, Y90p, Ym, Y90m, Idm, Y90p, Yp, Y90m, Ym, Y90p, Xm, X90m, 
+ Ym, X90m, Idp, Y90m, Idm, Y90p, Yp, X90m, Idm, Y90m, Idm, Idm, Idm}
+1{Idm, Y90p, Idp, Y90p, Yp, X90m, Xp, Y90p, Idm, Y90m, Idp, Y90m, Xm, Y90p, 
+ Idm, X90p, Idp, Y90m, Xm, Y90m, Xp, Y90p, Xp, X90p, Xm, Y90m, Yp, X90p, Idp, 
+ Y90m, Idm, Y90m, Idm, X90p, Xm, Y90m, Idp, X90m, Idm, Y90p, Idm, X90m, Idm, 
+ X90p, Idm, Y90p, Idm, X90m, Idm, X90p, Idp, X90p, Idp, Y90p, Xp, X90m, Xm, 
+ X90p, Idm, X90m, Ym, X90p, Xm, X90p, Yp, Y90p, Idm, X90m, Idp, X90p, Xp, 
+ Y90p, Yp, X90p, Yp, Y90p, Ym, Y90m, Idm, Y90p, Yp, Y90m, Ym, Y90p, Xm, X90m, 
+ Ym, X90m, Idp, Y90m, Idm, Y90p, Yp, X90m, Idm, Y90m, Idm, X90m, Idm, Y90m, 
+ Idp, Y90p, Idp, X90p, Xm, Y90m, Ym, X90p, Yp, Y90m, Yp, X90p, Xp, Y90m, Xm, 
+ X90m, Idp, X90p, Idp, Y90p, Xp, X90p, Ym, Y90p, Xp, X90m, Xm, Y90m, Idm, 
+ Idp, Idp}
+0{Idm, Y90p, Idp, Y90p, Yp, X90m, Xp, Y90p, Idm, Y90m, Idp, Y90m, Xm, Y90p, 
+ Idm, X90p, Idp, Y90m, Xm, Y90m, Xp, Y90p, Xp, X90p, Xm, Y90m, Yp, X90p, Idp, 
+ Y90m, Idm, Y90m, Idm, X90p, Xm, Y90m, Idp, X90m, Idm, Y90p, Idm, X90m, Idm, 
+ X90p, Idm, Y90p, Idm, X90m, Idm, X90p, Idp, X90p, Idp, Y90p, Xp, X90m, Xm, 
+ X90p, Idm, X90m, Ym, X90p, Xm, X90p, Yp, Y90p, Idm, X90m, Idp, X90p, Xp, 
+ Y90p, Yp, X90p, Yp, Y90p, Ym, Y90m, Idm, Y90p, Yp, Y90m, Ym, Y90p, Xm, X90m, 
+ Ym, X90m, Idp, Y90m, Idm, Y90p, Yp, X90m, Idm, Y90m, Idm, X90m, Idm, Y90m, 
+ Idp, Y90p, Idp, X90p, Xm, Y90m, Ym, X90p, Yp, Y90m, Yp, X90p, Xp, Y90m, Xm, 
+ X90m, Idp, X90p, Idp, Y90p, Xp, X90p, Ym, Y90p, Xp, X90m, Xm, Y90m, Idm, 
+ Y90m, Idp, X90p, Yp, X90m, Ym, Y90m, Yp, Y90m, Idp, Y90p, Idp, X90m, Xp, 
+ Y90m, Yp, X90p, Idp, Y90p, Idp, X90p, Idp, X90p, Idp, X90m, Xm, Y90p, Ym, 
+ X90m, Yp, Y90p, Idm, X90m, Yp}
+0{Idm, Y90p, Idp, Y90p, Yp, X90m, Xp, Y90p, Idm, Y90m, Idp, Y90m, Xm, Y90p, 
+ Idm, X90p, Idp, Y90m, Xm, Y90m, Xp, Y90p, Xp, X90p, Xm, Y90m, Yp, X90p, Idp, 
+ Y90m, Idm, Y90m, Idm, X90p, Xm, Y90m, Idp, X90m, Idm, Y90p, Idm, X90m, Idm, 
+ X90p, Idm, Y90p, Idm, X90m, Idm, X90p, Idp, X90p, Idp, Y90p, Xp, X90m, Xm, 
+ X90p, Idm, X90m, Ym, X90p, Xm, X90p, Yp, Y90p, Idm, X90m, Idp, X90p, Xp, 
+ Y90p, Yp, X90p, Yp, Y90p, Ym, Y90m, Idm, Y90p, Yp, Y90m, Ym, Y90p, Xm, X90m, 
+ Ym, X90m, Idp, Y90m, Idm, Y90p, Yp, X90m, Idm, Y90m, Idm, X90m, Idm, Y90m, 
+ Idp, Y90p, Idp, X90p, Xm, Y90m, Ym, X90p, Yp, Y90m, Yp, X90p, Xp, Y90m, Xm, 
+ X90m, Idp, X90p, Idp, Y90p, Xp, X90p, Ym, Y90p, Xp, X90m, Xm, Y90m, Idm, 
+ Y90m, Idp, X90p, Yp, X90m, Ym, Y90m, Yp, Y90m, Idp, Y90p, Idp, X90m, Xp, 
+ Y90m, Yp, X90p, Idp, Y90p, Idp, X90p, Idp, X90p, Idp, X90m, Xm, Y90p, Ym, 
+ X90m, Yp, Y90p, Idm, X90p, Yp, Y90m, Idp, Y90m, Idp, Y90m, Xm, Y90m, Idp, 
+ X90m, Xm, X90m, Idp, X90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, Yp, X90p, Xp, 
+ X90p, Ym, Y90p, Idm, X90p, Idm, X90p, Idp, X90p, Idp}
+1{Yp, Y90m, Idm, Y90p, Idm, Idm, Idm}
+1{Yp, Y90m, Idm, Y90p, Idm, X90m, Idm, X90p, Idm}
+1{Yp, Y90m, Idm, Y90p, Idm, X90m, Idm, Y90p, Idm, X90p, Idm}
+0{Yp, Y90m, Idm, Y90p, Idm, X90m, Idm, Y90p, Idm, Y90m, Idm, X90m, Idm}
+1{Yp, Y90m, Idm, Y90p, Idm, X90m, Idm, Y90p, Idm, Y90m, Idm, Y90m, Idm, X90m, 
+ Ym}
+1{Yp, Y90m, Idm, Y90p, Idm, X90m, Idm, Y90p, Idm, Y90m, Idm, Y90m, Idm, Y90m, 
+ Ym, X90p, Idm, Idm, Idp}
+1{Yp, Y90m, Idm, Y90p, Idm, X90m, Idm, Y90p, Idm, Y90m, Idm, Y90m, Idm, Y90m, 
+ Ym, X90p, Idm, Y90p, Idp, Y90p, Xm, Idp, Idm}
+0{Yp, Y90m, Idm, Y90p, Idm, X90m, Idm, Y90p, Idm, Y90m, Idm, Y90m, Idm, Y90m, 
+ Ym, X90p, Idm, Y90p, Idp, Y90p, Xm, Y90m, Idm, X90m, Idm, Y90m, Idp}
+0{Yp, Y90m, Idm, Y90p, Idm, X90m, Idm, Y90p, Idm, Y90m, Idm, Y90m, Idm, Y90m, 
+ Ym, X90p, Idm, Y90p, Idp, Y90p, Xm, Y90m, Idm, X90m, Idm, Y90m, Idp, X90m, 
+ Idp, Y90p, Ym, Y90m, Idp, X90p, Idm}
+0{Yp, Y90m, Idm, Y90p, Idm, X90m, Idm, Y90p, Idm, Y90m, Idm, Y90m, Idm, Y90m, 
+ Ym, X90p, Idm, Y90p, Idp, Y90p, Xm, Y90m, Idm, X90m, Idm, Y90m, Idp, X90m, 
+ Idp, Y90p, Ym, Y90m, Idp, X90m, Idm, Y90m, Xm, X90m, Idp, Y90p, Idm, Idm, Ym}
+0{Yp, Y90m, Idm, Y90p, Idm, X90m, Idm, Y90p, Idm, Y90m, Idm, Y90m, Idm, Y90m, 
+ Ym, X90p, Idm, Y90p, Idp, Y90p, Xm, Y90m, Idm, X90m, Idm, Y90m, Idp, X90m, 
+ Idp, Y90p, Ym, Y90m, Idp, X90m, Idm, Y90m, Xm, X90m, Idp, Y90p, Idm, X90p, 
+ Ym, X90p, Ym, Y90p, Idp, X90p, Idm, Y90p, Idm}
+1{Yp, Y90m, Idm, Y90p, Idm, X90m, Idm, Y90p, Idm, Y90m, Idm, Y90m, Idm, Y90m, 
+ Ym, X90p, Idm, Y90p, Idp, Y90p, Xm, Y90m, Idm, X90m, Idm, Y90m, Idp, X90m, 
+ Idp, Y90p, Ym, Y90m, Idp, X90m, Idm, Y90m, Xm, X90m, Idp, Y90p, Idm, X90p, 
+ Ym, X90p, Ym, Y90p, Idp, X90p, Idm, X90m, Idm, X90m, Idp, Y90m, Xm, X90p, 
+ Xm, X90m, Idm, X90m, Ym, X90p, Idp, X90m, Idp, X90m, Xm}
+0{Yp, Y90m, Idm, Y90p, Idm, X90m, Idm, Y90p, Idm, Y90m, Idm, Y90m, Idm, Y90m, 
+ Ym, X90p, Idm, Y90p, Idp, Y90p, Xm, Y90m, Idm, X90m, Idm, Y90m, Idp, X90m, 
+ Idp, Y90p, Ym, Y90m, Idp, X90m, Idm, Y90m, Xm, X90m, Idp, Y90p, Idm, X90p, 
+ Ym, X90p, Ym, Y90p, Idp, X90p, Idm, X90m, Idm, X90m, Idp, Y90m, Xm, X90p, 
+ Xm, X90m, Idm, X90m, Ym, X90p, Idp, X90m, Idp, Y90p, Xm, X90p, Yp, X90p, 
+ Idp, Y90m, Idp, X90p, Idm, Y90m, Ym, Y90p, Ym, Y90p, Ym, Y90m, Xp}
+1{Yp, Y90m, Idm, Y90p, Idm, X90m, Idm, Y90p, Idm, Y90m, Idm, Y90m, Idm, Y90m, 
+ Ym, X90p, Idm, Y90p, Idp, Y90p, Xm, Y90m, Idm, X90m, Idm, Y90m, Idp, X90m, 
+ Idp, Y90p, Ym, Y90m, Idp, X90m, Idm, Y90m, Xm, X90m, Idp, Y90p, Idm, X90p, 
+ Ym, X90p, Ym, Y90p, Idp, X90p, Idm, X90m, Idm, X90m, Idp, Y90m, Xm, X90p, 
+ Xm, X90m, Idm, X90m, Ym, X90p, Idp, X90m, Idp, Y90p, Xm, X90p, Yp, X90p, 
+ Idp, Y90m, Idp, X90p, Idm, Y90m, Ym, Y90p, Ym, Y90p, Ym, Y90m, Xp, Y90p, Xm, 
+ X90m, Xp, X90m, Idm, Y90p, Idm, Y90m, Ym, X90p, Xp, Y90m, Ym, Idp, Yp}
+1{Yp, Y90m, Idm, Y90p, Idm, X90m, Idm, Y90p, Idm, Y90m, Idm, Y90m, Idm, Y90m, 
+ Ym, X90p, Idm, Y90p, Idp, Y90p, Xm, Y90m, Idm, X90m, Idm, Y90m, Idp, X90m, 
+ Idp, Y90p, Ym, Y90m, Idp, X90m, Idm, Y90m, Xm, X90m, Idp, Y90p, Idm, X90p, 
+ Ym, X90p, Ym, Y90p, Idp, X90p, Idm, X90m, Idm, X90m, Idp, Y90m, Xm, X90p, 
+ Xm, X90m, Idm, X90m, Ym, X90p, Idp, X90m, Idp, Y90p, Xm, X90p, Yp, X90p, 
+ Idp, Y90m, Idp, X90p, Idm, Y90m, Ym, Y90p, Ym, Y90p, Ym, Y90m, Xp, Y90p, Xm, 
+ X90m, Xp, X90m, Idm, Y90p, Idm, Y90m, Ym, X90p, Xp, Y90m, Ym, X90m, Yp, 
+ Y90p, Xp, Y90m, Xm, X90m, Idp, Y90p, Ym, X90m, Idp, Y90m, Yp, X90p, Xp, 
+ Y90m, Idm, X90p, Yp, X90p, Idp, Y90m, Ym, X90m, Idp, Y90p, Xm, X90m, Yp, 
+ Y90m, Idm, Idm, Idp}
+0{Yp, Y90m, Idm, Y90p, Idm, X90m, Idm, Y90p, Idm, Y90m, Idm, Y90m, Idm, Y90m, 
+ Ym, X90p, Idm, Y90p, Idp, Y90p, Xm, Y90m, Idm, X90m, Idm, Y90m, Idp, X90m, 
+ Idp, Y90p, Ym, Y90m, Idp, X90m, Idm, Y90m, Xm, X90m, Idp, Y90p, Idm, X90p, 
+ Ym, X90p, Ym, Y90p, Idp, X90p, Idm, X90m, Idm, X90m, Idp, Y90m, Xm, X90p, 
+ Xm, X90m, Idm, X90m, Ym, X90p, Idp, X90m, Idp, Y90p, Xm, X90p, Yp, X90p, 
+ Idp, Y90m, Idp, X90p, Idm, Y90m, Ym, Y90p, Ym, Y90p, Ym, Y90m, Xp, Y90p, Xm, 
+ X90m, Xp, X90m, Idm, Y90p, Idm, Y90m, Ym, X90p, Xp, Y90m, Ym, X90m, Yp, 
+ Y90p, Xp, Y90m, Xm, X90m, Idp, Y90p, Ym, X90m, Idp, Y90m, Yp, X90p, Xp, 
+ Y90m, Idm, X90p, Yp, X90p, Idp, Y90m, Ym, X90m, Idp, Y90p, Xm, X90m, Yp, 
+ Y90m, Idm, Y90p, Idp, X90p, Idp, X90m, Idp, Y90p, Xp, Y90p, Xm, Y90m, Ym, 
+ X90m, Idp, Y90p, Yp, X90m, Xp, Y90p, Idm, X90p, Yp, X90m, Yp, X90p, Xm, 
+ Y90m, Idp, X90m, Idm, Y90m, Xp, X90m, Idm}
+0{Yp, Y90m, Idm, Y90p, Idm, X90m, Idm, Y90p, Idm, Y90m, Idm, Y90m, Idm, Y90m, 
+ Ym, X90p, Idm, Y90p, Idp, Y90p, Xm, Y90m, Idm, X90m, Idm, Y90m, Idp, X90m, 
+ Idp, Y90p, Ym, Y90m, Idp, X90m, Idm, Y90m, Xm, X90m, Idp, Y90p, Idm, X90p, 
+ Ym, X90p, Ym, Y90p, Idp, X90p, Idm, X90m, Idm, X90m, Idp, Y90m, Xm, X90p, 
+ Xm, X90m, Idm, X90m, Ym, X90p, Idp, X90m, Idp, Y90p, Xm, X90p, Yp, X90p, 
+ Idp, Y90m, Idp, X90p, Idm, Y90m, Ym, Y90p, Ym, Y90p, Ym, Y90m, Xp, Y90p, Xm, 
+ X90m, Xp, X90m, Idm, Y90p, Idm, Y90m, Ym, X90p, Xp, Y90m, Ym, X90m, Yp, 
+ Y90p, Xp, Y90m, Xm, X90m, Idp, Y90p, Ym, X90m, Idp, Y90m, Yp, X90p, Xp, 
+ Y90m, Idm, X90p, Yp, X90p, Idp, Y90m, Ym, X90m, Idp, Y90p, Xm, X90m, Yp, 
+ Y90m, Idm, Y90p, Idp, X90p, Idp, X90m, Idp, Y90p, Xp, Y90p, Xm, Y90m, Ym, 
+ X90m, Idp, Y90p, Yp, X90m, Xp, Y90p, Idm, X90p, Yp, X90m, Yp, X90p, Xm, 
+ Y90m, Idp, X90m, Idm, Y90m, Xp, X90m, Idm, Y90p, Yp, Y90p, Idp, Y90m, Idp, 
+ Y90p, Idm, X90m, Xp, X90m, Xp, X90p, Ym, Y90p, Yp, Y90m, Idm, Y90m, Idp, 
+ X90m, Yp, X90m, Ym, Y90m, Xm, X90p, Idm, X90p, Xp, X90p, Ym}
+0{Idm, Y90m, Ym, Y90p, Xp, Idp, Idp}
+0{Idm, Y90m, Ym, Y90p, Xp, X90m, Idp, X90p, Idp}
+0{Idm, Y90m, Ym, Y90p, Xp, X90m, Idp, Y90p, Idp, X90p, Idp}
+1{Idm, Y90m, Ym, Y90p, Xp, X90m, Idp, Y90p, Idp, Y90m, Idp, X90m, Idm}
+0{Idm, Y90m, Ym, Y90p, Xp, X90m, Idp, Y90p, Idp, Y90m, Idp, Y90p, Idm, X90p, 
+ Idm}
+0{Idm, Y90m, Ym, Y90p, Xp, X90m, Idp, Y90p, Idp, Y90m, Idp, Y90p, Idm, Y90m, 
+ Idm, X90p, Xm, Idm, Xp}
+0{Idm, Y90m, Ym, Y90p, Xp, X90m, Idp, Y90p, Idp, Y90m, Idp, Y90p, Idm, Y90m, 
+ Idm, X90p, Xm, Y90m, Xp, Y90m, Idp, Idm, Idp}
+0{Idm, Y90m, Ym, Y90p, Xp, X90m, Idp, Y90p, Idp, Y90m, Idp, Y90p, Idm, Y90m, 
+ Idm, X90p, Xm, Y90m, Xp, Y90m, Idp, Y90m, Idp, X90p, Ym, Y90p, Xp}
+1{Idm, Y90m, Ym, Y90p, Xp, X90m, Idp, Y90p, Idp, Y90m, Idp, Y90p, Idm, Y90m, 
+ Idm, X90p, Xm, Y90m, Xp, Y90m, Idp, Y90m, Idp, X90p, Ym, Y90m, Xp, X90p, Xp, 
+ Y90p, Idm, Y90m, Idp, X90p, Idp}
+1{Idm, Y90m, Ym, Y90p, Xp, X90m, Idp, Y90p, Idp, Y90m, Idp, Y90p, Idm, Y90m, 
+ Idm, X90p, Xm, Y90m, Xp, Y90m, Idp, Y90m, Idp, X90p, Ym, Y90m, Xp, X90p, Xp, 
+ Y90p, Idm, Y90m, Idp, X90m, Idp, Y90p, Idm, X90m, Idm, Y90m, Idm, Idp, Ym}
+0{Idm, Y90m, Ym, Y90p, Xp, X90m, Idp, Y90p, Idp, Y90m, Idp, Y90p, Idm, Y90m, 
+ Idm, X90p, Xm, Y90m, Xp, Y90m, Idp, Y90m, Idp, X90p, Ym, Y90m, Xp, X90p, Xp, 
+ Y90p, Idm, Y90m, Idp, X90m, Idp, Y90p, Idm, X90m, Idm, Y90m, Idm, X90m, Ym, 
+ X90m, Idp, Y90m, Xm, X90m, Ym, Y90p, Idp}
+0{Idm, Y90m, Ym, Y90p, Xp, X90m, Idp, Y90p, Idp, Y90m, Idp, Y90p, Idm, Y90m, 
+ Idm, X90p, Xm, Y90m, Xp, Y90m, Idp, Y90m, Idp, X90p, Ym, Y90m, Xp, X90p, Xp, 
+ Y90p, Idm, Y90m, Idp, X90m, Idp, Y90p, Idm, X90m, Idm, Y90m, Idm, X90m, Ym, 
+ X90m, Idp, Y90m, Xm, X90m, Ym, X90p, Idp, X90p, Idm, Y90p, Ym, X90m, Idp, 
+ X90m, Idm, X90p, Xp, X90m, Idp, X90m, Idm, X90p, Ym}
+1{Idm, Y90m, Ym, Y90p, Xp, X90m, Idp, Y90p, Idp, Y90m, Idp, Y90p, Idm, Y90m, 
+ Idm, X90p, Xm, Y90m, Xp, Y90m, Idp, Y90m, Idp, X90p, Ym, Y90m, Xp, X90p, Xp, 
+ Y90p, Idm, Y90m, Idp, X90m, Idp, Y90p, Idm, X90m, Idm, Y90m, Idm, X90m, Ym, 
+ X90m, Idp, Y90m, Xm, X90m, Ym, X90p, Idp, X90p, Idm, Y90p, Ym, X90m, Idp, 
+ X90m, Idm, X90p, Xp, X90m, Idp, X90m, Idm, Y90p, Ym, X90p, Idp, X90p, Idm, 
+ Y90m, Xm, X90m, Yp, Y90m, Yp, Y90p, Ym, Y90p, Idp, Y90p, Xm}
+0{Idm, Y90m, Ym, Y90p, Xp, X90m, Idp, Y90p, Idp, Y90m, Idp, Y90p, Idm, Y90m, 
+ Idm, X90p, Xm, Y90m, Xp, Y90m, Idp, Y90m, Idp, X90p, Ym, Y90m, Xp, X90p, Xp, 
+ Y90p, Idm, Y90m, Idp, X90m, Idp, Y90p, Idm, X90m, Idm, Y90m, Idm, X90m, Ym, 
+ X90m, Idp, Y90m, Xm, X90m, Ym, X90p, Idp, X90p, Idm, Y90p, Ym, X90m, Idp, 
+ X90m, Idm, X90p, Xp, X90m, Idp, X90m, Idm, Y90p, Ym, X90p, Idp, X90p, Idm, 
+ Y90m, Xm, X90m, Yp, Y90m, Yp, Y90p, Ym, Y90p, Idp, Y90m, Xm, Y90p, Xp, X90m, 
+ Idm, X90m, Idm, Y90m, Xm, Y90m, Yp, X90p, Idp, Y90m, Xp, Idm, Idm}
+1{Idm, Y90m, Ym, Y90p, Xp, X90m, Idp, Y90p, Idp, Y90m, Idp, Y90p, Idm, Y90m, 
+ Idm, X90p, Xm, Y90m, Xp, Y90m, Idp, Y90m, Idp, X90p, Ym, Y90m, Xp, X90p, Xp, 
+ Y90p, Idm, Y90m, Idp, X90m, Idp, Y90p, Idm, X90m, Idm, Y90m, Idm, X90m, Ym, 
+ X90m, Idp, Y90m, Xm, X90m, Ym, X90p, Idp, X90p, Idm, Y90p, Ym, X90m, Idp, 
+ X90m, Idm, X90p, Xp, X90m, Idp, X90m, Idm, Y90p, Ym, X90p, Idp, X90p, Idm, 
+ Y90m, Xm, X90m, Yp, Y90m, Yp, Y90p, Ym, Y90p, Idp, Y90m, Xm, Y90p, Xp, X90m, 
+ Idm, X90m, Idm, Y90m, Xm, Y90m, Yp, X90p, Idp, Y90m, Xp, X90m, Idm, Y90m, 
+ Xm, Y90p, Idm, X90m, Idm, Y90m, Yp, X90p, Idm, Y90p, Ym, X90m, Idp, Y90p, 
+ Idm, X90m, Idm, X90p, Xp, Y90p, Idp, X90m, Idm, Y90p, Idp, X90p, Idm, Y90m, 
+ Ym, Idp, Idm}
+1{Idm, Y90m, Ym, Y90p, Xp, X90m, Idp, Y90p, Idp, Y90m, Idp, Y90p, Idm, Y90m, 
+ Idm, X90p, Xm, Y90m, Xp, Y90m, Idp, Y90m, Idp, X90p, Ym, Y90m, Xp, X90p, Xp, 
+ Y90p, Idm, Y90m, Idp, X90m, Idp, Y90p, Idm, X90m, Idm, Y90m, Idm, X90m, Ym, 
+ X90m, Idp, Y90m, Xm, X90m, Ym, X90p, Idp, X90p, Idm, Y90p, Ym, X90m, Idp, 
+ X90m, Idm, X90p, Xp, X90m, Idp, X90m, Idm, Y90p, Ym, X90p, Idp, X90p, Idm, 
+ Y90m, Xm, X90m, Yp, Y90m, Yp, Y90p, Ym, Y90p, Idp, Y90m, Xm, Y90p, Xp, X90m, 
+ Idm, X90m, Idm, Y90m, Xm, Y90m, Yp, X90p, Idp, Y90m, Xp, X90m, Idm, Y90m, 
+ Xm, Y90p, Idm, X90m, Idm, Y90m, Yp, X90p, Idm, Y90p, Ym, X90m, Idp, Y90p, 
+ Idm, X90m, Idm, X90p, Xp, Y90p, Idp, X90m, Idm, Y90p, Idp, X90p, Idm, Y90m, 
+ Ym, Y90m, Idm, X90m, Idp, X90p, Ym, Y90p, Xm, Y90p, Idp, Y90p, Ym, X90p, 
+ Idm, Y90m, Idm, X90p, Xm, Y90m, Xp, X90m, Idp, X90p, Idm, X90m, Xm, Y90p, 
+ Idp, X90m, Idp, Y90p, Idm, X90m, Ym}
+1{Idm, Y90m, Ym, Y90p, Xp, X90m, Idp, Y90p, Idp, Y90m, Idp, Y90p, Idm, Y90m, 
+ Idm, X90p, Xm, Y90m, Xp, Y90m, Idp, Y90m, Idp, X90p, Ym, Y90m, Xp, X90p, Xp, 
+ Y90p, Idm, Y90m, Idp, X90m, Idp, Y90p, Idm, X90m, Idm, Y90m, Idm, X90m, Ym, 
+ X90m, Idp, Y90m, Xm, X90m, Ym, X90p, Idp, X90p, Idm, Y90p, Ym, X90m, Idp, 
+ X90m, Idm, X90p, Xp, X90m, Idp, X90m, Idm, Y90p, Ym, X90p, Idp, X90p, Idm, 
+ Y90m, Xm, X90m, Yp, Y90m, Yp, Y90p, Ym, Y90p, Idp, Y90m, Xm, Y90p, Xp, X90m, 
+ Idm, X90m, Idm, Y90m, Xm, Y90m, Yp, X90p, Idp, Y90m, Xp, X90m, Idm, Y90m, 
+ Xm, Y90p, Idm, X90m, Idm, Y90m, Yp, X90p, Idm, Y90p, Ym, X90m, Idp, Y90p, 
+ Idm, X90m, Idm, X90p, Xp, Y90p, Idp, X90m, Idm, Y90p, Idp, X90p, Idm, Y90m, 
+ Ym, Y90m, Idm, X90m, Idp, X90p, Ym, Y90p, Xm, Y90p, Idp, Y90p, Ym, X90p, 
+ Idm, Y90m, Idm, X90p, Xm, Y90m, Xp, X90m, Idp, X90p, Idm, X90m, Xm, Y90p, 
+ Idp, X90m, Idp, Y90p, Idm, X90p, Ym, Y90m, Idm, Y90m, Xm, Y90p, Xm, Y90p, 
+ Ym, X90m, Idp, X90m, Xp, X90p, Yp, Y90p, Xp, Y90m, Idp, Y90m, Idm, X90m, Xm, 
+ X90m, Idm, Y90p, Idp, X90m, Yp, X90p, Idm, X90m, Xm}
+0{Idm, X90p, Idm, Y90p, Yp, X90p, Ym}
+1{Idm, X90p, Idm, Y90p, Yp, X90m, Ym, Idp, Idp}
+1{Idm, X90p, Idm, Y90p, Yp, X90m, Ym, X90m, Idp, X90p, Idm}
+1{Idm, X90p, Idm, Y90p, Yp, X90m, Ym, X90m, Idp, X90m, Idm, Idm, Ym}
+0{Idm, X90p, Idm, Y90p, Yp, X90m, Ym, X90m, Idp, X90m, Idm, Y90p, Ym, Y90p, 
+ Idm}
+0{Idm, X90p, Idm, Y90p, Yp, X90m, Ym, X90m, Idp, X90m, Idm, Y90p, Ym, X90p, 
+ Idm, X90p, Ym, Y90m, Idp}
+0{Idm, X90p, Idm, Y90p, Yp, X90m, Ym, X90m, Idp, X90m, Idm, Y90p, Ym, X90p, 
+ Idm, X90p, Ym, Y90p, Idp, Y90m, Xm, Y90p, Xm}
+1{Idm, X90p, Idm, Y90p, Yp, X90m, Ym, X90m, Idp, X90m, Idm, Y90p, Ym, X90p, 
+ Idm, X90p, Ym, Y90p, Idp, Y90m, Xm, Y90p, Xm, X90p, Idp, X90m, Ym}
+1{Idm, X90p, Idm, Y90p, Yp, X90m, Ym, X90m, Idp, X90m, Idm, Y90p, Ym, X90p, 
+ Idm, X90p, Ym, Y90p, Idp, Y90m, Xm, Y90p, Xm, X90p, Idp, X90p, Ym, X90m, Xp, 
+ Y90p, Xm, X90p, Yp, Idp, Idm}
+1{Idm, X90p, Idm, Y90p, Yp, X90m, Ym, X90m, Idp, X90m, Idm, Y90p, Ym, X90p, 
+ Idm, X90p, Ym, Y90p, Idp, Y90m, Xm, Y90p, Xm, X90p, Idp, X90p, Ym, X90m, Xp, 
+ Y90p, Xm, X90p, Yp, Y90p, Idm, X90m, Idm, Y90m, Idm, X90m, Xp, X90m, Idp}
+0{Idm, X90p, Idm, Y90p, Yp, X90m, Ym, X90m, Idp, X90m, Idm, Y90p, Ym, X90p, 
+ Idm, X90p, Ym, Y90p, Idp, Y90m, Xm, Y90p, Xm, X90p, Idp, X90p, Ym, X90m, Xp, 
+ Y90p, Xm, X90p, Yp, Y90p, Idm, X90m, Idm, Y90m, Idm, X90m, Xp, X90m, Idp, 
+ X90p, Idm, Y90p, Idp, Y90p, Ym, X90p, Idp}
+0{Idm, X90p, Idm, Y90p, Yp, X90m, Ym, X90m, Idp, X90m, Idm, Y90p, Ym, X90p, 
+ Idm, X90p, Ym, Y90p, Idp, Y90m, Xm, Y90p, Xm, X90p, Idp, X90p, Ym, X90m, Xp, 
+ Y90p, Xm, X90p, Yp, Y90p, Idm, X90m, Idm, Y90m, Idm, X90m, Xp, X90m, Idp, 
+ X90p, Idm, Y90p, Idp, Y90p, Ym, X90p, Idp, Y90m, Xm, X90p, Idp, Y90m, Yp, 
+ Y90p, Yp, Y90m, Idm, X90m, Yp, X90p, Yp, Idm, Idm}
+1{Idm, X90p, Idm, Y90p, Yp, X90m, Ym, X90m, Idp, X90m, Idm, Y90p, Ym, X90p, 
+ Idm, X90p, Ym, Y90p, Idp, Y90m, Xm, Y90p, Xm, X90p, Idp, X90p, Ym, X90m, Xp, 
+ Y90p, Xm, X90p, Yp, Y90p, Idm, X90m, Idm, Y90m, Idm, X90m, Xp, X90m, Idp, 
+ X90p, Idm, Y90p, Idp, Y90p, Ym, X90p, Idp, Y90m, Xm, X90p, Idp, Y90m, Yp, 
+ Y90p, Yp, Y90m, Idm, X90m, Yp, X90p, Yp, X90p, Idm, Y90m, Idm, X90p, Xp, 
+ X90m, Idm, X90p, Idp, X90p, Ym, Y90m, Xp, Y90m, Yp, X90m, Idm}
+1{Idm, X90p, Idm, Y90p, Yp, X90m, Ym, X90m, Idp, X90m, Idm, Y90p, Ym, X90p, 
+ Idm, X90p, Ym, Y90p, Idp, Y90m, Xm, Y90p, Xm, X90p, Idp, X90p, Ym, X90m, Xp, 
+ Y90p, Xm, X90p, Yp, Y90p, Idm, X90m, Idm, Y90m, Idm, X90m, Xp, X90m, Idp, 
+ X90p, Idm, Y90p, Idp, Y90p, Ym, X90p, Idp, Y90m, Xm, X90p, Idp, Y90m, Yp, 
+ Y90p, Yp, Y90m, Idm, X90m, Yp, X90p, Yp, X90p, Idm, Y90m, Idm, X90p, Xp, 
+ X90m, Idm, X90p, Idp, X90p, Ym, Y90m, Xp, Y90m, Yp, Y90p, Idm, Y90m, Xm, 
+ X90p, Ym, Y90p, Yp, Y90p, Xm, X90p, Idp, X90m, Idm, Y90m, Xp, Y90m, Xp}
+1{Idm, X90p, Idm, Y90p, Yp, X90m, Ym, X90m, Idp, X90m, Idm, Y90p, Ym, X90p, 
+ Idm, X90p, Ym, Y90p, Idp, Y90m, Xm, Y90p, Xm, X90p, Idp, X90p, Ym, X90m, Xp, 
+ Y90p, Xm, X90p, Yp, Y90p, Idm, X90m, Idm, Y90m, Idm, X90m, Xp, X90m, Idp, 
+ X90p, Idm, Y90p, Idp, Y90p, Ym, X90p, Idp, Y90m, Xm, X90p, Idp, Y90m, Yp, 
+ Y90p, Yp, Y90m, Idm, X90m, Yp, X90p, Yp, X90p, Idm, Y90m, Idm, X90p, Xp, 
+ X90m, Idm, X90p, Idp, X90p, Ym, Y90m, Xp, Y90m, Yp, Y90p, Idm, Y90m, Xm, 
+ X90p, Ym, Y90p, Yp, Y90p, Xm, X90p, Idp, X90m, Idm, Y90m, Xp, Y90p, Xp, 
+ Y90m, Idm, X90p, Idm, Y90p, Idp, Y90p, Idm, X90m, Idm, Y90m, Ym, X90m, Xp, 
+ Y90p, Xp, Y90p, Ym, X90m, Idp, X90m, Xp, Y90p, Idm, X90p, Idp, X90m, Idm, 
+ Y90p, Idm, X90m, Xp}
+0{Idm, X90p, Idm, Y90p, Yp, X90m, Ym, X90m, Idp, X90m, Idm, Y90p, Ym, X90p, 
+ Idm, X90p, Ym, Y90p, Idp, Y90m, Xm, Y90p, Xm, X90p, Idp, X90p, Ym, X90m, Xp, 
+ Y90p, Xm, X90p, Yp, Y90p, Idm, X90m, Idm, Y90m, Idm, X90m, Xp, X90m, Idp, 
+ X90p, Idm, Y90p, Idp, Y90p, Ym, X90p, Idp, Y90m, Xm, X90p, Idp, Y90m, Yp, 
+ Y90p, Yp, Y90m, Idm, X90m, Yp, X90p, Yp, X90p, Idm, Y90m, Idm, X90p, Xp, 
+ X90m, Idm, X90p, Idp, X90p, Ym, Y90m, Xp, Y90m, Yp, Y90p, Idm, Y90m, Xm, 
+ X90p, Ym, Y90p, Yp, Y90p, Xm, X90p, Idp, X90m, Idm, Y90m, Xp, Y90p, Xp, 
+ Y90m, Idm, X90p, Idm, Y90p, Idp, Y90p, Idm, X90m, Idm, Y90m, Ym, X90m, Xp, 
+ Y90p, Xp, Y90p, Ym, X90m, Idp, X90m, Xp, Y90p, Idm, X90p, Idp, X90m, Idm, 
+ Y90p, Idm, X90m, Xp, X90p, Idp, X90m, Xp, X90p, Idm, Y90m, Xp, X90m, Ym, 
+ X90p, Idm, X90p, Xp, X90m, Ym, Y90m, Xm, Y90m, Xp, X90m, Idp, Y90m, Idm, 
+ X90m, Idp, X90m, Ym, X90m, Xp, Y90p, Idm}
+0{Idm, X90p, Idm, Y90p, Yp, X90m, Ym, X90m, Idp, X90m, Idm, Y90p, Ym, X90p, 
+ Idm, X90p, Ym, Y90p, Idp, Y90m, Xm, Y90p, Xm, X90p, Idp, X90p, Ym, X90m, Xp, 
+ Y90p, Xm, X90p, Yp, Y90p, Idm, X90m, Idm, Y90m, Idm, X90m, Xp, X90m, Idp, 
+ X90p, Idm, Y90p, Idp, Y90p, Ym, X90p, Idp, Y90m, Xm, X90p, Idp, Y90m, Yp, 
+ Y90p, Yp, Y90m, Idm, X90m, Yp, X90p, Yp, X90p, Idm, Y90m, Idm, X90p, Xp, 
+ X90m, Idm, X90p, Idp, X90p, Ym, Y90m, Xp, Y90m, Yp, Y90p, Idm, Y90m, Xm, 
+ X90p, Ym, Y90p, Yp, Y90p, Xm, X90p, Idp, X90m, Idm, Y90m, Xp, Y90p, Xp, 
+ Y90m, Idm, X90p, Idm, Y90p, Idp, Y90p, Idm, X90m, Idm, Y90m, Ym, X90m, Xp, 
+ Y90p, Xp, Y90p, Ym, X90m, Idp, X90m, Xp, Y90p, Idm, X90p, Idp, X90m, Idm, 
+ Y90p, Idm, X90m, Xp, X90p, Idp, X90m, Xp, X90p, Idm, Y90m, Xp, X90m, Ym, 
+ X90p, Idm, X90p, Xp, X90m, Ym, Y90m, Xm, Y90m, Xp, X90m, Idp, Y90m, Idm, 
+ X90m, Idp, X90m, Ym, X90m, Xp, Y90p, Idm, X90m, Xm, Y90p, Idm, Y90m, Xm, 
+ Y90p, Xm, Y90m, Xp, Y90m, Ym, Y90p, Idm, Y90m, Yp, X90m, Yp, Y90m, Idp, 
+ Y90m, Xp, X90p, Idm, X90p, Idp, Y90m, Idm, Y90p, Idp, Idp, Yp}
+1{Xp, X90p, Idp, Y90p, Xm, X90p, Idm}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idm, Idp, Ym}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idm, X90p, Ym, X90p, Idm}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idm, X90p, Ym, X90m, Idm, Idm, Xm}
+0{Xp, X90p, Idp, Y90p, Xm, X90m, Idm, X90p, Ym, X90m, Idm, Y90p, Xm, Y90p, Xp}
+0{Xp, X90p, Idp, Y90p, Xm, X90m, Idm, X90p, Ym, X90m, Idm, Y90p, Xm, X90p, 
+ Xp, X90m, Idp, Y90m, Idm}
+0{Xp, X90p, Idp, Y90p, Xm, X90m, Idm, X90p, Ym, X90m, Idm, Y90p, Xm, X90p, 
+ Xp, X90m, Idp, Y90m, Idm, Y90m, Idm, Y90m, Yp}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idm, X90p, Ym, X90m, Idm, Y90p, Xm, X90p, 
+ Xp, X90m, Idp, Y90m, Idm, Y90m, Idm, Y90m, Yp, X90m, Idm, X90p, Xp}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idm, X90p, Ym, X90m, Idm, Y90p, Xm, X90p, 
+ Xp, X90m, Idp, Y90m, Idm, Y90m, Idm, Y90m, Yp, X90m, Idm, X90m, Xp, X90p, 
+ Idp, Y90p, Idp, X90m, Xm, Idm, Idm}
+0{Xp, X90p, Idp, Y90p, Xm, X90m, Idm, X90p, Ym, X90m, Idm, Y90p, Xm, X90p, 
+ Xp, X90m, Idp, Y90m, Idm, Y90m, Idm, Y90m, Yp, X90m, Idm, X90m, Xp, X90p, 
+ Idp, Y90p, Idp, X90m, Xm, Y90m, Idm, X90p, Xm, Y90m, Xp, X90m, Idm, X90p, Yp}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idm, X90p, Ym, X90m, Idm, Y90p, Xm, X90p, 
+ Xp, X90m, Idp, Y90m, Idm, Y90m, Idm, Y90m, Yp, X90m, Idm, X90m, Xp, X90p, 
+ Idp, Y90p, Idp, X90m, Xm, Y90m, Idm, X90p, Xm, Y90m, Xp, X90m, Idm, X90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Xm, X90p, Idp}
+0{Xp, X90p, Idp, Y90p, Xm, X90m, Idm, X90p, Ym, X90m, Idm, Y90p, Xm, X90p, 
+ Xp, X90m, Idp, Y90m, Idm, Y90m, Idm, Y90m, Yp, X90m, Idm, X90m, Xp, X90p, 
+ Idp, Y90p, Idp, X90m, Xm, Y90m, Idm, X90p, Xm, Y90m, Xp, X90m, Idm, X90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Xm, X90p, Idp, Y90p, Xm, X90m, Yp, Y90p, Xp, 
+ Y90m, Idm, Y90p, Idm, X90m, Idp, X90p, Ym, Idm, Yp}
+0{Xp, X90p, Idp, Y90p, Xm, X90m, Idm, X90p, Ym, X90m, Idm, Y90p, Xm, X90p, 
+ Xp, X90m, Idp, Y90m, Idm, Y90m, Idm, Y90m, Yp, X90m, Idm, X90m, Xp, X90p, 
+ Idp, Y90p, Idp, X90m, Xm, Y90m, Idm, X90p, Xm, Y90m, Xp, X90m, Idm, X90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Xm, X90p, Idp, Y90p, Xm, X90m, Yp, Y90p, Xp, 
+ Y90m, Idm, Y90p, Idm, X90m, Idp, X90p, Ym, X90p, Yp, Y90m, Xm, X90p, Xm, 
+ X90m, Xp, X90m, Idp, X90m, Xm, Y90p, Ym, Y90p, Idm, X90p, Xp}
+0{Xp, X90p, Idp, Y90p, Xm, X90m, Idm, X90p, Ym, X90m, Idm, Y90p, Xm, X90p, 
+ Xp, X90m, Idp, Y90m, Idm, Y90m, Idm, Y90m, Yp, X90m, Idm, X90m, Xp, X90p, 
+ Idp, Y90p, Idp, X90m, Xm, Y90m, Idm, X90p, Xm, Y90m, Xp, X90m, Idm, X90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Xm, X90p, Idp, Y90p, Xm, X90m, Yp, Y90p, Xp, 
+ Y90m, Idm, Y90p, Idm, X90m, Idp, X90p, Ym, X90p, Yp, Y90m, Xm, X90p, Xm, 
+ X90m, Xp, X90m, Idp, X90m, Xm, Y90p, Ym, Y90p, Idm, Y90p, Xp, Y90m, Yp, 
+ X90p, Xm, Y90p, Ym, Y90p, Idm, X90m, Ym, X90p, Yp, Y90m, Xm, Y90m, Xp}
+0{Xp, X90p, Idp, Y90p, Xm, X90m, Idm, X90p, Ym, X90m, Idm, Y90p, Xm, X90p, 
+ Xp, X90m, Idp, Y90m, Idm, Y90m, Idm, Y90m, Yp, X90m, Idm, X90m, Xp, X90p, 
+ Idp, Y90p, Idp, X90m, Xm, Y90m, Idm, X90p, Xm, Y90m, Xp, X90m, Idm, X90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Xm, X90p, Idp, Y90p, Xm, X90m, Yp, Y90p, Xp, 
+ Y90m, Idm, Y90p, Idm, X90m, Idp, X90p, Ym, X90p, Yp, Y90m, Xm, X90p, Xm, 
+ X90m, Xp, X90m, Idp, X90m, Xm, Y90p, Ym, Y90p, Idm, Y90p, Xp, Y90m, Yp, 
+ X90p, Xm, Y90p, Ym, Y90p, Idm, X90m, Ym, X90p, Yp, Y90m, Xm, Y90p, Xp, Y90m, 
+ Idm, X90m, Idp, Y90m, Xm, Y90m, Idm, X90p, Xp, Y90p, Ym, X90p, Yp, Y90m, 
+ Idp, Y90m, Ym, X90p, Xm, X90p, Idm, Y90p, Idm, X90m, Xm, X90p, Idm, Y90m, 
+ Xp, X90m, Idm}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idm, X90p, Ym, X90m, Idm, Y90p, Xm, X90p, 
+ Xp, X90m, Idp, Y90m, Idm, Y90m, Idm, Y90m, Yp, X90m, Idm, X90m, Xp, X90p, 
+ Idp, Y90p, Idp, X90m, Xm, Y90m, Idm, X90p, Xm, Y90m, Xp, X90m, Idm, X90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Xm, X90p, Idp, Y90p, Xm, X90m, Yp, Y90p, Xp, 
+ Y90m, Idm, Y90p, Idm, X90m, Idp, X90p, Ym, X90p, Yp, Y90m, Xm, X90p, Xm, 
+ X90m, Xp, X90m, Idp, X90m, Xm, Y90p, Ym, Y90p, Idm, Y90p, Xp, Y90m, Yp, 
+ X90p, Xm, Y90p, Ym, Y90p, Idm, X90m, Ym, X90p, Yp, Y90m, Xm, Y90p, Xp, Y90m, 
+ Idm, X90m, Idp, Y90m, Xm, Y90m, Idm, X90p, Xp, Y90p, Ym, X90p, Yp, Y90m, 
+ Idp, Y90m, Ym, X90p, Xm, X90p, Idm, Y90p, Idm, X90m, Xm, X90p, Idm, Y90m, 
+ Xp, X90p, Idm, X90m, Ym, X90p, Yp, X90m, Yp, Y90p, Idm, X90p, Idm, X90p, 
+ Idm, X90p, Idm, X90p, Ym, Y90p, Idm, Y90p, Idm, X90m, Idm, Y90p, Ym, X90m, 
+ Xp, X90m, Ym, X90m, Xp, Y90m, Idp}
+0{Xp, X90p, Idp, Y90p, Xm, X90m, Idm, X90p, Ym, X90m, Idm, Y90p, Xm, X90p, 
+ Xp, X90m, Idp, Y90m, Idm, Y90m, Idm, Y90m, Yp, X90m, Idm, X90m, Xp, X90p, 
+ Idp, Y90p, Idp, X90m, Xm, Y90m, Idm, X90p, Xm, Y90m, Xp, X90m, Idm, X90p, 
+ Yp, X90m, Idp, Y90p, Ym, Y90p, Xm, X90p, Idp, Y90p, Xm, X90m, Yp, Y90p, Xp, 
+ Y90m, Idm, Y90p, Idm, X90m, Idp, X90p, Ym, X90p, Yp, Y90m, Xm, X90p, Xm, 
+ X90m, Xp, X90m, Idp, X90m, Xm, Y90p, Ym, Y90p, Idm, Y90p, Xp, Y90m, Yp, 
+ X90p, Xm, Y90p, Ym, Y90p, Idm, X90m, Ym, X90p, Yp, Y90m, Xm, Y90p, Xp, Y90m, 
+ Idm, X90m, Idp, Y90m, Xm, Y90m, Idm, X90p, Xp, Y90p, Ym, X90p, Yp, Y90m, 
+ Idp, Y90m, Ym, X90p, Xm, X90p, Idm, Y90p, Idm, X90m, Xm, X90p, Idm, Y90m, 
+ Xp, X90p, Idm, X90m, Ym, X90p, Yp, X90m, Yp, Y90p, Idm, X90p, Idm, X90p, 
+ Idm, X90p, Idm, X90p, Ym, Y90p, Idm, Y90p, Idm, X90m, Idm, Y90p, Ym, X90m, 
+ Xp, X90m, Ym, X90m, Xp, Y90p, Idp, X90m, Xm, Y90p, Xm, Y90m, Idp, Y90m, Xm, 
+ Y90p, Xp, Y90p, Idp, Y90p, Idm, Y90p, Idm, X90p, Xm, Y90p, Yp, Y90p, Xp, 
+ X90m, Yp, X90m, Idp, Y90p, Idp, Y90p, Idm, Idp, Idm}
+1{Ym, X90p, Idp, Y90m, Yp, X90m, Idp}
+0{Ym, X90p, Idp, Y90m, Yp, X90p, Idp, Idp, Idm}
+1{Ym, X90p, Idp, Y90m, Yp, X90p, Idp, X90m, Idm, X90p, Yp}
+1{Ym, X90p, Idp, Y90m, Yp, X90p, Idp, X90m, Idm, X90p, Yp, Idp, Idp}
+1{Ym, X90p, Idp, Y90m, Yp, X90p, Idp, X90m, Idm, X90p, Yp, Y90p, Idp, Y90p, 
+ Xp}
+1{Ym, X90p, Idp, Y90m, Yp, X90p, Idp, X90m, Idm, X90p, Yp, Y90p, Idp, X90m, 
+ Xp, X90p, Idm, Y90p, Ym}
+0{Ym, X90p, Idp, Y90m, Yp, X90p, Idp, X90m, Idm, X90p, Yp, Y90p, Idp, X90m, 
+ Xp, X90p, Idm, Y90m, Ym, Y90p, Idm, Y90p, Ym}
+1{Ym, X90p, Idp, Y90m, Yp, X90p, Idp, X90m, Idm, X90p, Yp, Y90p, Idp, X90m, 
+ Xp, X90p, Idm, Y90m, Ym, Y90p, Idm, Y90p, Ym, X90p, Xm, X90p, Xp}
+0{Ym, X90p, Idp, Y90m, Yp, X90p, Idp, X90m, Idm, X90p, Yp, Y90p, Idp, X90m, 
+ Xp, X90p, Idm, Y90m, Ym, Y90p, Idm, Y90p, Ym, X90p, Xm, X90m, Xp, X90p, Ym, 
+ Y90m, Ym, X90m, Xp, Idp, Xm}
+1{Ym, X90p, Idp, Y90m, Yp, X90p, Idp, X90m, Idm, X90p, Yp, Y90p, Idp, X90m, 
+ Xp, X90p, Idm, Y90m, Ym, Y90p, Idm, Y90p, Ym, X90p, Xm, X90m, Xp, X90p, Ym, 
+ Y90m, Ym, X90m, Xp, Y90m, Xm, X90p, Idm, Y90m, Xp, X90m, Ym, X90p, Idm}
+1{Ym, X90p, Idp, Y90m, Yp, X90p, Idp, X90m, Idm, X90p, Yp, Y90p, Idp, X90m, 
+ Xp, X90p, Idm, Y90m, Ym, Y90p, Idm, Y90p, Ym, X90p, Xm, X90m, Xp, X90p, Ym, 
+ Y90m, Ym, X90m, Xp, Y90m, Xm, X90p, Idm, Y90m, Xp, X90m, Ym, X90m, Idm, 
+ X90p, Xm, Y90m, Yp, Y90m, Xm, X90m, Yp}
+0{Ym, X90p, Idp, Y90m, Yp, X90p, Idp, X90m, Idm, X90p, Yp, Y90p, Idp, X90m, 
+ Xp, X90p, Idm, Y90m, Ym, Y90p, Idm, Y90p, Ym, X90p, Xm, X90m, Xp, X90p, Ym, 
+ Y90m, Ym, X90m, Xp, Y90m, Xm, X90p, Idm, Y90m, Xp, X90m, Ym, X90m, Idm, 
+ X90p, Xm, Y90m, Yp, Y90m, Xm, X90m, Yp, Y90p, Idm, X90m, Yp, Y90p, Idm, 
+ Y90p, Ym, Y90m, Idp, X90m, Idm, X90m, Idm, Idm, Yp}
+0{Ym, X90p, Idp, Y90m, Yp, X90p, Idp, X90m, Idm, X90p, Yp, Y90p, Idp, X90m, 
+ Xp, X90p, Idm, Y90m, Ym, Y90p, Idm, Y90p, Ym, X90p, Xm, X90m, Xp, X90p, Ym, 
+ Y90m, Ym, X90m, Xp, Y90m, Xm, X90p, Idm, Y90m, Xp, X90m, Ym, X90m, Idm, 
+ X90p, Xm, Y90m, Yp, Y90m, Xm, X90m, Yp, Y90p, Idm, X90m, Yp, Y90p, Idm, 
+ Y90p, Ym, Y90m, Idp, X90m, Idm, X90m, Idm, X90p, Yp, Y90m, Idp, X90m, Idm, 
+ X90m, Xm, X90m, Idp, X90m, Ym, Y90p, Xm, Y90p, Ym, X90p, Idp}
+0{Ym, X90p, Idp, Y90m, Yp, X90p, Idp, X90m, Idm, X90p, Yp, Y90p, Idp, X90m, 
+ Xp, X90p, Idm, Y90m, Ym, Y90p, Idm, Y90p, Ym, X90p, Xm, X90m, Xp, X90p, Ym, 
+ Y90m, Ym, X90m, Xp, Y90m, Xm, X90p, Idm, Y90m, Xp, X90m, Ym, X90m, Idm, 
+ X90p, Xm, Y90m, Yp, Y90m, Xm, X90m, Yp, Y90p, Idm, X90m, Yp, Y90p, Idm, 
+ Y90p, Ym, Y90m, Idp, X90m, Idm, X90m, Idm, X90p, Yp, Y90m, Idp, X90m, Idm, 
+ X90m, Xm, X90m, Idp, X90m, Ym, Y90p, Xm, Y90p, Ym, Y90m, Idp, Y90m, Yp, 
+ X90p, Yp, Y90p, Idm, Y90m, Ym, X90m, Idp, X90p, Idm, Y90p, Idm, Y90m, Idm}
+1{Ym, X90p, Idp, Y90m, Yp, X90p, Idp, X90m, Idm, X90p, Yp, Y90p, Idp, X90m, 
+ Xp, X90p, Idm, Y90m, Ym, Y90p, Idm, Y90p, Ym, X90p, Xm, X90m, Xp, X90p, Ym, 
+ Y90m, Ym, X90m, Xp, Y90m, Xm, X90p, Idm, Y90m, Xp, X90m, Ym, X90m, Idm, 
+ X90p, Xm, Y90m, Yp, Y90m, Xm, X90m, Yp, Y90p, Idm, X90m, Yp, Y90p, Idm, 
+ Y90p, Ym, Y90m, Idp, X90m, Idm, X90m, Idm, X90p, Yp, Y90m, Idp, X90m, Idm, 
+ X90m, Xm, X90m, Idp, X90m, Ym, Y90p, Xm, Y90p, Ym, Y90m, Idp, Y90m, Yp, 
+ X90p, Yp, Y90p, Idm, Y90m, Ym, X90m, Idp, X90p, Idm, Y90p, Idm, Y90m, Idm, 
+ Y90m, Idm, X90p, Idp, Y90m, Xm, Y90m, Yp, X90m, Ym, Y90m, Idp, X90m, Ym, 
+ Y90p, Xm, Y90p, Idp, X90p, Ym, X90p, Ym, Y90m, Xp, X90m, Idp, X90p, Ym, 
+ Y90m, Xm, X90m, Idm}
+0{Ym, X90p, Idp, Y90m, Yp, X90p, Idp, X90m, Idm, X90p, Yp, Y90p, Idp, X90m, 
+ Xp, X90p, Idm, Y90m, Ym, Y90p, Idm, Y90p, Ym, X90p, Xm, X90m, Xp, X90p, Ym, 
+ Y90m, Ym, X90m, Xp, Y90m, Xm, X90p, Idm, Y90m, Xp, X90m, Ym, X90m, Idm, 
+ X90p, Xm, Y90m, Yp, Y90m, Xm, X90m, Yp, Y90p, Idm, X90m, Yp, Y90p, Idm, 
+ Y90p, Ym, Y90m, Idp, X90m, Idm, X90m, Idm, X90p, Yp, Y90m, Idp, X90m, Idm, 
+ X90m, Xm, X90m, Idp, X90m, Ym, Y90p, Xm, Y90p, Ym, Y90m, Idp, Y90m, Yp, 
+ X90p, Yp, Y90p, Idm, Y90m, Ym, X90m, Idp, X90p, Idm, Y90p, Idm, Y90m, Idm, 
+ Y90m, Idm, X90p, Idp, Y90m, Xm, Y90m, Yp, X90m, Ym, Y90m, Idp, X90m, Ym, 
+ Y90p, Xm, Y90p, Idp, X90p, Ym, X90p, Ym, Y90m, Xp, X90m, Idp, X90p, Ym, 
+ Y90m, Xm, X90p, Idm, X90p, Idp, X90m, Idp, X90m, Idp, Y90p, Idm, X90m, Xp, 
+ X90p, Yp, X90p, Ym, X90m, Idp, Y90p, Ym, Y90p, Idm, X90m, Xm, Y90m, Xm, 
+ X90p, Yp, X90p, Idm, X90p, Xm, Y90m, Idm}
+0{Ym, X90p, Idp, Y90m, Yp, X90p, Idp, X90m, Idm, X90p, Yp, Y90p, Idp, X90m, 
+ Xp, X90p, Idm, Y90m, Ym, Y90p, Idm, Y90p, Ym, X90p, Xm, X90m, Xp, X90p, Ym, 
+ Y90m, Ym, X90m, Xp, Y90m, Xm, X90p, Idm, Y90m, Xp, X90m, Ym, X90m, Idm, 
+ X90p, Xm, Y90m, Yp, Y90m, Xm, X90m, Yp, Y90p, Idm, X90m, Yp, Y90p, Idm, 
+ Y90p, Ym, Y90m, Idp, X90m, Idm, X90m, Idm, X90p, Yp, Y90m, Idp, X90m, Idm, 
+ X90m, Xm, X90m, Idp, X90m, Ym, Y90p, Xm, Y90p, Ym, Y90m, Idp, Y90m, Yp, 
+ X90p, Yp, Y90p, Idm, Y90m, Ym, X90m, Idp, X90p, Idm, Y90p, Idm, Y90m, Idm, 
+ Y90m, Idm, X90p, Idp, Y90m, Xm, Y90m, Yp, X90m, Ym, Y90m, Idp, X90m, Ym, 
+ Y90p, Xm, Y90p, Idp, X90p, Ym, X90p, Ym, Y90m, Xp, X90m, Idp, X90p, Ym, 
+ Y90m, Xm, X90p, Idm, X90p, Idp, X90m, Idp, X90m, Idp, Y90p, Idm, X90m, Xp, 
+ X90p, Yp, X90p, Ym, X90m, Idp, Y90p, Ym, Y90p, Idm, X90m, Xm, Y90m, Xm, 
+ X90p, Yp, X90p, Idm, X90p, Xm, Y90m, Idm, X90p, Idp, Y90p, Ym, Y90m, Xp, 
+ Y90p, Idm, Y90p, Ym, Y90p, Idm, Y90p, Xp, Y90m, Idm, X90p, Xm, Y90p, Idp, 
+ Y90p, Idp, X90p, Idm, X90m, Idm, Y90p, Idm, Y90p, Idm, Idp, Idp}
+1{Xp, X90p, Idp, Y90p, Xm, X90p, Idp}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idp, Idm, Ym}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idp, X90p, Ym, X90m, Ym}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idp, X90p, Ym, X90m, Ym, Idp, Idm}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idp, X90p, Ym, X90m, Ym, Y90m, Idm, Y90p, 
+ Idm}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idp, X90p, Ym, X90m, Ym, Y90m, Idm, X90m, 
+ Idm, X90m, Ym, Y90p, Ym}
+0{Xp, X90p, Idp, Y90p, Xm, X90m, Idp, X90p, Ym, X90m, Ym, Y90m, Idm, X90m, 
+ Idm, X90m, Ym, Y90m, Ym, Y90p, Idm, Y90m, Idp}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idp, X90p, Ym, X90m, Ym, Y90m, Idm, X90m, 
+ Idm, X90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, Idp, X90m, Ym, X90m, Ym}
+0{Xp, X90p, Idp, Y90p, Xm, X90m, Idp, X90p, Ym, X90m, Ym, Y90m, Idm, X90m, 
+ Idm, X90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, Idp, X90m, Ym, X90p, Ym, X90m, Yp, 
+ Y90p, Idm, X90p, Xp, Idp, Xm}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idp, X90p, Ym, X90m, Ym, Y90m, Idm, X90m, 
+ Idm, X90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, Idp, X90m, Ym, X90p, Ym, X90m, Yp, 
+ Y90p, Idm, X90p, Xp, Y90p, Xm, X90m, Idm, Y90p, Idp, X90m, Idm, X90m, Idp}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idp, X90p, Ym, X90m, Ym, Y90m, Idm, X90m, 
+ Idm, X90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, Idp, X90m, Ym, X90p, Ym, X90m, Yp, 
+ Y90p, Idm, X90p, Xp, Y90p, Xm, X90m, Idm, Y90p, Idp, X90m, Idm, X90m, Idp, 
+ X90p, Yp, Y90m, Idm, Y90p, Idm, X90p, Ym}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idp, X90p, Ym, X90m, Ym, Y90m, Idm, X90m, 
+ Idm, X90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, Idp, X90m, Ym, X90p, Ym, X90m, Yp, 
+ Y90p, Idm, X90p, Xp, Y90p, Xm, X90m, Idm, Y90p, Idp, X90m, Idm, X90m, Idp, 
+ X90p, Yp, Y90m, Idm, Y90p, Idm, X90p, Ym, Y90m, Idp, X90m, Xm, Y90p, Xp, 
+ Y90m, Idm, Y90p, Xp, X90p, Xm, X90m, Idm, Idp, Xp}
+0{Xp, X90p, Idp, Y90p, Xm, X90m, Idp, X90p, Ym, X90m, Ym, Y90m, Idm, X90m, 
+ Idm, X90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, Idp, X90m, Ym, X90p, Ym, X90m, Yp, 
+ Y90p, Idm, X90p, Xp, Y90p, Xm, X90m, Idm, Y90p, Idp, X90m, Idm, X90m, Idp, 
+ X90p, Yp, Y90m, Idm, Y90p, Idm, X90p, Ym, Y90m, Idp, X90m, Xm, Y90p, Xp, 
+ Y90m, Idm, Y90p, Xp, X90p, Xm, X90m, Idm, X90m, Xp, Y90p, Idp, X90m, Yp, 
+ X90p, Idm, X90p, Xm, X90m, Ym, Y90p, Idp, Y90p, Xp, X90m, Xm}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idp, X90p, Ym, X90m, Ym, Y90m, Idm, X90m, 
+ Idm, X90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, Idp, X90m, Ym, X90p, Ym, X90m, Yp, 
+ Y90p, Idm, X90p, Xp, Y90p, Xm, X90m, Idm, Y90p, Idp, X90m, Idm, X90m, Idp, 
+ X90p, Yp, Y90m, Idm, Y90p, Idm, X90p, Ym, Y90m, Idp, X90m, Xm, Y90p, Xp, 
+ Y90m, Idm, Y90p, Xp, X90p, Xm, X90m, Idm, X90m, Xp, Y90p, Idp, X90m, Yp, 
+ X90p, Idm, X90p, Xm, X90m, Ym, Y90p, Idp, Y90p, Xp, Y90m, Xm, Y90p, Idm, 
+ X90p, Idp, Y90m, Yp, Y90m, Idp, X90p, Xp, X90m, Ym, Y90p, Ym, Y90m, Xp}
+0{Xp, X90p, Idp, Y90p, Xm, X90m, Idp, X90p, Ym, X90m, Ym, Y90m, Idm, X90m, 
+ Idm, X90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, Idp, X90m, Ym, X90p, Ym, X90m, Yp, 
+ Y90p, Idm, X90p, Xp, Y90p, Xm, X90m, Idm, Y90p, Idp, X90m, Idm, X90m, Idp, 
+ X90p, Yp, Y90m, Idm, Y90p, Idm, X90p, Ym, Y90m, Idp, X90m, Xm, Y90p, Xp, 
+ Y90m, Idm, Y90p, Xp, X90p, Xm, X90m, Idm, X90m, Xp, Y90p, Idp, X90m, Yp, 
+ X90p, Idm, X90p, Xm, X90m, Ym, Y90p, Idp, Y90p, Xp, Y90m, Xm, Y90p, Idm, 
+ X90p, Idp, Y90m, Yp, Y90m, Idp, X90p, Xp, X90m, Ym, Y90p, Ym, Y90m, Xp, 
+ Y90p, Idp, X90p, Xm, Y90p, Xp, Y90p, Idp, X90m, Xp, Y90m, Idm, X90p, Idp, 
+ Y90m, Ym, Y90m, Xp, X90p, Xm, X90p, Idm, Y90p, Yp, X90p, Idp, X90p, Idm, 
+ Y90m, Idp, X90p, Idp}
+1{Xp, X90p, Idp, Y90p, Xm, X90m, Idp, X90p, Ym, X90m, Ym, Y90m, Idm, X90m, 
+ Idm, X90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, Idp, X90m, Ym, X90p, Ym, X90m, Yp, 
+ Y90p, Idm, X90p, Xp, Y90p, Xm, X90m, Idm, Y90p, Idp, X90m, Idm, X90m, Idp, 
+ X90p, Yp, Y90m, Idm, Y90p, Idm, X90p, Ym, Y90m, Idp, X90m, Xm, Y90p, Xp, 
+ Y90m, Idm, Y90p, Xp, X90p, Xm, X90m, Idm, X90m, Xp, Y90p, Idp, X90m, Yp, 
+ X90p, Idm, X90p, Xm, X90m, Ym, Y90p, Idp, Y90p, Xp, Y90m, Xm, Y90p, Idm, 
+ X90p, Idp, Y90m, Yp, Y90m, Idp, X90p, Xp, X90m, Ym, Y90p, Ym, Y90m, Xp, 
+ Y90p, Idp, X90p, Xm, Y90p, Xp, Y90p, Idp, X90m, Xp, Y90m, Idm, X90p, Idp, 
+ Y90m, Ym, Y90m, Xp, X90p, Xm, X90p, Idm, Y90p, Yp, X90p, Idp, X90p, Idm, 
+ Y90m, Idp, X90m, Idp, X90p, Idp, X90p, Idm, X90m, Idm, Y90m, Idp, X90m, Xm, 
+ X90p, Ym, X90p, Ym, X90m, Idm, Y90m, Idp, Y90p, Idp, X90p, Idp, Y90m, Ym, 
+ X90p, Idp, X90p, Idm, X90p, Xp, Y90m, Xm}
+0{Xp, X90p, Idp, Y90p, Xm, X90m, Idp, X90p, Ym, X90m, Ym, Y90m, Idm, X90m, 
+ Idm, X90m, Ym, Y90m, Ym, Y90p, Idm, Y90p, Idp, X90m, Ym, X90p, Ym, X90m, Yp, 
+ Y90p, Idm, X90p, Xp, Y90p, Xm, X90m, Idm, Y90p, Idp, X90m, Idm, X90m, Idp, 
+ X90p, Yp, Y90m, Idm, Y90p, Idm, X90p, Ym, Y90m, Idp, X90m, Xm, Y90p, Xp, 
+ Y90m, Idm, Y90p, Xp, X90p, Xm, X90m, Idm, X90m, Xp, Y90p, Idp, X90m, Yp, 
+ X90p, Idm, X90p, Xm, X90m, Ym, Y90p, Idp, Y90p, Xp, Y90m, Xm, Y90p, Idm, 
+ X90p, Idp, Y90m, Yp, Y90m, Idp, X90p, Xp, X90m, Ym, Y90p, Ym, Y90m, Xp, 
+ Y90p, Idp, X90p, Xm, Y90p, Xp, Y90p, Idp, X90m, Xp, Y90m, Idm, X90p, Idp, 
+ Y90m, Ym, Y90m, Xp, X90p, Xm, X90p, Idm, Y90p, Yp, X90p, Idp, X90p, Idm, 
+ Y90m, Idp, X90m, Idp, X90p, Idp, X90p, Idm, X90m, Idm, Y90m, Idp, X90m, Xm, 
+ X90p, Ym, X90p, Ym, X90m, Idm, Y90m, Idp, Y90p, Idp, X90p, Idp, Y90m, Ym, 
+ X90p, Idp, X90p, Idm, X90p, Xp, Y90m, Xm, X90p, Idp, Y90p, Idm, Y90m, Idm, 
+ Y90m, Idp, Y90m, Yp, Y90m, Idm, Y90p, Xp, Y90m, Ym, X90m, Yp, Y90m, Xm, 
+ Y90m, Xp, X90p, Idp, X90m, Xp, Y90m, Yp, Y90m, Xp, Idp, Xp}
+1{Yp, X90p, Idm, Y90p, Xp, X90m, Xm}
+1{Yp, X90p, Idm, Y90p, Xp, X90m, Xm, Idm, Idp}
+0{Yp, X90p, Idm, Y90p, Xp, X90m, Xm, X90m, Idp, X90p, Xp}
+1{Yp, X90p, Idm, Y90p, Xp, X90m, Xm, X90m, Idp, X90m, Xp, Idp, Idm}
+1{Yp, X90p, Idm, Y90p, Xp, X90m, Xm, X90m, Idp, X90m, Xp, Y90m, Idm, Y90m, Xm}
+0{Yp, X90p, Idm, Y90p, Xp, X90m, Xm, X90m, Idp, X90m, Xp, Y90m, Idm, X90p, 
+ Xm, X90m, Xp, Y90m, Idp}
+1{Yp, X90p, Idm, Y90p, Xp, X90m, Xm, X90m, Idp, X90m, Xp, Y90m, Idm, X90p, 
+ Xm, X90m, Xp, Y90m, Idp, Y90m, Idp, Y90p, Ym}
+0{Yp, X90p, Idm, Y90p, Xp, X90m, Xm, X90m, Idp, X90m, Xp, Y90m, Idm, X90p, 
+ Xm, X90m, Xp, Y90m, Idp, Y90m, Idp, Y90p, Ym, X90p, Xp, X90m, Idm}
+0{Yp, X90p, Idm, Y90p, Xp, X90m, Xm, X90m, Idp, X90m, Xp, Y90m, Idm, X90p, 
+ Xm, X90m, Xp, Y90m, Idp, Y90m, Idp, Y90p, Ym, X90p, Xp, X90m, Idm, X90p, Yp, 
+ Y90m, Idp, X90p, Idp, Idm, Xp}
+1{Yp, X90p, Idm, Y90p, Xp, X90m, Xm, X90m, Idp, X90m, Xp, Y90m, Idm, X90p, 
+ Xm, X90m, Xp, Y90m, Idp, Y90m, Idp, Y90p, Ym, X90p, Xp, X90m, Idm, X90p, Yp, 
+ Y90m, Idp, X90p, Idp, Y90m, Xp, X90p, Xp, Y90m, Idp, X90m, Xm, X90m, Ym}
+1{Yp, X90p, Idm, Y90p, Xp, X90m, Xm, X90m, Idp, X90m, Xp, Y90m, Idm, X90p, 
+ Xm, X90m, Xp, Y90m, Idp, Y90m, Idp, Y90p, Ym, X90p, Xp, X90m, Idm, X90p, Yp, 
+ Y90m, Idp, X90p, Idp, Y90m, Xp, X90p, Xp, Y90m, Idp, X90m, Xm, X90m, Ym, 
+ X90p, Xm, Y90m, Xp, Y90m, Ym, X90m, Idp}
+0{Yp, X90p, Idm, Y90p, Xp, X90m, Xm, X90m, Idp, X90m, Xp, Y90m, Idm, X90p, 
+ Xm, X90m, Xp, Y90m, Idp, Y90m, Idp, Y90p, Ym, X90p, Xp, X90m, Idm, X90p, Yp, 
+ Y90m, Idp, X90p, Idp, Y90m, Xp, X90p, Xp, Y90m, Idp, X90m, Xm, X90m, Ym, 
+ X90p, Xm, Y90m, Xp, Y90m, Ym, X90m, Idp, Y90m, Ym, X90p, Idm, Y90m, Xp, 
+ Y90p, Xp, Y90m, Idm, X90m, Ym, X90p, Xp, Idm, Ym}
+1{Yp, X90p, Idm, Y90p, Xp, X90m, Xm, X90m, Idp, X90m, Xp, Y90m, Idm, X90p, 
+ Xm, X90m, Xp, Y90m, Idp, Y90m, Idp, Y90p, Ym, X90p, Xp, X90m, Idm, X90p, Yp, 
+ Y90m, Idp, X90p, Idp, Y90m, Xp, X90p, Xp, Y90m, Idp, X90m, Xm, X90m, Ym, 
+ X90p, Xm, Y90m, Xp, Y90m, Ym, X90m, Idp, Y90m, Ym, X90p, Idm, Y90m, Xp, 
+ Y90p, Xp, Y90m, Idm, X90m, Ym, X90p, Xp, X90p, Ym, Y90m, Xm, X90p, Idp, 
+ X90m, Idp, X90p, Idp, X90p, Idp, Y90m, Yp, Y90m, Idp, X90m, Idm}
+1{Yp, X90p, Idm, Y90p, Xp, X90m, Xm, X90m, Idp, X90m, Xp, Y90m, Idm, X90p, 
+ Xm, X90m, Xp, Y90m, Idp, Y90m, Idp, Y90p, Ym, X90p, Xp, X90m, Idm, X90p, Yp, 
+ Y90m, Idp, X90p, Idp, Y90m, Xp, X90p, Xp, Y90m, Idp, X90m, Xm, X90m, Ym, 
+ X90p, Xm, Y90m, Xp, Y90m, Ym, X90m, Idp, Y90m, Ym, X90p, Idm, Y90m, Xp, 
+ Y90p, Xp, Y90m, Idm, X90m, Ym, X90p, Xp, X90p, Ym, Y90m, Xm, X90p, Idp, 
+ X90m, Idp, X90p, Idp, X90p, Idp, Y90m, Yp, Y90m, Idp, Y90m, Idm, Y90p, Xp, 
+ X90m, Idp, Y90p, Xp, Y90p, Xp, X90p, Idm, X90p, Ym, Y90m, Xm, Y90m, Idp}
+0{Yp, X90p, Idm, Y90p, Xp, X90m, Xm, X90m, Idp, X90m, Xp, Y90m, Idm, X90p, 
+ Xm, X90m, Xp, Y90m, Idp, Y90m, Idp, Y90p, Ym, X90p, Xp, X90m, Idm, X90p, Yp, 
+ Y90m, Idp, X90p, Idp, Y90m, Xp, X90p, Xp, Y90m, Idp, X90m, Xm, X90m, Ym, 
+ X90p, Xm, Y90m, Xp, Y90m, Ym, X90m, Idp, Y90m, Ym, X90p, Idm, Y90m, Xp, 
+ Y90p, Xp, Y90m, Idm, X90m, Ym, X90p, Xp, X90p, Ym, Y90m, Xm, X90p, Idp, 
+ X90m, Idp, X90p, Idp, X90p, Idp, Y90m, Yp, Y90m, Idp, Y90m, Idm, Y90p, Xp, 
+ X90m, Idp, Y90p, Xp, Y90p, Xp, X90p, Idm, X90p, Ym, Y90m, Xm, Y90p, Idp, 
+ Y90p, Idm, X90m, Idm, Y90p, Xp, Y90p, Idm, X90p, Xm, Y90p, Xm, X90p, Idp, 
+ Y90m, Idp, Y90m, Idp, X90p, Xm, X90p, Ym, Y90m, Xm, X90m, Idp, X90m, Idm, 
+ Y90m, Idp, X90p, Xp}
+1{Yp, X90p, Idm, Y90p, Xp, X90m, Xm, X90m, Idp, X90m, Xp, Y90m, Idm, X90p, 
+ Xm, X90m, Xp, Y90m, Idp, Y90m, Idp, Y90p, Ym, X90p, Xp, X90m, Idm, X90p, Yp, 
+ Y90m, Idp, X90p, Idp, Y90m, Xp, X90p, Xp, Y90m, Idp, X90m, Xm, X90m, Ym, 
+ X90p, Xm, Y90m, Xp, Y90m, Ym, X90m, Idp, Y90m, Ym, X90p, Idm, Y90m, Xp, 
+ Y90p, Xp, Y90m, Idm, X90m, Ym, X90p, Xp, X90p, Ym, Y90m, Xm, X90p, Idp, 
+ X90m, Idp, X90p, Idp, X90p, Idp, Y90m, Yp, Y90m, Idp, Y90m, Idm, Y90p, Xp, 
+ X90m, Idp, Y90p, Xp, Y90p, Xp, X90p, Idm, X90p, Ym, Y90m, Xm, Y90p, Idp, 
+ Y90p, Idm, X90m, Idm, Y90p, Xp, Y90p, Idm, X90p, Xm, Y90p, Xm, X90p, Idp, 
+ Y90m, Idp, Y90m, Idp, X90p, Xm, X90p, Ym, Y90m, Xm, X90m, Idp, X90m, Idm, 
+ Y90m, Idp, X90p, Xp, X90m, Idp, X90m, Xm, X90p, Ym, Y90m, Ym, X90m, Xp, 
+ X90p, Xp, X90p, Idm, X90m, Xp, Y90m, Ym, Y90m, Idp, X90p, Xp, Y90p, Ym, 
+ X90m, Idp, X90m, Ym, X90m, Xp, Y90p, Yp}
+0{Yp, X90p, Idm, Y90p, Xp, X90m, Xm, X90m, Idp, X90m, Xp, Y90m, Idm, X90p, 
+ Xm, X90m, Xp, Y90m, Idp, Y90m, Idp, Y90p, Ym, X90p, Xp, X90m, Idm, X90p, Yp, 
+ Y90m, Idp, X90p, Idp, Y90m, Xp, X90p, Xp, Y90m, Idp, X90m, Xm, X90m, Ym, 
+ X90p, Xm, Y90m, Xp, Y90m, Ym, X90m, Idp, Y90m, Ym, X90p, Idm, Y90m, Xp, 
+ Y90p, Xp, Y90m, Idm, X90m, Ym, X90p, Xp, X90p, Ym, Y90m, Xm, X90p, Idp, 
+ X90m, Idp, X90p, Idp, X90p, Idp, Y90m, Yp, Y90m, Idp, Y90m, Idm, Y90p, Xp, 
+ X90m, Idp, Y90p, Xp, Y90p, Xp, X90p, Idm, X90p, Ym, Y90m, Xm, Y90p, Idp, 
+ Y90p, Idm, X90m, Idm, Y90p, Xp, Y90p, Idm, X90p, Xm, Y90p, Xm, X90p, Idp, 
+ Y90m, Idp, Y90m, Idp, X90p, Xm, X90p, Ym, Y90m, Xm, X90m, Idp, X90m, Idm, 
+ Y90m, Idp, X90p, Xp, X90m, Idp, X90m, Xm, X90p, Ym, Y90m, Ym, X90m, Xp, 
+ X90p, Xp, X90p, Idm, X90m, Xp, Y90m, Ym, Y90m, Idp, X90p, Xp, Y90p, Ym, 
+ X90m, Idp, X90m, Ym, X90m, Xp, Y90p, Yp, X90m, Ym, Y90p, Xm, Y90m, Idm, 
+ Y90p, Idp, Y90p, Yp, Y90p, Idp, Y90p, Xp, Y90m, Ym, X90m, Idp, Y90m, Xm, 
+ Y90m, Idp, X90m, Yp, X90m, Ym, Y90m, Idm, Y90p, Xm, Idm, Idp}
+1{Idp, X90p, Idp, Y90m, Xp, X90p, Yp}
+1{Idp, X90p, Idp, Y90m, Xp, X90p, Yp, Idm, Idm}
+0{Idp, X90p, Idp, Y90m, Xp, X90p, Yp, X90p, Idm, X90m, Xp}
+0{Idp, X90p, Idp, Y90m, Xp, X90p, Yp, X90p, Idm, X90p, Xp, Idm, Ym}
+0{Idp, X90p, Idp, Y90m, Xp, X90p, Yp, X90p, Idm, X90p, Xp, Y90p, Ym, Y90m, 
+ Idp}
+0{Idp, X90p, Idp, Y90m, Xp, X90p, Yp, X90p, Idm, X90p, Xp, Y90p, Ym, X90p, 
+ Idp, X90m, Xm, Y90p, Ym}
+1{Idp, X90p, Idp, Y90m, Xp, X90p, Yp, X90p, Idm, X90p, Xp, Y90p, Ym, X90p, 
+ Idp, X90m, Xm, Y90m, Ym, Y90p, Xp, Y90m, Idm}
+0{Idp, X90p, Idp, Y90m, Xp, X90p, Yp, X90p, Idm, X90p, Xp, Y90p, Ym, X90p, 
+ Idp, X90m, Xm, Y90m, Ym, Y90p, Xp, Y90m, Idm, X90m, Ym, X90p, Ym}
+1{Idp, X90p, Idp, Y90m, Xp, X90p, Yp, X90p, Idm, X90p, Xp, Y90p, Ym, X90p, 
+ Idp, X90m, Xm, Y90m, Ym, Y90p, Xp, Y90m, Idm, X90m, Ym, X90p, Ym, X90m, Idp, 
+ Y90p, Xm, X90p, Ym, Idp, Xm}
+1{Idp, X90p, Idp, Y90m, Xp, X90p, Yp, X90p, Idm, X90p, Xp, Y90p, Ym, X90p, 
+ Idp, X90m, Xm, Y90m, Ym, Y90p, Xp, Y90m, Idm, X90m, Ym, X90p, Ym, X90m, Idp, 
+ Y90p, Xm, X90p, Ym, Y90p, Xm, X90m, Idm, Y90m, Idm, X90m, Idp, X90p, Xm}
+0{Idp, X90p, Idp, Y90m, Xp, X90p, Yp, X90p, Idm, X90p, Xp, Y90p, Ym, X90p, 
+ Idp, X90m, Xm, Y90m, Ym, Y90p, Xp, Y90m, Idm, X90m, Ym, X90p, Ym, X90m, Idp, 
+ Y90p, Xm, X90p, Ym, Y90p, Xm, X90m, Idm, Y90m, Idm, X90m, Idp, X90p, Xm, 
+ X90m, Yp, Y90p, Idp, Y90p, Idp, X90p, Ym}
+1{Idp, X90p, Idp, Y90m, Xp, X90p, Yp, X90p, Idm, X90p, Xp, Y90p, Ym, X90p, 
+ Idp, X90m, Xm, Y90m, Ym, Y90p, Xp, Y90m, Idm, X90m, Ym, X90p, Ym, X90m, Idp, 
+ Y90p, Xm, X90p, Ym, Y90p, Xm, X90m, Idm, Y90m, Idm, X90m, Idp, X90p, Xm, 
+ X90m, Yp, Y90p, Idp, Y90p, Idp, X90m, Ym, Y90p, Ym, X90m, Idm, Y90p, Xp, 
+ Y90m, Yp, Y90p, Idp, X90m, Xm, X90p, Idp, Idm, Yp}
+1{Idp, X90p, Idp, Y90m, Xp, X90p, Yp, X90p, Idm, X90p, Xp, Y90p, Ym, X90p, 
+ Idp, X90m, Xm, Y90m, Ym, Y90p, Xp, Y90m, Idm, X90m, Ym, X90p, Ym, X90m, Idp, 
+ Y90p, Xm, X90p, Ym, Y90p, Xm, X90m, Idm, Y90m, Idm, X90m, Idp, X90p, Xm, 
+ X90m, Yp, Y90p, Idp, Y90p, Idp, X90m, Ym, Y90p, Ym, X90m, Idm, Y90p, Xp, 
+ Y90m, Yp, Y90p, Idp, X90m, Xm, X90p, Idp, X90m, Yp, Y90p, Idp, X90p, Idp, 
+ X90p, Ym, X90p, Xm, X90m, Idp, Y90p, Idm, Y90p, Xp, X90p, Idp}
+0{Idp, X90p, Idp, Y90m, Xp, X90p, Yp, X90p, Idm, X90p, Xp, Y90p, Ym, X90p, 
+ Idp, X90m, Xm, Y90m, Ym, Y90p, Xp, Y90m, Idm, X90m, Ym, X90p, Ym, X90m, Idp, 
+ Y90p, Xm, X90p, Ym, Y90p, Xm, X90m, Idm, Y90m, Idm, X90m, Idp, X90p, Xm, 
+ X90m, Yp, Y90p, Idp, Y90p, Idp, X90m, Ym, Y90p, Ym, X90m, Idm, Y90p, Xp, 
+ Y90m, Yp, Y90p, Idp, X90m, Xm, X90p, Idp, X90m, Yp, Y90p, Idp, X90p, Idp, 
+ X90p, Ym, X90p, Xm, X90m, Idp, Y90p, Idm, Y90p, Xp, Y90m, Idp, Y90m, Idm, 
+ X90m, Yp, Y90m, Idm, Y90p, Idp, X90p, Idp, X90p, Ym, Y90m, Yp, Y90m, Xp}
+0{Idp, X90p, Idp, Y90m, Xp, X90p, Yp, X90p, Idm, X90p, Xp, Y90p, Ym, X90p, 
+ Idp, X90m, Xm, Y90m, Ym, Y90p, Xp, Y90m, Idm, X90m, Ym, X90p, Ym, X90m, Idp, 
+ Y90p, Xm, X90p, Ym, Y90p, Xm, X90m, Idm, Y90m, Idm, X90m, Idp, X90p, Xm, 
+ X90m, Yp, Y90p, Idp, Y90p, Idp, X90m, Ym, Y90p, Ym, X90m, Idm, Y90p, Xp, 
+ Y90m, Yp, Y90p, Idp, X90m, Xm, X90p, Idp, X90m, Yp, Y90p, Idp, X90p, Idp, 
+ X90p, Ym, X90p, Xm, X90m, Idp, Y90p, Idm, Y90p, Xp, Y90m, Idp, Y90m, Idm, 
+ X90m, Yp, Y90m, Idm, Y90p, Idp, X90p, Idp, X90p, Ym, Y90m, Yp, Y90p, Xp, 
+ Y90m, Ym, X90p, Idm, Y90m, Idm, Y90p, Idm, X90p, Idm, Y90p, Idp, X90p, Xm, 
+ Y90m, Idm, Y90m, Yp, X90p, Idm, X90m, Idm, Y90p, Idm, X90p, Yp, X90m, Idp, 
+ Y90m, Idp, X90p, Xp}
+1{Idp, X90p, Idp, Y90m, Xp, X90p, Yp, X90p, Idm, X90p, Xp, Y90p, Ym, X90p, 
+ Idp, X90m, Xm, Y90m, Ym, Y90p, Xp, Y90m, Idm, X90m, Ym, X90p, Ym, X90m, Idp, 
+ Y90p, Xm, X90p, Ym, Y90p, Xm, X90m, Idm, Y90m, Idm, X90m, Idp, X90p, Xm, 
+ X90m, Yp, Y90p, Idp, Y90p, Idp, X90m, Ym, Y90p, Ym, X90m, Idm, Y90p, Xp, 
+ Y90m, Yp, Y90p, Idp, X90m, Xm, X90p, Idp, X90m, Yp, Y90p, Idp, X90p, Idp, 
+ X90p, Ym, X90p, Xm, X90m, Idp, Y90p, Idm, Y90p, Xp, Y90m, Idp, Y90m, Idm, 
+ X90m, Yp, Y90m, Idm, Y90p, Idp, X90p, Idp, X90p, Ym, Y90m, Yp, Y90p, Xp, 
+ Y90m, Ym, X90p, Idm, Y90m, Idm, Y90p, Idm, X90p, Idm, Y90p, Idp, X90p, Xm, 
+ Y90m, Idm, Y90m, Yp, X90p, Idm, X90m, Idm, Y90p, Idm, X90p, Yp, X90m, Idp, 
+ Y90m, Idp, X90p, Xp, X90m, Ym, X90p, Idm, X90m, Yp, Y90p, Idp, X90m, Idp, 
+ X90m, Xm, X90m, Yp, X90p, Idm, Y90m, Idp, Y90p, Idp, X90m, Ym, Y90m, Idm, 
+ X90m, Xm, X90m, Idm, X90p, Idp, Y90m, Ym}
+0{Idp, X90p, Idp, Y90m, Xp, X90p, Yp, X90p, Idm, X90p, Xp, Y90p, Ym, X90p, 
+ Idp, X90m, Xm, Y90m, Ym, Y90p, Xp, Y90m, Idm, X90m, Ym, X90p, Ym, X90m, Idp, 
+ Y90p, Xm, X90p, Ym, Y90p, Xm, X90m, Idm, Y90m, Idm, X90m, Idp, X90p, Xm, 
+ X90m, Yp, Y90p, Idp, Y90p, Idp, X90m, Ym, Y90p, Ym, X90m, Idm, Y90p, Xp, 
+ Y90m, Yp, Y90p, Idp, X90m, Xm, X90p, Idp, X90m, Yp, Y90p, Idp, X90p, Idp, 
+ X90p, Ym, X90p, Xm, X90m, Idp, Y90p, Idm, Y90p, Xp, Y90m, Idp, Y90m, Idm, 
+ X90m, Yp, Y90m, Idm, Y90p, Idp, X90p, Idp, X90p, Ym, Y90m, Yp, Y90p, Xp, 
+ Y90m, Ym, X90p, Idm, Y90m, Idm, Y90p, Idm, X90p, Idm, Y90p, Idp, X90p, Xm, 
+ Y90m, Idm, Y90m, Yp, X90p, Idm, X90m, Idm, Y90p, Idm, X90p, Yp, X90m, Idp, 
+ Y90m, Idp, X90p, Xp, X90m, Ym, X90p, Idm, X90m, Yp, Y90p, Idp, X90m, Idp, 
+ X90m, Xm, X90m, Yp, X90p, Idm, Y90m, Idp, Y90p, Idp, X90m, Ym, Y90m, Idm, 
+ X90m, Xm, X90m, Idm, X90p, Idp, Y90p, Ym, X90m, Idp, Y90m, Idm, Y90p, Idm, 
+ Y90p, Xm, Y90m, Idm, Y90m, Xm, Y90p, Idm, Y90m, Xp, X90m, Idp, Y90p, Yp, 
+ Y90p, Ym, X90m, Xp, X90m, Xm, Y90m, Idm, Y90p, Xm, Idp, Yp}
+1{Idp, X90p, Idp, Y90p, Ym, X90m, Yp}
+0{Idp, X90p, Idp, Y90p, Ym, X90m, Yp, Idm, Yp}
+0{Idp, X90p, Idp, Y90p, Ym, X90m, Yp, X90m, Yp, X90p, Xp}
+1{Idp, X90p, Idp, Y90p, Ym, X90m, Yp, X90m, Yp, X90p, Xp, Idm, Ym}
+0{Idp, X90p, Idp, Y90p, Ym, X90m, Yp, X90m, Yp, X90p, Xp, Y90p, Ym, Y90p, Idm}
+0{Idp, X90p, Idp, Y90p, Ym, X90m, Yp, X90m, Yp, X90p, Xp, Y90p, Ym, X90p, 
+ Idm, X90m, Xm, Y90m, Yp}
+1{Idp, X90p, Idp, Y90p, Ym, X90m, Yp, X90m, Yp, X90p, Xp, Y90p, Ym, X90p, 
+ Idm, X90m, Xm, Y90m, Yp, Y90p, Idm, Y90p, Idm}
+0{Idp, X90p, Idp, Y90p, Ym, X90m, Yp, X90m, Yp, X90p, Xp, Y90p, Ym, X90p, 
+ Idm, X90m, Xm, Y90m, Yp, Y90p, Idm, Y90m, Idm, X90p, Idm, X90p, Yp}
+1{Idp, X90p, Idp, Y90p, Ym, X90m, Yp, X90m, Yp, X90p, Xp, Y90p, Ym, X90p, 
+ Idm, X90m, Xm, Y90m, Yp, Y90p, Idm, Y90m, Idm, X90p, Idm, X90m, Yp, X90p, 
+ Xm, Y90m, Idp, X90p, Xm, Idm, Yp}
+0{Idp, X90p, Idp, Y90p, Ym, X90m, Yp, X90m, Yp, X90p, Xp, Y90p, Ym, X90p, 
+ Idm, X90m, Xm, Y90m, Yp, Y90p, Idm, Y90m, Idm, X90p, Idm, X90m, Yp, X90p, 
+ Xm, Y90m, Idp, X90p, Xm, Y90p, Yp, X90m, Idm, Y90m, Idp, X90m, Idm, X90m, 
+ Idp}
+1{Idp, X90p, Idp, Y90p, Ym, X90m, Yp, X90m, Yp, X90p, Xp, Y90p, Ym, X90p, 
+ Idm, X90m, Xm, Y90m, Yp, Y90p, Idm, Y90m, Idm, X90p, Idm, X90m, Yp, X90p, 
+ Xm, Y90m, Idp, X90p, Xm, Y90p, Yp, X90m, Idm, Y90m, Idp, X90m, Idm, X90p, 
+ Idp, X90p, Ym, Y90m, Xm, Y90m, Yp, X90p, Idp}
+0{Idp, X90p, Idp, Y90p, Ym, X90m, Yp, X90m, Yp, X90p, Xp, Y90p, Ym, X90p, 
+ Idm, X90m, Xm, Y90m, Yp, Y90p, Idm, Y90m, Idm, X90p, Idm, X90m, Yp, X90p, 
+ Xm, Y90m, Idp, X90p, Xm, Y90p, Yp, X90m, Idm, Y90m, Idp, X90m, Idm, X90p, 
+ Idp, X90p, Ym, Y90m, Xm, Y90m, Yp, X90m, Idp, Y90m, Idp, X90p, Xm, Y90m, 
+ Idp, Y90m, Idm, Y90p, Idp, X90p, Idm, X90m, Ym, Idp, Idp}
+1{Idp, X90p, Idp, Y90p, Ym, X90m, Yp, X90m, Yp, X90p, Xp, Y90p, Ym, X90p, 
+ Idm, X90m, Xm, Y90m, Yp, Y90p, Idm, Y90m, Idm, X90p, Idm, X90m, Yp, X90p, 
+ Xm, Y90m, Idp, X90p, Xm, Y90p, Yp, X90m, Idm, Y90m, Idp, X90m, Idm, X90p, 
+ Idp, X90p, Ym, Y90m, Xm, Y90m, Yp, X90m, Idp, Y90m, Idp, X90p, Xm, Y90m, 
+ Idp, Y90m, Idm, Y90p, Idp, X90p, Idm, X90m, Ym, X90m, Idp, Y90m, Idp, X90m, 
+ Idm, X90p, Idm, X90m, Xm, X90p, Idm, Y90m, Idm, Y90m, Ym, X90p, Idm}
+0{Idp, X90p, Idp, Y90p, Ym, X90m, Yp, X90m, Yp, X90p, Xp, Y90p, Ym, X90p, 
+ Idm, X90m, Xm, Y90m, Yp, Y90p, Idm, Y90m, Idm, X90p, Idm, X90m, Yp, X90p, 
+ Xm, Y90m, Idp, X90p, Xm, Y90p, Yp, X90m, Idm, Y90m, Idp, X90m, Idm, X90p, 
+ Idp, X90p, Ym, Y90m, Xm, Y90m, Yp, X90m, Idp, Y90m, Idp, X90p, Xm, Y90m, 
+ Idp, Y90m, Idm, Y90p, Idp, X90p, Idm, X90m, Ym, X90m, Idp, Y90m, Idp, X90m, 
+ Idm, X90p, Idm, X90m, Xm, X90p, Idm, Y90m, Idm, Y90m, Ym, Y90p, Idm, Y90p, 
+ Xp, X90m, Idp, Y90p, Ym, Y90p, Idm, X90p, Ym, X90m, Idp, Y90m, Idp, Y90p, Xp}
+0{Idp, X90p, Idp, Y90p, Ym, X90m, Yp, X90m, Yp, X90p, Xp, Y90p, Ym, X90p, 
+ Idm, X90m, Xm, Y90m, Yp, Y90p, Idm, Y90m, Idm, X90p, Idm, X90m, Yp, X90p, 
+ Xm, Y90m, Idp, X90p, Xm, Y90p, Yp, X90m, Idm, Y90m, Idp, X90m, Idm, X90p, 
+ Idp, X90p, Ym, Y90m, Xm, Y90m, Yp, X90m, Idp, Y90m, Idp, X90p, Xm, Y90m, 
+ Idp, Y90m, Idm, Y90p, Idp, X90p, Idm, X90m, Ym, X90m, Idp, Y90m, Idp, X90m, 
+ Idm, X90p, Idm, X90m, Xm, X90p, Idm, Y90m, Idm, Y90m, Ym, Y90p, Idm, Y90p, 
+ Xp, X90m, Idp, Y90p, Ym, Y90p, Idm, X90p, Ym, X90m, Idp, Y90m, Idp, Y90m, 
+ Xp, Y90p, Xp, X90m, Idm, Y90m, Idm, Y90m, Yp, X90m, Yp, Y90m, Idp, X90p, 
+ Idp, Y90m, Yp, Y90m, Xp, X90p, Yp, X90p, Ym, Y90m, Idm, X90m, Xm, X90p, Idm, 
+ Y90p, Idp, X90m, Idp}
+1{Idp, X90p, Idp, Y90p, Ym, X90m, Yp, X90m, Yp, X90p, Xp, Y90p, Ym, X90p, 
+ Idm, X90m, Xm, Y90m, Yp, Y90p, Idm, Y90m, Idm, X90p, Idm, X90m, Yp, X90p, 
+ Xm, Y90m, Idp, X90p, Xm, Y90p, Yp, X90m, Idm, Y90m, Idp, X90m, Idm, X90p, 
+ Idp, X90p, Ym, Y90m, Xm, Y90m, Yp, X90m, Idp, Y90m, Idp, X90p, Xm, Y90m, 
+ Idp, Y90m, Idm, Y90p, Idp, X90p, Idm, X90m, Ym, X90m, Idp, Y90m, Idp, X90m, 
+ Idm, X90p, Idm, X90m, Xm, X90p, Idm, Y90m, Idm, Y90m, Ym, Y90p, Idm, Y90p, 
+ Xp, X90m, Idp, Y90p, Ym, Y90p, Idm, X90p, Ym, X90m, Idp, Y90m, Idp, Y90m, 
+ Xp, Y90p, Xp, X90m, Idm, Y90m, Idm, Y90m, Yp, X90m, Yp, Y90m, Idp, X90p, 
+ Idp, Y90m, Yp, Y90m, Xp, X90p, Yp, X90p, Ym, Y90m, Idm, X90m, Xm, X90p, Idm, 
+ Y90p, Idp, X90m, Idp, X90p, Idp, X90m, Xp, X90p, Xm, Y90m, Xp, X90m, Idp, 
+ X90m, Idm, X90m, Ym, X90p, Idm, Y90p, Xm, Y90p, Idp, X90m, Idp, Y90m, Ym, 
+ X90p, Idp, X90m, Idp, X90p, Idp, Y90m, Yp}
+1{Idp, X90p, Idp, Y90p, Ym, X90m, Yp, X90m, Yp, X90p, Xp, Y90p, Ym, X90p, 
+ Idm, X90m, Xm, Y90m, Yp, Y90p, Idm, Y90m, Idm, X90p, Idm, X90m, Yp, X90p, 
+ Xm, Y90m, Idp, X90p, Xm, Y90p, Yp, X90m, Idm, Y90m, Idp, X90m, Idm, X90p, 
+ Idp, X90p, Ym, Y90m, Xm, Y90m, Yp, X90m, Idp, Y90m, Idp, X90p, Xm, Y90m, 
+ Idp, Y90m, Idm, Y90p, Idp, X90p, Idm, X90m, Ym, X90m, Idp, Y90m, Idp, X90m, 
+ Idm, X90p, Idm, X90m, Xm, X90p, Idm, Y90m, Idm, Y90m, Ym, Y90p, Idm, Y90p, 
+ Xp, X90m, Idp, Y90p, Ym, Y90p, Idm, X90p, Ym, X90m, Idp, Y90m, Idp, Y90m, 
+ Xp, Y90p, Xp, X90m, Idm, Y90m, Idm, Y90m, Yp, X90m, Yp, Y90m, Idp, X90p, 
+ Idp, Y90m, Yp, Y90m, Xp, X90p, Yp, X90p, Ym, Y90m, Idm, X90m, Xm, X90p, Idm, 
+ Y90p, Idp, X90m, Idp, X90p, Idp, X90m, Xp, X90p, Xm, Y90m, Xp, X90m, Idp, 
+ X90m, Idm, X90m, Ym, X90p, Idm, Y90p, Xm, Y90p, Idp, X90m, Idp, Y90m, Ym, 
+ X90p, Idp, X90m, Idp, X90p, Idp, Y90m, Yp, X90p, Idp, Y90m, Idp, Y90p, Xm, 
+ Y90m, Xm, Y90p, Ym, Y90p, Xm, Y90m, Idm, Y90p, Xp, X90p, Idm, Y90m, Idm, 
+ Y90m, Idp, X90m, Xm, X90m, Idm, Y90p, Idm, Y90p, Xp, Idm, Idp}
+0{Idm, X90p, Ym, Y90p, Idm, X90p, Ym}
+1{Idm, X90p, Ym, Y90p, Idm, X90m, Ym, Idp, Idp}
+0{Idm, X90p, Ym, Y90p, Idm, X90m, Ym, X90m, Idp, X90p, Yp}
+1{Idm, X90p, Ym, Y90p, Idm, X90m, Ym, X90m, Idp, X90p, Yp, Idm, Xm}
+0{Idm, X90p, Ym, Y90p, Idm, X90m, Ym, X90m, Idp, X90p, Yp, Y90p, Xm, Y90p, Xm}
+0{Idm, X90p, Ym, Y90p, Idm, X90m, Ym, X90m, Idp, X90p, Yp, Y90p, Xm, X90p, 
+ Xm, X90m, Idp, Y90p, Ym}
+1{Idm, X90p, Ym, Y90p, Idm, X90m, Ym, X90m, Idp, X90p, Yp, Y90p, Xm, X90p, 
+ Xm, X90m, Idp, Y90p, Ym, Y90m, Ym, Y90m, Xm}
+0{Idm, X90p, Ym, Y90p, Idm, X90m, Ym, X90m, Idp, X90p, Yp, Y90p, Xm, X90p, 
+ Xm, X90m, Idp, Y90p, Ym, Y90m, Ym, Y90p, Xm, X90p, Xm, X90m, Yp}
+0{Idm, X90p, Ym, Y90p, Idm, X90m, Ym, X90m, Idp, X90p, Yp, Y90p, Xm, X90p, 
+ Xm, X90m, Idp, Y90p, Ym, Y90m, Ym, Y90p, Xm, X90p, Xm, X90m, Yp, X90p, Idm, 
+ Y90m, Xp, X90m, Idm, Idm, Xp}
+0{Idm, X90p, Ym, Y90p, Idm, X90m, Ym, X90m, Idp, X90p, Yp, Y90p, Xm, X90p, 
+ Xm, X90m, Idp, Y90p, Ym, Y90m, Ym, Y90p, Xm, X90p, Xm, X90m, Yp, X90p, Idm, 
+ Y90m, Xp, X90m, Idm, Y90p, Xp, X90m, Idm, Y90m, Idm, X90p, Xm, X90m, Idm}
+0{Idm, X90p, Ym, Y90p, Idm, X90m, Ym, X90m, Idp, X90p, Yp, Y90p, Xm, X90p, 
+ Xm, X90m, Idp, Y90p, Ym, Y90m, Ym, Y90p, Xm, X90p, Xm, X90m, Yp, X90p, Idm, 
+ Y90m, Xp, X90m, Idm, Y90p, Xp, X90m, Idm, Y90m, Idm, X90p, Xm, X90p, Idm, 
+ X90m, Yp, Y90p, Idm, Y90p, Xm, X90m, Xp}
+1{Idm, X90p, Ym, Y90p, Idm, X90m, Ym, X90m, Idp, X90p, Yp, Y90p, Xm, X90p, 
+ Xm, X90m, Idp, Y90p, Ym, Y90m, Ym, Y90p, Xm, X90p, Xm, X90m, Yp, X90p, Idm, 
+ Y90m, Xp, X90m, Idm, Y90p, Xp, X90m, Idm, Y90m, Idm, X90p, Xm, X90p, Idm, 
+ X90m, Yp, Y90p, Idm, Y90p, Xm, X90p, Xp, Y90m, Idm, X90m, Idm, Y90m, Ym, 
+ Y90p, Idp, Y90m, Xp, X90m, Idm, X90p, Yp, Idp, Idm}
+1{Idm, X90p, Ym, Y90p, Idm, X90m, Ym, X90m, Idp, X90p, Yp, Y90p, Xm, X90p, 
+ Xm, X90m, Idp, Y90p, Ym, Y90m, Ym, Y90p, Xm, X90p, Xm, X90m, Yp, X90p, Idm, 
+ Y90m, Xp, X90m, Idm, Y90p, Xp, X90m, Idm, Y90m, Idm, X90p, Xm, X90p, Idm, 
+ X90m, Yp, Y90p, Idm, Y90p, Xm, X90p, Xp, Y90m, Idm, X90m, Idm, Y90m, Ym, 
+ Y90p, Idp, Y90m, Xp, X90m, Idm, X90p, Yp, X90p, Idm, Y90p, Idp, X90m, Xp, 
+ X90p, Yp, X90p, Idm, X90p, Idp, Y90p, Idp, Y90m, Idp, X90p, Xm}
+0{Idm, X90p, Ym, Y90p, Idm, X90m, Ym, X90m, Idp, X90p, Yp, Y90p, Xm, X90p, 
+ Xm, X90m, Idp, Y90p, Ym, Y90m, Ym, Y90p, Xm, X90p, Xm, X90m, Yp, X90p, Idm, 
+ Y90m, Xp, X90m, Idm, Y90p, Xp, X90m, Idm, Y90m, Idm, X90p, Xm, X90p, Idm, 
+ X90m, Yp, Y90p, Idm, Y90p, Xm, X90p, Xp, Y90m, Idm, X90m, Idm, Y90m, Ym, 
+ Y90p, Idp, Y90m, Xp, X90m, Idm, X90p, Yp, X90p, Idm, Y90p, Idp, X90m, Xp, 
+ X90p, Yp, X90p, Idm, X90p, Idp, Y90p, Idp, Y90m, Idp, Y90m, Xm, Y90p, Idm, 
+ X90p, Ym, Y90p, Idm, Y90p, Yp, X90p, Xm, X90m, Yp, Y90p, Idp, Y90p, Xp}
+0{Idm, X90p, Ym, Y90p, Idm, X90m, Ym, X90m, Idp, X90p, Yp, Y90p, Xm, X90p, 
+ Xm, X90m, Idp, Y90p, Ym, Y90m, Ym, Y90p, Xm, X90p, Xm, X90m, Yp, X90p, Idm, 
+ Y90m, Xp, X90m, Idm, Y90p, Xp, X90m, Idm, Y90m, Idm, X90p, Xm, X90p, Idm, 
+ X90m, Yp, Y90p, Idm, Y90p, Xm, X90p, Xp, Y90m, Idm, X90m, Idm, Y90m, Ym, 
+ Y90p, Idp, Y90m, Xp, X90m, Idm, X90p, Yp, X90p, Idm, Y90p, Idp, X90m, Xp, 
+ X90p, Yp, X90p, Idm, X90p, Idp, Y90p, Idp, Y90m, Idp, Y90m, Xm, Y90p, Idm, 
+ X90p, Ym, Y90p, Idm, Y90p, Yp, X90p, Xm, X90m, Yp, Y90p, Idp, Y90m, Xp, 
+ Y90p, Xp, X90m, Idm, Y90m, Xp, Y90m, Xm, X90m, Yp, Y90m, Idm, X90p, Idp, 
+ Y90m, Idm, Y90p, Xp, X90m, Idp, X90m, Yp, Y90p, Idm, X90p, Yp, X90m, Idp, 
+ Y90m, Idp, X90p, Idm}
+0{Idm, X90p, Ym, Y90p, Idm, X90m, Ym, X90m, Idp, X90p, Yp, Y90p, Xm, X90p, 
+ Xm, X90m, Idp, Y90p, Ym, Y90m, Ym, Y90p, Xm, X90p, Xm, X90m, Yp, X90p, Idm, 
+ Y90m, Xp, X90m, Idm, Y90p, Xp, X90m, Idm, Y90m, Idm, X90p, Xm, X90p, Idm, 
+ X90m, Yp, Y90p, Idm, Y90p, Xm, X90p, Xp, Y90m, Idm, X90m, Idm, Y90m, Ym, 
+ Y90p, Idp, Y90m, Xp, X90m, Idm, X90p, Yp, X90p, Idm, Y90p, Idp, X90m, Xp, 
+ X90p, Yp, X90p, Idm, X90p, Idp, Y90p, Idp, Y90m, Idp, Y90m, Xm, Y90p, Idm, 
+ X90p, Ym, Y90p, Idm, Y90p, Yp, X90p, Xm, X90m, Yp, Y90p, Idp, Y90m, Xp, 
+ Y90p, Xp, X90m, Idm, Y90m, Xp, Y90m, Xm, X90m, Yp, Y90m, Idm, X90p, Idp, 
+ Y90m, Idm, Y90p, Xp, X90m, Idp, X90m, Yp, Y90p, Idm, X90p, Yp, X90m, Idp, 
+ Y90m, Idp, X90p, Idm, X90m, Xp, X90p, Idm, X90p, Idp, Y90p, Yp, X90p, Yp, 
+ X90m, Idm, X90p, Ym, X90m, Idp, Y90m, Xm, Y90m, Xp, X90m, Yp, Y90m, Idp, 
+ X90p, Idm, X90m, Xp, X90m, Xp, Y90p, Idp}
+0{Idm, X90p, Ym, Y90p, Idm, X90m, Ym, X90m, Idp, X90p, Yp, Y90p, Xm, X90p, 
+ Xm, X90m, Idp, Y90p, Ym, Y90m, Ym, Y90p, Xm, X90p, Xm, X90m, Yp, X90p, Idm, 
+ Y90m, Xp, X90m, Idm, Y90p, Xp, X90m, Idm, Y90m, Idm, X90p, Xm, X90p, Idm, 
+ X90m, Yp, Y90p, Idm, Y90p, Xm, X90p, Xp, Y90m, Idm, X90m, Idm, Y90m, Ym, 
+ Y90p, Idp, Y90m, Xp, X90m, Idm, X90p, Yp, X90p, Idm, Y90p, Idp, X90m, Xp, 
+ X90p, Yp, X90p, Idm, X90p, Idp, Y90p, Idp, Y90m, Idp, Y90m, Xm, Y90p, Idm, 
+ X90p, Ym, Y90p, Idm, Y90p, Yp, X90p, Xm, X90m, Yp, Y90p, Idp, Y90m, Xp, 
+ Y90p, Xp, X90m, Idm, Y90m, Xp, Y90m, Xm, X90m, Yp, Y90m, Idm, X90p, Idp, 
+ Y90m, Idm, Y90p, Xp, X90m, Idp, X90m, Yp, Y90p, Idm, X90p, Yp, X90m, Idp, 
+ Y90m, Idp, X90p, Idm, X90m, Xp, X90p, Idm, X90p, Idp, Y90p, Yp, X90p, Yp, 
+ X90m, Idm, X90p, Ym, X90m, Idp, Y90m, Xm, Y90m, Xp, X90m, Yp, Y90m, Idp, 
+ X90p, Idm, X90m, Xp, X90m, Xp, Y90p, Idp, X90m, Idm, Y90p, Idp, Y90p, Idp, 
+ Y90p, Xm, Y90m, Yp, Y90m, Idp, Y90m, Xp, Y90p, Xp, X90p, Yp, Y90p, Idp, 
+ Y90m, Idp, X90m, Xm, X90m, Idp, Y90m, Idm, Y90m, Ym, Idm, Idm}

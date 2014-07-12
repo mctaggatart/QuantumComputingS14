@@ -1,0 +1,14 @@
+# "debug" or "production"
+BUILD_TYPE = production
+
+include ../../include/standard_definitions.mk
+
+PROG1 = TestReal.e
+SRCS1 = TestReal.cpp
+OBJS1 = TestReal.o
+
+PROG2 = TestComplex.e
+SRCS2 = TestComplex.cpp
+OBJS2 = TestComplex.o
+
+include ../../include/standard_makes.mk

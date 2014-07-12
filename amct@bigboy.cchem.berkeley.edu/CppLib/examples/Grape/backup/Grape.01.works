@@ -1,0 +1,938 @@
+/*
+Name: Grape.h
+Author: Jay M. Gambetta and Felix Motzoi
+
+Dependences: MatrixExponential.hpp, QuantumOperations.hpp
+Brief Discription: This program implements grape using my matrix class
+Limitations: I dont see the need for both statetransfer and unitarytransfer, these should be combined into one.
+
+Version History
+	v0: June  9, 2008.
+	v1: Feburary 5th, 2009 uses my new matrix class
+	v2: Feburary 25th, 2009 edits to make adding different performance functions easier. It turns out it is a bit slower with the pointer to the function but not much
+	v3: March ~1, 2009 added envelope for adding nonlinearity to the controls/time e.g. working in the lab frame
+
+*/
+#ifndef Grape_h
+#define Grape_h
+#include "MatrixExponential.hpp"
+#include "QuantumOperations.hpp"
+class Grape {
+	public:
+		Grape(size_t dim, size_t num_controls, size_t num_time);// number of controls, the number of time points
+		virtual ~Grape();
+	
+		void SetNumericalParameters(const double fidelity, const double h, const double base_a, const double epsilon, const double tolerance, size_t max_iter, size_t* nsubpixels, double qubit_freq_, double anharmonicity_);
+		void SetNumericalParameters(const double fidelity, const double h, const double base_a, const double epsilon, const double tolerance, size_t max_iter);
+		void SetHdrift(const matrix<std::complex<double> >& H_drift);
+		void SetRhoDesired(const matrix<std::complex<double> >& rho_desired);
+		void SetRhoInitial(const matrix<std::complex<double> >& rho_initial);
+		void SetHcontrol(const matrix<std::complex<double> >& H_control, const size_t k);
+		void Setucontrol(const std::vector<double> u_control, const size_t k);
+		void Normalizeucontrol(const size_t k, double value);
+		
+		matrix<std::complex<double> > GetHdrift();
+		matrix<std::complex<double> > GetRhoDesired();
+		matrix<std::complex<double> > GetRhoInitial();
+		matrix<std::complex<double> > GetHcontrol(const size_t k);
+		double* Getucontrol(const size_t k);
+		
+		void StateTransfer(double (Grape::* phi)() const, double (Grape::* gradphi)(const size_t j, const size_t k) const, 
+				void (Grape::* ptrSetHnonlinearity)(size_t j), void (Grape::* ptrSetHgradnonlin)(const size_t j));
+		void StateTransfer(double (Grape::* phi)() const, double (Grape::* gradphi)(const size_t j, const size_t k) const)
+		{   StateTransfer(phi, gradphi, &Grape::SetLinear, &Grape::SetGradLinear);
+		}
+		void UnitaryTransfer(double (Grape::* phi)() const, double (Grape::* gradphi)(const size_t j, const size_t k) const, 
+				void (Grape::* ptrSetHnonlinearity)(size_t j), void (Grape::* ptrSetHgradnonlin)(const size_t j));
+		void UnitaryTransfer(double (Grape::* phi)() const, double (Grape::* gradphi)(const size_t j, const size_t k) const)
+		{   UnitaryTransfer(phi, gradphi, &Grape::SetLinear, &Grape::SetGradLinear);
+		}
+		
+		double Phi0() const;
+		double GradPhi0(const size_t j,const size_t k) const;
+		double Phi3() const;
+		double GradPhi3(const size_t j, const size_t k) const;
+		double Phi4() const;
+		double GradPhi4(const size_t j, const size_t k) const;
+		double Phi4TraceCav() const;
+		double GradPhi4TraceCav(const size_t j, const size_t k) const;
+		double Phi4Sub2() const;
+		double GradPhi4Sub2(const size_t j, const size_t k) const;
+		
+		double GradPhi4Sub2Filter(const size_t j, const size_t k) const;
+		double GradPhi4Sub2RWFilter(const size_t j, const size_t k) const;
+		void SetLinear(size_t j);
+		void SetGradLinear(size_t j);
+
+		void SetLab2Quadratures(size_t j);
+		void SetGradLab2Quadratures(size_t j);
+		void SetCounterRotating(size_t j);
+		void SetGradCounterRotating(size_t j);
+		void SetCounterRotatingFilt(size_t j);
+		void SetGradCounterRotatingFilt(size_t j);
+		void SetLab2QuadFiltered(size_t j);
+		void SetGradLab2QuadFiltered(size_t j);		
+	
+		double fidelity_; // the desired in fidelity 
+		size_t nconfigs_;
+		matrix<std::complex<double> >* rho_; //an array of the forward  states (rho in paper)
+		
+	private:
+		size_t dim_;//dimensions of the Hilbert space
+		size_t dimQ_;//dimensions of the Qubit Hilbert space
+		double one_on_dim_;//used alot so I have defined it
+		matrix<std::complex<double> > H_drift_; //drift hamiltonian
+		matrix<std::complex<double> > rho_desired_; //the disered rho or unitary
+		matrix<std::complex<double> > rho_initial_; //the initial rho or unitary
+		
+		size_t num_controls_; //number of controls,
+		matrix<std::complex<double> >* H_controls_; // list of the control hamiltonians
+		double **controls_; // list of vectors of u[i][j] where i counts control i and j counts time
+		size_t num_time_;//  the number of time points	
+		size_t max_iter_; //max iteration befor it turns off
+		size_t count_; // counter used to count calls to grape
+		size_t failcount_; // counter used to count failed calls to grape	
+		size_t consec_failcount_; //# consecutive iterations without success 	
+		double tolerance_; // the minimal change in fidelity 
+		double base_a_; // scale parameter for derivative, epsilon =base_a^power
+		double h_; //the time step
+		int power_;//scales parameter for derivative, base_a^power
+		double epsilon_; //scales parameter for derivative, base_a^power
+		size_t *nsubpixels_; // how many subpixels to calculate under the (controlable) envelope
+		size_t pos_count_; // counts the number of forward steps in the algorithm				
+		
+		size_t *controlsetflag_;//a array which when all 1 all controls and drift are set
+		double **gradient_;//an array containing the gradiant for each i and j
+		double **tempgradient_;//an array containing the gradiant for each i and j
+		matrix<std::complex<double> > Htemp_; //a tempory matrix to store the total hamiltonian
+		matrix<std::complex<double> > *H_controls_tdep_; //time-dependent form of the hamiltonian
+		std::complex<double> ***Udiag_;
+		matrix<std::complex<double> >* lambda_;//an array of the backward  states (lambda in paper)
+		matrix<std::complex<double> >* Unitaries_;//an array of the unitaries to be applied
+		std::complex<double> i; // the complex number i
+		
+		//system specific parameters:
+		double qubit_freq_;
+		double anharmonicity_;
+		double drive_freq_;
+		double filter_norm_;
+		double filter_rate_;
+		double config_;
+};
+inline Grape::Grape(size_t dim, size_t num_controls, size_t num_time) : dim_(dim), num_controls_(num_controls), num_time_(num_time){
+	controls_ = new double *[num_controls_];
+	gradient_ = new double *[num_controls_];
+	tempgradient_ = new double *[num_controls_];
+	controlsetflag_=new size_t[num_controls_+3]; // one more for Hdrift and one more for rho_desired and rho_initial
+	H_controls_=new  matrix<std::complex<double> >[num_controls_];
+	H_controls_tdep_=new  matrix<std::complex<double> >[num_controls_];
+	for(size_t k=0; k < num_controls_; ++k){
+		controls_[k] = new double[num_time_];
+		controls_[k] = new double[num_time_];
+		gradient_[k] = new double[num_time_];
+		tempgradient_[k] = new double[num_time_];
+		controlsetflag_[k]=1;//set for the Hcontros
+		H_controls_[k].initialize(dim_,dim_);
+		H_controls_tdep_[k].initialize(dim_,dim_);
+	}
+	dimQ_=2;
+	config_=0;
+	controlsetflag_[num_controls_]=1; //set for the Hdrift
+	controlsetflag_[num_controls_+1]=1; //set for the rho_desired
+	controlsetflag_[num_controls_+2]=1; //set for the rho_initial
+	rho_=new  matrix<std::complex<double> >[num_time_];
+	lambda_=new  matrix<std::complex<double> >[num_time_];
+	Unitaries_=new  matrix<std::complex<double> >[num_time_];
+	for(size_t j=0; j < num_time_; ++j){
+		rho_[j].initialize(dim_,dim_);
+		lambda_[j].initialize(dim_,dim_);
+		Unitaries_[j].initialize(dim_,dim_);
+	}
+	nsubpixels_= new size_t[num_controls];
+	
+	i=std::complex<double>(0.0,1.0);
+	one_on_dim_=1/double(dim_);
+	Udiag_ = new std::complex<double> **[num_controls_];
+	for(size_t k=0; k < num_controls_; ++k){
+		nsubpixels_[k]=1;
+		Udiag_[k] = new std::complex<double> *[2];
+		Udiag_[k][0] = new std::complex<double>[dim_];
+		Udiag_[k][1] = new std::complex<double>[dim_];
+	}
+	drive_freq_=0;
+	
+}
+inline Grape::~Grape(){
+	for( size_t k = 0; k < num_controls_; ++k){
+		delete [] controls_[k];
+		delete [] gradient_[k];
+		delete [] tempgradient_[k];
+		delete [] Udiag_[k][0];
+		delete [] Udiag_[k][1];
+		delete [] Udiag_[k];
+	}
+	delete [] Udiag_;
+	delete [] controls_;
+	delete [] gradient_;
+	delete [] tempgradient_;
+	delete [] controlsetflag_;
+	delete [] H_controls_;
+	delete [] rho_;
+	delete [] lambda_;
+	delete [] nsubpixels_;
+	delete [] Unitaries_;
+}
+inline void Grape::SetNumericalParameters(const double fidelity, const double h, const double base_a, const double epsilon, const double tolerance, size_t max_iter, 
+											size_t* nsubpixels, double qubit_freq, double anharmonicity)	
+{	for(int k=0; k<num_controls_; k++)
+		nsubpixels_[k]=nsubpixels[k];
+	qubit_freq_=qubit_freq;
+	anharmonicity_=anharmonicity;	
+	nconfigs_=1;
+	SetNumericalParameters(fidelity, h, base_a, epsilon, tolerance, max_iter);
+}
+inline void Grape::SetNumericalParameters(const double fidelity, const double h, const double base_a, const double epsilon, const double tolerance, size_t max_iter){
+
+	tolerance_=tolerance;
+	fidelity_=fidelity;
+	h_ = h;
+	max_iter_ = max_iter;
+	base_a_ = base_a;
+	epsilon_=epsilon*h;
+	// alpha_ = alpha*2.0*h;
+	
+	filter_rate_=0.025;
+	filter_norm_=0;
+	for(size_t l = 0; l < num_time_; ++l)					
+	{														
+		filter_norm_ += exp(-abs((int)num_time_/2-(int)l)*h_/filter_rate_)*h_/filter_rate_/2;	
+	}
+	std::cout << filter_norm_ <<"\n\n";
+	
+	if(verbose==yes)
+	{
+	 	std::cout << "--------------------Numerical Parameters--------------------" << std::endl;
+		std::cout << "smallest change in phi allowed: " << tolerance_ << std::endl;
+		std::cout << "desired fidelity: " << fidelity_ << std::endl;
+		std::cout << "step size: " << h_ << std::endl;
+		std::cout << "max iterations allow before termination: " << max_iter_ << std::endl;
+		std::cout << "number of subpixels in envelope: " << nsubpixels_ << std::endl;
+		std::cout << "------------------------------------------------------------" << std::endl;
+	}
+}
+inline void Grape::SetHdrift(const matrix<std::complex<double> >& H_drift){
+	H_drift_=H_drift;
+	controlsetflag_[num_controls_]=0;
+	if(verbose==yes)
+	{
+		H_drift_.SetOutputStyle(Matrix);
+	 	std::cout << "--------------------Hdrift is set---------------------------" << std::endl;
+		std::cout << H_drift_ << std::endl;
+		std::cout << "------------------------------------------------------------" << std::endl;
+	}
+}
+inline void Grape::SetRhoDesired(const matrix<std::complex<double> >& rho_desired){
+	rho_desired_=rho_desired;
+	controlsetflag_[num_controls_+1]=0;
+	if(verbose==yes)
+	{
+		rho_desired_.SetOutputStyle(Matrix);
+	 	std::cout << "--------------------rho desired is set---------------------------" << std::endl;
+		std::cout << rho_desired_ << std::endl;
+		std::cout << "------------------------------------------------------------" << std::endl;
+	}
+}
+inline void Grape::SetRhoInitial(const matrix<std::complex<double> >& rho_initial){
+	rho_initial_=rho_initial;
+	controlsetflag_[num_controls_+2]=0;
+	if(verbose==yes)
+	{
+		rho_initial_.SetOutputStyle(Matrix);
+	 	std::cout << "--------------------rho initial is set---------------------------" << std::endl;
+		std::cout << rho_initial_ << std::endl;
+		std::cout << "------------------------------------------------------------" << std::endl;
+	}
+}
+inline void Grape::SetHcontrol(const matrix<std::complex<double> >& H_control, const size_t k){
+	H_controls_[k]=H_control;
+	H_controls_tdep_[k]=H_control;
+	controlsetflag_[k]=0;
+	if(verbose==yes)
+	{	
+		H_controls_[k].SetOutputStyle(Matrix);
+	 	std::cout << "------------------The " << k << "th Hcontrol is set-------------------" << std::endl;
+		std::cout << H_controls_[k] << std::endl;
+		std::cout << "------------------------------------------------------------" << std::endl;
+	}
+}
+inline void Grape::Setucontrol(std::vector<double> u_control, const size_t k){
+	
+	for(size_t j = 0; j < num_time_; ++j){
+		controls_[k][j]=u_control[j];
+	}
+	if(verbose==yes)
+	{
+	 	std::cout << "------------------The " << k << "th ucontrol is set-------------------" << std::endl;
+		for(size_t j = 0; j < num_time_; ++j){
+			std::cout <<  controls_[k][j] << '\t';
+		}
+		std::cout<< std::endl;
+		std::cout << "------------------------------------------------------------" << std::endl;
+	}
+}
+inline void Grape::Normalizeucontrol(const size_t k, double value)
+{
+	double sum=0;
+	for(size_t j = 0; j < num_time_; ++j){
+		sum+=controls_[k][j];
+	}
+	sum=value/sum/h_;
+	std::cout<<sum<<std::endl;
+	for(size_t j = 0; j < num_time_; ++j){
+		controls_[k][j]*=sum;
+	}
+}
+
+
+inline matrix<std::complex<double> > Grape::GetHdrift(){
+	return H_drift_;
+}
+inline matrix<std::complex<double> > Grape::GetRhoDesired(){
+	return rho_desired_;
+}
+inline matrix<std::complex<double> > Grape::GetRhoInitial(){
+	return rho_initial_;
+}
+inline matrix<std::complex<double> > Grape::GetHcontrol(const size_t k){
+	return H_controls_[k];
+}
+inline double* Grape::Getucontrol(const size_t k){
+	return controls_[k];
+}
+
+void Grape::StateTransfer(double (Grape::* phi)() const, double (Grape::* gradphi)(const size_t j, const size_t k) const, 
+   void (Grape::* ptrSetHnonlinearity)(size_t j) , void (Grape::* ptrSetHgradnonlin)(const size_t j)){
+	
+
+	//Some flags to make sure all parameters are set
+	size_t test=0;
+	for(size_t k = 0; k < num_controls_+3; ++k)
+	{
+		test+=controlsetflag_[k];
+		if(verbose==yes)
+		{
+		 	std::cout << k << "th control flag is " << controlsetflag_[k] << std::endl;
+		}
+	}
+	if(test != 0)
+		UFs::MyError("Grape::StateTransfer(): you have not set the drift and all control hamiltonians:\n");
+		
+	//Set the counters to zero
+	count_ =0;
+	pos_count_ =0;
+	//the power scale for epsilot (epsilon = base_a^power_)
+	power_ =0;
+	// fidelity ranges from 0 to 1 with 0 be orthogonal and 1 being the same time
+	double current_fidelity=0.0, current_delta_fidelity=1.0, last_fidelity=-1.0;
+	
+	//Starting the algorithim	
+	while(current_delta_fidelity*current_delta_fidelity > tolerance_){
+
+		if(count_> max_iter_){	
+			std::cout << "Grape::StateTransfer(), algorithim did not converge in the allow max iterations" << std::endl;
+			break;
+		}
+		count_ = count_ + 1;
+		
+		// the propagators and the foraward evolution
+		for(size_t j = 0; j < num_time_; ++j){
+			Htemp_ = H_drift_;
+			for(size_t k = 0; k < num_controls_; ++k){
+				Htemp_ += controls_[k][j]*H_controls_[k];
+			}
+			// std::cout << Htemp_ << std::endl;
+			Unitaries_[j]=ExpM::EigenMethod(Htemp_,-i*h_);
+			if(j==0){
+				rho_[0] = Unitaries_[0]*rho_initial_*MOs::Dagger(Unitaries_[0]);
+				//rho_[0] = rhoupdate(Unitaries_[0],rho_initial);
+			}
+			else{
+				rho_[j] = Unitaries_[j]*rho_[j-1]*MOs::Dagger(Unitaries_[j]);
+			}
+		}
+		
+		//the fidelities and break if we reach the required fidelity
+		current_fidelity=(this->*phi)();
+		if(current_fidelity >= fidelity_)
+			break;
+		current_delta_fidelity=current_fidelity-last_fidelity;
+		last_fidelity=current_fidelity;
+		// std::cout << current_fidelity << '\t' <<  current_delta_fidelity << std::endl;
+
+		//the update in the controls
+		if(current_delta_fidelity>=0){
+			// the backward evolution
+			lambda_[num_time_-1] = rho_desired_;
+			for(size_t j = num_time_-1; j > 0; --j){
+				//Udg.rho.U
+				lambda_[j-1] = MOs::Dagger(Unitaries_[j])*lambda_[j]*Unitaries_[j];
+			}
+			for(size_t j = 0; j < num_time_; ++j){
+				for(size_t k =0; k < num_controls_; ++k){
+					// std::cout << power_ << std::endl;
+					gradient_[k][j]=(this->*gradphi)(j,k);
+					controls_[k][j]+=pow(base_a_,power_)*gradient_[k][j];//-alpha_*controls_[k][j]);
+				}
+			}
+			++pos_count_;//if we get to correct directions we set power to be bigger
+			if(pos_count_ ==2){
+				power_++;
+				pos_count_ =0;
+			}
+		}
+		else{
+			power_--;
+			pos_count_ =0;
+			for(size_t j = 0; j < num_time_; ++j){
+				for(size_t k =0; k < num_controls_; ++k){
+					controls_[k][j]+=pow(base_a_,power_)*(1-base_a_)*gradient_[k][j];
+					// std::cout << power_ << std::endl;
+				}
+			}
+					
+		}
+		
+		
+		if (count_%100==0){
+			std::cout << "step " << count_ << " which has an fidelity of " << current_fidelity << " and a delta fidelity of " << current_delta_fidelity << std::endl; 
+		}
+	}
+	std::cout << "step " << count_ << " which has an fidelity of " << current_fidelity << " and a delta fidelity of " << current_delta_fidelity << std::endl;  
+}
+void Grape::UnitaryTransfer(double (Grape::* phi)() const, double (Grape::* gradphi)(const size_t j, const size_t k) const, 
+						void (Grape::* ptrSetHnonlinearity)(size_t j), void (Grape::* ptrSetHgradnonlin)(const size_t j)){
+	
+	matrix<std::complex<double> > ident(dim_,dim_); 
+	MOs::Identity(ident);
+	matrix<std::complex<double> >* lastrho = &ident; 
+	//Some flags to make sure all parameters are set
+	size_t test=0;
+	for(size_t k = 0; k < num_controls_+2; ++k)
+	{
+		test+=controlsetflag_[k];
+		if(verbose==yes)
+		{
+		 	std::cout << k << "th control flag is " << controlsetflag_[k] << std::endl;
+		}
+	}
+	if(test != 0)
+		UFs::MyError("Grape::UnitaryTransfer(): you have not set the drift and all control hamiltonians:\n");
+		
+	//Set the counters to zero
+	count_ =0;
+	failcount_ =0;
+	consec_failcount_=0;
+	pos_count_ =0;
+	//the power scale for epsilot (epsilon = base_a^power_)
+	power_ =0;
+	// fidelity ranges from 0 to 1 with 0 be orthogonal and 1 being the same time
+	double current_fidelity=0.0;
+	double delta_fidelity=1;
+	double top_fidelity=0.0;	//Starting the algorithim	
+	while(delta_fidelity*delta_fidelity > tolerance_ ) //TODO: min power setting, add success condition
+	{			
+		if(count_> max_iter_){	
+			std::cout << "Grape::UnitaryTransfer(), algorithim did not converge in the allow max iterations" << std::endl;
+			break;
+		}
+		count_++;
+		if(num_controls_>2) drive_freq_ = qubit_freq_;// - controls_[2][1];	
+		current_fidelity=0;
+		for(size_t k =0; k < num_controls_; ++k){
+		  for(size_t j = 0; j < num_time_; ++j)
+		  {	tempgradient_[k][j]=0;
+		  }
+		}	
+
+	//	for(phase_=0; phase_<1.99*M_PI; phase_+=2*M_PI/nphases) 
+		for(config_=0; config_<nconfigs_; config_++) 
+		{	
+			// the propagators and the foraward evolution
+			lastrho = &ident;
+			for(size_t j = 0; j < num_time_; ++j){
+				(this->*ptrSetHnonlinearity)(j);// updates H_controls_tdep_ for time dependent controls where time dependence is define by ptrSetHnonlinearity (hard coded)
+				Htemp_ = H_drift_;
+				for(size_t k = 0; k < num_controls_; ++k){				
+					for(size_t q=0; q< dim_; ++q){
+						for(size_t p=0; p<dim_; ++p){
+							Htemp_(q,p) += H_controls_tdep_[k](q,p);
+						}
+					}
+				}			
+				//std::cout << Htemp_ << std::endl;	
+				
+				Unitaries_[j]= ExpM::EigenMethod(Htemp_,-i*h_);
+				rho_[j] = Unitaries_[j]*(*lastrho);
+				lastrho=&(rho_[j]);
+			}	
+			
+			//the average configuration fidelity
+			current_fidelity+=(this->*phi)();
+			
+			// the backward evolution
+			lambda_[num_time_-1] = rho_desired_;
+			for(size_t j = num_time_-1; j > 0; --j){
+				lambda_[j-1] = MOs::Dagger(Unitaries_[j])*lambda_[j];
+			}
+			
+			double tempgrad;
+			for(size_t k =0; k < num_controls_; ++k){
+				for(size_t j = 0; j < num_time_; j+=nsubpixels_[k]){
+					tempgrad=0;
+					for(size_t l = 0; l < nsubpixels_[k]; ++l){
+						(this->*ptrSetHgradnonlin)(j+l);
+						tempgrad+=(this->*gradphi)(j+l,k);
+					}
+					for(size_t l = 0; l < nsubpixels_[k]; ++l)
+					{	tempgradient_[k][j+l]+=tempgrad;
+					}
+				}
+			} 								
+		}	 
+		current_fidelity/=nconfigs_;
+		delta_fidelity=current_fidelity-top_fidelity;
+			
+		if(delta_fidelity>0)  //the update in the controls			
+		{
+			// std::cout <<count_ << std::endl;	
+				 
+			 top_fidelity+=delta_fidelity;
+			 ++pos_count_;//if we get to correct directions we set power to be bigger
+			 consec_failcount_=0;	
+			
+			 if(top_fidelity >= fidelity_)
+			{	
+				std::cout << top_fidelity <<"success\t";
+				break;
+			}
+		
+			 if(pos_count_ ==2){
+				power_++;
+				pos_count_ =0;
+			 }
+			 for(size_t k =0; k < num_controls_; ++k){
+			  for(size_t j = 0; j < num_time_; ++j)
+			  {	 gradient_[k][j]=tempgradient_[k][j];
+				 controls_[k][j]+=pow(base_a_,power_)*gradient_[k][j];  
+			  }
+			 }
+			 if (count_%10==1)
+					std::cout << "step " << count_ << ", " << failcount_ << " failures, which has an fidelity of " << top_fidelity << " and a delta fidelity of " << delta_fidelity << std::endl; 			  
+		}
+		else {
+				power_--;
+				pos_count_ =0;
+	//			std::cout << controls_[0][2]-pow(base_a_,power_)*(base_a_)*gradient_[0][2] << "+" <<pow(base_a_,power_)*(1) << '*'  << gradient_[0][2]<< " ,fid="<<current_fidelity << " \n " ;
+				
+				for(size_t j = 0; j < num_time_; ++j){
+					for(size_t k =0; k < num_controls_; ++k){
+						controls_[k][j]+=pow(base_a_,power_)*(1-base_a_)*gradient_[k][j];
+					}
+				}		
+				failcount_++;
+				consec_failcount_++;		
+		}
+			
+  }
+		
+	std::cout << "finished on step " << count_ << ", " << failcount_ << " failures, which has an fidelity of " << top_fidelity << " and a delta fidelity of " << delta_fidelity << std::endl;  
+}
+
+inline double Grape::Phi0() const{
+	//the measure implemented, phi (PHI_0) is phi = trace[rho_desired* UN-1....U_0 rho_initial U_0\dg ... U_N-1\dg]
+	std::complex<double> temp1=0.0;
+	for(size_t q=0; q< dim_; ++q){
+		for(size_t p=0; p<dim_; ++p){
+			temp1 += conj(rho_desired_(p,q))*rho_[num_time_-1](p,q);
+		}
+	}
+	return real(temp1);
+}
+inline double Grape::GradPhi0(const size_t j, const size_t k) const{
+	//phi_0
+	std::complex<double> temp1=0;
+	matrix<std::complex<double> > Rtemp;
+	Rtemp=QOs::SuperHami(H_controls_tdep_[k],rho_[j]);
+	//Fill in the upper triangle
+	for (size_t p=0; p< dim_; ++p){
+		for(size_t q=p+1; q < dim_; ++q){
+			Rtemp(p,q)=std::conj(Rtemp(q,p));
+		}
+	}	
+	for(size_t q=0; q< dim_; ++q){
+		for(size_t p=0; p<dim_; ++p){
+			temp1 +=std::conj(lambda_[j](p,q))*Rtemp(p,q);	
+		}
+	}
+	// std::cout << h_*QOs::Expectation(L,-i*H*R+i*R*H)- h_*temp1 << std::endl;
+	// std::cout << temp1 << std::endl;
+	// 	Rtemp.SetOutputStyle(Matrix);
+	// std::cout << Rtemp << std::endl;		
+	return epsilon_*real(temp1);
+}
+inline double Grape::Phi3() const{
+	//the measure implemented, phi (PHI_3) is phi = trace[U_desired* UN-1....U_0]/D
+	std::complex<double> temp1=0.0;
+	for(size_t q=0; q< dim_; ++q){
+		for(size_t p=0; p<dim_; ++p){
+			temp1 += std::conj(rho_desired_(p,q))*rho_[num_time_-1](p,q);
+		}
+	}
+	return std::real(temp1)*one_on_dim_;
+}
+inline double Grape::GradPhi3(const size_t j, const size_t k) const{
+	//phi_3
+	std::complex<double> temp1=0;
+	matrix<std::complex<double> > Rtemp;
+	Rtemp=H_controls_tdep_[k]*rho_[j];
+	for(size_t q=0; q< dim_; ++q){
+		for(size_t p=0; p<dim_; ++p){
+			temp1 +=std::conj(lambda_[j](p,q))*Rtemp(p,q);	
+		}
+	}	
+	return epsilon_*std::imag(temp1);
+}
+inline double Grape::Phi4() const{
+	//the measure implemented, phi (PHI_4) is phi = |trace[U_desired* UN-1....U_0 ]|^2/D^2
+	std::complex<double> temp1=0.0;
+	for(size_t q=0; q< dim_; ++q){
+		for(size_t p=0; p<dim_; ++p){
+			temp1 += std::conj(rho_desired_(p,q))*rho_[num_time_-1](p,q);
+		}
+	}
+	return real(temp1*std::conj(temp1))*one_on_dim_*one_on_dim_;
+}
+inline double Grape::GradPhi4(const size_t j, const size_t k) const{
+	//phi_4
+	//2.0*h_*imag(QOs::Expectation( MOs::Dagger(L),H*R)*QOs::Expectation(MOs::Dagger(R),L));
+	std::complex<double> temp1=0, temp2=0;
+	matrix<std::complex<double> > Rtemp;
+	Rtemp=H_controls_tdep_[k]*rho_[j];
+	for(size_t q=0; q< dim_; ++q){
+		for(size_t p=0; p<dim_; ++p){
+			temp1 +=std::conj(lambda_[j](p,q))*Rtemp(p,q);
+			temp2 += std::conj(rho_[j](p,q))*lambda_[j](p,q);	
+		}
+	}
+	return 2.0*epsilon_*std::imag(temp1*temp2);//*one_on_dim_*one_on_dim_;
+}
+inline double Grape::Phi4Sub2() const{
+	//the measure implemented, phi (PHI_4_sub) is phi = |sum_{i=0,1} <i|U_desired* UN-1....U_0|i>|^2/2^2
+	std::complex<double> temp1=0.0;
+	for(size_t q=0; q< 2; ++q){
+		for(size_t p=0; p<dim_; ++p){
+			temp1 += std::conj(rho_desired_(p,q))*rho_[num_time_-1](p,q);
+		}
+	}
+	return std::real(temp1*std::conj(temp1))*0.25;
+}
+inline double Grape::GradPhi4Sub2(const size_t j, const size_t k) const{
+	//Phi_4_subsystem
+	//2.0*h_*imag(QOs::Expectation( MOs::Dagger(L),H*R)*QOs::Expectation(MOs::Dagger(R),L));
+	std::complex<double> temp1=0, temp2=0;
+	matrix<std::complex<double> > Rtemp;
+	Rtemp=H_controls_tdep_[k]*rho_[j];
+	for(size_t q=0; q< 2; ++q){
+		for(size_t p=0; p<dim_; ++p){
+			temp1 +=std::conj(lambda_[j](p,q))*Rtemp(p,q);
+			temp2 += std::conj(rho_[j](p,q))*lambda_[j](p,q);	
+		}
+	}
+	return 2.0*epsilon_*std::imag(temp1*temp2);//*one_on_dim_*one_on_dim_;
+}
+inline double Grape::Phi4TraceCav() const{
+	//the measure implemented, phi (PHI_4_sub) is phi = |sum_{i=0,1} <i|U_desired* UN-1....U_0|i>|^2/2^2
+	std::complex<double> temp1=0.0;
+	matrix<std::complex<double> > Rtemp=MOs::TraceOutB(rho_[num_time_-1],5);///5=dimCav
+	for(size_t q=0; q< 2; ++q){
+		for(size_t p=0; p<dimQ_; ++p){
+			temp1 += std::conj(rho_desired_(p,q))*Rtemp(p,q);
+		}
+	}
+	return std::real(temp1*std::conj(temp1))*0.25;
+}
+inline double Grape::GradPhi4TraceCav(const size_t j, const size_t k) const{
+	//Phi_4_subsystem
+	//2.0*h_*imag(QOs::Expectation( MOs::Dagger(L),H*R)*QOs::Expectation(MOs::Dagger(R),L));
+	std::complex<double> temp1=0, temp2=0;
+	matrix<std::complex<double> > Rtemp;
+	Rtemp=MOs::TraceOutB(H_controls_tdep_[k]*rho_[j],5);///5=dimCav
+	for(size_t q=0; q< 2; ++q){
+		for(size_t p=0; p<dimQ_; ++p){
+			temp1 +=std::conj(lambda_[j](p,q))*Rtemp(p,q);
+			temp2 += std::conj(rho_[j](p,q))*lambda_[j](p,q);	
+		}
+	}
+	return 2.0*epsilon_*std::imag(temp1*temp2);//*one_on_dim_*one_on_dim_;
+}
+inline double Grape::GradPhi4Sub2Filter(const size_t j, const size_t k) const{
+	double gradient=0.0;
+	if(j<nsubpixels_[k] || j>num_time_-nsubpixels_[k]) return gradient;
+	std::complex<double> temp1=0, temp2=0;
+	matrix<std::complex<double> > Rtemp;
+	int endtime = j + 100;
+	if(j>num_time_-100) endtime = num_time_;
+	for(size_t l = (j>100)*(j-100); l <endtime; ++l){
+	  Rtemp=cos(((double)l)*drive_freq_*h_ - (k%2)*M_PI/2)*H_controls_tdep_[k]*rho_[l]*exp(-abs((int)j-(int)l)*h_/filter_rate_)*(h_/filter_rate_/2.0 /filter_norm_);
+	  for(size_t q=0; q< 2; ++q){
+	  	 for(size_t p=0; p<dim_; ++p){
+			temp1 +=std::conj(lambda_[l](p,q))*Rtemp(p,q);
+			temp2 += std::conj(rho_[l](p,q))*lambda_[l](p,q);	
+		 }
+	  }
+	  gradient +=2.0*epsilon_*std::imag(temp1*temp2);
+	}
+	return gradient;
+}
+
+inline double Grape::GradPhi4Sub2RWFilter(const size_t j, const size_t k) const{
+	double gradient=0.0;
+	double prefac;
+	if(j<nsubpixels_[k]*12 || j>num_time_-12*nsubpixels_[k]) return gradient;
+	int span=100;
+	int endtime = j + span;
+	if(j>num_time_-span) endtime = num_time_;
+	
+	double phase = config_*2*M_PI/nconfigs_; 
+	
+	for(size_t l = (j>span)*(j-span); l <endtime; ++l) 	
+	//int l=j;
+	{
+		prefac = cos(phase + ((double)j)*(drive_freq_)*h_ - (k%2)*M_PI/2)*exp(-abs((int)j-(int)l)*h_/filter_rate_)*(h_/filter_rate_/2.0 /filter_norm_); 
+		Udiag_[k][0][0]=Udiag_[k][1][0]=1;
+		Udiag_[k][0][1]=exp(-std::complex<double>(0.0,phase +(double)j*drive_freq_*h_));
+		Udiag_[k][0][2]=exp(-std::complex<double>(0.0,2.0*(phase + (double)j*drive_freq_*h_)));
+		Udiag_[k][0][3]=exp(-std::complex<double>(0.0,3.0*(phase + (double)j*drive_freq_*h_)));
+		Udiag_[k][1][1]=exp(std::complex<double>(0.0,(phase + (double)j*drive_freq_*h_)));
+		Udiag_[k][1][2]=exp(std::complex<double>(0.0,2.0*(phase + (double)j*drive_freq_*h_)));	
+		Udiag_[k][1][3]=exp(std::complex<double>(0.0,3.0*(phase + (double)j*drive_freq_*h_)));	
+		for(size_t q=0; q< dim_; ++q){
+			for(size_t p=0; p<dim_; ++p){
+				H_controls_tdep_[k](p,q)= Udiag_[k][0][q]*H_controls_[k](p,q)*Udiag_[k][1][p]*prefac;
+			
+			}
+		}		std::complex<double> temp1=0, temp2=0;
+	matrix<std::complex<double> > Rtemp;
+	Rtemp=H_controls_tdep_[k]*rho_[j];
+	for(size_t q=0; q< 2; ++q){
+		for(size_t p=0; p<dim_; ++p){
+			temp1 +=std::conj(lambda_[j](p,q))*Rtemp(p,q);
+			temp2 += std::conj(rho_[j](p,q))*lambda_[j](p,q);	
+		}
+	}
+	
+	gradient+= 2.0*epsilon_*std::imag(temp1*temp2);//*one_on_dim_*one_on_dim_;
+	}
+	return gradient;
+}
+
+void Grape::SetLinear(size_t j)
+{
+/*	std::complex<double> lambda = H_controls_[0](1,2);
+	std::complex<double> lambdai = H_controls_[1](1,2);
+	if(config_==1)
+	{
+		H_controls_[0](1,2)=H_controls_[0](2,1)=lambda*0.93;
+		H_controls_[1](1,2)=lambdai*0.93;
+	} else if(config_==2){
+		H_controls_[0](1,2)=H_controls_[0](2,1)=lambda*1.07;
+		H_controls_[1](1,2)=lambdai*1.07;
+	}
+	H_controls_[1](2,1)=-H_controls_[1](1,2);
+*/	
+	for(size_t k = 0; k < num_controls_; ++k){	
+		H_controls_tdep_[k]=controls_[k][j]*H_controls_[k];
+		
+	}
+//	H_controls_[0](1,2)=H_controls_[0](2,1)=lambda;
+//	H_controls_[1](1,2)=lambdai;
+//	H_controls_[1](2,1)=-H_controls_[1](1,2);
+
+}
+void Grape::SetGradLinear(size_t j)
+{
+/*	std::complex<double> lambda = H_controls_[0](1,2);
+	std::complex<double> lambdai = H_controls_[1](1,2);
+	if(config_==1)
+	{
+		H_controls_[0](1,2)=H_controls_[0](2,1)=lambda*0.93;
+		H_controls_[1](1,2)=lambdai*0.93;
+	} else if(config_==2){
+		H_controls_[0](1,2)=H_controls_[0](2,1)=lambda*1.07;
+		H_controls_[1](1,2)=lambdai*1.07;
+	}
+	H_controls_[1](2,1)=-H_controls_[1](1,2);
+*/	
+	for(size_t k = 0; k < num_controls_; ++k){	
+		H_controls_tdep_[k]=H_controls_[k];
+	}
+//	H_controls_[0](1,2)=H_controls_[0](2,1)=lambda;
+//	H_controls_[1](1,2)=lambdai;
+//	H_controls_[1](2,1)=-H_controls_[1](1,2);
+}
+
+void Grape::SetLab2Quadratures(size_t j)
+{
+	for(size_t k = 0; k < num_controls_; ++k){	
+		if((k+1)%3)
+			H_controls_tdep_[k]= controls_[k][j]*H_controls_[k]*cos(((double)j)*(drive_freq_)*h_ - (k%2)*M_PI/2);
+		else  H_controls_tdep_[k]=controls_[k][j]*H_controls_[k];	
+	}
+}
+void Grape::SetGradLab2Quadratures(size_t j)
+{
+	for(size_t k = 0; k < num_controls_; ++k){	
+		if((k+1)%3)
+			H_controls_tdep_[k] = H_controls_[k]*cos(((double)j)*(drive_freq_/*+controls_[(k/3)*3+2][j]*/)*h_ - (k%2)*M_PI/2);
+		else  H_controls_tdep_[k] = H_controls_[k];
+	}	
+}
+
+void Grape::SetLab2QuadFiltered(size_t j)
+{
+	double cntrl;
+	//std::cout<< j << " " << controls_[0][j] <<"\n";
+	for(size_t k = 0; k < num_controls_; ++k) {
+		cntrl=0;
+		if((k+1)%3)
+		{
+		for(size_t l = 0; l < num_time_; ++l)					
+		{														
+			cntrl += controls_[k][l]*exp(-abs((int)j-(int)l)*h_/filter_rate_)*h_/filter_rate_/2 /filter_norm_;	
+		}			
+		H_controls_tdep_[k]= cntrl*cos(((double)j)*(drive_freq_/*+controls_[(k/3)*3+2][j]*/)*h_ - (k%2)*M_PI/2)*H_controls_[k];
+		}
+		else  H_controls_tdep_[k]=0.0*H_controls_[k];
+		//std::cout<< controls_[k][j] << " " << cntrl << "\n";
+		//if(!k) std::cout<< j << " " << cntrl << "\n";
+	}	
+}
+
+void Grape::SetGradLab2QuadFiltered(size_t j)
+{
+		for(size_t k = 0; k < num_controls_; ++k) {
+			H_controls_tdep_[k]= H_controls_[k];
+		}
+}
+
+void Grape::SetCounterRotating(size_t j)
+{
+	double phase = config_*2*M_PI/nconfigs_; 
+		
+	for(size_t k = 0; k < num_controls_; ++k) {	
+		Udiag_[k][0][0]=Udiag_[k][1][0]=1;
+		Udiag_[k][0][1]=exp(-std::complex<double>(0.0,phase +(double)j*drive_freq_*h_));
+		Udiag_[k][0][2]=exp(-std::complex<double>(0.0,2.0*(phase + (double)j*drive_freq_*h_)));
+		Udiag_[k][0][3]=exp(-std::complex<double>(0.0,3.0*(phase + (double)j*drive_freq_*h_)));
+		Udiag_[k][1][1]=exp(std::complex<double>(0.0,(phase + (double)j*drive_freq_*h_)));
+		Udiag_[k][1][2]=exp(std::complex<double>(0.0,2.0*(phase + (double)j*drive_freq_*h_)));	
+		Udiag_[k][1][3]=exp(std::complex<double>(0.0,3.0*(phase + (double)j*drive_freq_*h_)));		
+		if((k+1)%3)
+		{	
+		for(size_t q=0; q< dim_; ++q){
+			for(size_t p=0; p<dim_; ++p){
+				H_controls_tdep_[k](p,q)= Udiag_[k][0][q]*controls_[k][j]*H_controls_[k](p,q)*cos(phase + ((double)j)*(drive_freq_)*h_ - (k%2)*M_PI/2)*Udiag_[k][1][p];
+			}
+		}	
+		}
+		else  
+		H_controls_tdep_[k]=(controls_[k][j])*H_controls_[k];
+	}
+	
+}
+void Grape::SetGradCounterRotating(size_t j)
+{
+	double phase = config_*2*M_PI/nconfigs_; 
+	
+	int l=j;
+	
+	//for(double phase=0; phase<2*M_PI; phase+=2*M_PI/7) 
+	{
+		
+	for(size_t k = 0; k < num_controls_; ++k) {	
+		Udiag_[k][0][0]=Udiag_[k][1][0]=1;
+		Udiag_[k][0][1]=exp(-std::complex<double>(0.0,phase +(double)j*drive_freq_*h_));
+		Udiag_[k][0][2]=exp(-std::complex<double>(0.0,2.0*(phase + (double)j*drive_freq_*h_)));
+		Udiag_[k][0][3]=exp(-std::complex<double>(0.0,3.0*(phase + (double)j*drive_freq_*h_)));
+		Udiag_[k][1][1]=exp(std::complex<double>(0.0,(phase + (double)j*drive_freq_*h_)));
+		Udiag_[k][1][2]=exp(std::complex<double>(0.0,2.0*(phase + (double)j*drive_freq_*h_)));	
+		Udiag_[k][1][3]=exp(std::complex<double>(0.0,3.0*(phase + (double)j*drive_freq_*h_)));	
+		if((k+1)%3)
+		{	
+		for(size_t q=0; q< dim_; ++q){
+			for(size_t p=0; p<dim_; ++p){
+				H_controls_tdep_[k](p,q)= Udiag_[k][0][q]*H_controls_[k](p,q)*cos(phase + ((double)j)*(drive_freq_)*h_ - (k%2)*M_PI/2)*Udiag_[k][1][p];
+				//H_controls_tdep_[k](p,q)= Udiag_[k][0][q]*H_controls_[k](p,q)*cos(phase + ((double)j)*(drive_freq_)*h_ - (k%2)*M_PI/2)*Udiag_[k][1][p]*exp(-abs((int)j-(int)l)*h_/filter_rate_)*(h_/filter_rate_/2.0 /filter_norm_);
+			
+			}
+		}	
+		}
+		else  H_controls_tdep_[k]=H_controls_[k];
+	/*	{
+			for(size_t q=0; q< dim_; ++q){
+			  for(size_t p=0; p<dim_; ++p){
+					H_controls_tdep_[k](p,q)= Udiag_[k][0][q]*( -controls_[(k/3)*3][j]*H_controls_[(k/3)*3](p,q)*sin( ((double)j)*(qubit_freq_+controls_[k][j])*h_ ) 
+						+ controls_[(k/3)*3+1][j]*H_controls_[(k/3)*3+1](p,q)*cos( ((double)j)*(qubit_freq_+controls_[k][j])*h_)   )*Udiag_[k][1][p]*((double)j)*h_;
+			  }
+			}	
+		
+		}*/
+	}
+	}
+	
+}
+void Grape::SetCounterRotatingFilt(size_t j)
+{
+
+	double phase = config_*2*M_PI/nconfigs_; 
+	
+	double cntrl;
+	for(size_t k = 0; k < num_controls_; ++k) {	
+		Udiag_[k][0][0]=Udiag_[k][1][0]=1;
+		Udiag_[k][0][1]=exp(-std::complex<double>(0.0,phase +(double)j*drive_freq_*h_));
+		Udiag_[k][0][2]=exp(-std::complex<double>(0.0,2.0*(phase + (double)j*drive_freq_*h_)));
+		Udiag_[k][0][3]=exp(-std::complex<double>(0.0,3.0*(phase + (double)j*drive_freq_*h_)));
+		Udiag_[k][1][1]=exp(std::complex<double>(0.0,(phase + (double)j*drive_freq_*h_)));
+		Udiag_[k][1][2]=exp(std::complex<double>(0.0,2.0*(phase + (double)j*drive_freq_*h_)));	
+		Udiag_[k][1][3]=exp(std::complex<double>(0.0,3.0*(phase + (double)j*drive_freq_*h_)));		
+		cntrl=0;
+		if((k+1)%3)
+		{	
+		int endtime = j + 300;
+		if(j>num_time_-300) endtime = num_time_;
+		for(size_t l = (j>300)*(j-300); l <endtime; ++l)
+		//size_t l=j;
+		//for(size_t l =0; l <num_time_; ++l)
+		{														
+			cntrl += controls_[k][l]*exp(-abs((int)j-(int)l)*h_/filter_rate_)*h_/filter_rate_/2 /filter_norm_;	
+		}
+		for(size_t q=0; q< dim_; ++q){
+			for(size_t p=0; p<dim_; ++p){
+				H_controls_tdep_[k](p,q)= Udiag_[k][0][q]*cntrl*H_controls_[k](p,q)*cos(phase + ((double)j)*(drive_freq_)*h_ - (k%2)*M_PI/2)*Udiag_[k][1][p];
+			}
+		}	
+		}
+		else  H_controls_tdep_[k]=controls_[k][j]*H_controls_[k];
+	}
+}
+void Grape::SetGradCounterRotatingFilt(size_t j)
+{
+		for(size_t k = 0; k < num_controls_; ++k) {
+			H_controls_tdep_[k]= H_controls_[k];
+		}
+}
+
+
+
+#endif /* Grape_h */
+

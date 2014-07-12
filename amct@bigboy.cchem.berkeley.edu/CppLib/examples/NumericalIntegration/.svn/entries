@@ -1,0 +1,53 @@
+8
+
+dir
+58
+svn://jonagold/papers/CppLib/examples/NumericalIntegration
+svn://jonagold/papers/CppLib
+
+
+
+2009-06-09T19:13:34.438445Z
+58
+jgambett
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+b07ada10-da6f-4d2d-af9b-bf9c28920242
+
+NumericalIntegrationTest.cpp
+file
+
+
+
+
+2009-06-23T05:35:57.000000Z
+233d5f00c2bcc7e6ea7571eb6de9f79f
+2009-06-09T19:13:34.438445Z
+58
+jgambett
+
+Makefile
+file
+
+
+
+
+2009-06-23T05:35:57.000000Z
+fee9f12c2bc770bdcf1e3e06a3e885da
+2009-06-09T19:13:34.438445Z
+58
+jgambett
+has-props
+

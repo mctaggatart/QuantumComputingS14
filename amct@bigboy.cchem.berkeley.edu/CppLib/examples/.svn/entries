@@ -1,0 +1,67 @@
+8
+
+dir
+58
+svn://jonagold/papers/CppLib/examples
+svn://jonagold/papers/CppLib
+
+
+
+2009-06-09T19:13:34.438445Z
+58
+jgambett
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+b07ada10-da6f-4d2d-af9b-bf9c28920242
+
+MatrixLaPack
+dir
+
+NumericalLimits
+dir
+
+MatrixMultiplication
+dir
+
+NumericalIntegration
+dir
+
+MatrixStandard
+dir
+
+MatrixBlas
+dir
+
+MatrixOperations
+dir
+
+UsefullFunctions
+dir
+
+OrdinaryDiffEqs
+dir
+
+SpecialFunctions
+dir
+
+MatrixExponential
+dir
+
+Grape
+dir
+
+QuantumOperations
+dir
+

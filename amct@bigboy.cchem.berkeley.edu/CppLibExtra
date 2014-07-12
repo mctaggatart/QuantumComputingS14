@@ -1,0 +1,7 @@
+Detailed Description of classes and functions:
+
+(added by Botan Feb. 25)
+TicToc.hpp
+	void 	Tic() 	- Starts a timer.
+	double 	Toc() 	- Ends the timer, returns total time in seconds.
+	

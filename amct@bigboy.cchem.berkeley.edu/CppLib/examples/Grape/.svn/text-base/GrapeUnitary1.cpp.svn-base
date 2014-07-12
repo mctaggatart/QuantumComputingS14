@@ -1,0 +1,75 @@
+/*
+Name: Grape.cpp
+Author: Jay Gambetta
+
+Dependences: GrapeUnitary.hpp  
+Brief Discription: This demonstrates grape for unitary using Phi3 and doing a pi pulse on a qubit
+Limitations: None
+
+Version History
+	v0: Feb  11th, 2009.
+
+time ./GrapeUnitary1.e GrapeUnitary1.dat
+
+*/
+#include <Grape.hpp>
+using namespace std;
+
+int main (int argc, char const *argv[]){
+	
+	verbose=no;
+	cout << "Running program " << argv[0] << endl;
+	
+	//Grape inputs
+	size_t num_time=1000, dim = 2, num_controls =1;
+	Grape sys(dim, num_controls, num_time);
+	size_t max_iter=100000;
+	double tolerance=std::numeric_limits<double>::min(), fidelity=0.999999, base_a=1.5, epsilon=5000, tgate=4, dt;
+	dt=tgate/double(num_time);
+	cout << dt << endl;
+	
+	size_t numsubpix[2];
+	numsubpix[0] =1;
+	numsubpix[1] =1;
+
+	// cout << dt << endl;
+	sys.SetNumericalParameters(fidelity, dt, base_a, epsilon, tolerance, max_iter, numsubpix);
+	
+	matrix<complex<double> > a(dim,dim), ad(dim,dim), n(dim,dim), Hdrift(dim,dim), Hcontrol(dim,dim);
+	double delta=0;
+	MOs::Destroy(a);
+	ad = MOs::Dagger(a);
+	n=ad*a;
+	Hdrift = delta*n;
+	Hcontrol=0.5*(a+ad);
+	sys.SetHdrift(Hdrift);
+ 	sys.SetHcontrol(Hcontrol,0);
+	vector<double> ucontrol(num_time), ucontrolfinal;
+	for(size_t j = 0; j < num_time; ++j)
+	{
+		ucontrol[j]=USs::TruncatedGaussian(j*dt, 0, tgate, M_PI, 1);//M_PI/tgate;
+	}
+	sys.Setucontrol(ucontrol,0);
+	
+	//Initial condition
+	matrix<complex<double> > U_desired(dim,dim);
+	U_desired.SetOutputStyle(Matrix);
+	MOs::Null(U_desired);
+	U_desired(1,0)=std::complex<double>(0,-1);
+	U_desired(0,1)=std::complex<double>(0,-1);
+	sys.SetRhoDesired(U_desired);
+	//run grape
+	sys.UnitaryTransfer(&Grape::Phi3, &Grape::GradPhi3);
+	
+	
+	// The finial control
+	ucontrolfinal.assign(sys.Getucontrol(0),sys.Getucontrol(0) + num_time );
+	string const outfile = argv[1];
+	ofstream dataout;
+	UFs::OpenFile(outfile,dataout, 16);
+	for(size_t j =0; j < num_time; j++){
+			dataout << j*dt << '\t' << ucontrolfinal[j] << endl;
+	}
+	dataout.close();
+	return 0;
+}

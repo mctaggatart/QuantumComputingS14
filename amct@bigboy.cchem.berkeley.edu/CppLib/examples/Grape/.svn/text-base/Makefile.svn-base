@@ -1,0 +1,35 @@
+# "debug" or "production"
+BUILD_TYPE = debug
+
+include ../../include/standard_definitions.mk
+
+PROG0 = GrapeState.e
+SRCS0 = GrapeState.cpp
+OBJS0 = GrapeState.o
+
+PROG1 = GrapeState1.e
+SRCS1 = GrapeState1.cpp
+OBJS1 = GrapeState1.o
+
+
+PROG2 = GrapeUnitary1.e
+SRCS2 = GrapeUnitary1.cpp
+OBJS2 = GrapeUnitary1.o
+
+PROG3 = GrapeUnitary2.e
+SRCS3 = GrapeUnitary2.cpp
+OBJS3 = GrapeUnitary2.o
+
+PROG4 = GrapeUnitary3.e
+SRCS4 = GrapeUnitary3.cpp
+OBJS4 = GrapeUnitary3.o
+
+PROG5 = GrapeUnitary4.e
+SRCS5 = GrapeUnitary4.cpp
+OBJS5 = GrapeUnitary4.o
+
+PROG6 = GrapeUnitaryEnvelope.e
+SRCS6 = GrapeUnitaryEnvelope.cpp
+OBJS6 = GrapeUnitaryEnvelope.o
+
+include ../../include/standard_makes.mk

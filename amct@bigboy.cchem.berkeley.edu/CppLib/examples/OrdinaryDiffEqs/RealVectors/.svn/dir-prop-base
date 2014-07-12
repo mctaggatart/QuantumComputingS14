@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 118
+TestAdapEuler.e
+TestAdapRK4.e
+TestAdapRK45.e
+TestAdapRKCK.e
+TestEuler.e
+TestRK4.e
+TestRombergRK4.e
+TestRombergEuler.e
+
+END

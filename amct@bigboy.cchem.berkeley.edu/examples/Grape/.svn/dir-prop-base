@@ -1,0 +1,29 @@
+K 10
+svn:ignore
+V 400
+GrapeUnitary4.dat
+GrapeUnitary4.e
+GrapeUnitary3.e
+GrapeUnitary3.dat
+GrapeUnitary2.e
+GrapeUnitary2.dat
+GrapeUnitary1.e
+GrapeUnitary1.dat
+GrapeState.dat
+GrapeState.e
+labconXNOT10000.txt
+labconYNOT10000.txt
+GrapeState1.dat
+GrapeState1.e
+GrapeState2.dat
+GrapeState3.dat
+GrapeState01.dat
+GrapeState02.dat
+GrapeState03.dat
+GrapeState04.dat
+GrapeState12.dat
+GrapeState00.dat
+test.dat
+GrapeUnitaryEnvelope.e
+
+END

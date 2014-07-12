@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 91
+LAPACK_zheevr.e
+LAPACK_dgeev.e
+LAPACK_dgesv.e
+LAPACK_zheev.e
+LAPACK_zgeev.e
+LAPACK_dsyev.e
+
+END

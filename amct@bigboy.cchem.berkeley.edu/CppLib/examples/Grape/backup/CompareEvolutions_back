@@ -1,0 +1,136 @@
+/*
+Name: GrapeUnitaryEnvelope.cpp
+Author: felix motzoi
+
+Dependences: GrapeUnitaryEnvelope.hpp  
+Brief Discription: This demonstrates grape for lab frame vs rotating frame with large pixels
+
+Version History
+	v0: Using AnalyticControl class, Oct. 6 2009.
+
+*/
+#include "OptimizeEvolution.hpp"
+
+using namespace std;
+
+int main (int argc, char const *argv[]){
+
+	verbose=no;
+	cout << "Running program " << argv[0] << endl;
+	
+	//System/Optimization parameters
+	double qbfreq=51.5, Delta=-2.5, lambda=sqrt(3/2);  //physical params
+	double lamb2 =  1/sqrt(2);
+	double rab = M_PI;
+	double Delta2 = Delta;
+	double tolerance=0.00000000000000001, fidelity=0.9, base_a=1.3, epsilon=0.000005, tgate=1, dt;  //search params
+	size_t max_iter=500000;
+	size_t dim=5;
+	double to_ms =1000.0/CLOCKS_PER_SEC;
+	int clo;
+	
+	//Typical operators	
+	complex<double> ii(0.0,1.0);
+	matrix<complex<double> > a(dim,dim), ad(dim,dim), n(dim,dim), Ident(dim, dim),twophot(dim, dim);
+	MOs::Destroy(a);
+	ad = MOs::Dagger(a);
+	n=ad*a;
+	MOs::Identity(Ident);
+	MOs::Null(twophot);
+	twophot(0,2)=1;//-ii;
+	twophot(2,0)=1;//ii;
+
+	//RWA fixed parameters
+	
+	const size_t rwasub=20;
+	
+	size_t rwa_num_time=tgate*rwasub, num_controls =4;
+	
+	//RW fixed parameters
+    //const int nsub=20;
+	//size_t num_time=rwa_num_time*nsub/rwasub;
+	//dt=tgate/double(num_time);
+	
+//	system("mkdir hello");
+	
+		//RWA frame	
+		double rwa_dt = tgate/double(rwa_num_time);		
+		
+		OptimizeEvolution sys(dim, num_controls, rwa_num_time), baselinesys(dim, num_controls, rwa_num_time);
+		
+//		baselinesys.Phi = sys.Phi = &OptimizeEvolution::Phi4Sub2;
+//		baselinesys.gradPhi = sys.gradPhi = &OptimizeEvolution::GradPhi4Sub2;
+		
+		
+		//sys.SetHdrift(Delta/2*(n*n-n));			//first transition
+//		matrix<complex<double> > HDrift(dim, dim);
+		//level 0
+//		HDrift = Delta/2*( n*n - n);
+
+//		ptrSetTransition pSetTransition = &AnalyticControl::setdriving01;
+
+//		sys.SetHdrift(HDrift);	
+//		baselinesys.SetHdrift(HDrift);
+//		HDrift.SetOutputStyle(Matrix);	
+//		cout << HDrift << endl;
+		
+//		matrix<complex<double> > Shift(dim, dim);
+//		MOs::Null(Shift);
+//		matrix<complex<double> > Shift2(dim, dim);
+//		MOs::Null(Shift2);
+			
+//		Shift(0,1) = Shift(1,0) =1;
+//		Shift2(0,1) =-ii; 
+//		Shift2(1,0) =ii;
+
+//		ad = MOs::Dagger(a);
+		
+		AnalyticControl refcontrol(0.5*(a+ad), rwa_dt,rwa_num_time,rwasub,sys);
+//		refcontrol.setparams(&AnalyticControl::ShiftedGaussian, rab, 1.5, 1);
+
+//		sys.SetParameters(fidelity=0.000000000000009999999999, rwa_dt, base_a, epsilon, tolerance, max_iter);		
+//		baselinesys.SetParameters(fidelity=0.000000000000009999999999, rwa_dt, base_a, epsilon, tolerance, max_iter);	
+
+//		sys.evolutions = &baselinesys;	
+
+		AnalyticControl u0C(0.5*(a+ad), rwa_dt,rwa_num_time,rwasub,sys, "gaussB"), 
+				u1C(0.5*(-ii*a+ii*ad),rwa_dt, rwa_num_time, rwasub,sys, "derivB");
+		AnalyticControl		u2C(n,rwa_dt,rwa_num_time,rwasub,sys),
+				u3C(0.0*twophot,rwa_dt,rwa_num_time,rwasub,sys);
+
+//		AnalyticControl *baselineControls[num_controls];
+
+
+//		u0C.setparams(&AnalyticControl::GaussianDRAGC, rab, 1.5, 0, pSetTransition, &refcontrol);
+//		u1C.setparams(&AnalyticControl::Derivative, -1/Delta/2, 0, 0, pSetTransition, &refcontrol); 
+
+//		u0C.pInterpolate = u1C.pInterpolate = u2C.pInterpolate = u3C.pInterpolate =  &AnalyticControl::CubicInterpolate;//Pixelate;//LinearInterpolate;//
+
+
+//		for(int k=0; k<num_controls; k++)
+//		{	baselineControls[k] = new AnalyticControl(*(AnalyticControl*)sys.GetuControl(k), 40);
+//			baselineControls[k]->evol = &baselinesys;
+//			baselinesys.Setucontrol(baselineControls[k]);
+//		}
+
+//		clo= clock();	
+
+//		sys.sweeptimesandcompare( "timecontrolslice20.dat");
+//		u0C.Hcontrol_(1,0) = u0C.Hcontrol_(0,1) = u1C.Hcontrol_(1,0) = u1C.Hcontrol_(0,1) = 0;
+//		sys.sweepenergies(0, 2, Shift, Shift2, u0C.Hcontrol_, u1C.Hcontrol_, "lamb5nsHarm2.5_drgC_G2.dat") );
+
+//		baselineControls[0]->writefile("basectrl0.dat");
+
+//		for(int k=0; k<num_controls; k++)
+//		{
+//			delete baselineControls[k];
+//		}
+
+
+//		cout << "time taken: " << to_ms*(clock() - clo) << endl;
+
+	return 0;
+	////////////////////////////
+	
+	
+}

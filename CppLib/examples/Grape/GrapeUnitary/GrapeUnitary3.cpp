@@ -112,7 +112,7 @@ int main (int argc, char const *argv[]){
 	CNOT12=MOs::TensorProduct(si,MOs::TensorProduct(si,cnot));
 	U_desired=CNOT12; 
 	sys.SetUDesired(U_desired);
-	sys.SetTrueRhoDesired(U_desired);
+	//sys.SetTrueRhoDesired(U_desired);
 	//run grape
 	sys.UnitaryTransfer();
 	

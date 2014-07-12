@@ -38,14 +38,15 @@ class OptimizeEvolution : public Evolution{
 
 		void SetNumericalParameters(const double fidelity, const double base_a, const double epsilon, const double tolerance, size_t max_iter);
 		void SetNumTimes(const size_t newnumtimes);
-		
+  
 		//helper functions
 		void computegradient();
-                void computegradientDensity();
+                void computegradient_Density();
 		void computegradient_Commute();
 		void updatecontrols();
-		void unwindcontrols();
-		
+                void unwindcontrols();
+  //undo rho increments
+  matrix<std::complex<double> > inverseDissipator1(std::complex<double> dt, matrix<std::complex<double> > A);
 		//ensemble/robust versions
 		void robustforwardpropagate();
 		void robustgradient();
@@ -53,7 +54,7 @@ class OptimizeEvolution : public Evolution{
 		
 		//optimization function
 		void UnitaryTransfer();	
-		
+  
   //Fidelity functions adapted from Khaneja GRAPE paper
                 double Phi1()  const;
                 double GradPhi1(const size_t j, const size_t k) const;
@@ -63,7 +64,7 @@ class OptimizeEvolution : public Evolution{
 		double GradPhi3(const size_t j, const size_t k) const;
 		double Phi4() const;
 		double GradPhi4(const size_t j, const size_t k) ;
-		double Phi4TrCav() const;
+	double Phi4TrCav() const;
 		double GradPhi4TrCav(const size_t j, const size_t k) ;		
 		double Phi4Sub2() const;
 		double GradPhi4Sub2(const size_t j, const size_t k) ;
@@ -76,7 +77,7 @@ class OptimizeEvolution : public Evolution{
 		//public variables
 		size_t nconfigs_;					
 		double config_;		
-		
+  
 		GradFid gradPhi;
 		Fid	Phi;
 		GradFid gradPenalty;
@@ -86,7 +87,7 @@ class OptimizeEvolution : public Evolution{
 		size_t num_evol;						//number such evolutions
 
 		ptrGradients pGetGradient;
-
+  
 		size_t gatesteptime;				//when sweeping gate times increment gate time by this amount at each iteration
 		size_t ngatetimes;							//number of gate times to sweep through
 		double startfid;						//starting fidelity before sweep
@@ -138,7 +139,7 @@ inline OptimizeEvolution::OptimizeEvolution(size_t dim, size_t num_controls, siz
 	gradRho.initialize(dim,dim);
 	P.initialize(dim,dim);
 	lambda_rho.initialize(dim,dim);
-	pGetGradient = 	static_cast<ptrPropagate>(&OptimizeEvolution::computegradientDensity);		
+	pGetGradient = 	static_cast<ptrPropagate>(&OptimizeEvolution::computegradient_Density);		
 	Phi = &OptimizeEvolution::Phi2;
 	gradPhi = &OptimizeEvolution::GradPhi2;
 	gradient_ = new double *[num_controls_];
@@ -175,7 +176,6 @@ inline void OptimizeEvolution::SetNumericalParameters(const double fidelity, con
 		std::cout << "------------------------------------------------------------" << std::endl;
 	}
 }
-
 inline void OptimizeEvolution::SetNumTimes(const size_t newnumtimes)
 {
 	Evolution::SetNumTimes(newnumtimes);
@@ -186,21 +186,31 @@ inline void OptimizeEvolution::SetNumTimes(const size_t newnumtimes)
 }
 
 
-
+inline 
 void OptimizeEvolution::robustgradient() 
 {
 	for(size_t k = 0; k < num_controls_; ++k)
 			for(size_t j = 0; j < num_time_; ++j)
-				gradient_[k][j]=0;	
+				gradient_[k][j]	= 0;	
 	for (size_t s=0; s<num_evol; s++ )
 	{
 		evolutions[s]->computegradient();
 		for(size_t k = 0; k < num_controls_; ++k)
 			for(size_t j = 0; j < num_time_; ++j)
-				gradient_[k][j]+= evolutions[s]->gradient_[k][j];
+				gradient_[k][j]	+= evolutions[s]->gradient_[k][j];
 	}
 }
 
+matrix<std::complex<double> > OptimizeEvolution::inverseDissipator1(std::complex<double> dt, matrix<std::complex<double> >A){
+
+ matrix<std::complex<double> > ident(dim_,dim_);  MOs::Identity(ident);	//produces a dim by dim identity matrix
+
+ //add in T1 to first param
+ //wrong
+ //cout<<((ident-std::sqrt(dt)*A)+0.5*MOs::Dagger(A)*A*dt)<< "Matrix A" <<endl;
+  return ((ident-std::sqrt(dt)*A)+0.5*MOs::Dagger(A)*A*dt);
+
+}
 void OptimizeEvolution::robustforwardpropagate()
 {
 	for (size_t s=0; s<num_evol; s++ )
@@ -228,31 +238,31 @@ double OptimizeEvolution::robustfidelity() const
 void OptimizeEvolution::computegradient()
 {
 	matrix<std::complex<double> > Htemp_(dim_, dim_);
-	P = MOs::Dagger(U_desired_); //Lagrange multiplier
-	double deriv;
+	P = MOs::Dagger(U_desired_);	//Lagrange multiplier
+	double	deriv;
       
 
 	for(size_t k = 0; k < num_controls_; ++k)
 			for(size_t j = 0; j < num_time_; ++j)
-				gradient_[k][j]=0;	
+				gradient_[k][j]	= 0;	
 
        
 	for(int j = num_time_-1; j >=0 ; --j){
 			for(size_t k = 0; k < num_controls_; ++k){			
-				theControls_[k]->getMatrixGradient(j,  &Htemp_); // k-th control,j-th pixel matrix control
+				theControls_[k]->getMatrixGradient(j,  &Htemp_);	// k-th control,	j-th pixel matrix control
 				
-				//integral of k,j-th control in diagonal frame of total hamiltonian
-				Htemp_ = MOs::Dagger(Z[j])*Htemp_* Z[j];
+				//integral of k,	j-th control in diagonal frame of total hamiltonian
+				Htemp_							  = MOs::Dagger(Z[j])*Htemp_*	Z[j];
 				for (size_t q = 0; q < dim_; ++q)
 					for (size_t p = 0; p < dim_; ++p)
 						if(p!=q && (W[j][q]-W[j][p]))Htemp_(q,p) *= (i*cos(-(W[j][q]-W[j][p])*h_)-sin(-(W[j][q]-W[j][p])*h_)-i)/(W[j][q]-W[j][p])/h_;
-				Htemp_ = Z[j]*Htemp_*MOs::Dagger(Z[j]);		
+				Htemp_							  = Z[j]*Htemp_*MOs::Dagger(Z[j]);		
 				
 
-			       	gradU= Htemp_*U_[j]; // k,j-th matrix gradient of total matrix propagation
+			       	gradU = Htemp_*U_[j];	// k,	j-th matrix gradient of total matrix propagation
 			
 				
-				deriv = (this->*gradPhi)(j,k);
+				deriv	      = (this->*gradPhi)(j,k);
 				 if(gradPenalty)
 			       		deriv = deriv + (this->*gradPenalty)(j,k);
 			     
@@ -260,40 +270,44 @@ void OptimizeEvolution::computegradient()
 			       //trace and chain rule to other (scalar) pixel controls
 			     
 		 }
-			if(j) P = P*Unitaries_[j];//computes phi at each step 		 
+			if(j) P = P*Unitaries_[j];	//computes phi at each step 		 
 	}
 		
 }
 //computes gradient for density matrices
-void OptimizeEvolution::computegradientDensity()
+void OptimizeEvolution::computegradient_Density()
 {
-	matrix<std::complex<double> > Htemp_(dim_, dim_);
-	P = MOs::Dagger(U_desired_); //Lagrange multiplier, P in Khaneja
-	lambda_rho = MOs::Dagger(true_rho_desired_);
-	double deriv;
-       
+ matrix<std::complex<double> > ident(dim_,dim_);  MOs::Identity(ident);	//produces a dim by dim identity matrix
+ matrix<std::complex<double> > PauliZ(2,2); MOs::GenPauliZ(PauliZ, 0,1);	//producedim x dim Pauli Z matrix
+ matrix<std::complex<double> > Anhil(2,2); MOs::Destroy(Anhil);	//produce dim x dim Sigma Minus matrix (eg, spin lowering)
+
+ matrix<std::complex<double> > Htemp_(dim_, dim_);
+ P						= MOs::Dagger(U_desired_);	//Lagrange multiplier,	P in Khaneja
+ lambda_rho					= MOs::Dagger(true_rho_desired_);	//lagrange multiplier for density matrices
+	double	deriv;
+	//set all gradient to 0 initially
 	for(size_t k = 0; k < num_controls_; ++k)
 			for(size_t j = 0; j < num_time_; ++j)
-				gradient_[k][j]=0;	
+				gradient_[k][j]	= 0; 	
 
        
 	for(int j = num_time_-1; j >=0 ; --j){
 			for(size_t k = 0; k < num_controls_; ++k){			
-				theControls_[k]->getMatrixGradient(j,  &Htemp_); // k-th control,j-th pixel matrix control
-		//integral of k,j-th control in diagonal frame of total hamiltonian
-				Htemp_ = MOs::Dagger(Z[j])*Htemp_* Z[j];
+				theControls_[k]->getMatrixGradient(j,  &Htemp_);	// k-th control,	j-th pixel matrix control
+		//integral of k,									j-th control in diagonal frame of total hamiltonian
+				Htemp_  = MOs::Dagger(Z[j])*Htemp_*Z[j];
 				for (size_t q = 0; q < dim_; ++q)
 					for (size_t p = 0; p < dim_; ++p)
 						if(p!=q && (W[j][q]-W[j][p]))Htemp_(q,p) *= (i*cos(-(W[j][q]-W[j][p])*h_)-sin(-(W[j][q]-W[j][p])*h_)-i)/(W[j][q]-W[j][p])/h_;
-				Htemp_ = Z[j]*Htemp_*MOs::Dagger(Z[j]);		
+				Htemp_  = Z[j]*Htemp_*MOs::Dagger(Z[j]);		
 				
 			//computes unitary gradient
-			       	gradU= Htemp_*U_[j]; // k,j-th matrix gradient of total matrix propagation
-				//computes DM gradient
-				gradRho= (Htemp_*Rho1_[j] - Rho1_[j]*Htemp_);
+			       	gradU	= Htemp_*U_[j];	// k,	j-th matrix gradient of total matrix propagation
+				//computes DM gradient,		commutator of [Htemp,	Rho[j]]
+				gradRho	= (Htemp_*Rho1_[j] - Rho1_[j]*Htemp_);
 		
-				
-				deriv = (this->*gradPhi)(j,k);
+				//use gradient corripsonding to your phi
+				deriv	= (this->*gradPhi)(j,k);
 				//adds penalty
 				 if(gradPenalty)
 			       		deriv = deriv + (this->*gradPenalty)(j,k);
@@ -301,36 +315,41 @@ void OptimizeEvolution::computegradientDensity()
 			        theControls_[k]->setSubGradients(j, deriv , gradient_[k]); 
 			       
 		 }
-			
+			//for each jth case
 			if(j){ 
+			  // cout<<j<<"j"<<endl;
 			  //sets lambda and P to the correct values
+			  //  lambda_rho=MOs::Dagger(Unitaries_[j])*lambda_rho*Unitaries_[j];
+			  lambda_rho = MOs::Dagger(Unitaries_[j])*lambda_rho*Unitaries_[j]+(1.0/T1A)*(h_)*(MOs::Dagger(Anhil)*lambda_rho*Anhil-0.5*(MOs::Dagger(Anhil)*Anhil*lambda_rho)-0.5*(lambda_rho*MOs::Dagger(Anhil)*Anhil));
 			  
-			  lambda_rho = MOs::Dagger(Unitaries_[j])*lambda_rho*Unitaries_[j];  		 
-			  P=P*Unitaries_[j];
-}
+			  //  cout<<h_*T2A<<"Numbery numbers";
+			  // lambda_rho = inverseDissipator1((h_*T1A), Anhil)*(MOs::Dagger(Unitaries_[j])*lambda_rho*Unitaries_[j])*inverseDissipator1((h_*T1A), Anhil);
+			  //cout<<lambda_rho<<"Lambda"<<endl;	
+		          P          = P*Unitaries_[j];
+			}
 	}
 		
-}
+  }
 
 
-//left unedited as not used, commutes for unitaries
+//left unedited as not used,	commutes for unitaries
 void OptimizeEvolution::computegradient_Commute(){
-	int start, inc;
+	int	start,		inc;
 	matrix<std::complex<double> > Htemp_;
-	P = MOs::Dagger(U_desired_);		//Lagrange multiplier
+	P = MOs::Dagger(U_desired_);	//Lagrange multiplier
 	
 	for(size_t k = 0; k < num_controls_; ++k)
 			for(size_t j = 0; j < num_time_; ++j)
-				gradient_[k][j]=0;	
+				gradient_[k][j]	= 0;	
 	
 	for(int j = num_time_-1; j >=0 ; --j){
-		if(j%8==0 || j%8==3 || j%8==5 || j%8==6)	{	start=0; inc=+1; } 
-		else		{	start=num_controls_-1; inc=-1;	}
+		if(j%8==0 || j%8==3 || j%8==5 || j%8==6)	{	start =	0; inc=+1; } 
+		else		{	start				      =	num_controls_-1; inc=-1;	}
 		for(int k = start; k < num_controls_ && k>=0;  k+=inc){
-			theControls_[k]->getMatrixGradient(j,  &Htemp_);	 // k-th control,j-th pixel matrix control
-			gradU=Htemp_*UC_[k][j];								// k,j-th matrix gradient of total matrix propagation
-			theControls_[k]->setSubGradients(j,  (this->*gradPhi)(j,k), gradient_[k]);	//trace and chain rule to other (scalar) pixel controls
-			P = P*UnitariesC_[k][j];
+			theControls_[k]->getMatrixGradient(j,  &Htemp_);	// k-th control,								     j-th pixel matrix control
+			gradU						      =	Htemp_*UC_[k][j];	// k,j-th matrix gradient of total matrix propagation
+			theControls_[k]->setSubGradients(j,  (this->*gradPhi)(j,k),										     gradient_[k]);//trace and chain rule to other (scalar) pixel controls
+			P  = P*UnitariesC_[k][j];
 		}				 
 	}
 }
@@ -393,6 +412,7 @@ void OptimizeEvolution::UnitaryTransfer(){
 			current_fidelity=(current_fidelity+(this->*Penalty)());
 			
 		n_conseq_unimprov += (current_fidelity-top_fidelity_==delta_fidelity); //numerical precision error
+		//cout<<delta_fidelity<<"Numerical precision here is"<<endl;
 		delta_fidelity=current_fidelity-top_fidelity_;
 		
 		if(delta_fidelity>0)  //the update in the controls			
@@ -485,6 +505,7 @@ inline double OptimizeEvolution::Phi2() const{
 	  for(size_t p=0; p<dim_; ++p){
 		  //computes diagonal elements for TRACE
 			temp1 += std::conj(true_rho_desired_(p,q))*Rho1_[num_time_-1](p,q);
+			//cout<<Rho1_[num_time_-1](p,q)<<"Rho1"<<endl;
 			
 	  }		
 	} 
@@ -743,7 +764,7 @@ void OptimizeEvolution::writepopulations(char* suffix="")
 			for(size_t k=0; k<dim_; k++){
 			  //where one sets the population, use the 2nd line for unitaries. 
 			  dataout<< "\t" << pow(abs(Rho1_[j](k,k)),1);
-			  //dataout<< "\t" << pow(abs(U_[j](l,k)),2);
+			  //			  dataout<< "\t" << pow(abs(U_[j](l,k)),2);
 			}
 			dataout << "\n";		
 		}
