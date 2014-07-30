@@ -56,14 +56,22 @@ int main (int argc, char const *argv[]){
 	cout << "Running program " << argv[0] << endl;
 	
 	//Grape inputs
-	size_t num_time=600, dim = 16, num_controls =2;
-	size_t max_iter=100000;
+	size_t num_time=60, dim = 16,numDis=1, typeDis=2, num_controls =2;
+	size_t max_iter=1000;
 	double tolerance=std::numeric_limits<double>::min(), fidelity=0.99, base_a=2.0, epsilon=5000, dt=0.00002, tgate=dt*double(num_time);
 
-	OptimizeEvolution sys(dim, num_controls, num_time, dt, "Unitary3");
+ matrix<complex<double> >* dis;
+	dis= new matrix<std::complex<double> >[numDis*typeDis];
+	for(int k=0; k<typeDis*numDis; ++k){
+	  dis[k].initialize(dim,dim); //NEED TO MAKE A A GLOBAL VARIABLE SET!!
+}	
+		MOs::Destroy(dis[0]);
+	dis[1]=(MOs::Dagger(dis[0]))*(dis[0]);
+ 
+	OptimizeEvolution sys(dim, num_controls, num_time, dt, dis, numDis, typeDis,"Unitary3");
 	sys.SetNumericalParameters(fidelity=0.99, base_a, epsilon, tolerance, max_iter);
-
-	
+	//EDITTT
+	sys.SetOppsDesired(dis);	
 	matrix<complex<double> > sx(2,2), sy(2,2), sz(2,2), si(2,2), Hdrift(dim,dim), Hcontrol(dim,dim);
 	MOs::Pauli(sx, sy, sz);
 	MOs::Identity(si);
@@ -95,6 +103,7 @@ int main (int argc, char const *argv[]){
 	
 	//Drift
 	Hdrift= M_PI*(omega1*Z1+omega2*Z2+omega3*Z3+omega4*Z4)+M_PI*(J12*(Z1*Z2 + X1*X2 + Y1*Y2) +J13*(Z1*Z3 + X1*X3 + Y1*Y3)+J14*(Z1*Z4 + X1*X4 + Y1*Y4) +J23*(Z2*Z3 + X2*X3 + Y2*Y3) + J24*(Z2*Z4 + X2*X4 + Y2*Y4) + J34*(Z3*Z4 + X3*X4 + Y3*Y4));
+	//	cout <<Hdrift<<"hdrift"<<endl;
 	sys.SetHdrift(Hdrift);
 	
 	Control u0(M_PI*(X1+X2+X3+X4), dt, num_time, 1, &sys, "u2_control0");	
@@ -103,16 +112,21 @@ int main (int argc, char const *argv[]){
 	Control u1(M_PI*(Y1+Y2+Y3+Y4), dt, num_time, 1, &sys, "u2_control1");
 	u1.RandomControl(-1000, 1000);
 	
-	matrix<complex<double> > U_desired(dim,dim), CNOT12(dim,dim), cnot(4,4);
+	matrix<complex<double> > U_desired(dim,dim), CNOT12(dim,dim), cnot(4,4), goal(dim,dim);
 	MOs::Null(cnot);
+	//goal.Initalize();
 	cnot(0,0)=complex<double>(1,0);
 	cnot(1,1)=complex<double>(1,0);
 	cnot(2,3)=complex<double>(1,0);
 	cnot(3,2)=complex<double>(1,0);
 	CNOT12=MOs::TensorProduct(si,MOs::TensorProduct(si,cnot));
+	goal(15,15)=complex<double>(1,0);
+	sys.SetOmega(5.0);
+	sys.SetRhoInitial(goal);
 	U_desired=CNOT12; 
 	sys.SetUDesired(U_desired);
-	//sys.SetTrueRhoDesired(U_desired);
+	//cout<<U_desired<<"U Des"<<endl;
+	sys.SetTrueRhoDesired(U_desired);
 	//run grape
 	sys.UnitaryTransfer();
 	

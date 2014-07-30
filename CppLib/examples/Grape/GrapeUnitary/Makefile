@@ -1,5 +1,5 @@
 # "debug" or "production"
-BUILD_TYPE = debug
+BUILD_TYPE = production
 
 include ../../../include/standard_definitions.mk
 

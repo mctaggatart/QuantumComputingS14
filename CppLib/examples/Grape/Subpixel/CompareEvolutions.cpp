@@ -1,6 +1,6 @@
 /*
 Name: GrapeUnitaryEnvelope.cpp
-Author: felix motzoi
+Author: felix motzoi, Anastasia McTaggart
 
 Dependences: GrapeUnitaryEnvelope.hpp  
 Brief Discription: This demonstrates grape for lab frame vs rotating frame with large pixels
@@ -91,7 +91,7 @@ int main (int argc, char const *argv[]){
 		baselinesys.SetHdrift(HDrift);
 
 		baselinesys.SetNumericalParameters(fidelity, base_a, epsilon, tolerance, max_iter);	
-		baselinesys.SetRhoDesired(UNOT);
+		baselinesys.SetUDesired(UNOT);
 
 		cout << "declaring controls...\n";
 		
@@ -202,7 +202,8 @@ int main (int argc, char const *argv[]){
 		}
 				
 		cout << "beginning sweep...\n";
-		baselinesys.sweeptimesandcompare(static_cast<ptrPropagate> (&OptimizeEvolution::UnitaryTransfer));
+		//	baselinesys.sweeptimesandcompare(static_cast<ptrPropagate> (&OptimizeEvolution::UnitaryTransfer));
+		baselinesys.UnitaryTransfer();
 //		baselinesys.sweepdimandcompare( "com_evolrand_frq10_Hd5_Hc3.dat", HDriftRef, refdimcon);
 
 		cout <<"deleting controls\n";		

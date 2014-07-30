@@ -33,7 +33,7 @@ typedef void (OptimizeEvolution::* ptrGradients)();
 
 class OptimizeEvolution : public Evolution{
 	public:
-		OptimizeEvolution(size_t dim, size_t num_controls, size_t num_time, const double dt, char* filename);
+  OptimizeEvolution(size_t dim, size_t num_controls, size_t num_time, const double h, matrix<std::complex<double> >* dis, size_t numDis, size_t typeDis,char* filename);
 		virtual ~OptimizeEvolution();
 
 		void SetNumericalParameters(const double fidelity, const double base_a, const double epsilon, const double tolerance, size_t max_iter);
@@ -46,7 +46,10 @@ class OptimizeEvolution : public Evolution{
 		void updatecontrols();
                 void unwindcontrols();
   //undo rho increments
-  matrix<std::complex<double> > inverseDissipator1(std::complex<double> dt, matrix<std::complex<double> > A);
+  matrix<std::complex<double> > inverseDissipator1(std::complex<double> dt,std::complex<double> gamma, matrix<std::complex<double> >lambda, matrix<std::complex<double> >A);
+
+  matrix<std::complex<double> > GenInverseDis(double dt, std::complex<double> gamma, size_t numDis,  size_t typeDis, matrix<std::complex<double> >lambda);
+
 		//ensemble/robust versions
 		void robustforwardpropagate();
 		void robustgradient();
@@ -68,6 +71,8 @@ class OptimizeEvolution : public Evolution{
 		double GradPhi4TrCav(const size_t j, const size_t k) ;		
 		double Phi4Sub2() const;
 		double GradPhi4Sub2(const size_t j, const size_t k) ;
+		double Phi2Sub2() const;
+		double GradPhi2Sub2(const size_t j, const size_t k) ;
 		
 		double LeakagePenalty() const;
 		double GradLeakagePenalty(const size_t j, const size_t k) ;
@@ -129,8 +134,8 @@ class OptimizeEvolution : public Evolution{
 #include "AnalyticControl.hpp"
 
 //constructor initalizes everything
-inline OptimizeEvolution::OptimizeEvolution(size_t dim, size_t num_controls, size_t num_time, const double h, char* filename) 
-	: Evolution(dim, num_controls, num_time, h), Penalty(NULL), gradPenalty(NULL){
+inline OptimizeEvolution::OptimizeEvolution(size_t dim, size_t num_controls, size_t num_time, const double h,matrix<std::complex<double> >* dis, size_t numDis, size_t typeDis, char* filename) 
+  : Evolution(dim, num_controls, num_time, h, dis, numDis, typeDis), Penalty(NULL), gradPenalty(NULL){
 	config_=0;
 	if(filename) strcpy(this->filename_, filename);
 	level0index_=0;
@@ -201,14 +206,26 @@ void OptimizeEvolution::robustgradient()
 	}
 }
 
-matrix<std::complex<double> > OptimizeEvolution::inverseDissipator1(std::complex<double> dt, matrix<std::complex<double> >A){
+matrix<std::complex<double> > OptimizeEvolution::GenInverseDis(double dt, std::complex<double> gamma, size_t numDis_, size_t typeDis, matrix<std::complex<double> > lambda){
+  matrix<std::complex<double> > tempdis=inverseDissipator1(dt, gamma, A_[0], lambda);
+       
+  for(int k=1; k<(typeDis)*(numDis_); ++k){
+    tempdis = tempdis + inverseDissipator1(dt, gamma, A_[1], lambda); //NEED TO MAKE A A GLOBAL VARIABLE SET!!
+    }
+  
+  return tempdis;
+}
 
- matrix<std::complex<double> > ident(dim_,dim_);  MOs::Identity(ident);	//produces a dim by dim identity matrix
 
+
+matrix<std::complex<double> > OptimizeEvolution::inverseDissipator1(std::complex<double> dt,std::complex<double> gamma, matrix<std::complex<double> >lambda, matrix<std::complex<double> >A){
+
+ matrix<std::complex<double> > ident(dim_,dim_);  MOs::Identity(ident);	//produces a dim by dim identity matrixr
+ return gamma*(dt)*(MOs::Dagger(A)*lambda*A-0.5*(MOs::Dagger(A)*A*lambda)-0.5*(lambda*MOs::Dagger(A)*A));
  //add in T1 to first param
  //wrong
  //cout<<((ident-std::sqrt(dt)*A)+0.5*MOs::Dagger(A)*A*dt)<< "Matrix A" <<endl;
-  return ((ident-std::sqrt(dt)*A)+0.5*MOs::Dagger(A)*A*dt);
+ // return ((ident-std::sqrt(dt)*A)+0.5*MOs::Dagger(A)*A*dt);
 
 }
 void OptimizeEvolution::robustforwardpropagate()
@@ -278,9 +295,12 @@ void OptimizeEvolution::computegradient()
 void OptimizeEvolution::computegradient_Density()
 {
  matrix<std::complex<double> > ident(dim_,dim_);  MOs::Identity(ident);	//produces a dim by dim identity matrix
- matrix<std::complex<double> > PauliZ(2,2); MOs::GenPauliZ(PauliZ, 0,1);	//producedim x dim Pauli Z matrix
- matrix<std::complex<double> > Anhil(2,2); MOs::Destroy(Anhil);	//produce dim x dim Sigma Minus matrix (eg, spin lowering)
-
+ matrix<std::complex<double> > PauliZ;
+ // MOs::GenPauliZ(PauliZ, 0,1)	//producedim x dim Pauli Z matrix
+ matrix<std::complex<double> > Anhil(dim_,dim_); MOs::Destroy(Anhil);	//produce dim x dim Sigma Minus matrix (eg, spin lowering)
+ PauliZ.initialize(dim_,dim_);
+ PauliZ(1,1)=1;
+ //PauliZ(2,2)=2;
  matrix<std::complex<double> > Htemp_(dim_, dim_);
  P						= MOs::Dagger(U_desired_);	//Lagrange multiplier,	P in Khaneja
  lambda_rho					= MOs::Dagger(true_rho_desired_);	//lagrange multiplier for density matrices
@@ -320,7 +340,9 @@ void OptimizeEvolution::computegradient_Density()
 			  // cout<<j<<"j"<<endl;
 			  //sets lambda and P to the correct values
 			  //  lambda_rho=MOs::Dagger(Unitaries_[j])*lambda_rho*Unitaries_[j];
-			  lambda_rho = MOs::Dagger(Unitaries_[j])*lambda_rho*Unitaries_[j]+(1.0/T1A)*(h_)*(MOs::Dagger(Anhil)*lambda_rho*Anhil-0.5*(MOs::Dagger(Anhil)*Anhil*lambda_rho)-0.5*(lambda_rho*MOs::Dagger(Anhil)*Anhil));
+			  lambda_rho = MOs::Dagger(Unitaries_[j])*lambda_rho*Unitaries_[j]+GenInverseDis(h_, 1.0/T1A,  numDis_, typeDis_, lambda_rho);
+
+			    //+inverseDissipator1(h_, 1.0/T1A, lambda_rho,Anhil);//+inverseDissipator1(h_, 1.0/T2A, lambda_rho,PauliZ);
 			  
 			  //  cout<<h_*T2A<<"Numbery numbers";
 			  // lambda_rho = inverseDissipator1((h_*T1A), Anhil)*(MOs::Dagger(Unitaries_[j])*lambda_rho*Unitaries_[j])*inverseDissipator1((h_*T1A), Anhil);
@@ -499,11 +521,12 @@ inline double OptimizeEvolution::GradPhi1(const size_t j, const size_t k) const{
 
 //Phi 2 from the Khanja paper, it is |phi_0|^2 or <Rho_desired|rho><rho|Rho_desired>, and it does this by taking the trace of Rho_Desired with the current Rho. This can be used for both Density Matrices and Unitaries
 inline double OptimizeEvolution::Phi2() const{
-	
+  //cout<<"dimensionaity" << dim_<<endl;
 	std::complex<double> temp1=0.0;
-	for(size_t q=0; q< dim_; ++q){
-	  for(size_t p=0; p<dim_; ++p){
-		  //computes diagonal elements for TRACE
+	for(size_t q=0; q< dim_; q++){
+	  for(size_t p=0; p<dim_; p++){
+	    //cout<<p<<q<<"Itterators out of bounds"<<endl;	 
+	    //computes diagonal elements for TRACE
 			temp1 += std::conj(true_rho_desired_(p,q))*Rho1_[num_time_-1](p,q);
 			//cout<<Rho1_[num_time_-1](p,q)<<"Rho1"<<endl;
 			
@@ -518,8 +541,9 @@ inline double OptimizeEvolution::GradPhi2(const size_t j, const size_t k) {
 	//phi_4
 
 	std::complex<double> temp1=0, temp2=0;
-	for(size_t q=0; q< dim_; ++q){
-		for(size_t p=0; p<dim_; ++p){
+	for(size_t q=0; q< dim_; q++){
+		for(size_t p=0; p<dim_; p++){
+		  //cout<<p<<q<<"Itterators out of bounds"<<endl;
 			temp1 += lambda_rho(q,p)*gradRho(p,q);
 			temp2 += std::conj(Rho1_[num_time_-1](p,q))*true_rho_desired_(p,q);	
 		}
@@ -557,6 +581,9 @@ inline double OptimizeEvolution::Phi4() const{
 	} 
 	return real(temp1*std::conj(temp1))/dim_/dim_;
 }
+
+
+
 inline double OptimizeEvolution::GradPhi4(const size_t j, const size_t k) {
 	//phi_4
 	//2.0*h_*imag(QOs::Expectation( MOs::Dagger(L),H*R)*QOs::Expectation(MOs::Dagger(R),L));
@@ -608,7 +635,37 @@ inline double OptimizeEvolution::GradPhi4TrCav(const size_t j, const size_t k) {
 	return 2.0*epsilon_*std::imag(temp1*temp2);//*one_on_dim_*one_on_dim_;
 }
 
+//Phi 2 from the Khanja paper, it is |phi_0|^2 or <Rho_desired|rho><rho|Rho_desired>, and it does this by taking the trace of Rho_Desired with the current Rho. This can be used for both Density Matrices and Unitaries
+inline double OptimizeEvolution::Phi2Sub2() const{
+	
+	std::complex<double> temp1=0.0;
+	//	cout<<Rho1_[num_time_-1](0,0)
+	//<<"level 0 index"<<endl;
+	for(size_t q=level0index_; q< level0index_+2; ++q){
+	  for(size_t p=0; p<dim_; ++p){
+		  //computes diagonal elements for TRACE
+	    temp1 += std::conj(true_rho_desired_(p,q))*Rho1_[num_time_-1](p,q);
+	    //	cout<<MOs::Trace(Rho1_[num_time_-1])<<"trace"<<endl;
+		//	cout<<Rho1_[num_time_-1]<<"Rho1"<<endl;
+			
+	  }		
+	}
+	
+	return std::real(temp1*std::conj(temp1));
+	
+}
+inline double OptimizeEvolution::GradPhi2Sub2(const size_t j, const size_t k) {
+	//phi_4
 
+	std::complex<double> temp1=0, temp2=0;
+		for(size_t q=level0index_; q< level0index_+2; ++q){
+		for(size_t p=0; p<dim_; ++p){
+		      	temp1 += lambda_rho(q,p)*gradRho(p,q);
+			temp2 += std::conj(Rho1_[num_time_-1](p,q))*true_rho_desired_(p,q);
+		}
+	}
+	return 2.0*epsilon_*std::imag(temp1*temp2);//*one_on_dim_*one_on_dim_;
+} 
 inline double OptimizeEvolution::Phi4Sub2() const{
 	//the measure implemented, phi (PHI_4_sub) is phi = |sum_{i=0,1} <i|U_desired* UN-1....U_0|i>|^2/2^2
 	std::complex<double> temp1=0.0;
@@ -763,8 +820,8 @@ void OptimizeEvolution::writepopulations(char* suffix="")
 			dataout <<  h_*(j+0.5);
 			for(size_t k=0; k<dim_; k++){
 			  //where one sets the population, use the 2nd line for unitaries. 
-			  dataout<< "\t" << pow(abs(Rho1_[j](k,k)),1);
-			  //			  dataout<< "\t" << pow(abs(U_[j](l,k)),2);
+			  // dataout<< "\t" << pow(abs(Rho1_[j](k,k)),1);
+			  			  dataout<< "\t" << pow(abs(U_[j](l,k)),2);
 			}
 			dataout << "\n";		
 		}

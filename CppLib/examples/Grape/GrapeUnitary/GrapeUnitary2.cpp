@@ -56,12 +56,22 @@ int main (int argc, char const *argv[]){
 	cout << "Running program " << argv[0] << endl;
 	
 	//Grape inputs
-	size_t num_time=300, dim = 16, num_controls =2;
-	size_t max_iter=100000;
+	size_t num_time=1000, dim = 16,numDis=1, typeDis=2, num_controls =2;
+	size_t max_iter=10;
 	double tolerance=std::numeric_limits<double>::min(), fidelity, base_a=2.0, epsilon=5000000, dt=0.000002, tgate=dt*double(num_time);
-
-	OptimizeEvolution sys(dim, num_controls, num_time, dt, "Unitary2");
+ 
+  matrix<complex<double> >* dis;
+	dis= new matrix<std::complex<double> >[numDis*typeDis];
+	for(int k=0; k<typeDis*numDis; ++k){
+	  dis[k].initialize(dim,dim); //NEED TO MAKE A A GLOBAL VARIABLE SET!!
+}	
+		MOs::Destroy(dis[0]);
+	dis[1]=(MOs::Dagger(dis[0]))*(dis[0]);
+ 
+	//cout<<"Anhiliation"<<dis[0]<<endl;
+	OptimizeEvolution sys(dim, num_controls, num_time, dt, dis, numDis, typeDis, "Unitary2");
 	sys.SetNumericalParameters(fidelity=0.99, base_a, epsilon, tolerance, max_iter);
+	sys.SetOppsDesired(dis);
 	
 	matrix<complex<double> > sx(2,2), sy(2,2), sz(2,2), si(2,2), Hdrift(dim,dim), Hcontrol(dim,dim);
 	MOs::Pauli(sx, sy, sz);
@@ -95,7 +105,7 @@ int main (int argc, char const *argv[]){
 	//Drift
 	Hdrift= M_PI*(omega1*Z1+omega2*Z2+omega3*Z3+omega4*Z4)+M_PI*(J12*(Z1*Z2 + X1*X2 + Y1*Y2) +J13*(Z1*Z3 + X1*X3 + Y1*Y3)+J14*(Z1*Z4 + X1*X4 + Y1*Y4) +J23*(Z2*Z3 + X2*X3 + Y2*Y3) + J24*(Z2*Z4 + X2*X4 + Y2*Y4) + J34*(Z3*Z4 + X3*X4 + Y3*Y4));
 	sys.SetHdrift(Hdrift);
-	
+		
 	Control u0(M_PI*(X1+X2+X3+X4), dt, num_time, 1, &sys, "u2_control0");	
 	u0.RandomControl(-1000, 1000);
 	
@@ -104,8 +114,13 @@ int main (int argc, char const *argv[]){
 	
 	matrix<complex<double> > U_desired(dim,dim);
 	U_desired=X3;
+  	matrix<complex<double > > rho_init;
+	rho_init.initialize(dim,dim);
+			rho_init(1,1)=1;
+       	sys.SetRhoInitial(rho_init);
 	sys.SetUDesired(U_desired);
-	sys.SetOmega(omega1);
+	sys.SetTrueRhoDesired(U_desired);
+	sys.SetOmega(5.0);
 	//sys.SetTrueRhoDesired(U_desired,Rho_des);
 	cout << MOs::Trace(X1*X1) << endl;
 	
