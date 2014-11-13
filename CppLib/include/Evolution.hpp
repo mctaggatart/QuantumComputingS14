@@ -1,14 +1,12 @@
- 
 /*
-Name: Evolution.h
 Author: Jay M. Gambetta and Felix Motzoi, Anastasia McTaggart
 This does the actual comutation of the gradient			
 Dependences: Controls, but relies on
- "MatrixExponential.hpp"
+ "MatrixExponential.hpp" 
  "MatrixOperations.hpp"
  "MatrixOperations.hpp"
  "QuantumOperations.hpp"	
- "QuantumOperations.hpp"
+ "QuantumOperations.hpp
 */
 
 #ifndef Evolution_h
@@ -25,7 +23,7 @@ typedef void (Evolution::* ptrPropagate)();
 #include "QuantumOperations.hpp"
 class Evolution {
 	public:
-  Evolution(size_t dim, size_t num_controls, size_t num_time, const double h, matrix<std::complex<double> >* dis,size_t numDis, size_t typeDis);// number of controls, the number of time points
+  Evolution(size_t dim, size_t num_controls, size_t num_time, const double h, matrix<std::complex<double> >** dis,size_t numDis, size_t typeDis);// number of controls, the number of time points
 		virtual ~Evolution();
 
 				//getter functions
@@ -41,34 +39,35 @@ class Evolution {
   void SetOmega(double omega);//used for dissipation, T1, T2 depend on this
 
   void SetRhoInitial(const matrix<std::complex<double> >& rho_initial); //initial state
-		
+  //sets the desired unitary.		
   void SetUDesired(const matrix<std::complex<double> >& U_desired);
-  void SetTrueRhoDesired(const matrix<std::complex<double> >& Udes);//sets desired Rho	
-  void Setucontrol(Control* control, const int index=-1);
+  void SetTrueRhoDesired(const matrix<std::complex<double> >& Udes);//sets desired Rho	final
+  void Setucontrol(Control* control, const int index=-1); //sets the controls
 
-  void SetOppsDesired(const matrix<std::complex<double> >* Udes1);		
+  void SetOppsDesired(matrix<std::complex<double> >** Udes1); //sets our desired opperator		
  
   void writepopulations(char* outfile); //writes populations to a graph
 						
   ptrPropagate pPropagate; //function pointer to propagate function of choice
 
   //different forms of forward propagate                
-		void		forwardpropagate();
-                void		forwardpropagate_Density();
+  void		forwardpropagate(); //standard for unitaries
+  void		forwardpropagate_Density();//for density matrices
                 void		forwardpropagate_Taylor();
 		void	     	forwardpropagate_Commute();
-  matrix<std::complex<double> > dissipator1(double dt, std::complex<double> gamma, matrix<std::complex<double> > A, matrix<std::complex<double> >* rho);
-  matrix<std::complex<double> > dissipator2(double dt, std::complex<double> gamma, matrix<std::complex<double> > A, matrix<std::complex<double> >* rho);
-  matrix<std::complex<double> > GenDis(double dt, std::complex<double> gamma,matrix<std::complex<double> >* rho);
+  matrix<std::complex<double> > dissipator1(double dt, std::complex<double> gamma, matrix<std::complex<double> > A, matrix<std::complex<double> >* rho);//first form of the dissipator 
+  matrix<std::complex<double> > dissipator2(double dt, std::complex<double> gamma, matrix<std::complex<double> > A, matrix<std::complex<double> >* rho); //2nd form, used in the code
+  matrix<std::complex<double> > GenDis(int j,double dt, std::complex<double> gamma,matrix<std::complex<double> >* rho); //actually does our dissipator
+  matrix<std::complex<double> > GenKrausDis(int j,double dt, matrix<std::complex<double> >* rho); //for kraus operators
   //matrix<std::complex<double> > SetDis(matrix<std::complex<double> > dis[],int typeDis_, int numDis_);
                 matrix<std::complex<double> >*	U_; //an array of the forward evolutions (rho in paper
               
-                matrix<std::complex<double> >*	Rho1_;
+  matrix<std::complex<double> >*	Rho1_; //our rho at each time step
                 matrix<std::complex<double> >** UC_; //an array of the forward evolutions (rho in paper) splitting by control
-  double*					freqs_;
+  double*					freqs_; //used in prior versions
 						
 	public:
-    matrix<std::complex<double> >*	A_;
+  matrix<std::complex<double> >**	A_; //dissipator array
 		size_t	num_time_;	//  the number of time points	
 		double	h_;	//the time step
 		double	tgate_;
@@ -78,7 +77,7 @@ class Evolution {
 
                matrix<std::complex<double> > *H_drift_;	//drift hamiltonian
 	       matrix<std::complex<double> > H_drift_exp;	//exponential of drift hamiltonia
-  // matrix<std::complex<double> >            A_;
+
 	       matrix<std::complex<double> > U_desired_;	//the desired unitary, previously called Rho_Desired.
                matrix<std::complex<double> > true_rho_desired_;	//the desired rho
 		matrix<std::complex<double> > rho_initial_;	//the initial rho or unitary
@@ -102,19 +101,12 @@ class Evolution {
 };
 
 #include "Control.hpp"
-
-inline Evolution::Evolution(size_t dim, size_t num_controls, size_t num_time, const double h, matrix<std::complex<double> >* dis, size_t numDis, size_t typeDis) 
+//Evolution takes Dimensions, number controls, number of timesteps, dt, the dissipator in matrix form, the number of dissipators in matrix form, and their number of types.
+inline Evolution::Evolution(size_t dim, size_t num_controls, size_t num_time, const double h, matrix<std::complex<double> >** dis, size_t numDis, size_t typeDis) 
   : dim_(dim), num_controls_(num_controls), num_time_(num_time), h_(h), lastcontrol(0), numDis_(numDis), typeDis_(typeDis)
 {
-  
-     
-  
-  /*  A_=new matrix<std::complex<double> >[num_time_];
-  for(int k=0; k<typeDis*numDis; k++){ 
-	A_[k].initialize(2,2);
-	A_[k]=dis[k];
-       
-	}*/
+  //this method is primarily initializing everything.
+  //following lines used in old forms of the code
   freqs_=NULL;
 	Z = new matrix<std::complex<double> >[num_time_];	
 	W = new double *[num_time_];
@@ -145,16 +137,24 @@ inline Evolution::Evolution(size_t dim, size_t num_controls, size_t num_time, co
 	controlsetflag_[num_controls_+2]=1; //set for the rho_initial
 	lastcontrol = 0;
 	U_=new  matrix<std::complex<double> >[num_time_];
-	Rho1_= new matrix<std::complex<double> >[num_time_];
-	A_= new matrix<std::complex<double> >[numDis_*typeDis_];
-	Unitaries_=new  matrix<std::complex<double> >[num_time_];
-	//      A_=new  matrix<std::complex<double> >[10];
 
+	Rho1_= new matrix<std::complex<double> >[num_time_];
+	//A_ is our list of dissipators, and initalizes it
+	A_=new matrix<std::complex<double> >*[num_time_];
+	//initializes our list of unitaries
+	Unitaries_=new  matrix<std::complex<double> >[num_time_];
+
+       	for(int i=0; i<num_time_; ++i){
+	  //sets to an appropriate sized array for each time step
+	A_[i]= new matrix<std::complex<double> >[numDis_*typeDis_];
+	//initialize our list of dissipators
 	for(size_t k=0; k < numDis_*typeDis_; ++k){
-	  	  A_[k].initialize(2,2);
+	  	  A_[i][k].initialize(dim_,dim_);
+
+	}
 	}
 	for(size_t j=0; j < num_time_; ++j){
-	  // A_[j].initialize(10,10);
+	  // initialize other matrices to numtime with proper dimensions
 		U_[j].initialize(dim_,dim_);
 		Rho1_[j].initialize(dim_, dim_);
 		Unitaries_[j].initialize(dim_,dim_);
@@ -164,14 +164,10 @@ inline Evolution::Evolution(size_t dim, size_t num_controls, size_t num_time, co
 	one_on_dim_=1/double(dim_);	
 	H_drift_exp.initialize(dim_,dim_);
 		rho_initial_.initialize(dim_,dim_);
+		//arbitrarily chosen initial value. Should be reset by code already, but check.
 		rho_initial_(1,1)=1;
 	       
-	//	cout<<rho_initial_<< "rho init" <<endl;
-	//
-	//	rho_initial_(1,1)=1;
-	//rho_initial_(0,0)=rho_initial_(1,1)=0.5;
-	//to test convention
-	//		rho_initial_(1,1)= rho_initial_(1,0) = rho_initial_(0,1)= rho_initial_(0,0)=0.5;
+
 }
 
 Evolution::~Evolution(){
@@ -196,7 +192,7 @@ Evolution::~Evolution(){
 }
 inline void Evolution::SetOmega(double omega){
   omega_=omega;
-
+  //omega is an arbitrarily chosen value, should eventually be stochastic/take into account background noise
 	//relaxation constant, should be omega/10
   T1A=omega_/10.0;
 	  T1B=omega_/10.0;
@@ -224,11 +220,12 @@ inline void Evolution::SetNumTimes(const size_t newnumtimes)
 	
 	U_=new matrix<std::complex<double> >[num_time_];
 	Rho1_=new matrix<std::complex<double> >[num_time_];
-	A_= new matrix<std::complex<double> >[numDis_*typeDis_];
-       
-
+	A_= new matrix<std::complex<double> >*[num_time_];
+	for(size_t j=0; j<num_time_; ++j){
+A_[j]= new matrix<std::complex<double> >[numDis_*typeDis_];
 	for(size_t k=0; k < numDis_*typeDis_; ++k){
-	   A_[k].initialize(dim_,dim_);
+	   A_[j][k].initialize(dim_,dim_);
+	}
 	}
 	Unitaries_=new  matrix<std::complex<double> >[num_time_];
 	for(size_t j=0; j < num_time_; ++j){
@@ -284,9 +281,7 @@ inline void Evolution::Setucontrol(Control* control, const int k){
 	if(k>=0) lastcontrol=k;
 	
 	theControls_[lastcontrol]=control;
-	
-//	if(!controlsetflag_[num_controls_])
-//		theControls_[lastcontrol]->ZeH= MOs::Dagger(theControls_[lastcontrol]->Z)*H_drift_exp;
+
 	
 	controlsetflag_[lastcontrol++]=0;
 }
@@ -307,13 +302,9 @@ inline void Evolution::SetUDesired(const matrix<std::complex<double> >& U_desire
 //sets actual rho desired
 inline void Evolution::SetTrueRhoDesired(const matrix<std::complex<double> >& Udes){
   matrix<std::complex<double> > rho_des1;
-  	rho_des1.initialize(dim_,dim_);
-	rho_des1(0,0)=rho_des1(1,1)=0.5;
-	//true_rho_desired_=Udes*rho_des1*MOs::Dagger(Udes);
-  //true_rho_desired_=rho;
+  //set Rho desired to U*RHO*U^Daggar
   true_rho_desired_=Udes*rho_initial_*MOs::Dagger(Udes);
-  //cout<<"true rho" << true_rho_desired_<<endl;
-
+ 
   controlsetflag_[num_controls_+1]=0;
 	if(verbose==yes)
 	{
@@ -325,33 +316,22 @@ inline void Evolution::SetTrueRhoDesired(const matrix<std::complex<double> >& Ud
 }
 
 
+//sets our dissipator value
+inline void Evolution::SetOppsDesired(matrix<std::complex<double> >** Udes1){
 
-inline void Evolution::SetOppsDesired(const matrix<std::complex<double> >* Udes1){
-  //  matrix<std::complex<double> > input=new matrix<std::complex<double> >[numDis*typeDis];
-  for(size_t i=0; i< numDis_*typeDis_; ++i){
-    //input[i].initialize(2,2);
-  A_[i]=Udes1[i];
+  for(int k=0; k<num_time_; ++k){
+  for(size_t i=0; i<( numDis_)*(typeDis_); ++i){
+    //set our actual value of our dissipator at each step
+  A_[k][i]=Udes1[k][i];
   }
-  //  return input;
-	//true_rho_desired_=Udes*rho_des1*MOs::Dagger(Udes);
-  //true_rho_desired_=rho;
-  //true_rho_desired_=Udes*rho_initial_*MOs::Dagger(Udes);
-  //cout<<"true rho" << true_rho_desired_<<endl;
-
-  /*  controlsetflag_[num_controls_+1]=0;
-	if(verbose==yes)
-	{
-	                  A_.SetOutputStyle(Matrix);
-	 	std::cout << "--------------------Pauli Matrices for opperators---------------------" << std::endl;
-		std::cout << A_[0] << std::endl;
-		std::cout << "------------------------------------------------------------" << std::endl;
-		}*/
+  }
 }
 
 
 //Set the initial state for transfer
 inline void Evolution::SetRhoInitial(const matrix<std::complex<double> >& rho_initial){
-	rho_initial_=rho_initial;
+               rho_initial_=rho_initial;
+	  
 	controlsetflag_[num_controls_+2]=0;
 	if(verbose==yes)
 	{
@@ -386,10 +366,10 @@ inline void Evolution::writepopulations(char* outfile)
 	
 	matrix<std::complex<double> > pop = rho_initial_;			
 							
-	for(size_t j =0; j < num_time_; j++){
+	for(size_t j =0; j < num_time_; ++j){
 		popout << h_* j;
 		//modified to use Rho_[j] instead of U_[j], as rho is the populations
-		//pop = U_[j]*rho_initial_*MOs::Dagger(U_[j]);
+		//pop = U_[j]*rho_initial_*MOs::Dagger(U_[j]); old form
 		pop= Rho1_[j];
 		
 		for(int d=0; d<dim_; d++)
@@ -400,62 +380,52 @@ inline void Evolution::writepopulations(char* outfile)
 }
 
 inline matrix<std::complex<double > > Evolution::dissipator2(double dt,std::complex<double> gamma, matrix<std::complex<double> > A, matrix<std::complex<double> >* rho){
-  // matrix<std::complex<double> >* rhoHere(dim_, dim_) = rho;
+ 
   std::complex<double> dt_;
   dt_=dt;
-  //cout<<A<<"opp"<<endl;
-  //cout<<(*rho)<<"rho test"<<endl;
-  //matrix<std::complex<double> > ident(dim_,dim_);  MOs::Identity(ident);
-  //cout<< (gamma*dt_)*(A*(*rho)*MOs::Dagger(A)-0.5*(MOs::Dagger(A)*A*(*rho))-0.5*((*rho)*MOs::Dagger(A)*A))<< "testing dis"<<endl;
-    return (gamma*dt)*(A*(*rho)*MOs::Dagger(A)-0.5*(MOs::Dagger(A)*A*(*rho))-0.5*((*rho)*MOs::Dagger(A)*A));
-  //return ident;
-	//return rhoHere;
+  //alternate form of dissipator. dt*D*Rho*D^Dagger -.5(D^Dagger*D*Rho-.5*Rho*D^Dagger*D
+ return (dt)*(A*(*rho)*MOs::Dagger(A)-0.5*(MOs::Dagger(A)*A*(*rho))-0.5*((*rho)*MOs::Dagger(A)*A));
+
 
 }
 /*Method one for making a dissipator*/
 inline matrix<std::complex<double > > Evolution::dissipator1(double dt,std::complex<double> gamma, matrix<std::complex<double> > A, matrix<std::complex<double> >* rho){
   std::complex<double> dt_; //turn dt into a complex double for type casting reasons
   dt_=dt;
-  //  matrix<std::complex<double> >* rhoHere(dim_, dim_);
+
 	matrix<std::complex<double> > ident(dim_,dim_);  MOs::Identity(ident);
-	//cout<<std::sqrt(dt_*gamma)<<"DT"<<endl;
+	//return I+Sqrt(dT*gamma)*D-.5*D^Dagger*D*Dt*gamma
 	return (ident+std::sqrt(dt_*gamma)*A-0.5*MOs::Dagger(A)*A*dt_*gamma);
-	//return ident;
-	//return rhoHere;
+	
 
 }
+//Krauss Dissipators
+matrix<std::complex<double> > Evolution::GenKrausDis(int j,double dt, matrix<std::complex<double> >* rho){
 
-matrix<std::complex<double> > Evolution::GenDis(double dt, std::complex<double> gamma,matrix<std::complex<double> >* rho){
-  // size_t a,b;
-  // a=1;
-  //b=2;
-  // cout<<a*b<<"TESTING MULTI"<<endl;
-  //int c,d;
-  //c=1;
-  //d=2;
-  //cout<<A_[1]<<"oPPERATOR TEST"<<endl;
-  matrix<std::complex<double> > tempdis=dissipator2(dt, gamma, A_[0], rho);
-  //cout<<"Opps" << (typeDis_)*(numDis_)<<endl;
-  for(size_t k=1; k<(typeDis_)*(numDis_); ++k){
+  matrix<std::complex<double> > opperator=A_[j][0];
+  matrix<std::complex<double> > tempdis= A_[j][0]*(*rho)*MOs::Dagger(A_[j][0]);
+  
+  for(size_t k=1; k<(typeDis_)*(numDis_); k++){
+    //the form of the dissipator  
+    tempdis = A_[j][k]*(*rho)*MOs::Dagger(A_[j][k]); //NEED TO MAKE A A GLOBAL VARIABLE SET!!
+    }
+  
+ 
+   return tempdis;
+}
+//creates our dissipator
+matrix<std::complex<double> > Evolution::GenDis(int j,double dt,std::complex<double> gamma, matrix<std::complex<double> >* rho){
+
+  matrix<std::complex<double> > tempdis=dissipator2(dt, gamma, A_[j][0], rho);
+ 
+  for(size_t k=1; k<(typeDis_)*(numDis_); k++){
     // cout<<k<<"k"<<endl;
-    tempdis += dissipator2(dt, gamma, A_[k-1], rho); //NEED TO MAKE A A GLOBAL VARIABLE SET!!
+    tempdis += dissipator2(dt, gamma, A_[j][k], rho); //NEED TO MAKE A A GLOBAL VARIABLE SET!!
     }
   
   return tempdis;
 }
-/*
-inline matrix<std::complex<double> > SetDis(matrix<std::complex<double> > dis[],int numDis_, int typeDis_){
- A_[]=new  matrix<std::complex<double> >*[numDis_*typeDis_];
- for(int k=0; k<typeDis_; k++){ 
-	A_[k].initialize(2,2);
-	A_[k]=dis[k];
-	numDis=numDis_;
-	typeDis=typeDis_;
 
- }
-  return A_[0];
-}
-*/
 //forward propogate for unitaries
    void Evolution::forwardpropagate()
    {
@@ -501,20 +471,19 @@ inline matrix<std::complex<double> > SetDis(matrix<std::complex<double> > dis[],
 //forward propogation for density matrices
  void Evolution::forwardpropagate_Density()
    {
-     matrix<std::complex<double> > PauliZ;
-     // MOs::GenPauliZ(PauliZ, 0,1);//producedim x dim Pauli Z matrix
+     matrix<std::complex<double> > PauliZ; //PauliZ done by hand
      matrix<std::complex<double> > Anhil(dim_,dim_); MOs::Destroy(Anhil);//produce dim x dim Sigma Minus matrix (eg, spin lowering)
      matrix<std::complex<double> > ident(dim_,dim_);  MOs::Identity(ident); //produces a dim by dim identity matrix
  PauliZ.initialize(dim_,dim_);
  PauliZ(1,1)=1;
- //PauliZ(2,2)=2;   
+ 
 	matrix<std::complex<double> > Htemp_(dim_,dim_), Htemp2_(dim_,dim_);	
 	matrix<std::complex<double> >* lastRho = &rho_initial_;
    	matrix<std::complex<double> >* curUnitary = &ident;
  	std::complex<double>* freqs  = new std::complex<double>[dim_];
 
 	lastRho = &rho_initial_;
-	//	cout<<Anhil<< "anhil"<<endl;
+
    	curUnitary = &ident;
    	for(size_t j = 0; j < num_time_; j++){
    		Htemp_= *H_drift_;
@@ -546,30 +515,14 @@ inline matrix<std::complex<double> > SetDis(matrix<std::complex<double> > dis[],
    		
    		//timestep propagator Unitaries_[j] and total propagator U_[j]
    		Unitaries_[j]= ExpM::EigenMethod(Htemp_,-i*h_, &(Z[j]), W[j]);	
-		//Rho1_[j] = Unitaries_[j]*(*lastRho)*(MOs::Dagger(Unitaries_[j]));
-		//cout<<"partybus for segfaults"
-		//	cout<<"anil"<<Anhil<<endl;
-		/*TO DO ADD RECURSIVE FUNCTION FOR EACH SYSTEM)*/
-		
-		//attempt to implement decoherance
-		//attempt to implement decoherance
-		//	matrix<std::complex<double> > anhilTest;
-     
+		//Updates Unitaries	
  U_[j]=Unitaries_[j]*(*curUnitary);
-		//	cout<<"abs trace"<<std::abs(MOs::Trace(Rho1_[j]))<<endl;
-		//cout<<T1A<<"Testing t1 set"<<endl;	
- //cout<<Anhil<<"Anhik"<<endl;
- //cout<<j<<"Last j before enter"<<endl;
- Rho1_[j]=Unitaries_[j]*(*lastRho)*MOs::Dagger(Unitaries_[j])+GenDis(h_,1.0/T1A,lastRho);
- 
+ //updates rho to compare to/use
+ *lastRho=Unitaries_[j]*(*lastRho)*MOs::Dagger(Unitaries_[j]);
+ //sets our rho at each time step
+Rho1_[j]=GenKrausDis(j, h_,lastRho);
 
-//+dissipator2(h_,(1.0/T1A), Anhil, lastRho);//+dissipator2(h_, 1.0/T2A, PauliZ, lastRho);
-
-	
-								       
-		//	  U_[j]=Unitaries_[j]*(*curUnitary);//updates unitary
-	       
-   		curUnitary = &(U_[j]);//sets current location
+   		curUnitary = &(U_[j]);//sets current unitary location
 		lastRho=&(Rho1_[j]);//sets rho location
    	}	
 }	
@@ -610,13 +563,13 @@ void Evolution::forwardpropagate_Taylor()
 		}
   	
 }		
-//forward propagate commute for unitaries
+//forward propagate commute for unitaries, commented out due to errors
 void Evolution::forwardpropagate_Commute()
 {
-
+  /*
   matrix<std::complex<double> > tempmat(dim_,dim_), ident(dim_,dim_), *propag;
-	std::complex<double> scalarexponents[dim_];
-	std::complex<double> freqs[dim_];
+  //	std::complex<double> scalarexponents[dim_];
+  //	std::complex<double> freqs[dim_];
 	MOs::Identity(ident);
 	propag=&ident;
 	int start, inc;
@@ -648,9 +601,12 @@ void Evolution::forwardpropagate_Commute()
 		}
 		U_[j] = *propag;
 		
+
 					}
 
-	  }
+
+  */
+}
 	
 
 

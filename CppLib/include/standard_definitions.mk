@@ -46,13 +46,13 @@ ifndef CLUSTER
 	else
 		ifneq (,$(strip $(findstring $(OSTYPE), Linux)))
 			# Linux
-	  		CC      = g++
-			LD      = g++
+	  		CC      = clang++
+			LD      = clang++
 			LDFLAGS +=  -lblas -llapack 
 	  		ifeq ($(BUILD_TYPE), debug)
-				CFLAGS += -g -ansi -w -Wconversion -Wshadow -Wcast-qual -Wwrite-strings -Wno-deprecated
+				CFLAGS += -g -ansi -w -Wconversion -Wshadow -Wcast-qual -Wwrite-strings -Wno-deprecated -std=c++0x
 			else
-				CFLAGS += -O3 -Wno-deprecated
+				CFLAGS += -O3 -Wno-deprecated -std=c++0x
 			endif
 			
 		else 
@@ -61,9 +61,9 @@ ifndef CLUSTER
 			LD      = g++
 			LDFLAGS += -lgsl -lgslcblas -llapack -lblas -lg2c -lm -m64 
 			ifeq ($(BUILD_TYPE), debug)
-				CFLAGS += -g -ansi -pedantic -Wall -W -Wconversion -Wshadow -Wcast-qual -Wwrite-strings -m64 
+				CFLAGS += -g -ansi -pedantic -Wall -W -Wconversion -Wshadow -Wcast-qual -Wwrite-strings -m64
 			else
-				CFLAGS += -O3 -m64
+				CFLAGS += -O3 -m64 -std=c++0x
 			endif	
 				LDFLAGS +=  -L /usr/lib -lacml -lpathfortran 
 		endif

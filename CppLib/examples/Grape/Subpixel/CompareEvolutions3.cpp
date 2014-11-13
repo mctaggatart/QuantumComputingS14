@@ -1,4 +1,5 @@
 /*
+NOT TESTED WITH EDITS TO NEW COMPILED FORM OF EVOLUTION
 Name: GrapeUnitaryEnvelope.cpp
 Author: felix motzoi
 
@@ -23,7 +24,7 @@ int main (int argc, char const *argv[]){
 	double qbfreq=5*M_PI, Delta=-4.00, lambda=sqrt(3/2);  //physical params
 	double lamb2 =  1/sqrt(2);
 	double Delta2 = Delta;
-	double tolerance=0.00000000000000001, fidelity, base_a=1.7, epsilon=0.00005, tgate=20, dt;  //search params
+	double tolerance=std::numeric_limits<double>::min(), fidelity, base_a=1.7, epsilon=0.00005, tgate=20, dt;  //search params
 	double rab = M_PI;
 	size_t max_iter=500000;
 	size_t dimQ=2, dimL=2, dimL2=2, dimL3=2;
@@ -57,11 +58,21 @@ int main (int argc, char const *argv[]){
 	//dt=tgate/double(num_time);
 	
 //	system("mkdir hello");
-	
+	size_t numDis=1, typeDis=2;
+   matrix<complex<double> >* dis;
+	dis= new matrix<std::complex<double> >[numDis*typeDis];
+	for(int k=0; k<typeDis*numDis; ++k){
+	  dis[k].initialize(dim,dim); //NEED TO MAKE A A GLOBAL VARIABLE SET!!
+}	
+		MOs::Destroy(dis[0]);
+	dis[1]=(MOs::Dagger(dis[0]))*(dis[0]);
+ 	
 		//RWA frame	
 		double rwa_dt = tgate/double(rwa_num_time);		
 		
-		OptimizeEvolution baselinesys(dim, num_controls, rwa_num_time, rwa_dt, "OffResCoupling");
+		OptimizeEvolution baselinesys(dim, num_controls, rwa_num_time, rwa_dt,dis, numDis,typeDis, "OffResCoupling");
+
+	//sys.SetTrueRhoDesired(U_desired,R,ho_des);
 		baselinesys.Phi = &OptimizeEvolution::Phi4;
 		baselinesys.gradPhi = &OptimizeEvolution::GradPhi4;
 		baselinesys.pPropagate = &Evolution::forwardpropagate;
@@ -155,8 +166,17 @@ int main (int argc, char const *argv[]){
 		baselinesys.SetNumericalParameters(fidelity=0.6, base_a, epsilon, tolerance, max_iter);	
 		U_desired =U_desired_big;
 		U_desired.resize(dim,dim);
+baselinesys.SetOppsDesired(dis);
+
 //		U_desired=	 ExpM::EigenMethod(HdriftQ,-ii*tgate)*U_desired;
-		baselinesys.SetRhoDesired(U_desired);
+		//	baselinesys.SetRhoDesired(U_desired);
+
+		matrix<complex<double> > init(dim,dim);
+		init(1,1)=1;
+baselinesys.SetRhoInitial(init);
+	baselinesys.SetUDesired(U_desired);
+	baselinesys.SetTrueRhoDesired(U_desired);
+	baselinesys.SetOmega(50.0);
 		cout << "u desired: \n" << U_desired << endl;
 
 		cout << "declaring controls...\n";
@@ -293,8 +313,14 @@ int main (int argc, char const *argv[]){
 		double sub = rwasub/60;
 			
 		for (size_t s=0; s<2; s++)
-		{	sys[s] = new OptimizeEvolution(dim, num_controls, num_time/mult, delta_t*mult, "OffResCoupling");
+		  {	sys[s] = new OptimizeEvolution(dim, num_controls, num_time/mult, delta_t*mult,dis, numDis,typeDis, "OffResCoupling");
 			sys[s]->SetNumericalParameters(fidelity=0.99999, base_a, epsilon, tolerance, max_iter);
+sys[s]->SetRhoInitial(init);
+	sys[s]->SetOppsDesired(dis);
+	sys[s]->SetUDesired(U_desired);
+	sys[s]->SetTrueRhoDesired(U_desired);
+	sys[s]->SetOmega(50.0);
+
 			sys[s]->Phi = baselinesys.Phi;
 			sys[s]->gradPhi = baselinesys.gradPhi;
 			sys[s]->SetHdrift(HDrift);	
@@ -366,7 +392,7 @@ int main (int argc, char const *argv[]){
 		matrix<complex<double> > Shift = HdriftQ;		
 		matrix<complex<double> > Shift2 = HdriftQ;
 		
-//		baselinesys.UnitaryTransfer();
+		//	baselinesys.UnitaryTransfer();
 		
 //		baselinesys.sweeptimes(static_cast<ptrPropagate> (&OptimizeEvolution::sweepinitialconditions));
 
@@ -375,7 +401,7 @@ int main (int argc, char const *argv[]){
 */
 
 //		baselinesys.sweeptimesandcompare(static_cast<ptrPropagate> (&OptimizeEvolution::UnitaryTransfer));
-		baselinesys.sweepfinegrainingandcompare(	static_cast<ptrPropagate> (&OptimizeEvolution::UnitaryTransfer));
+		baselinesys.UnitaryTransfer();
 //		baselinesys.sweepdimandcompare(	static_cast<ptrPropagate> (&OptimizeEvolution::UnitaryTransfer), HDriftRef, U_desired_big, refdimcon);
 
 		cout <<"deleting controls\n";		

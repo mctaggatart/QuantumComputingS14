@@ -56,8 +56,8 @@ int main (int argc, char const *argv[]){
 	cout << "Running program " << argv[0] << endl;
 	
 	//Grape inputs
-	size_t num_time=1000, dim = 16,numDis=1, typeDis=2, num_controls =2;
-	size_t max_iter=10;
+	size_t num_time=10000, dim = 16,numDis=1, typeDis=3, num_controls =2;
+	size_t max_iter=1000;
 	double tolerance=std::numeric_limits<double>::min(), fidelity, base_a=2.0, epsilon=5000000, dt=0.000002, tgate=dt*double(num_time);
  
   matrix<complex<double> >* dis;
@@ -67,7 +67,7 @@ int main (int argc, char const *argv[]){
 }	
 		MOs::Destroy(dis[0]);
 	dis[1]=(MOs::Dagger(dis[0]))*(dis[0]);
- 
+	MOs::Destroy(dis[2]);
 	//cout<<"Anhiliation"<<dis[0]<<endl;
 	OptimizeEvolution sys(dim, num_controls, num_time, dt, dis, numDis, typeDis, "Unitary2");
 	sys.SetNumericalParameters(fidelity=0.99, base_a, epsilon, tolerance, max_iter);

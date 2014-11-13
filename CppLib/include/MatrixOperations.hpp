@@ -39,7 +39,7 @@ namespace MOs { //All my matrix operators
 	template <class T>
 	bool IsLowerTriangular (const matrix<T>& A);
 	bool IsHermitian (const matrix<std::complex<double> >& A);
-	
+
 	//Common Matricies
 	template <class T> 
 	void Null(matrix<T>& A);
@@ -68,6 +68,7 @@ namespace MOs { //All my matrix operators
 	template <class T> 
 	matrix<T> Transpose(const matrix<T>& A);
 	matrix<std::complex<double> > Dagger(const matrix<std::complex<double> >& A);
+  matrix<std::complex<double> > Normalize (matrix<std::complex<double> >& A);
 	matrix<std::complex<double> > Conjugate(const matrix<std::complex<double> >& A);
 	template <class T>
 	T Trace(const matrix<T>& A);
@@ -467,6 +468,24 @@ inline void  MOs::multdiag(matrix<std::complex<double> >& dest,  const matrix<st
 		}
 	}
 }
+inline matrix<std::complex<double> > MOs::Normalize(matrix<std::complex<double> >& norm){
+  matrix<std::complex<double> > dag = MOs::Dagger(norm);
+
+	size_t rows= norm.GetRows(), cols = norm.GetColumns();
+	//	if(MOs::IsDiagonal(norm)){
+	for (size_t i=0; i < rows; i++){
+		for(size_t j=0; j < cols; j++){
+		  norm(i,j) =norm(i,j)*((1.0)/dag(j,i));
+		}
+		//	}
+}
+	//	else{
+	// std::cout<<"Your matrix is not Diagonal, could not be normalized"<<std::endl;
+	//}
+	return norm;
+}
+
+
 
 
 #endif /* MatrixOperations_h */

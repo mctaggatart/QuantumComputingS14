@@ -1,4 +1,6 @@
 /*
+
+EDITS UNTESTED SUMMER 2014, simply done to compile
 Name: GrapeUnitaryEnvelope.cpp
 Author: felix motzoi
 
@@ -57,12 +59,22 @@ int main (int argc, char const *argv[]){
 	
 		//RWA frame	
 		double rwa_dt = tgate/double(rwa_num_time);		
-		
-		OptimizeEvolution baselinesys(dim, num_controls, rwa_num_time, rwa_dt, "EnvelopeCompare_test");
+		size_t numDis=1, typeDis=2;
+  matrix<complex<double> >* dis;
+	dis= new matrix<std::complex<double> >[numDis*typeDis];
+	for(int k=0; k<typeDis*numDis; ++k){
+	  dis[k].initialize(dim,dim); //NEED TO MAKE A A GLOBAL VARIABLE SET!!
+}	
+		MOs::Destroy(dis[0]);
+	dis[1]=(MOs::Dagger(dis[0]))*(dis[0]);
+ 
+
+	OptimizeEvolution baselinesys(dim, num_controls, rwa_num_time, rwa_dt,dis, numDis, typeDis, "EnvelopeCompare_test");
 		baselinesys.Phi = &OptimizeEvolution::Phi4Sub2;
 		baselinesys.gradPhi = &OptimizeEvolution::GradPhi4Sub2;
 		baselinesys.pPropagate = &Evolution::forwardpropagate;
 		baselinesys.pGetGradient = 	&OptimizeEvolution::computegradient;
+		baselinesys.SetOppsDesired(dis);
 		baselinesys.gatesteptime = 1;
 		//baselinesys.ngatetimes = 6;  //times
 		baselinesys.ngatetimes = 30;  //subpix
@@ -87,8 +99,14 @@ int main (int argc, char const *argv[]){
 		baselinesys.SetHdrift(HDrift);
 
 		baselinesys.SetNumericalParameters(fidelity=0.999999999999999999, base_a, epsilon, tolerance, max_iter);	
-		baselinesys.SetRhoDesired(UNOT);
-
+		//	baselinesys.SetRhoDesired(UNOT);
+		matrix<complex<double> > init;
+		init.initialize(dim,dim);
+		init(1,1)=1;
+baselinesys.SetRhoInitial(init);
+	baselinesys.SetUDesired(UNOT);
+	baselinesys.SetTrueRhoDesired(UNOT);
+	baselinesys.SetOmega(5.0);
 		cout << "declaring controls...\n";
 		
 		ad = MOs::Dagger(a);
@@ -124,7 +142,7 @@ int main (int argc, char const *argv[]){
 		for (size_t s=0; s<num_evol; s++)
 		{	
 		
-			sys[s] = new OptimizeEvolution(dim, num_controls, rwa_num_time/mult[s], rwa_dt*mult[s], "altevol");
+			sys[s] = new OptimizeEvolution(dim, num_controls, rwa_num_time/mult[s], rwa_dt*mult[s],  dis, numDis, typeDis, "altevol");
 			sys[s]->SetNumericalParameters(fidelity=0.999999999999999999, base_a, epsilon, tolerance, max_iter);
 			sys[s]->Phi = &OptimizeEvolution::Phi4Sub2;
 			sys[s]->gradPhi = &OptimizeEvolution::GradPhi4Sub2;
@@ -174,7 +192,7 @@ int main (int argc, char const *argv[]){
 	
 		cout << "beginning sweep...\n";
 //		baselinesys.sweeptimesandcompare(static_cast<ptrPropagate> (&OptimizeEvolution::UnitaryTransfer));
-		baselinesys.sweepfinegrainingandcompare(	static_cast<ptrPropagate> (&OptimizeEvolution::UnitaryTransfer));
+		baselinesys.UnitaryTransfer();
 //		baselinesys.sweepdimandcompare( "com_evolrand_frq10_Hd5_Hc3.dat", HDriftRef, refdimcon);
 
 		cout <<"deleting controls\n";		
